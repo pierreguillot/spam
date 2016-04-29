@@ -14,8 +14,8 @@ typedef struct _spam_master
     t_object*   s_block;
 }t_spam_master;
 
-char spam_master_init(t_spam_master* master);
-char spam_master_close(t_spam_master* master);
+char spam_master_init(t_object* process,t_spam_master* master);
+char spam_master_free(t_object* process, t_spam_master* master);
 char spam_master_load_canvas(t_spam_master* master, t_symbol* name, int preargc, t_atom* preargv, int argc, t_atom* argv);
 
 

@@ -11,9 +11,10 @@
 
 extern t_class* canvas_class;
 
-char spam_master_init(t_spam_master* master)
+char spam_master_init(t_object* process, t_spam_master* master)
 {
     t_atom av[3];
+    t_symbol *s = NULL;
     master->s_cnv = canvas_new(NULL, gensym(""), 0, NULL);
     if(master->s_cnv)
     {
@@ -38,13 +39,25 @@ char spam_master_init(t_spam_master* master)
         error("spam: can't allocate master canvas.");
         return -1;
     }
+    s = canvas_realizedollar(master->s_cnv, gensym("$0-spam-process"));
+    if(s)
+    {
+        s->s_thing = (struct _class **)process;
+    }
+    
     return 0;
 }
 
-char spam_master_close(t_spam_master* master)
+char spam_master_free(t_object* process, t_spam_master* master)
 {
+    t_symbol *s = NULL;
     if(master->s_cnv)
     {
+        s = canvas_realizedollar(master->s_cnv, gensym("$0-spam-process"));
+        if(s)
+        {
+            s->s_thing = NULL;
+        }
         canvas_free(master->s_cnv);
         return 0;
     }

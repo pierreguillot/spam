@@ -78,6 +78,136 @@ static void spam_process_outlet_anything(t_spam_outlet *x, t_symbol* s, int argc
 
 
 
+typedef struct _spam_iolets
+{
+    int             staticins;
+    int             nins_message;
+    int             nins_signal;
+    int             staticout;
+    int             nout_message;
+    int             nouts_signal;
+    t_spam_inlet*   ins;
+    t_spam_outlet*  outs;
+} t_spam_iolets;
+
+static void spam_iolets_init(t_spam_iolets* iolets)
+{
+    iolets->staticins   = 0;
+    iolets->nins_message= 0;
+    iolets->nins_signal = 0;
+    iolets->staticout   = 0;
+    iolets->nout_message= 0;
+    iolets->nouts_signal= 0;
+    iolets->ins         = NULL;
+    iolets->outs        = NULL;
+}
+
+static void spam_iolets_free(t_spam_iolets* iolets)
+{
+    int i;
+    if(iolets->nins_message && iolets->ins)
+    {
+        freebytes(iolets->ins, iolets->nins_message * sizeof(t_spam_inlet));
+    }
+    if(iolets->nout_message && iolets->outs)
+    {
+        for(i = 0; i < iolets->nout_message; ++i)
+        {
+            pd_unbind((t_pd *)(iolets->outs+i), iolets->outs[i].s_sym);
+        }
+        freebytes(iolets->outs, iolets->nout_message * sizeof(t_spam_outlet));
+    }
+    iolets->staticins   = 0;
+    iolets->nins_message= 0;
+    iolets->nins_signal = 0;
+    iolets->staticout   = 0;
+    iolets->nout_message= 0;
+    iolets->nouts_signal = 0;
+    iolets->ins         = NULL;
+    iolets->outs        = NULL;
+}
+
+static void spam_iolets_set(t_spam_iolets* iolets, t_spam_io* io)
+{
+    if(!io->s_type){
+        if(!io->s_signal){
+            iolets->nins_message = (iolets->nins_message > io->s_index+1) ? iolets->nins_message : io->s_index+1;
+        }
+        else if(io->s_static){
+            iolets->staticins = 1;
+        }
+        else{
+            iolets->nins_signal = (iolets->nins_signal > io->s_index+1) ? iolets->nins_signal : io->s_index+1;
+        }
+    }
+    else{
+        if(!io->s_signal){
+            iolets->nout_message = (iolets->nout_message > io->s_index+1) ? iolets->nout_message : io->s_index+1;
+        }
+        else if(io->s_static){
+            iolets->staticout = 1;
+        }
+        else{
+            iolets->nouts_signal = (iolets->nouts_signal > io->s_index+1) ? iolets->nouts_signal : io->s_index+1;
+        }
+    }
+}
+
+static void spam_iolets_process(t_object* x, t_canvas* cnv, t_spam_iolets* iolets, int nstatics)
+{
+    char temp[MAXPDSTRING];
+    int i, sig = 0;
+    
+    sig = (iolets->staticins || iolets->nins_signal) ? 1 : 0;
+    if(sig)
+    {
+        for(i = 1; i < iolets->staticins * nstatics + iolets->nins_signal; ++i)
+        {
+            signalinlet_new(x, 0.f);
+        }
+    }
+    if(iolets->nins_message)
+    {
+        iolets->ins = (t_spam_inlet *)getbytes(iolets->nins_message * sizeof(t_spam_inlet));
+        for(i = !sig; i < iolets->nins_message; ++i)
+        {
+            sprintf(temp, "$0-in-%i", i);
+            iolets->ins[i].s_pd    = spam_process_inlet_class;
+            iolets->ins[i].s_sym   = canvas_realizedollar(cnv, gensym(temp));
+            inlet_new(x, &(iolets->ins[i].s_pd), 0, 0);
+        }
+    }
+    
+    sig = (iolets->staticout || iolets->nouts_signal) ? 1 : 0;
+    if(sig)
+    {
+        for(i = 0; i < iolets->staticout * nstatics + iolets->nouts_signal; ++i)
+        {
+            outlet_new(x, &s_signal);
+        }
+    }
+    
+    if(iolets->nout_message)
+    {
+        iolets->outs = (t_spam_outlet *)getbytes(iolets->nout_message * sizeof(t_spam_outlet));
+        for(i = 0; i < iolets->nout_message; ++i)
+        {
+            sprintf(temp, "$0-out-%i", i);
+            iolets->outs[i].s_pd       = spam_process_outlet_class;
+            iolets->outs[i].s_sym      = canvas_realizedollar(cnv, gensym(temp));
+            iolets->outs[i].s_outlet   = outlet_new((t_object *)x, NULL);
+            pd_bind(&(iolets->outs[i].s_pd), iolets->outs[i].s_sym);
+        }
+    }
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -86,20 +216,10 @@ typedef struct _spam
     t_object        s_obj;
     t_spam_master   s_master;
     t_spam_signal   s_signal;
+    t_spam_iolets   s_iolet;
     int             s_nrows;
     int             s_ncolumns;
-    
     t_symbol*       s_fin;
-    int             s_nins;
-    t_spam_inlet*   s_ins;
-    
-    char            s_instatic;
-    int             s_ninssig;
-    
-    int             s_nouts;
-    t_spam_outlet*  s_outs;
-    char            s_outstatic;
-    int             s_noutssig;
 } t_spam;
 
 
@@ -133,27 +253,17 @@ static void spam_process_anything(t_spam *x, t_symbol* s, int argc, t_atom* argv
     }
 }
 
+
+
+
+
+
+
 static void spam_process_free(t_spam *x)
 {
-    int i;
-    if(x->s_master.s_cnv)
-    {
-        pd_unbind((t_pd *)x, canvas_realizedollar(x->s_master.s_cnv, gensym("$0-master")));
-    }
-    if(x->s_nins && x->s_ins)
-    {
-        freebytes(x->s_ins, x->s_nins * sizeof(t_spam_inlet));
-    }
-    if(x->s_nouts && x->s_nouts)
-    {
-        for(i = 0; i < x->s_nouts; ++i)
-        {
-            pd_unbind((t_pd *)(x->s_outs+i), x->s_outs[i].s_sym);
-        }
-        freebytes(x->s_outs, x->s_nouts * sizeof(t_spam_outlet));
-    }
+    spam_iolets_free(&(x->s_iolet));
     spam_signal_free(&(x->s_signal));
-    spam_master_close(&(x->s_master));
+    spam_master_free((t_object *)x, &(x->s_master));
 }
 
 static void spam_process_vis(t_spam *x, t_floatarg index)
@@ -169,27 +279,8 @@ static void spam_process_click(t_spam *x, t_floatarg xpos, t_floatarg ypos, t_fl
     spam_process_vis(x, 0);
 }
 
-static void spam_process_setio(t_spam *x, t_int iotype, t_int idx, t_int sig, t_int stic)
-{
-    if(iotype)
-    {
-        x->s_nouts = (idx + 1) > x->s_nouts ? (idx + 1) : x->s_nouts;
-    }
-    else
-    {
-        if(stic)
-        {
-            x->s_instatic = 1;
-        }
-        else if(sig)
-        {
-            x->s_ninssig = (idx + 1) > x->s_ninssig ? (idx + 1) : x->s_ninssig;
-        }
-        else
-        {
-            x->s_nins = (idx + 1) > x->s_nins ? (idx + 1) : x->s_nins;
-        }
-    }
+static void spam_process_setio(t_spam *x, t_spam_io* io){
+    spam_iolets_set(&(x->s_iolet), io);
 }
 
 static void spam_process_dsp(t_spam *x, t_signal **sp)
@@ -199,9 +290,9 @@ static void spam_process_dsp(t_spam *x, t_signal **sp)
     t_symbol* s;
     t_atom* av;
     char temp[MAXPDSTRING];
-    int nins = x->s_instatic * x->s_nrows * x->s_ncolumns + x->s_ninssig;
-    int nouts = x->s_outstatic * x->s_nrows * x->s_ncolumns + x->s_noutssig;
-    spam_signal_alloc(&(x->s_signal), (nins > nouts) ? nins : nouts, sp[0]->s_n);
+    //int nins = x->s_instatic * x->s_nrows * x->s_ncolumns + x->s_ninssig;
+    //int nouts = x->s_outstatic * x->s_nrows * x->s_ncolumns + x->s_noutssig;
+    //spam_signal_alloc(&(x->s_signal), (nins > nouts) ? nins : nouts, sp[0]->s_n);
     if(x->s_signal.s_samples)
     {
         /*
@@ -239,21 +330,13 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
 {
     int i, j;
     t_atom av[4];
-    char temp[MAXPDSTRING];
     t_symbol* name;
     t_spam *x  = (t_spam *)pd_new(spam_process_class);
     if(x)
     {
         spam_signal_init(&(x->s_signal));
-        
-        x->s_nins       = 0;
-        x->s_ins        = NULL;
+        spam_iolets_init(&(x->s_iolet));
         x->s_fin        = NULL;
-        x->s_instatic   = 0;
-        x->s_ninssig    = 0;
-        
-        x->s_nouts      = 0;
-        x->s_outs       = NULL;
         
         x->s_nrows      = atom_getfloatarg(0, argc, argv);
         x->s_ncolumns   = atom_getfloatarg(1, argc, argv);
@@ -264,12 +347,11 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
             pd_free((t_pd *)x);
             return NULL;
         }
-        if(spam_master_init(&(x->s_master)))
+        if(spam_master_init((t_object *)x, &(x->s_master)))
         {
             pd_free((t_pd *)x);
             return NULL;
         }
-        pd_bind((t_pd *)x, canvas_realizedollar(x->s_master.s_cnv, gensym("$0-master")));
         
         SETFLOAT(av, x->s_nrows);
         SETFLOAT(av+1, x->s_ncolumns);
@@ -287,41 +369,12 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
                 }
             }
         }
-        if(x->s_ninssig || x->s_instatic)
-        {
-            for(i = 0; i < (int)x->s_instatic * x->s_nrows * x->s_ncolumns + x->s_ninssig; ++i)
-            {
-                signalinlet_new(&(x->s_obj), 0.f);
-            }
-        }
-        if(x->s_nins)
-        {
-            if(!(x->s_ninssig || x->s_instatic))
-            {
-                x->s_fin = canvas_realizedollar(x->s_master.s_cnv, gensym("$0-in-0"));
-            }
-            x->s_ins = (t_spam_inlet *)getbytes(x->s_nins * sizeof(t_spam_inlet));
-            for(i = (int)(!(x->s_ninssig || x->s_instatic)); i < x->s_nins; ++i)
-            {
-                sprintf(temp, "$0-in-%i", i);
-                x->s_ins[i].s_pd    = spam_process_inlet_class;
-                x->s_ins[i].s_sym   = canvas_realizedollar(x->s_master.s_cnv, gensym(temp));
-                inlet_new(&(x->s_obj), &x->s_ins[i].s_pd, 0, 0);
-            }
-        }
         
-        if(x->s_nouts)
+        if(!(x->s_iolet.nins_signal || x->s_iolet.staticins))
         {
-            x->s_outs = (t_spam_outlet *)getbytes(x->s_nouts * sizeof(t_spam_outlet));
-            for(i = 0; i < x->s_nouts; ++i)
-            {
-                sprintf(temp, "$0-out-%i", i);
-                x->s_outs[i].s_pd       = spam_process_outlet_class;
-                x->s_outs[i].s_sym      = canvas_realizedollar(x->s_master.s_cnv, gensym(temp));
-                x->s_outs[i].s_outlet   = outlet_new((t_object *)x, NULL);
-                pd_bind((t_pd *)(x->s_outs+i), x->s_outs[i].s_sym);
-            }
+            x->s_fin = canvas_realizedollar(x->s_master.s_cnv, gensym("$0-in-0"));
         }
+        spam_iolets_process((t_object *)x, x->s_master.s_cnv, &(x->s_iolet), x->s_ncolumns * x->s_nrows);
     }
     return x;
 }
