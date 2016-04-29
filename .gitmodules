@@ -1,0 +1,3 @@
+[submodule "pd"]
+	path = pd
+	url = https://pierreguillot@github.com/pure-data/pure-data.git
