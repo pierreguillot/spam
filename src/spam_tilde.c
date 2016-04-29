@@ -12,69 +12,66 @@ static t_class* spam_process_class;
 static t_class* spam_process_inlet_class;
 static t_class* spam_process_outlet_class;
 
-typedef struct _spam_process_inlet
+typedef struct _spam_inlet
 {
     t_class*    s_pd;
     t_symbol*   s_sym;
-} t_spam_process_inlet;
+} t_spam_inlet;
 
-static void spam_process_inlet_bang(t_spam_process_inlet *x){
+static void spam_process_inlet_bang(t_spam_inlet *x){
     if(x->s_sym && x->s_sym->s_thing){
         pd_bang(x->s_sym->s_thing);
     }
 }
 
-static void spam_process_inlet_float(t_spam_process_inlet *x, float f){
+static void spam_process_inlet_float(t_spam_inlet *x, float f){
     if(x->s_sym && x->s_sym->s_thing){
         pd_float(x->s_sym->s_thing, f);
     }
 }
 
-static void spam_process_inlet_symbol(t_spam_process_inlet *x, t_symbol* s){
+static void spam_process_inlet_symbol(t_spam_inlet *x, t_symbol* s){
     if(x->s_sym && x->s_sym->s_thing){
         pd_symbol(x->s_sym->s_thing, s);
     }
 }
 
-static void spam_process_inlet_list(t_spam_process_inlet *x, t_symbol* s, int argc, t_atom* argv){
+static void spam_process_inlet_list(t_spam_inlet *x, t_symbol* s, int argc, t_atom* argv){
     if(x->s_sym && x->s_sym->s_thing){
         pd_list(x->s_sym->s_thing, s, argc, argv);
     }
 }
 
-static void spam_process_inlet_anything(t_spam_process_inlet *x, t_symbol* s, int argc, t_atom* argv){
+static void spam_process_inlet_anything(t_spam_inlet *x, t_symbol* s, int argc, t_atom* argv){
     if(x->s_sym && x->s_sym->s_thing){
         pd_typedmess(x->s_sym->s_thing, s, argc, argv);
     }
 }
 
-
-
-
-typedef struct _spam_process_outlet
+typedef struct _spam_outlet
 {
     t_class*    s_pd;
     t_outlet*   s_outlet;
     t_symbol*   s_sym;
-} t_spam_process_outlet;
+} t_spam_outlet;
 
-static void spam_process_outlet_bang(t_spam_process_outlet *x){
+static void spam_process_outlet_bang(t_spam_outlet *x){
     outlet_bang(x->s_outlet);
 }
 
-static void spam_process_outlet_float(t_spam_process_outlet *x, float f){
+static void spam_process_outlet_float(t_spam_outlet *x, float f){
     outlet_float(x->s_outlet, f);
 }
 
-static void spam_process_outlet_symbol(t_spam_process_outlet *x, t_symbol* s){
+static void spam_process_outlet_symbol(t_spam_outlet *x, t_symbol* s){
     outlet_symbol(x->s_outlet, s);
 }
 
-static void spam_process_outlet_list(t_spam_process_outlet *x, t_symbol* s, int argc, t_atom* argv){
+static void spam_process_outlet_list(t_spam_outlet *x, t_symbol* s, int argc, t_atom* argv){
     outlet_list(x->s_outlet, s, argc, argv);
 }
 
-static void spam_process_outlet_anything(t_spam_process_outlet *x, t_symbol* s, int argc, t_atom* argv){
+static void spam_process_outlet_anything(t_spam_outlet *x, t_symbol* s, int argc, t_atom* argv){
     outlet_anything(x->s_outlet, s, argc, argv);
 }
 
@@ -94,13 +91,13 @@ typedef struct _spam
     
     t_symbol*       s_fin;
     int             s_nins;
-    t_spam_process_inlet*   s_ins;
+    t_spam_inlet*   s_ins;
     
     char            s_instatic;
     int             s_ninssig;
     
     int             s_nouts;
-    t_spam_process_outlet*  s_outs;
+    t_spam_outlet*  s_outs;
     char            s_outstatic;
     int             s_noutssig;
 } t_spam;
@@ -145,7 +142,7 @@ static void spam_process_free(t_spam *x)
     }
     if(x->s_nins && x->s_ins)
     {
-        freebytes(x->s_ins, x->s_nins * sizeof(t_spam_process_inlet));
+        freebytes(x->s_ins, x->s_nins * sizeof(t_spam_inlet));
     }
     if(x->s_nouts && x->s_nouts)
     {
@@ -153,7 +150,7 @@ static void spam_process_free(t_spam *x)
         {
             pd_unbind((t_pd *)(x->s_outs+i), x->s_outs[i].s_sym);
         }
-        freebytes(x->s_outs, x->s_nouts * sizeof(t_spam_process_outlet));
+        freebytes(x->s_outs, x->s_nouts * sizeof(t_spam_outlet));
     }
     spam_signal_free(&(x->s_signal));
     spam_master_close(&(x->s_master));
@@ -303,7 +300,7 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
             {
                 x->s_fin = canvas_realizedollar(x->s_master.s_cnv, gensym("$0-in-0"));
             }
-            x->s_ins = (t_spam_process_inlet *)getbytes(x->s_nins * sizeof(t_spam_process_inlet));
+            x->s_ins = (t_spam_inlet *)getbytes(x->s_nins * sizeof(t_spam_inlet));
             for(i = (int)(!(x->s_ninssig || x->s_instatic)); i < x->s_nins; ++i)
             {
                 sprintf(temp, "$0-in-%i", i);
@@ -315,7 +312,7 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
         
         if(x->s_nouts)
         {
-            x->s_outs = (t_spam_process_outlet *)getbytes(x->s_nouts * sizeof(t_spam_process_outlet));
+            x->s_outs = (t_spam_outlet *)getbytes(x->s_nouts * sizeof(t_spam_outlet));
             for(i = 0; i < x->s_nouts; ++i)
             {
                 sprintf(temp, "$0-out-%i", i);
@@ -348,7 +345,7 @@ extern void setup_spam0x2eprocess_tilde(void)
     }
     spam_process_class = c;
     
-    c = class_new(gensym("spam-inlet"), 0, 0, sizeof(t_spam_process_inlet), CLASS_PD, 0);
+    c = class_new(gensym("spam-inlet"), 0, 0, sizeof(t_spam_inlet), CLASS_PD, 0);
     if(c)
     {
         class_addmethod(c, (t_method)spam_process_inlet_bang,       gensym("bang"),    A_NULL,  0);
@@ -360,7 +357,7 @@ extern void setup_spam0x2eprocess_tilde(void)
     spam_process_inlet_class = c;
     
     
-    c = class_new(gensym("spam-outlet"), 0, 0, sizeof(t_spam_process_outlet), CLASS_PD, 0);
+    c = class_new(gensym("spam-outlet"), 0, 0, sizeof(t_spam_outlet), CLASS_PD, 0);
     if(c)
     {
         class_addmethod(c, (t_method)spam_process_outlet_bang,       gensym("bang"),    A_NULL,  0);

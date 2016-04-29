@@ -1,4 +1,5 @@
 #N canvas 588 460 450 300 10;
+#X declare -path ../bin;
 #X msg 149 44 vis \$1;
 #X obj 149 20 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
@@ -28,6 +29,8 @@
 -262144 -1 -1 0 256;
 #X obj 89 89 sig~ 1;
 #X obj 149 123 spam.process~ 4 4 spam.dummy;
+#X obj 232 14 declare -path ../bin;
+#X obj 149 203 spam.process~ 4 4 spamsub;
 #X connect 0 0 17 0;
 #X connect 1 0 0 0;
 #X connect 1 0 6 1;
