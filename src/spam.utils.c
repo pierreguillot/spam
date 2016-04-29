@@ -6,7 +6,7 @@
 
 #include "spam.utils.h"
 #include "../pd/src/g_canvas.h"
-#include <strings.h>
+#include <string.h>
 #include <stdarg.h>
 
 extern t_class* canvas_class;
@@ -24,7 +24,7 @@ char spam_master_init(t_object* process, t_spam_master* master)
         SETFLOAT(av+1, 10);
         SETSYMBOL(av+2, gensym("switch~"));
         pd_typedmess((t_pd *)master->s_cnv, gensym("obj"), 3, av);
-        if(!strncmp(class_getname(master->s_cnv->gl_list->g_pd), "block~", 6))
+        if(!strncmp((const char *)class_getname(master->s_cnv->gl_list->g_pd), "block~", 6))
         {
             master->s_block = (t_object *)master->s_cnv->gl_list;
         }
@@ -77,7 +77,8 @@ char spam_master_load_canvas(t_spam_master* master, t_symbol* name, int preargc,
             SETFLOAT(av, 1);
             SETFLOAT(av+1, 1);
             SETSYMBOL(av+2, name);
-            memcpy(av+3, preargv, preargc * sizeof(t_atom));
+            int to_verify;
+            memcpy((void *)(av+3), (void *)(preargv), preargc * sizeof(t_atom));
             pd_typedmess((t_pd *)master->s_cnv, gensym("obj"), (preargc + 3), av);
             
             for(z = master->s_cnv->gl_list; z; z = z->g_next)
