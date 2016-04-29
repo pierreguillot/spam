@@ -1,0 +1,27 @@
+language: c
+dist: trusty
+sudo: required
+
+notifications:
+  email: false
+
+git:
+  submodules: true
+  depth: 3
+
+matrix:
+  include:
+
+    - os: linux
+      compiler: gcc
+    - os: linux
+      compiler: clang
+    - os: osx
+      compiler: gcc
+    - os: osx
+      compiler: clang
+
+script:
+  - mkdir build && cd build
+  - cmake ..
+  - cmake --build .
