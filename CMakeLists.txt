@@ -29,38 +29,40 @@ add_library(spam_tilde SHARED ${SPAMTILDESRC})
 set_target_properties(spam_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.process~)
 
 set(SPAMINSRC
-	${PROJECT_SOURCE_DIR}/src/spam.utils.h
-	${PROJECT_SOURCE_DIR}/src/spam.utils.c
+	${PROJECT_SOURCE_DIR}/src/spam.io.h
+	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.in.c)
 source_group(src FILES ${SPAMINSRC})
 add_library(spam_in SHARED ${SPAMINSRC})
 set_target_properties(spam_in PROPERTIES LIBRARY_OUTPUT_NAME spam.in)
 
 set(SPAMOUTSRC
-	${PROJECT_SOURCE_DIR}/src/spam.utils.h
-	${PROJECT_SOURCE_DIR}/src/spam.utils.c
+	${PROJECT_SOURCE_DIR}/src/spam.io.h
+	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.out.c)
 source_group(src FILES ${SPAMOUTSRC})
 add_library(spam_out SHARED ${SPAMOUTSRC})
 set_target_properties(spam_out PROPERTIES LIBRARY_OUTPUT_NAME spam.out)
 
 set(SPAMINTILDESRC
-	${PROJECT_SOURCE_DIR}/src/spam.utils.h
-	${PROJECT_SOURCE_DIR}/src/spam.utils.c
+	${PROJECT_SOURCE_DIR}/src/spam.io.h
+	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.in_tilde.c)
 source_group(src FILES ${SPAMINTILDESRC})
 add_library(spam_in_tilde SHARED ${SPAMINTILDESRC})
 set_target_properties(spam_in_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.in~)
 
 set(SPAMOUTTILDESRC
-	${PROJECT_SOURCE_DIR}/src/spam.utils.h
-	${PROJECT_SOURCE_DIR}/src/spam.utils.c
+	${PROJECT_SOURCE_DIR}/src/spam.io.h
+	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.out_tilde.c)
 source_group(src FILES ${SPAMOUTTILDESRC})
 add_library(spam_out_tilde SHARED ${SPAMOUTTILDESRC})
 set_target_properties(spam_out_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.out~)
 
 set(SPAMSRC
+	${PROJECT_SOURCE_DIR}/src/spam.io.h
+	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.utils.h
 	${PROJECT_SOURCE_DIR}/src/spam.utils.c
 	${PROJECT_SOURCE_DIR}/src/spam_tilde.c

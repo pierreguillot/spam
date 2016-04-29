@@ -4,7 +4,7 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-#include "spam.utils.h"
+#include "spam.io.h"
 
 static t_class* spam_in_class;
 
@@ -49,7 +49,6 @@ static void *spam_in_new(t_float f)
             return NULL;
         }
         x->s_out = outlet_new((t_object *)x, NULL);
-        spam_io_notify((t_spam_io *)x);
     }
     return x;
 }

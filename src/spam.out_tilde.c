@@ -4,7 +4,7 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-#include "spam.utils.h"
+#include "spam.io.h"
 
 static t_class* spam_out_tilde_class;
 
@@ -15,6 +15,7 @@ typedef struct _spam_out_tilde
 } t_spam_out_tilde;
 
 static void spam_out_tilde_dsp(t_spam_out_tilde *x, t_signal **sp){
+    spam_io_dsp((t_spam_io *)x);
     if(x->s_io.s_samples){
         dsp_add_plus(x->s_io.s_samples, sp[0]->s_vec, x->s_io.s_samples, sp[0]->s_n);
     }
@@ -45,7 +46,6 @@ static void *spam_out_tilde_new(t_symbol* s, int argc, t_atom* argv)
         {
             post("spam.out~: static mode all arguments ignored.");
         }
-        spam_io_notify((t_spam_io *)x);
     }
     return x;
 }

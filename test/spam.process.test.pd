@@ -11,34 +11,31 @@
 #X obj 79 40 - 1;
 #X obj 79 21 f 0;
 #X obj 112 21 f 0;
-#X obj 169 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 229 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 148 162 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 224 172 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 295 181 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 299 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 295 160 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 89 89 sig~ 1;
-#X obj 149 123 spam.process~ 4 4 spam.dummy;
 #X obj 232 14 declare -path ../bin;
+#X obj 243 72 sig~;
+#X obj 169 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 89 256;
+#X obj 229 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 114 256;
+#X obj 148 162 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 89 256;
+#X obj 224 172 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 103 256;
+#X obj 321 180 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 148 256;
+#X obj 299 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 148 256;
+#X obj 295 160 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 114 256;
 #X obj 359 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 103 256;
 #X obj 88 162 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 243 72 sig~;
 #X obj 69 119 sig~ 1;
-#X obj 149 203 spam.process~ 4 4 spam.sub;
 #X obj 68 261 print~;
 #X obj 70 217 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X connect 0 0 16 0;
+#X obj 149 203 spam.process~ 1 spam.sub;
 #X connect 1 0 0 0;
 #X connect 1 0 6 1;
 #X connect 1 0 7 1;
@@ -48,15 +45,15 @@
 #X connect 5 0 1 0;
 #X connect 6 0 5 0;
 #X connect 7 0 2 0;
-#X connect 10 0 22 1;
-#X connect 11 0 22 2;
-#X connect 12 0 22 4;
-#X connect 14 0 22 3;
+#X connect 12 0 22 1;
+#X connect 13 0 22 2;
+#X connect 14 0 22 4;
+#X connect 16 0 22 3;
+#X connect 18 0 22 0;
 #X connect 19 0 22 0;
-#X connect 21 0 22 0;
-#X connect 22 0 23 0;
-#X connect 22 1 8 0;
-#X connect 22 2 9 0;
-#X connect 22 3 13 0;
-#X connect 22 4 18 0;
-#X connect 24 0 23 0;
+#X connect 21 0 20 0;
+#X connect 22 0 20 0;
+#X connect 22 1 10 0;
+#X connect 22 2 11 0;
+#X connect 22 3 15 0;
+#X connect 22 4 17 0;
