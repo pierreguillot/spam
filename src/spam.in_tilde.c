@@ -4,17 +4,13 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-#include "../pd/src/m_pd.h"
-#include "../pd/src/g_canvas.h"
+#include "spam.utils.h"
 
 static t_class* spam_in_tilde_class;
 
 typedef struct _spam_in_tilde
 {
-    t_object    s_obj;
-    int         s_idx;
-    int         s_static;
-    t_symbol*   s_sym;
+    t_spam_io    s_io;
     t_sample*   s_samples;
 } t_spam_in_tilde;
 

@@ -1,0 +1,4 @@
+#N canvas 75 452 212 156 10;
+#X obj 34 44 loadbang;
+#X obj 34 86 print \$0 \$1 \$2 \$3 \$4;
+#X connect 0 0 1 0;

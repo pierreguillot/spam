@@ -48,12 +48,6 @@ static void spam_process_inlet_anything(t_spam_process_inlet *x, t_symbol* s, in
     }
 }
 
-typedef struct _spam_process_inlet_sig
-{
-    t_symbol*   s_sym;
-    char        s_static;
-} t_spam_process_inlet_s;
-
 
 
 
@@ -84,11 +78,6 @@ static void spam_process_outlet_anything(t_spam_process_outlet *x, t_symbol* s, 
     outlet_anything(x->s_outlet, s, argc, argv);
 }
 
-typedef struct _spam_process_outlet_sig
-{
-    t_symbol*   s_sym;
-    char        s_static;
-} t_spam_process_outlet_s;
 
 
 
@@ -114,7 +103,6 @@ typedef struct _spam
     t_spam_process_outlet*  s_outs;
     char            s_outstatic;
     int             s_noutssig;
-    t_spam_process_outlet_s* s_outssig;
 } t_spam;
 
 
@@ -167,8 +155,8 @@ static void spam_process_free(t_spam *x)
         }
         freebytes(x->s_outs, x->s_nouts * sizeof(t_spam_process_outlet));
     }
-    spam_process_signal_free(&(x->s_signal));
-    spam_process_master_close(&(x->s_master));
+    spam_signal_free(&(x->s_signal));
+    spam_master_close(&(x->s_master));
 }
 
 static void spam_process_vis(t_spam *x, t_floatarg index)
@@ -216,7 +204,7 @@ static void spam_process_dsp(t_spam *x, t_signal **sp)
     char temp[MAXPDSTRING];
     int nins = x->s_instatic * x->s_nrows * x->s_ncolumns + x->s_ninssig;
     int nouts = x->s_outstatic * x->s_nrows * x->s_ncolumns + x->s_noutssig;
-    spam_process_signal_alloc(&(x->s_signal), (nins > nouts) ? nins : nouts, sp[0]->s_n);
+    spam_signal_alloc(&(x->s_signal), (nins > nouts) ? nins : nouts, sp[0]->s_n);
     if(x->s_signal.s_samples)
     {
         /*
@@ -259,7 +247,7 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
     t_spam *x  = (t_spam *)pd_new(spam_process_class);
     if(x)
     {
-        spam_process_signal_init(&(x->s_signal));
+        spam_signal_init(&(x->s_signal));
         
         x->s_nins       = 0;
         x->s_ins        = NULL;
@@ -279,7 +267,7 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
             pd_free((t_pd *)x);
             return NULL;
         }
-        if(spam_process_master_init(&(x->s_master)))
+        if(spam_master_init(&(x->s_master)))
         {
             pd_free((t_pd *)x);
             return NULL;
@@ -294,7 +282,7 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
             for(j = 0; j < x->s_ncolumns; ++j)
             {
                 SETFLOAT(av+3, j);
-                if(spam_process_master_load_canvas(&(x->s_master), name, 4, av, argc-3, argv+3))
+                if(spam_master_load_canvas(&(x->s_master), name, 4, av, argc-3, argv+3))
                 {
                     error("spam: can't load subpatch '%s'", name->s_name);
                     pd_free((t_pd *)x);

@@ -4,93 +4,57 @@
 // WARRANTIES, see the file, "LICENSE.txt," in this distribution.
 */
 
-#include "../pd/src/m_pd.h"
-#include "../pd/src/g_canvas.h"
+#include "spam.utils.h"
 
 static t_class* spam_out_class;
 
-typedef struct _spam_out
-{
-    t_object    s_obj;
-    int         s_idx;
-    t_symbol*   s_sym;
-} t_spam_out;
+typedef t_spam_io t_spam_out;
 
-static void spam_out_bang(t_spam_out *x)
-{
-    if(x->s_sym && x->s_sym->s_thing)
-    {
-        pd_bang(x->s_sym->s_thing);
+static void spam_out_bang(t_spam_out *x){
+    if(x->s_symbol && x->s_symbol->s_thing){
+        pd_bang(x->s_symbol->s_thing);
     }
 }
 
-static void spam_out_float(t_spam_out *x, float f)
-{
-    if(x->s_sym && x->s_sym->s_thing)
-    {
-        pd_float(x->s_sym->s_thing, f);
+static void spam_out_float(t_spam_out *x, float f){
+    if(x->s_symbol && x->s_symbol->s_thing){
+        pd_float(x->s_symbol->s_thing, f);
     }
 }
 
-static void spam_out_symbol(t_spam_out *x, t_symbol* s)
-{
-    if(x->s_sym && x->s_sym->s_thing)
-    {
-        pd_symbol(x->s_sym->s_thing, s);
+static void spam_out_symbol(t_spam_out *x, t_symbol* s){
+    if(x->s_symbol && x->s_symbol->s_thing){
+        pd_symbol(x->s_symbol->s_thing, s);
     }
 }
 
-static void spam_out_list(t_spam_out *x, t_symbol* s, int argc, t_atom* argv)
-{
-    if(x->s_sym && x->s_sym->s_thing)
-    {
-        pd_list(x->s_sym->s_thing, s, argc, argv);
+static void spam_out_list(t_spam_out *x, t_symbol* s, int argc, t_atom* argv){
+    if(x->s_symbol && x->s_symbol->s_thing){
+        pd_list(x->s_symbol->s_thing, s, argc, argv);
     }
 }
 
-static void spam_out_anything(t_spam_out *x, t_symbol* s, int argc, t_atom* argv)
-{
-    if(x->s_sym && x->s_sym->s_thing)
-    {
-        pd_typedmess(x->s_sym->s_thing, s, argc, argv);
+static void spam_out_anything(t_spam_out *x, t_symbol* s, int argc, t_atom* argv){
+    if(x->s_symbol && x->s_symbol->s_thing){
+        pd_typedmess(x->s_symbol->s_thing, s, argc, argv);
     }
 }
 
-static void spam_out_free(t_spam_out *x)
-{
-    ;
+static void spam_out_free(t_spam_out *x) {
+    spam_io_free((t_spam_io *)x);
 }
 
 static void *spam_out_new(t_float idx)
 {
-    char temp[MAXPDSTRING];
-    t_canvas* cnv;
-    t_symbol* sym;
     t_spam_out *x = (t_spam_out *)pd_new(spam_out_class);
     if(x)
     {
-        x->s_idx = idx;
-        if(x->s_idx < 0)
+        if(spam_io_init((t_spam_io *)x, idx, 1, 0, 0))
         {
             pd_free((t_pd *)x);
-            error("spam.out: index must be superior or equal to zero.");
             return NULL;
         }
-        cnv = canvas_getcurrent();
-        while(cnv && cnv->gl_owner)
-        {
-            cnv = cnv->gl_owner;
-        }
-        if(cnv)
-        {
-            sprintf(temp, "$0-out-%i", x->s_idx);
-            x->s_sym = canvas_realizedollar(cnv, gensym(temp));
-            sym = canvas_realizedollar(cnv, gensym("$0-master"));
-            if(sym && sym->s_thing)
-            {
-                mess4(sym->s_thing, gensym("setio"), (t_int)(1), ((t_int)x->s_idx), (t_int)(0), (t_int)(0));
-            }
-        }
+        spam_io_notify((t_spam_io *)x);
     }
     return x;
 }

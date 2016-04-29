@@ -30,7 +30,23 @@ void spam_signal_init(t_spam_signal* signal);
 void spam_signal_alloc(t_spam_signal* signal, size_t nchannels, size_t blocksize);
 void spam_signal_free(t_spam_signal* signal);
 
+typedef struct _spam_io
+{
+    t_object    s_object;
+    int         s_index;
+    char        s_type;     //!< 0 for inlet, 1 for outlet
+    char        s_signal;   //!< if ~ object
+    char        s_static;   //!< if static
+    t_symbol*   s_symbol;
+}t_spam_io;
+
+char spam_io_init(t_spam_io* io, int idx, char type, char sig, char stat);
+char spam_io_free(t_spam_io* io);
+char spam_io_notify(t_spam_io* io);
+
 t_canvas* spam_get_toplevel();
+t_symbol* spam_gensym(char* txt, ...);
+t_object* spam_get_process();
 
 
 #endif // spam_utils_h
