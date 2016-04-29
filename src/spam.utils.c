@@ -27,6 +27,7 @@ char spam_master_init(t_object* process, t_spam_master* master)
         if(!strncmp((const char *)class_getname(master->s_cnv->gl_list->g_pd), "block~", 6))
         {
             master->s_block = (t_object *)master->s_cnv->gl_list;
+            master->s_block_tick = (t_spam_bang_method)zgetfn((t_pd *)master->s_block, &s_bang);
         }
         else
         {
@@ -44,7 +45,6 @@ char spam_master_init(t_object* process, t_spam_master* master)
     {
         s->s_thing = (struct _class **)process;
     }
-    
     return 0;
 }
 
@@ -69,16 +69,23 @@ char spam_master_load_canvas(t_spam_master* master, t_symbol* name, int preargc,
     int i, n, v;
     t_gobj* z;
     t_atom* vec, *av;
+    int size = preargc + argc;
     if(master->s_cnv)
     {
-        av = getbytes((preargc + 3) * sizeof(t_atom));
+        av = getbytes((size + 3) * sizeof(t_atom));
         if(av)
         {
             SETFLOAT(av, 1);
             SETFLOAT(av+1, 1);
             SETSYMBOL(av+2, name);
-            int to_verify;
-            memcpy((void *)(av+3), (void *)(preargv), preargc * sizeof(t_atom));
+            if(preargv && preargc)
+            {
+                memcpy((void *)(av+3), (void *)(preargv), preargc * sizeof(t_atom));
+            }
+            if(argc && argv)
+            {
+                memcpy((void *)(av+3+preargc), (void *)(argv), argc * sizeof(t_atom));
+            }
             pd_typedmess((t_pd *)master->s_cnv, gensym("obj"), (preargc + 3), av);
             
             for(z = master->s_cnv->gl_list; z; z = z->g_next)
@@ -106,7 +113,7 @@ char spam_master_load_canvas(t_spam_master* master, t_symbol* name, int preargc,
                     }
                 }
             }
-            freebytes(av, (preargc + 3) * sizeof(t_atom));
+            freebytes(av, (size + 3) * sizeof(t_atom));
         }
     }
     return -1;
@@ -120,7 +127,7 @@ void spam_signal_init(t_spam_signal* signal)
     signal->s_blocksize = 0;
 }
 
-void spam_signal_alloc(t_spam_signal* signal, size_t nchannels, size_t blocksize)
+char spam_signal_alloc(t_spam_signal* signal, size_t nchannels, size_t blocksize)
 {
     t_sample* temp;
     const size_t size = signal->s_blocksize * signal->s_nchannels * sizeof(t_sample);
@@ -132,6 +139,7 @@ void spam_signal_alloc(t_spam_signal* signal, size_t nchannels, size_t blocksize
             signal->s_samples = temp;
             signal->s_blocksize = blocksize;
             signal->s_nchannels = nchannels;
+            return 0;
         }
         else
         {
@@ -141,19 +149,21 @@ void spam_signal_alloc(t_spam_signal* signal, size_t nchannels, size_t blocksize
             signal->s_nchannels = 0;
         }
     }
-    else if(nchannels * blocksize)
+    else if(!signal->s_samples && !size && nchannels && blocksize)
     {
         signal->s_samples = (t_sample *)getbytes(nchannels * blocksize * sizeof(t_sample));
         if(signal->s_samples)
         {
             signal->s_blocksize = blocksize;
             signal->s_nchannels = nchannels;
+            return 0;
         }
     }
-    else if(signal->s_samples && size)
+    else if(signal->s_samples && size && !nchannels && !blocksize)
     {
         spam_signal_free(signal);
     }
+    return -1;
 }
 
 void spam_signal_free(t_spam_signal* signal)
@@ -168,13 +178,57 @@ void spam_signal_free(t_spam_signal* signal)
     }
 }
 
+
+
+static t_canvas* spam_io_get_toplevel()
+{
+    t_canvas* cnv = canvas_getcurrent();
+    while(cnv && cnv->gl_owner)
+    {
+        cnv = cnv->gl_owner;
+    }
+    return cnv;
+}
+
+static t_symbol* spam_io_gensym(t_canvas* cnv, char* txt, ...)
+{
+    va_list ap;
+    t_symbol* s = NULL;
+    char temp[MAXPDSTRING];
+    if(cnv)
+    {
+        va_start(ap, txt);
+        vsnprintf(temp, MAXPDSTRING-1, txt, ap);
+        va_end(ap);
+        return canvas_realizedollar(cnv, gensym(temp));
+    }
+    return s;
+}
+
+t_object* spam_get_io_process(t_canvas* cnv)
+{
+    t_symbol* s = NULL;
+    if(cnv)
+    {
+        s = canvas_realizedollar(cnv, gensym("$0-spam-process"));
+        if(s)
+        {
+            return (t_object *)s->s_thing;
+        }
+    }
+    return NULL;
+}
+
+
 char spam_io_init(t_spam_io* io, int idx, char type, char sig, char stat)
 {
+    io->s_canvas    = spam_io_get_toplevel();
     io->s_index     = idx;
     io->s_type      = type ? 1 : 0;
     io->s_signal    = sig  ? 1 : 0;
     io->s_static    = stat ? 1 : 0;
     io->s_symbol    = NULL;
+    io->s_signal    = NULL;
     if(io->s_index < 0)
     {
         pd_error(io, "spam.io: index must be superior or equal to zero.");
@@ -189,11 +243,11 @@ char spam_io_init(t_spam_io* io, int idx, char type, char sig, char stat)
     {
         if(!io->s_signal)
         {
-            io->s_symbol = spam_gensym("$0-in-%i", io->s_index);
+            io->s_symbol = spam_io_gensym(io->s_canvas, "$0-in-%i", io->s_index);
         }
         else
         {
-            io->s_symbol = spam_gensym("$0-in-tilde-%i", io->s_index);
+            io->s_symbol = spam_io_gensym(io->s_canvas, "$0-in-tilde-%i", io->s_index);
         }
         if(io->s_symbol)
         {
@@ -209,11 +263,11 @@ char spam_io_init(t_spam_io* io, int idx, char type, char sig, char stat)
     {
         if(!io->s_signal)
         {
-            io->s_symbol = spam_gensym("$0-out-%i", io->s_index);
+            io->s_symbol = spam_io_gensym(io->s_canvas, "$0-out-%i", io->s_index);
         }
         else
         {
-            io->s_symbol = spam_gensym("$0-out-tilde-%i", io->s_index);
+            io->s_symbol = spam_io_gensym(io->s_canvas, "$0-out-tilde-%i", io->s_index);
         }
     }
     return 0;
@@ -230,7 +284,7 @@ char spam_io_free(t_spam_io* io)
 
 char spam_io_notify(t_spam_io* io)
 {
-    t_object* process = spam_get_process();
+    t_object* process = spam_get_io_process(io->s_canvas);
     if(process)
     {
         mess1((t_pd *)process, gensym("setio"), (void *)(io));
@@ -239,46 +293,18 @@ char spam_io_notify(t_spam_io* io)
     return -1;
 }
 
-t_canvas* spam_get_toplevel()
+char spam_io_dsp(t_spam_io* io)
 {
-    t_canvas* cnv = canvas_getcurrent();
-    while(cnv && cnv->gl_owner)
+    t_object* process = spam_get_io_process(io->s_canvas);
+    if(process)
     {
-        cnv = cnv->gl_owner;
+        mess1((t_pd *)process, gensym("getsamples"), (void *)(io));
+        return 0;
     }
-    return cnv;
+    return -1;
 }
 
-t_symbol* spam_gensym(char* txt, ...)
-{
-    va_list ap;
-    t_symbol* s = NULL;
-    char temp[MAXPDSTRING];
-    t_canvas* cnv = spam_get_toplevel();
-    if(cnv)
-    {
-        va_start(ap, txt);
-        vsnprintf(temp, MAXPDSTRING-1, txt, ap);
-        va_end(ap);
-        return canvas_realizedollar(cnv, gensym(temp));
-    }    
-    return s;
-}
 
-t_object* spam_get_process()
-{
-    t_symbol* s = NULL;
-    t_canvas* cnv = spam_get_toplevel();
-    if(cnv)
-    {
-        s = canvas_realizedollar(cnv, gensym("$0-spam-process"));
-        if(s)
-        {
-            return (t_object *)s->s_thing;
-        }
-    }
-    return NULL;
-}
 
 
 
