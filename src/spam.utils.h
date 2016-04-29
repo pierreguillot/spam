@@ -8,6 +8,8 @@
 #define spam_utils_h
 #include "../pd/src/m_pd.h"
 
+#define __spam_version__ "0.0.1"
+
 typedef struct _spam_master
 {
     t_canvas*   s_cnv;
