@@ -21,10 +21,14 @@ build_script:
     - cmake .. -G "Visual Studio 14 2015"
     - cmake --build .
 
+after_build:
+    - cd ..\
+    - DIR
+    - 7z a spam.zip %APPVEYOR_BUILD_FOLDER%\bin\
+    - DIR
+
 artifacts:
-  - path: ..\bin
-    name: spam
-    type: zip
+  - path: spam.zip
 
 notifications:
 
