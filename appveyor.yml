@@ -27,11 +27,11 @@ after_build:
     - DEL /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.pdb
     - DEL /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
     - RENAME %APPVEYOR_BUILD_FOLDER%\bin spam
-    - 7z a spam.zip %APPVEYOR_BUILD_FOLDER%\spam\
+    - 7z a spam_%PLATFORM%.zip %APPVEYOR_BUILD_FOLDER%\spam\
     - DIR
 
 artifacts:
-  - path: spam.zip
+  - path: spam_%PLATFORM%.zip
 
 notifications:
 
