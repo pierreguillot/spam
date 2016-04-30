@@ -18,7 +18,7 @@ install:
 build_script:
     - mkdir build
     - cd build
-    - cmake .. -G "Visual Studio 14 2015"
+    - cmake .. -DCONF=$PLATFORM -G "Visual Studio 14 2015"
     - cmake --build .
 
 notifications:
