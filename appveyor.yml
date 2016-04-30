@@ -26,7 +26,8 @@ after_build:
     - DIR
     - DEL /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.pdb
     - DEL /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
-    - 7z a spam.zip %APPVEYOR_BUILD_FOLDER%\bin\
+    - RENAME %APPVEYOR_BUILD_FOLDER%\bin spam
+    - 7z a spam.zip %APPVEYOR_BUILD_FOLDER%\spam\
     - DIR
 
 artifacts:
