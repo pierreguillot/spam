@@ -44,3 +44,19 @@ script:
   - mkdir build && cd build
   - cmake .. -DCONF=$bits
   - cmake --build .
+
+before_deploy:
+  - cd ../
+  - zip -r spam_$opes_$bits.zip bin
+
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: fN6p5VEtIgGrtarx8viTVJU9HqithhwARc/578IMB73gDB7rDtYv4sWpnc/ShsCN7rKK52e2vn0auqm+2sPg12Cn9Dy4VPKhulFestBOAlrOSoweTAgQk9Y8ltjjc0QukZkBy/nZrnRg9py7zOvL251EJc7L3jmzcOFlQKqkp2JJYur7ylSlpFf0wPPNWDSDZky0gnBgHu458dnD0gSRSugw9GOrjYRbwSomdwETCGiwTR/FUZDIqF76F++4HCtFEOYzwA1eGUQCpgl8YPIIad+vGSR/mSZausQkB/qFkCwDv5tIw7TCJ/oTP1+Z7bquyq4HsOmbIr9Bg2mH7wHRdNDEGagmDaKPZzK5hkenevVqPrAPMNGsQrl6s8XbnTSP+HxD04H+2foyz5RCw4XCy57jEQMMzC8M13l7qSo4X8OjlKiIVd+OEiBneLgDgPz2pW1iwzD5OV6jF/RJKduidsduFQi947kUjZokcpMZWv7hHPMG1PNx1A3T9aeV1T3heK2T2RtqsiFYuiST28LQCLvwNwpD4JtMgDoV2HJX/yQqjs9WCH5VDO59whjAmlSW26sx5/4D5RjQDlbg1wWujo5mbwpIwnRTakY4xGD+BA3KADE2HzyP34SAmA2Qky4CjHwONIB0IB14gI7h3xVMQ4RXCx2uOK8w4RlnGdFzZA0=
+  file:
+    - spam_$opes_$bits.zip
+  on:
+    condition: "$CC = gcc"
+    tags: true
+    repo: pierreguillot/spam
