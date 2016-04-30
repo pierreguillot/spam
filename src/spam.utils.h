@@ -24,17 +24,25 @@ typedef struct _spam_iolets
     struct _spam_outlet* outs;
 } t_spam_iolets;
 
+typedef struct _spam_block
+{
+    t_object*           s_object;
+    t_spam_bang_method  s_tick;
+} t_spam_block;
+
 typedef struct _spam_master
 {
     t_object            s_object;
     t_canvas*           s_canvas;
     int                 s_n;
+    t_spam_block        s_block;
     t_canvas**          s_subcanvas;
-    t_object*           s_block;
-    t_spam_bang_method  s_block_tick;
     int                 s_currentn;
     t_spam_iolets       s_iolets;
     t_signal**          s_sigs;
+    t_sample*           s_outputs;
+    t_sample**          s_routputs;
+    int                 s_blksize;
 }t_spam_master;
 
 

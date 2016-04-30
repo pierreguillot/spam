@@ -90,45 +90,13 @@ static void spam_process_io_dsp(t_spam *x, t_spam_io* io){
     spam_master_io_dsp((t_spam_master *)x, io);
 }
 
-t_int *spam_process_perform(t_int *w)
-{
-    int i;
-    int n         = (int)(w[1]);
-    int nins      = (int)(w[2]);
-    int outs      = (int)(w[3]);
-    t_sample**in  = (t_sample *)(w[4]);
-    t_sample**out = (t_sample *)(w[5]);
-    for(i = 0; i < nins; ++i)
-    {
-        
-    }
-    
-    
-    return (w+6);
-}
 
 
 static void spam_process_dsp(t_spam *x, t_signal **sp)
 {
-    int i;
-    t_int* vec;
-    int nins    = spam_master_get_nsignals((t_spam_master *)x, 0);
-    int nouts   = spam_master_get_nsignals((t_spam_master *)x, 1);
-    if(nins && nouts)
+    if(spam_master_dsp((t_spam_master *)x, sp))
     {
-        if(!x->s_inputs)
-        {
-            x->s_inputs  = (t_sample **)getbytes(nins * sizeof(t_sample *));
-        }
-        if(!x->s_outputs)
-        {
-           x->s_outputs = (t_sample **)getbytes(nouts * sizeof(t_sample *));
-        }
-        if(x->s_inputs && x->s_outputs)
-        {
-            dsp_add(spam_process_perform, 5, sp[0]->s_n, nins, nouts, x->s_inputs, x->s_outputs);
-            spam_master_dsp((t_spam_master *)x, sp);
-        }
+        pd_error(x, "spam.process~: can't perform dsp.");
     }
 }
 

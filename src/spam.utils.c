@@ -181,7 +181,10 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
     master->s_subcanvas = NULL;
     master->s_canvas    = NULL;
     master->s_currentn  = 0;
-    master->s_sigs     = NULL;
+    master->s_sigs      = NULL;
+    master->s_outputs   = NULL;
+    master->s_routputs  = NULL;
+    master->s_blksize   = 0;
     
     spam_iolets_init(&(master->s_iolets));
     master->s_canvas = canvas_new(NULL, gensym(""), 0, NULL);
@@ -195,8 +198,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
         pd_typedmess((t_pd *)master->s_canvas, gensym("obj"), 3, av);
         if(!strncmp((const char *)class_getname(master->s_canvas->gl_list->g_pd), "block~", 6))
         {
-            master->s_block = (t_object *)master->s_canvas->gl_list;
-            master->s_block_tick = (t_spam_bang_method)zgetfn((t_pd *)master->s_block, &s_bang);
+            master->s_block.s_object = (t_object *)master->s_canvas->gl_list;
         }
         else
         {
@@ -245,6 +247,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
 char spam_master_free(t_spam_master* master)
 {
     t_symbol *s = NULL;
+    int nouts = spam_iolets_get_noutsig(&(master->s_iolets), master->s_n);
     if(master->s_canvas)
     {
         s = canvas_realizedollar(master->s_canvas, gensym("$0-spam-process"));
@@ -258,6 +261,17 @@ char spam_master_free(t_spam_master* master)
             freebytes(master->s_subcanvas, master->s_n * sizeof(t_canvas *));
         }
         spam_iolets_free(&(master->s_iolets));
+        if(master->s_outputs)
+        {
+            freebytes(master->s_outputs, master->s_blksize * nouts * sizeof(t_sample *));
+            master->s_outputs = NULL;
+            master->s_blksize = 0;
+        }
+        if(master->s_routputs)
+        {
+            freebytes(master->s_routputs,nouts * sizeof(t_sample **));
+            master->s_routputs = NULL;
+        }
         return 0;
     }
     return -1;
@@ -273,10 +287,96 @@ char spam_master_visible(t_spam_master* master, int index)
     return -1;
 }
 
+static int zaza = 0;
+
+static t_int *spam_process_perform(t_int *w)
+{
+    int i, j;
+    int n                   = (int)(w[1]);
+    int nouts               = (int)(w[2]);
+    t_sample* iout          = (t_sample *)(w[3]);
+    t_sample** rout         = (t_sample **)(w[4]);
+    t_spam_block* block     = (t_spam_block *)(w[5]);
+    if(zaza++ < 4)
+    {
+        post("%ld %ld %ld %ld %ld", (long)n, (long)nouts, (long)iout, (long)rout, (long)block);
+    }
+    
+    for(i = 0; i < nouts * n; ++i)
+    {
+        iout[i] = 0.f;
+    }
+    
+    //m(block);
+    
+    for(i = 0; i < nouts; ++i)
+    {
+        for(j = 0; j < n; ++j)
+        {
+            rout[i][j] = iout[i*n+j];
+        }
+    }
+    
+    return (w+6);
+}
+
+
+
+
+
 char spam_master_dsp(t_spam_master* master, t_signal **sp)
 {
-    master->s_sigs = sp;
-    mess0((t_pd *)master->s_canvas, gensym("dsp"));
+    int i;
+    int nins = spam_iolets_get_ninsig(&(master->s_iolets), master->s_n);
+    int nouts = spam_iolets_get_noutsig(&(master->s_iolets), master->s_n);
+    if(master->s_outputs)
+    {
+        freebytes(master->s_outputs, master->s_blksize * nouts * sizeof(t_sample *));
+        master->s_outputs = NULL;
+        master->s_blksize = 0;
+    }
+    if(master->s_routputs)
+    {
+        freebytes(master->s_routputs,nouts * sizeof(t_sample **));
+        master->s_routputs = NULL;
+    }
+    if(sp && sp[0])
+    {
+        master->s_outputs = getbytes(sp[0]->s_n * nouts * sizeof(t_sample *));
+        if(master->s_outputs)
+        {
+            master->s_blksize = sp[0]->s_n;
+            master->s_sigs    = sp;
+            master->s_routputs = (t_sample **)getbytes(nouts * sizeof(t_sample *));
+            if(master->s_routputs)
+            {
+                for(i = 0; i < nouts; ++i)
+                {
+                    master->s_routputs[i] = sp[nins+i]->s_vec;
+                }
+                master->s_block.s_tick   = (t_spam_bang_method)zgetfn((t_pd *)master->s_block.s_object, &s_bang);
+                if(!master->s_block.s_tick)
+                {
+                    error("spam.process~: can't find the block method.");
+                    return -1;
+                }
+                zaza = 0;
+                post("%ld %ld %ld %ld %ld", (long)sp[0]->s_n, (long)nouts, (long)master->s_outputs, (long)master->s_routputs, (t_int)(&(master->s_block)));
+                
+                dsp_add(spam_process_perform, 5, (t_int)sp[0]->s_n, (t_int)nouts, (t_int)master->s_outputs, (t_int)master->s_routputs, (t_int)(&(master->s_block)));
+                mess0((t_pd *)master->s_canvas, gensym("dsp"));
+            }
+            else
+            {
+                return -1;
+            }
+        }
+        else
+        {
+            return -1;
+        }
+    }
+    
     return 0;
 }
 
@@ -314,17 +414,37 @@ void spam_master_io_dsp(t_spam_master* master, t_spam_io* io)
 {
     t_signal** sp = master->s_sigs;
     t_spam_iolets* iolets = &(master->s_iolets);
-    int n = io->s_type ? spam_iolets_get_ninsig(&(master->s_iolets), master->s_n) : 0;
-    if(io->s_signal && (io->s_static || !iolets->staticins))
+    if(!io->s_signal)
     {
-        io->s_samples = sp[io->s_index+n]->s_vec;
-        io->s_n       = sp[io->s_index+n]->s_n;
+        pd_error(master, "spam.process~: try use message input for signal.");
     }
-    else if(io->s_signal && (!io->s_static && iolets->staticins))
+    if(io->s_type == 0)
     {
-        io->s_samples = sp[io->s_index+master->s_n+n]->s_vec;
-        io->s_n       = sp[io->s_index+master->s_n+n]->s_n;
+        if(io->s_static)
+        {
+            io->s_samples = sp[io->s_index]->s_vec;
+            io->s_n       = sp[io->s_index]->s_n;
+        }
+        else if(!io->s_static)
+        {
+            io->s_samples = sp[io->s_index + master->s_n * iolets->staticins]->s_vec;
+            io->s_n       = sp[io->s_index + master->s_n * iolets->staticins]->s_n;
+        }
     }
+    else
+    {
+        if(io->s_static)
+        {
+            io->s_samples = master->s_outputs + master->s_blksize * io->s_index;
+            io->s_n       = master->s_blksize;
+        }
+        else if(!io->s_static)
+        {
+            io->s_samples = master->s_outputs + master->s_blksize * (io->s_index + master->s_n * iolets->staticout);
+            io->s_n       = master->s_blksize;
+        }
+    }
+    
 }
 
 int spam_master_get_nsignals(t_spam_master* master, int type)
