@@ -176,7 +176,6 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
 {
     int i;
     t_atom av[3];
-    t_symbol *s = NULL;
     master->s_n         = 0;
     master->s_subcanvas = NULL;
     master->s_canvas    = NULL;
