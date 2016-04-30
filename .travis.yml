@@ -1,27 +1,26 @@
 language: c
 dist: trusty
 sudo: required
-
 notifications:
   email: false
-
 git:
   submodules: true
   depth: 3
-
 matrix:
   include:
-
-    - os: linux
-      compiler: gcc
-    - os: linux
-      compiler: clang
-    - os: osx
-      compiler: gcc
-    - os: osx
-      compiler: clang
-
+  - os: linux
+    compiler: gcc
+  - os: linux
+    compiler: clang
+  - os: osx
+    compiler: gcc
+  - os: osx
+    compiler: clang
 script:
   - mkdir build && cd build
   - cmake ..
   - cmake --build .
+before_install:
+  - openssl aes-256-cbc -K $encrypted_c4d11f6d3374_key -iv $encrypted_c4d11f6d3374_iv -in config/travisci_rsa.enc -out config/travisci_rsa -d
+  - chmod 0600 config/travisci_rsa
+  - cp config/travisci_rsa ~/.ssh/id_rsa
