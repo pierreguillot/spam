@@ -47,7 +47,8 @@ script:
 
 before_deploy:
   - cd ../
-  - zip -r spam_$zip.zip bin
+  - mv bin spam
+  - zip -r spam_$zip.zip spam
 
 deploy:
   provider: releases
