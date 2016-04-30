@@ -16,9 +16,12 @@ elseif(${LINUX})
 	set(CMAKE_SHARED_LIBRARY_SUFFIX ".pd_linux")
 else()
 	set(CMAKE_SHARED_LIBRARY_SUFFIX  ".dll")
+	link_directories(${PROJECT_SOURCE_DIR}/pdwinlib)
 endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/pd/src/)
+
+
 
 set(SPAMTILDESRC
 	${PROJECT_SOURCE_DIR}/src/spam.utils.h
@@ -27,6 +30,9 @@ set(SPAMTILDESRC
 source_group(src FILES ${SPAMTILDESRC})
 add_library(spam_tilde SHARED ${SPAMTILDESRC})
 set_target_properties(spam_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.process~)
+if(${WIN32})
+		target_link_libraries(spam_tilde pd)
+endif()
 
 set(SPAMINSRC
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
@@ -35,6 +41,9 @@ set(SPAMINSRC
 source_group(src FILES ${SPAMINSRC})
 add_library(spam_in SHARED ${SPAMINSRC})
 set_target_properties(spam_in PROPERTIES LIBRARY_OUTPUT_NAME spam.in)
+if(${WIN32})
+		target_link_libraries(spam_in pd)
+endif()
 
 set(SPAMOUTSRC
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
@@ -43,6 +52,9 @@ set(SPAMOUTSRC
 source_group(src FILES ${SPAMOUTSRC})
 add_library(spam_out SHARED ${SPAMOUTSRC})
 set_target_properties(spam_out PROPERTIES LIBRARY_OUTPUT_NAME spam.out)
+if(${WIN32})
+		target_link_libraries(spam_out pd)
+endif()
 
 set(SPAMINTILDESRC
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
@@ -51,6 +63,9 @@ set(SPAMINTILDESRC
 source_group(src FILES ${SPAMINTILDESRC})
 add_library(spam_in_tilde SHARED ${SPAMINTILDESRC})
 set_target_properties(spam_in_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.in~)
+if(${WIN32})
+		target_link_libraries(spam_in_tilde pd)
+endif()
 
 set(SPAMOUTTILDESRC
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
@@ -59,6 +74,9 @@ set(SPAMOUTTILDESRC
 source_group(src FILES ${SPAMOUTTILDESRC})
 add_library(spam_out_tilde SHARED ${SPAMOUTTILDESRC})
 set_target_properties(spam_out_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.out~)
+if(${WIN32})
+		target_link_libraries(spam_out_tilde pd)
+endif()
 
 set(SPAMSRC
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
@@ -74,3 +92,6 @@ set(SPAMSRC
 source_group(src FILES ${SPAMSRC})
 add_library(spam SHARED ${SPAMSRC})
 set_target_properties(spam PROPERTIES LIBRARY_OUTPUT_NAME spam)
+if(${WIN32})
+		target_link_libraries(spam pd)
+endif()
