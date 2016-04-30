@@ -198,7 +198,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
         pd_typedmess((t_pd *)master->s_canvas, gensym("obj"), 3, av);
         if(!strncmp((const char *)class_getname(master->s_canvas->gl_list->g_pd), "block~", 6))
         {
-            master->s_block.s_object = (t_object *)master->s_canvas->gl_list;
+            master->s_block = (t_object *)master->s_canvas->gl_list;
         }
         else
         {
@@ -287,8 +287,6 @@ char spam_master_visible(t_spam_master* master, int index)
     return -1;
 }
 
-static int zaza = 0;
-
 static t_int *spam_process_perform(t_int *w)
 {
     int i, j;
@@ -296,19 +294,13 @@ static t_int *spam_process_perform(t_int *w)
     int nouts               = (int)(w[2]);
     t_sample* iout          = (t_sample *)(w[3]);
     t_sample** rout         = (t_sample **)(w[4]);
-    t_spam_block* block     = (t_spam_block *)(w[5]);
-    if(zaza++ < 4)
-    {
-        post("%ld %ld %ld %ld %ld", (long)n, (long)nouts, (long)iout, (long)rout, (long)block);
-    }
+    t_object* block         = (t_object *)(w[5]);
     
     for(i = 0; i < nouts * n; ++i)
     {
         iout[i] = 0.f;
     }
-    
-    //m(block);
-    
+    pd_bang((t_pd *)block);
     for(i = 0; i < nouts; ++i)
     {
         for(j = 0; j < n; ++j)
@@ -354,16 +346,7 @@ char spam_master_dsp(t_spam_master* master, t_signal **sp)
                 {
                     master->s_routputs[i] = sp[nins+i]->s_vec;
                 }
-                master->s_block.s_tick   = (t_spam_bang_method)zgetfn((t_pd *)master->s_block.s_object, &s_bang);
-                if(!master->s_block.s_tick)
-                {
-                    error("spam.process~: can't find the block method.");
-                    return -1;
-                }
-                zaza = 0;
-                post("%ld %ld %ld %ld %ld", (long)sp[0]->s_n, (long)nouts, (long)master->s_outputs, (long)master->s_routputs, (t_int)(&(master->s_block)));
-                
-                dsp_add(spam_process_perform, 5, (t_int)sp[0]->s_n, (t_int)nouts, (t_int)master->s_outputs, (t_int)master->s_routputs, (t_int)(&(master->s_block)));
+                dsp_add(spam_process_perform, 5, (t_int)sp[0]->s_n, (t_int)nouts, (t_int)master->s_outputs, (t_int)master->s_routputs, (t_int)(master->s_block));
                 mess0((t_pd *)master->s_canvas, gensym("dsp"));
             }
             else
