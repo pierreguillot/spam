@@ -24,6 +24,7 @@ script:
   - cmake --build .
 
 before_deploy:
+  - ls
   - cd ../bin
   - zip spam
   - ls
