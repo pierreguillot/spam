@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8)
 
 project(spam)
 option(CONF "Build for configuration" "universal")
+option(GSPA "Build for global spam target" OFF)
 
 
 set(CMAKE_MACOSX_RPATH Off)
@@ -110,6 +111,7 @@ if(${WIN32})
 		target_link_libraries(spam_out_tilde pd)
 endif()
 
+if(${GSPA})
 set(SPAMSRC
 	${PROJECT_SOURCE_DIR}/src/spam.def.h
 	${PROJECT_SOURCE_DIR}/src/spam.tie.h
@@ -129,4 +131,5 @@ add_library(spam SHARED ${SPAMSRC})
 set_target_properties(spam PROPERTIES LIBRARY_OUTPUT_NAME spam)
 if(${WIN32})
 		target_link_libraries(spam pd)
+endif()
 endif()
