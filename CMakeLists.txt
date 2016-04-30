@@ -25,6 +25,8 @@ include_directories(${PROJECT_SOURCE_DIR}/pd/src/)
 
 
 set(SPAMTILDESRC
+	${PROJECT_SOURCE_DIR}/src/spam.tie.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.utils.h
 	${PROJECT_SOURCE_DIR}/src/spam.utils.c
 	${PROJECT_SOURCE_DIR}/src/spam_tilde.c)
@@ -36,6 +38,8 @@ if(${WIN32})
 endif()
 
 set(SPAMINSRC
+	${PROJECT_SOURCE_DIR}/src/spam.tie.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
 	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.in.c)
@@ -47,6 +51,8 @@ if(${WIN32})
 endif()
 
 set(SPAMOUTSRC
+	${PROJECT_SOURCE_DIR}/src/spam.tie.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
 	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.out.c)
@@ -58,6 +64,8 @@ if(${WIN32})
 endif()
 
 set(SPAMINTILDESRC
+	${PROJECT_SOURCE_DIR}/src/spam.tie.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
 	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.in_tilde.c)
@@ -69,6 +77,8 @@ if(${WIN32})
 endif()
 
 set(SPAMOUTTILDESRC
+	${PROJECT_SOURCE_DIR}/src/spam.tie.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
 	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.out_tilde.c)
@@ -80,6 +90,9 @@ if(${WIN32})
 endif()
 
 set(SPAMSRC
+	${PROJECT_SOURCE_DIR}/src/spam.def.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.h
+	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.io.h
 	${PROJECT_SOURCE_DIR}/src/spam.io.c
 	${PROJECT_SOURCE_DIR}/src/spam.utils.h

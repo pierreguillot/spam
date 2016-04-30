@@ -5,6 +5,7 @@
 */
 
 #include "spam.utils.h"
+#include "spam.tie.h"
 #include "../pd/src/g_canvas.h"
 #include <string.h>
 #include <stdarg.h>
@@ -12,19 +13,6 @@
 extern t_class* canvas_class;
 static t_class* spam_process_inlet_class;
 static t_class* spam_process_outlet_class;
-
-typedef struct _spam_inlet
-{
-    t_class*    s_pd;
-    t_symbol*   s_sym;
-} t_spam_inlet;
-
-typedef struct _spam_outlet
-{
-    t_class*    s_pd;
-    t_outlet*   s_outlet;
-    t_symbol*   s_sym;
-} t_spam_outlet;
 
 static int spam_iolets_get_ninsig(t_spam_iolets* iolets, int nstatics)
 {
@@ -75,20 +63,23 @@ static void spam_iolets_free(t_spam_iolets* iolets)
 
 static void spam_iolets_newio(t_spam_master* master, t_spam_iolets* iolets)
 {
-    char temp[MAXPDSTRING];
     int i;
-    for(i = 0; i < spam_iolets_get_ninsig(iolets, master->s_n); ++i)
+    int ninsig = spam_iolets_get_ninsig(iolets, master->s_n);
+    for(i = 1; i < ninsig; ++i)
     {
         signalinlet_new((t_object *)master, 0);
     }
     if(iolets->nins_message)
     {
         iolets->ins = (t_spam_inlet *)getbytes(iolets->nins_message * sizeof(t_spam_inlet));
-        for(i = 0; i < iolets->nins_message; ++i)
+        if(!ninsig)
         {
-            sprintf(temp, "$0-in-%i", i);
+            master->s_fin = spam_tie_gensym((t_spam_tie *)master->s_tie, __spam_in_string__, 0);
+        }
+        for(i = ninsig ? 0 : 1; i < iolets->nins_message; ++i)
+        {
             iolets->ins[i].s_pd    = spam_process_inlet_class;
-            iolets->ins[i].s_sym   = canvas_realizedollar(master->s_canvas, gensym(temp));
+            iolets->ins[i].s_sym   = spam_tie_gensym((t_spam_tie *)master->s_tie, __spam_in_string__, i);
             inlet_new((t_object *)master, &(iolets->ins[i].s_pd), 0, 0);
         }
     }
@@ -102,17 +93,13 @@ static void spam_iolets_newio(t_spam_master* master, t_spam_iolets* iolets)
         iolets->outs = (t_spam_outlet *)getbytes(iolets->nout_message * sizeof(t_spam_outlet));
         for(i = 0; i < iolets->nout_message; ++i)
         {
-            sprintf(temp, "$0-out-%i", i);
             iolets->outs[i].s_pd       = spam_process_outlet_class;
-            iolets->outs[i].s_sym      = canvas_realizedollar(master->s_canvas, gensym(temp));
+            iolets->outs[i].s_sym      = spam_tie_gensym((t_spam_tie *)master->s_tie, __spam_out_string__, i);
             iolets->outs[i].s_outlet   = outlet_new((t_object *)master, NULL);
             pd_bind(&(iolets->outs[i].s_pd), iolets->outs[i].s_sym);
         }
     }
 }
-
-
-
 
 
 
@@ -172,6 +159,19 @@ static t_canvas* spam_master_load_canvas(t_spam_master* master, t_symbol* name, 
     return NULL;
 }
 
+static t_object* spam_mater_get_object(t_canvas* cnv, const char* name, size_t s)
+{
+    t_gobj* y = NULL;
+    for(y = cnv->gl_list; y; y = y->g_next)
+    {
+        if(!strncmp((const char *)class_getname(y->g_pd), name, s))
+        {
+            return (t_object *)y;
+        }
+    }
+    return NULL;
+}
+
 char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_atom* argv)
 {
     int i;
@@ -185,9 +185,13 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
     master->s_outputs   = NULL;
     master->s_routputs  = NULL;
     master->s_blksize   = 0;
+    master->s_fin       = NULL;
+    master->s_block     = NULL;
+    master->s_tie       = NULL;
     
     spam_iolets_init(&(master->s_iolets));
     master->s_canvas = canvas_new(NULL, gensym(""), 0, NULL);
+    
     if(master->s_canvas)
     {
         pd_popsym((t_pd *)master->s_canvas);
@@ -196,25 +200,26 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
         SETFLOAT(av+1, 10);
         SETSYMBOL(av+2, gensym("switch~"));
         pd_typedmess((t_pd *)master->s_canvas, gensym("obj"), 3, av);
-        if(!strncmp((const char *)class_getname(master->s_canvas->gl_list->g_pd), "block~", 6))
-        {
-            master->s_block = (t_object *)master->s_canvas->gl_list;
-        }
-        else
+        SETSYMBOL(av+2, gensym("spam.tie"));
+        pd_typedmess((t_pd *)master->s_canvas, gensym("obj"), 3, av);
+        master->s_block = spam_mater_get_object(master->s_canvas,  "block~", 6);
+        if(!master->s_block)
         {
             error("spam.process~: can't allocate master switch~ object.");
             return -1;
         }
+        master->s_tie  = spam_mater_get_object(master->s_canvas,  "spam.tie", 8);
+        if(!master->s_block)
+        {
+            error("spam.process~: can't allocate tie object.");
+            return -1;
+        }
+        mess1((t_pd *)master->s_tie, gensym("setprocess"), (t_object*)master);
     }
     else
     {
         error("spam.process~: can't allocate master canvas.");
         return -1;
-    }
-    s = canvas_realizedollar(master->s_canvas, gensym("$0-spam-process"));
-    if(s)
-    {
-        s->s_thing = (struct _class **)master;
     }
     
     
@@ -246,15 +251,9 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
 
 char spam_master_free(t_spam_master* master)
 {
-    t_symbol *s = NULL;
     int nouts = spam_iolets_get_noutsig(&(master->s_iolets), master->s_n);
     if(master->s_canvas)
     {
-        s = canvas_realizedollar(master->s_canvas, gensym("$0-spam-process"));
-        if(s)
-        {
-            s->s_thing = NULL;
-        }
         canvas_free(master->s_canvas);
         if(master->s_n && master->s_subcanvas)
         {
@@ -430,17 +429,7 @@ void spam_master_io_dsp(t_spam_master* master, t_spam_io* io)
     
 }
 
-int spam_master_get_nsignals(t_spam_master* master, int type)
-{
-    if(type)
-    {
-        return spam_iolets_get_noutsig(&(master->s_iolets), master->s_n);
-    }
-    else
-    {
-        return spam_iolets_get_ninsig(&(master->s_iolets), master->s_n);
-    }
-}
+
 
 
 
@@ -511,9 +500,11 @@ static void spam_process_outlet_anything(t_spam_outlet *x, t_symbol* s, int argc
     outlet_anything(x->s_outlet, s, argc, argv);
 }
 
+
 void spam_master_setup(void)
 {
-    t_class *c = class_new(gensym("spam-inlet"), 0, 0, sizeof(t_spam_inlet), CLASS_PD, 0);
+    spam_tie_setup();
+    t_class* c = class_new(gensym("spam-inlet"), 0, 0, sizeof(t_spam_inlet), CLASS_PD, 0);
     if(c)
     {
         class_addmethod(c, (t_method)spam_process_inlet_bang,       gensym("bang"),    A_NULL,  0);

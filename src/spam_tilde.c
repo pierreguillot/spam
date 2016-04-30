@@ -11,43 +11,41 @@ static t_class* spam_process_class;
 typedef struct _spam
 {
     t_spam_master   s_master;
-    t_sample**      s_inputs;
-    t_sample**      s_outputs;
-    //t_symbol*       s_fin;
+    float           s_f;
 } t_spam;
 
 
-/*
+
 static void spam_process_bang(t_spam *x){
-    if(x->s_fin && x->s_fin->s_thing){
-        pd_bang(x->s_fin->s_thing);
+    if(x->s_master.s_fin && x->s_master.s_fin->s_thing){
+        pd_bang(x->s_master.s_fin->s_thing);
     }
 }
 
 static void spam_process_float(t_spam *x, float f){
-    if(x->s_fin && x->s_fin->s_thing){
-        pd_float(x->s_fin->s_thing, f);
+    if(x->s_master.s_fin && x->s_master.s_fin->s_thing){
+        pd_float(x->s_master.s_fin->s_thing, f);
     }
 }
 
 static void spam_process_symbol(t_spam *x, t_symbol* s){
-    if(x->s_fin && x->s_fin->s_thing){
-        pd_symbol(x->s_fin->s_thing, s);
+    if(x->s_master.s_fin && x->s_master.s_fin->s_thing){
+        pd_symbol(x->s_master.s_fin->s_thing, s);
     }
 }
 
 static void spam_process_list(t_spam *x, t_symbol* s, int argc, t_atom* argv){
-    if(x->s_fin && x->s_fin->s_thing){
-        pd_list(x->s_fin->s_thing, s, argc, argv);
+    if(x->s_master.s_fin && x->s_master.s_fin->s_thing){
+        pd_list(x->s_master.s_fin->s_thing, s, argc, argv);
     }
 }
 
 static void spam_process_anything(t_spam *x, t_symbol* s, int argc, t_atom* argv){
-    if(x->s_fin && x->s_fin->s_thing){
-        pd_typedmess(x->s_fin->s_thing, s, argc, argv);
+    if(x->s_master.s_fin && x->s_master.s_fin->s_thing){
+        pd_typedmess(x->s_master.s_fin->s_thing, s, argc, argv);
     }
 }
-*/
+
 
 
 
@@ -56,16 +54,6 @@ static void spam_process_anything(t_spam *x, t_symbol* s, int argc, t_atom* argv
 
 static void spam_process_free(t_spam *x)
 {
-    int nins    = spam_master_get_nsignals((t_spam_master *)x, 0);
-    int nouts   = spam_master_get_nsignals((t_spam_master *)x, 1);
-    if(x->s_inputs)
-    {
-        freebytes(x->s_inputs, nins * sizeof(t_sample *));
-    }
-    if(x->s_outputs)
-    {
-        freebytes(x->s_inputs, nouts * sizeof(t_sample *));
-    }
     spam_master_free(&(x->s_master));
 }
 
@@ -105,8 +93,6 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
     t_spam *x  = (t_spam *)pd_new(spam_process_class);
     if(x)
     {
-        x->s_inputs     = NULL;
-        x->s_outputs    = NULL;
         if(spam_master_init((t_spam_master *)x,
                             atom_getsymbolarg(1, argc, argv),
                             atom_getfloatarg(0, argc, argv),
@@ -121,22 +107,21 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
 
 extern void setup_spam0x2eprocess_tilde(void)
 {
-    t_class *c = class_new(gensym("spam.process~"), (t_newmethod)spam_process_new, (t_method)spam_process_free, sizeof(t_spam), CLASS_NOINLET, A_GIMME, 0);
+    t_class *c = class_new(gensym("spam.process~"), (t_newmethod)spam_process_new, (t_method)spam_process_free, sizeof(t_spam), CLASS_DEFAULT, A_GIMME, 0);
     if(c)
     {
         class_addmethod(c, (t_method)spam_process_click,    gensym("click"), A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_process_vis,      gensym("vis"), A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_process_dsp,      gensym("dsp"), A_CANT, 0);
-        class_addmethod(c, (t_method)spam_process_io_init,  gensym("ioinit"), A_CANT, 0);
-        class_addmethod(c, (t_method)spam_process_io_dsp,   gensym("iodsp"), A_CANT, 0);
+        class_addmethod(c, (t_method)spam_process_io_init,  gensym(__spam_io_init__), A_CANT, 0);
+        class_addmethod(c, (t_method)spam_process_io_dsp,   gensym(__spam_io_dsp__), A_CANT, 0);
+        CLASS_MAINSIGNALIN(c, t_spam, s_f);
         
-        /*
         class_addmethod(c, (t_method)spam_process_bang,       gensym("bang"),    A_NULL,  0);
         class_addmethod(c, (t_method)spam_process_float,      gensym("float"),   A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_process_symbol,     gensym("symbol"),  A_SYMBOL,0);
         class_addmethod(c, (t_method)spam_process_list,       gensym("list"),    A_GIMME, 0);
         class_addmethod(c, (t_method)spam_process_anything,   gensym("anything"),A_GIMME, 0);
-         */
     }
     spam_process_class = c;
     spam_master_setup();

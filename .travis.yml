@@ -28,11 +28,8 @@ script:
   - cmake --build .
 
 before_deploy:
-  - ls
   - cd ../
-  - ls
   - zip -r spam_$OS.zip bin
-  - ls
 
 deploy:
   provider: releases

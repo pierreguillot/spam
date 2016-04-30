@@ -6,6 +6,7 @@
 
 #ifndef spam_utils_h
 #define spam_utils_h
+#include "../pd/src/m_pd.h"
 #include "spam.io.h"
 
 typedef void (*t_spam_bang_method)(t_object* x);
@@ -30,6 +31,7 @@ typedef struct _spam_master
     t_object            s_object;
     t_canvas*           s_canvas;
     int                 s_n;
+    t_object*           s_tie;
     t_object*           s_block;
     t_canvas**          s_subcanvas;
     int                 s_currentn;
@@ -38,6 +40,7 @@ typedef struct _spam_master
     t_sample*           s_outputs;
     t_sample**          s_routputs;
     int                 s_blksize;
+    t_symbol*           s_fin;
 }t_spam_master;
 
 
@@ -48,7 +51,6 @@ char spam_master_visible(t_spam_master* master, int index);
 char spam_master_dsp(t_spam_master* master, t_signal **sp);
 void spam_master_io_init(t_spam_master* master, t_spam_io* io);
 void spam_master_io_dsp(t_spam_master* master, t_spam_io* io);
-int spam_master_get_nsignals(t_spam_master* master, int type);
 
 
 

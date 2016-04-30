@@ -14,21 +14,21 @@
 #X obj 232 14 declare -path ../bin;
 #X obj 243 72 sig~;
 #X obj 169 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 71 256;
 #X obj 229 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 56 256;
 #X obj 148 162 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 71 256;
 #X obj 224 172 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 94 256;
 #X obj 321 180 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 76 256;
 #X obj 299 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 76 256;
 #X obj 295 160 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 56 256;
 #X obj 359 257 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 179 256;
 #X obj 88 162 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 69 119 sig~ 1;
@@ -37,8 +37,12 @@
 -1;
 #X obj 149 203 spam.process~ 1 spam.sub;
 #X obj 71 79 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 89 256;
+-262144 -1 -1 0 256;
 #X obj 71 98 t b f;
+#X obj 149 103 spam.process~ 1 spam.dummy;
+#X obj 148 76 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 179 256;
+#X msg 209 46 vis 0;
 #X connect 1 0 0 0;
 #X connect 1 0 6 1;
 #X connect 1 0 7 1;
@@ -63,3 +67,5 @@
 #X connect 23 0 24 0;
 #X connect 24 0 21 0;
 #X connect 24 1 19 0;
+#X connect 26 0 25 0;
+#X connect 27 0 25 0;
