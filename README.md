@@ -1,2 +1,3 @@
 # spam
-Spatialization Matricial for Pure Data
+[![Build Status](https://travis-ci.org/pierreguillot/spam.svg?branch=master)](https://travis-ci.org/pierreguillot/spam)  
+A set of externals for Pure Data ...
