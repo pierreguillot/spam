@@ -31,7 +31,6 @@ deploy:
   file:
     - ../bin/spam.in.pd_darwin
   on:
-    branch: master
     condition: "$CC = gcc"
     #tags: releases
     repo: pierreguillot/spam
