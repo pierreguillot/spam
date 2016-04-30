@@ -1,0 +1,134 @@
+#N canvas 422 139 766 523 10;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty spam.process~ 2 8 0 14 -262144
+-66577 0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 8 pd header;
+#X text 6 30 The object loads several instances of a patch. It acts
+in a similar way to the clone object but allows to differentiate the
+inputs and outputs of each instance. This specificity can be useful
+to implement vectorial or matricial operations especially for spatialization
+techniques.;
+#X text 6 100 The first argument is the number of instances. The second
+argument is the name of the patch. The other arguments are sent to
+each instance. Nevertheless the first argument of each instance is
+its number \, starting with zero., f 60;
+#X text 6 280 The first inlet can also be used to send messages to
+the object instead of the patches. The only message available for the
+moment is vis with the index of an instance that displays the patch.
+Perhaps in the futur other messages will be used.;
+#X text 6 160 Depending on the objects spam.in \, spam.out \, spam.in~
+and spam.out~ in the patch \, the number of inlet and outlet of the
+object varies but their distribution always follows a specific order.
+The first inlets and outlets match to the signal \, starting with the
+inlets and outlets specifics to each instance and finishing with the
+inlets and outlets shared by all the instances. The inlets and outlets
+for messages are always at the end.;
+#X text 6 360 If you don't have any spam.in~ objects but you do have
+a spam.in object in your patch \, the first inlet will be used for
+the first spam.in object and the spam.process~ object. The inlets and
+outlets for messages are always shared by all the instance and there
+is no methods to target a specfic instance so you you should use route
+the messages within the patches.;
+#X text 6 460 Important: If you edit the patch \, you have to recreate
+the spam.process~ to reflect the changes.;
+#X msg 403 173 vis \$1;
+#X obj 403 143 nbx 5 14 0 3 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 467 96 sig~ 1;
+#X obj 467 485 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 467 464 snapshot~;
+#X obj 475 444 r \$0-b;
+#X obj 418 97 s \$0-b;
+#X obj 418 74 metro 20;
+#X obj 418 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 427 40 \; pd dsp \$1;
+#X obj 496 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256;
+#X obj 496 404 snapshot~;
+#X obj 504 384 r \$0-b;
+#X obj 492 116 sig~ 2;
+#X obj 517 137 sig~ 3;
+#X obj 542 157 sig~ 4;
+#X obj 526 365 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6 256;
+#X obj 526 344 snapshot~;
+#X obj 534 324 r \$0-b;
+#X obj 555 305 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 8 256;
+#X obj 555 284 snapshot~;
+#X obj 563 264 r \$0-b;
+#X obj 568 76 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 593 120 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 585 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 585 404 snapshot~;
+#X obj 593 384 r \$0-b;
+#X obj 614 356 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 180 256;
+#X obj 614 335 snapshot~;
+#X obj 622 315 r \$0-b;
+#X obj 644 286 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 218 256;
+#X obj 618 159 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 9 256;
+#X obj 644 179 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 218 256;
+#X text 440 19 Turn on the dsp.;
+#X obj 593 138 sig~ 0;
+#X obj 702 305 + 1;
+#X obj 677 327 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256;
+#X obj 467 230 spam.process~ 4 spam.example 8;
+#X obj 644 262 t f b, f 6;
+#X obj 644 198 t f b, f 8;
+#X obj 690 265 f 1;
+#X obj 677 305 f 1;
+#X obj 568 96 sig~ 2;
+#X connect 7 0 44 0;
+#X connect 8 0 7 0;
+#X connect 9 0 44 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
+#X connect 15 0 16 0;
+#X connect 18 0 17 0;
+#X connect 19 0 18 0;
+#X connect 20 0 44 1;
+#X connect 21 0 44 2;
+#X connect 22 0 44 3;
+#X connect 24 0 23 0;
+#X connect 25 0 24 0;
+#X connect 27 0 26 0;
+#X connect 28 0 27 0;
+#X connect 29 0 49 0;
+#X connect 30 0 41 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 35 0 34 0;
+#X connect 36 0 35 0;
+#X connect 38 0 44 6;
+#X connect 39 0 46 0;
+#X connect 41 0 44 5;
+#X connect 42 0 48 1;
+#X connect 44 0 11 0;
+#X connect 44 1 18 0;
+#X connect 44 2 24 0;
+#X connect 44 3 27 0;
+#X connect 44 4 32 0;
+#X connect 44 5 35 0;
+#X connect 44 6 45 0;
+#X connect 45 0 37 0;
+#X connect 45 1 48 0;
+#X connect 46 0 44 7;
+#X connect 46 1 47 0;
+#X connect 47 0 48 1;
+#X connect 48 0 42 0;
+#X connect 48 0 43 0;
+#X connect 49 0 44 4;
