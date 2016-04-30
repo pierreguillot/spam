@@ -23,6 +23,7 @@ typedef struct _spam_io
     int         s_static;   //!< if static
     t_symbol*   s_symbol;
     t_sample*   s_samples;
+    int         s_n;
 }t_spam_io;
 
 char spam_io_init(t_spam_io* io, int idx, int type, int sig, int stat);

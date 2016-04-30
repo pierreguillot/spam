@@ -15,10 +15,19 @@ typedef struct _spam_in_tilde
 
 static void spam_in_tilde_dsp(t_spam_in_tilde *x, t_signal **sp){
     spam_io_dsp((t_spam_io *)x);
-    if(x->s_io.s_samples){
-        dsp_add_plus(x->s_io.s_samples, sp[0]->s_vec, sp[1]->s_vec, sp[0]->s_n);
+    if(x->s_io.s_samples)
+    {
+        if(x->s_io.s_n != sp[0]->s_n)
+        {
+            pd_error(x, "spam~: can't use another block size in for the moment.");
+        }
+        else
+        {
+            dsp_add_copy(x->s_io.s_samples, sp[0]->s_vec, sp[0]->s_n);
+        }
     }
-    else{
+    else
+    {
         dsp_add_zero(sp[0]->s_vec, sp[0]->s_n);
     }
 }

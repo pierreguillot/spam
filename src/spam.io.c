@@ -108,7 +108,7 @@ char spam_io_init(t_spam_io* io, int idx, int type, int sig, int stat)
     process = spam_get_io_process(io->s_canvas);
     if(process)
     {
-        mess1((t_pd *)process, gensym("setio"), (void *)(io));
+        mess1((t_pd *)process, gensym("ioinit"), (void *)(io));
     }
     return 0;
 }
@@ -127,7 +127,7 @@ char spam_io_dsp(t_spam_io* io)
     t_object* process = spam_get_io_process(io->s_canvas);
     if(process)
     {
-        mess1((t_pd *)process, gensym("getsamples"), (void *)(io));
+        mess1((t_pd *)process, gensym("iodsp"), (void *)(io));
         return 0;
     }
     return -1;

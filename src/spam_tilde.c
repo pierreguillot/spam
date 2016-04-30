@@ -11,8 +11,8 @@ static t_class* spam_process_class;
 typedef struct _spam
 {
     t_spam_master   s_master;
-    t_spam_signal   s_signal;
-    t_spam_iolets   s_iolet;
+    t_sample**      s_inputs;
+    t_sample**      s_outputs;
     //t_symbol*       s_fin;
 } t_spam;
 
@@ -56,83 +56,79 @@ static void spam_process_anything(t_spam *x, t_symbol* s, int argc, t_atom* argv
 
 static void spam_process_free(t_spam *x)
 {
-    spam_iolets_free(&(x->s_iolet));
-    spam_signal_free(&(x->s_signal));
+    int nins    = spam_master_get_nsignals((t_spam_master *)x, 0);
+    int nouts   = spam_master_get_nsignals((t_spam_master *)x, 1);
+    if(x->s_inputs)
+    {
+        freebytes(x->s_inputs, nins * sizeof(t_sample *));
+    }
+    if(x->s_outputs)
+    {
+        freebytes(x->s_inputs, nouts * sizeof(t_sample *));
+    }
     spam_master_free(&(x->s_master));
 }
 
 static void spam_process_vis(t_spam *x, t_floatarg index)
 {
-    if(x->s_master.s_canvas)
+    if(spam_master_visible((t_spam_master *)x, index))
     {
-        //canvas_vis(cnv, vis);
+        error("spam.process~: index out of range!");
     }
 }
 
-static void spam_process_click(t_spam *x, t_floatarg xpos, t_floatarg ypos, t_floatarg shift, t_floatarg ctrl, t_floatarg alt)
+static void spam_process_click(t_spam *x, t_floatarg xp, t_floatarg yp, t_floatarg s, t_floatarg c, t_floatarg a)
 {
     spam_process_vis(x, 0);
 }
 
-static void spam_process_setio(t_spam *x, t_spam_io* io){
-    spam_iolets_set(&(x->s_iolet), io);
+static void spam_process_io_init(t_spam *x, t_spam_io* io){
+    spam_master_io_init((t_spam_master *)x, io);
 }
 
-static void spam_process_getsample(t_spam *x, t_spam_io* io){
-    spam_iolets_set_samples(&(x->s_iolet), io, &(x->s_signal), x->s_master.s_n);
+static void spam_process_io_dsp(t_spam *x, t_spam_io* io){
+    spam_master_io_dsp((t_spam_master *)x, io);
 }
 
-t_int *spam_perform(t_int *w)
+t_int *spam_process_perform(t_int *w)
 {
-    t_sample *in1 = (t_sample *)(w[1]);
-    t_sample *in2 = (t_sample *)(w[2]);
-    t_sample *out = (t_sample *)(w[3]);
-    int n = (int)(w[4]);
-    while (n--) *out++ = *in1++ + *in2++;
-    return (w+5);
+    int i;
+    int n         = (int)(w[1]);
+    int nins      = (int)(w[2]);
+    int outs      = (int)(w[3]);
+    t_sample**in  = (t_sample *)(w[4]);
+    t_sample**out = (t_sample *)(w[5]);
+    for(i = 0; i < nins; ++i)
+    {
+        
+    }
+    
+    
+    return (w+6);
 }
 
 
 static void spam_process_dsp(t_spam *x, t_signal **sp)
 {
-    post("spam_process_dsp");
-    /*
-    int i, j, n;
-    t_sample* v;
-    t_symbol* s;
-    t_atom* av;
-    char temp[MAXPDSTRING];
-     */
-    int nins    = spam_iolets_get_ninsig(&(x->s_iolet), x->s_master.s_n);
-    int nouts   = spam_iolets_get_noutsig(&(x->s_iolet), x->s_master.s_n);
-    int max     = (nins > nouts) ? nins : nouts;
-    if(!spam_signal_alloc(&(x->s_signal), max, (sp && sp[0]) ? sp[0]->s_n : 0))
+    int i;
+    t_int* vec;
+    int nins    = spam_master_get_nsignals((t_spam_master *)x, 0);
+    int nouts   = spam_master_get_nsignals((t_spam_master *)x, 1);
+    if(nins && nouts)
     {
-        mess0((t_pd *)x->s_master.s_canvas, gensym("dsp"));
-        /*
-        j = 0;
-        if(x->s_instatic)
+        if(!x->s_inputs)
         {
-            for(j = 0; j < x->s_nrows * x->s_ncolumns; ++j)
-            {
-                sprintf(temp, "$0-in_static-%i", j);
-                s = canvas_realizedollar(x->s_master.s_canvas, gensym(temp));
-                if(s && s->s_thing)
-                {
-                    mess3(s->s_thing, gensym("set"), x->s_samples+j*sp[0]->s_n, 0, 0);
-                }
-            }
+            x->s_inputs  = (t_sample **)getbytes(nins * sizeof(t_sample *));
         }
-        for(i = 0; i < x->s_ninssig; ++i, ++j)
+        if(!x->s_outputs)
         {
-            sprintf(temp, "$0-in_tilde-%i", i);
-            s = canvas_realizedollar(x->s_master.s_canvas, gensym(temp));
-            if(s && s->s_thing)
-            {
-                mess3(s->s_thing, gensym("set"), x->s_samples+j*sp[0]->s_n, 0, 0);
-            }
+           x->s_outputs = (t_sample **)getbytes(nouts * sizeof(t_sample *));
         }
-         */
+        if(x->s_inputs && x->s_outputs)
+        {
+            dsp_add(spam_process_perform, 5, sp[0]->s_n, nins, nouts, x->s_inputs, x->s_outputs);
+            spam_master_dsp((t_spam_master *)x, sp);
+        }
     }
 }
 
@@ -141,8 +137,8 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
     t_spam *x  = (t_spam *)pd_new(spam_process_class);
     if(x)
     {
-        spam_signal_init(&(x->s_signal));
-        spam_iolets_init(&(x->s_iolet));
+        x->s_inputs     = NULL;
+        x->s_outputs    = NULL;
         if(spam_master_init((t_spam_master *)x,
                             atom_getsymbolarg(1, argc, argv),
                             atom_getfloatarg(0, argc, argv),
@@ -151,8 +147,6 @@ static void *spam_process_new(t_symbol *s, int argc, t_atom *argv)
             pd_free((t_pd *)x);
             return NULL;
         }
-        
-        spam_iolets_newio(&(x->s_iolet), (t_object *)x, x->s_master.s_canvas, x->s_master.s_n);
     }
     return x;
 }
@@ -165,8 +159,8 @@ extern void setup_spam0x2eprocess_tilde(void)
         class_addmethod(c, (t_method)spam_process_click,    gensym("click"), A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_process_vis,      gensym("vis"), A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_process_dsp,      gensym("dsp"), A_CANT, 0);
-        class_addmethod(c, (t_method)spam_process_setio,    gensym("setio"), A_CANT, 0);
-        class_addmethod(c, (t_method)spam_process_getsample,gensym("getsamples"), A_CANT, 0);
+        class_addmethod(c, (t_method)spam_process_io_init,  gensym("ioinit"), A_CANT, 0);
+        class_addmethod(c, (t_method)spam_process_io_dsp,   gensym("iodsp"), A_CANT, 0);
         
         /*
         class_addmethod(c, (t_method)spam_process_bang,       gensym("bang"),    A_NULL,  0);
@@ -177,7 +171,7 @@ extern void setup_spam0x2eprocess_tilde(void)
          */
     }
     spam_process_class = c;
-    setup_iolet_setup();
+    spam_master_setup();
 }
 
 
