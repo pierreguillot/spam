@@ -1,7 +1,7 @@
 #N canvas 422 139 766 523 10;
 #N canvas 443 106 450 300 header 0;
-#X obj 3 3 cnv 18 18 18 empty empty spam.process~ 2 8 0 14 -262144
--66577 0;
+#X obj 3 3 cnv 18 18 18 empty empty spam~ 2 8 0 14 -262144 -66577 0
+;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 8 pd header;
@@ -25,14 +25,6 @@ The first inlets and outlets match to the signal \, starting with the
 inlets and outlets specifics to each instance and finishing with the
 inlets and outlets shared by all the instances. The inlets and outlets
 for messages are always at the end.;
-#X text 6 360 If you don't have any spam.in~ objects but you do have
-a spam.in object in your patch \, the first inlet will be used for
-the first spam.in object and the spam.process~ object. The inlets and
-outlets for messages are always shared by all the instance and there
-is no methods to target a specfic instance so you you should use route
-the messages within the patches.;
-#X text 6 460 Important: If you edit the patch \, you have to recreate
-the spam.process~ to reflect the changes.;
 #X msg 403 173 vis \$1;
 #X obj 403 143 nbx 5 14 0 3 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
@@ -62,7 +54,7 @@ the spam.process~ to reflect the changes.;
 #X obj 555 284 snapshot~;
 #X obj 563 264 r \$0-b;
 #X obj 568 76 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
+-262144 -1 -1 0 256;
 #X obj 593 120 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 585 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -70,65 +62,73 @@ the spam.process~ to reflect the changes.;
 #X obj 585 404 snapshot~;
 #X obj 593 384 r \$0-b;
 #X obj 614 356 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 180 256;
+-262144 -1 -1 20 256;
 #X obj 614 335 snapshot~;
 #X obj 622 315 r \$0-b;
 #X obj 644 286 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 218 256;
+-262144 -1 -1 0 256;
 #X obj 618 159 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 9 256;
+-262144 -1 -1 0 256;
 #X obj 644 179 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 218 256;
+-262144 -1 -1 0 256;
 #X text 440 19 Turn on the dsp.;
 #X obj 593 138 sig~ 0;
 #X obj 702 305 + 1;
 #X obj 677 327 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 4 256;
-#X obj 467 230 spam.process~ 4 spam.example 8;
+-262144 -1 -1 0 256;
 #X obj 644 262 t f b, f 6;
 #X obj 644 198 t f b, f 8;
 #X obj 690 265 f 1;
 #X obj 677 305 f 1;
 #X obj 568 96 sig~ 2;
-#X connect 7 0 44 0;
-#X connect 8 0 7 0;
-#X connect 9 0 44 0;
-#X connect 11 0 10 0;
+#X obj 467 230 spam~ 4 spam.example 8 shadoks;
+#X text 6 360 If you don't have any spam.in~ objects but you do have
+a spam.in object in your patch \, the first inlet will be used for
+the first spam.in object and the spam~ object. The inlets and outlets
+for messages are always shared by all the instance and there is no
+methods to target a specfic instance so you you should use route the
+messages within the patches.;
+#X text 6 460 Important: If you edit the patch \, you have to recreate
+the spam~ object to reflect the changes.;
+#X connect 5 0 47 0;
+#X connect 6 0 5 0;
+#X connect 7 0 47 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
 #X connect 12 0 11 0;
-#X connect 14 0 13 0;
-#X connect 15 0 14 0;
-#X connect 15 0 16 0;
-#X connect 18 0 17 0;
-#X connect 19 0 18 0;
-#X connect 20 0 44 1;
-#X connect 21 0 44 2;
-#X connect 22 0 44 3;
-#X connect 24 0 23 0;
+#X connect 13 0 12 0;
+#X connect 13 0 14 0;
+#X connect 16 0 15 0;
+#X connect 17 0 16 0;
+#X connect 18 0 47 1;
+#X connect 19 0 47 2;
+#X connect 20 0 47 3;
+#X connect 22 0 21 0;
+#X connect 23 0 22 0;
 #X connect 25 0 24 0;
-#X connect 27 0 26 0;
-#X connect 28 0 27 0;
-#X connect 29 0 49 0;
-#X connect 30 0 41 0;
-#X connect 32 0 31 0;
+#X connect 26 0 25 0;
+#X connect 27 0 46 0;
+#X connect 28 0 39 0;
+#X connect 30 0 29 0;
+#X connect 31 0 30 0;
 #X connect 33 0 32 0;
-#X connect 35 0 34 0;
-#X connect 36 0 35 0;
-#X connect 38 0 44 6;
-#X connect 39 0 46 0;
-#X connect 41 0 44 5;
-#X connect 42 0 48 1;
-#X connect 44 0 11 0;
-#X connect 44 1 18 0;
-#X connect 44 2 24 0;
-#X connect 44 3 27 0;
-#X connect 44 4 32 0;
-#X connect 44 5 35 0;
-#X connect 44 6 45 0;
-#X connect 45 0 37 0;
-#X connect 45 1 48 0;
-#X connect 46 0 44 7;
-#X connect 46 1 47 0;
-#X connect 47 0 48 1;
-#X connect 48 0 42 0;
-#X connect 48 0 43 0;
-#X connect 49 0 44 4;
+#X connect 34 0 33 0;
+#X connect 36 0 47 6;
+#X connect 37 0 43 0;
+#X connect 39 0 47 5;
+#X connect 40 0 45 1;
+#X connect 42 0 35 0;
+#X connect 42 1 45 0;
+#X connect 43 0 47 7;
+#X connect 43 1 44 0;
+#X connect 44 0 45 1;
+#X connect 45 0 40 0;
+#X connect 45 0 41 0;
+#X connect 46 0 47 4;
+#X connect 47 0 9 0;
+#X connect 47 1 16 0;
+#X connect 47 2 22 0;
+#X connect 47 3 25 0;
+#X connect 47 4 30 0;
+#X connect 47 5 33 0;
+#X connect 47 6 42 0;

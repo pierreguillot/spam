@@ -54,7 +54,7 @@ set(SPAMTILDESRC
 	${PROJECT_SOURCE_DIR}/src/spam_tilde.c)
 source_group(src FILES ${SPAMTILDESRC})
 add_library(spam_tilde SHARED ${SPAMTILDESRC})
-set_target_properties(spam_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.process~)
+set_target_properties(spam_tilde PROPERTIES LIBRARY_OUTPUT_NAME 'spam~')
 if(${WIN32})
 		target_link_libraries(spam_tilde pd)
 endif()
