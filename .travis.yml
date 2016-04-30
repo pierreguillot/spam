@@ -23,6 +23,11 @@ script:
   - cmake ..
   - cmake --build .
 
+before_deploy:
+  - cd ../bin
+  - zip spam
+  - ls
+
 deploy:
   provider: releases
   skip_cleanup: true
