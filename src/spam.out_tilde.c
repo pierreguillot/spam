@@ -65,7 +65,7 @@ extern void setup_spam0x2eout_tilde(void)
     if(c)
     {
         CLASS_MAINSIGNALIN((t_class *)c, t_spam_out_tilde, s_f);
-        class_sethelpsymbol((t_class *)c, gensym("spam.io"));
+        class_sethelpsymbol((t_class *)c, gensym("spam"));
         class_addmethod((t_class *)c, (t_method)spam_out_tilde_dsp, gensym("dsp"), A_CANT, 0);
     }
     spam_out_tilde_class = c;

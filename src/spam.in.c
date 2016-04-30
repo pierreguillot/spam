@@ -58,7 +58,7 @@ extern void setup_spam0x2ein(void)
     t_class* c = class_new(gensym("spam.in"), (t_newmethod)spam_in_new, (t_method)spam_in_free, sizeof(t_spam_in), CLASS_NOINLET, A_FLOAT, 0);
     if(c)
     {
-        class_sethelpsymbol((t_class *)c, gensym("spam.io"));
+        class_sethelpsymbol((t_class *)c, gensym("spam"));
         class_addmethod(c, (t_method)spam_in_bang,       gensym("bang"),    A_NULL,  0);
         class_addmethod(c, (t_method)spam_in_float,      gensym("float"),   A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_in_symbol,     gensym("symbol"),  A_SYMBOL,0);

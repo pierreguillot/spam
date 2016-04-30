@@ -65,7 +65,7 @@ extern void setup_spam0x2ein_tilde(void)
     t_class* c = class_new(gensym("spam.in~"), (t_newmethod)spam_in_tilde_new, (t_method)spam_in_tilde_free, sizeof(t_spam_in_tilde), CLASS_NOINLET, A_GIMME, 0);
     if(c)
     {
-        class_sethelpsymbol((t_class *)c, gensym("spam.io"));
+        class_sethelpsymbol((t_class *)c, gensym("spam"));
         class_addmethod((t_class *)c, (t_method)spam_in_tilde_dsp, gensym("dsp"), A_CANT, 0);
     }
     spam_in_tilde_class = c;
