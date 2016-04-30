@@ -26,6 +26,7 @@ script:
 before_deploy:
   - ls
   - cd ../bin
+  - ls
   - zip spam
   - ls
 
