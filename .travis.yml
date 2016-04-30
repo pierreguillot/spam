@@ -6,6 +6,7 @@ notifications:
 git:
   submodules: true
   depth: 3
+  
 matrix:
   include:
   - os: linux
@@ -16,10 +17,12 @@ matrix:
     compiler: gcc
   - os: osx
     compiler: clang
+
 script:
-- mkdir build && cd build
-- cmake ..
-- cmake --build .
+  - mkdir build && cd build
+  - cmake ..
+  - cmake --build .
+
 deploy:
   provider: releases
   api_key:
