@@ -17,6 +17,7 @@ elseif(${LINUX})
 else()
 	set(CMAKE_SHARED_LIBRARY_SUFFIX  ".dll")
 	link_directories(${PROJECT_SOURCE_DIR}/pdwinlib)
+	add_definitions("/D_CRT_SECURE_NO_WARNINGS /wd4091 /wd4996")
 endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/pd/src/)
