@@ -29,7 +29,7 @@ after_build:
     - 7z a spam_win.zip %APPVEYOR_BUILD_FOLDER%\spam\
 
 artifacts:
-  - path: spam_win.zip
+  - path: '*.zip'
 
 notifications:
 
