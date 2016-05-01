@@ -8,30 +8,33 @@
 #X text 4 101 The first argument is the position index from the vector.
 The second argument is the number of rows in the matrix and the third
 argument is the number of column in the matrix.;
-#X obj 133 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
-#X obj 190 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
-#X obj 133 166 mat.2d.itorc 6 4 4;
-#X obj 13 166 mat.2d.itorc 0 4 4;
-#X obj 133 188 unpack, f 10;
-#X obj 13 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 133 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 70 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 190 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 13 188 unpack, f 10;
-#X obj 253 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 3 256;
-#X obj 310 224 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
-#X obj 253 188 unpack, f 10;
-#X text 4 251 The result is a list containing the row index and a column
+#X obj 133 185 mat.2d.itorc 6 4 4;
+#X obj 13 185 mat.2d.itorc 0 4 4;
+#X obj 133 207 unpack, f 10;
+#X obj 13 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 70 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 13 207 unpack, f 10;
+#X obj 253 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 310 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 253 207 unpack, f 10;
+#X text 4 270 The result is a list containing the row index and a column
 index inside the matrix.;
-#X obj 253 166 mat.2d.itorc 14 5 4;
+#X obj 253 185 mat.2d.itorc 14 5 4;
 #X text 4 31 The abstraction transforms an index of a vector (the position
 of an element inside a vector) into a row index and a column index
 of a matrix (the position of an element inside a matrix) depending
 on the total number of rows and columns in the matrix.;
+#X obj 13 163 loadbang;
+#X obj 133 163 loadbang;
+#X obj 253 163 loadbang;
 #X connect 4 0 6 0;
 #X connect 5 0 9 0;
 #X connect 6 0 2 0;
@@ -41,3 +44,6 @@ on the total number of rows and columns in the matrix.;
 #X connect 12 0 10 0;
 #X connect 12 1 11 0;
 #X connect 14 0 12 0;
+#X connect 16 0 5 0;
+#X connect 17 0 4 0;
+#X connect 18 0 14 0;

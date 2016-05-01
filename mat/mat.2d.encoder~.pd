@@ -1,4 +1,4 @@
-#N canvas 23 168 254 265 10;
+#N canvas 278 386 271 275 10;
 #X obj 12 216 *~;
 #X obj 12 16 spam.in~ 0;
 #X obj 12 238 spam.out~;
@@ -12,6 +12,7 @@
 #X obj 27 150 -, f 5;
 #X obj 27 172 pack f 20;
 #X obj 27 194 line~;
+#X obj 114 16 loadbang;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X connect 3 0 6 0;
@@ -25,3 +26,4 @@
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
 #X connect 12 0 0 1;
+#X connect 13 0 4 0;
