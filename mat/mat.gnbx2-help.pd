@@ -1,0 +1,17 @@
+#N canvas 217 441 386 115 10;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty mat.gnbx2 2 8 0 14 -262144
+-66577 0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 6 pd header;
+#X obj 13 91 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 13 50 mat.2d.gxy;
+#X obj 13 69 unpack f f;
+#X obj 70 92 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 4 31 The abstraction represents two numbers.;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 3 1 4 0;

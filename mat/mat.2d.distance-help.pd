@@ -1,75 +1,24 @@
-#N canvas 624 244 378 224 10;
+#N canvas 217 441 379 209 10;
 #N canvas 443 106 450 300 header 0;
 #X obj 3 3 cnv 18 18 18 empty empty mat.2d.distance 2 8 0 14 -262144
 -66577 0;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 6 pd header;
-#X obj 13 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 13 171 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X text 4 31 The abstraction computes the euclidean distance between
 two points with their cartesian coordinates.;
 #X text 4 61 The inlets expect a list of two values that represent
 the abscissa and the ordinate of each point. The position of the second
 point can be set at the creation with the arguments.;
-#X obj 13 174 mat.2d.distance;
-#X obj 207 199 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 4.54579 256;
-#X obj 207 172 mat.2d.distance 1.2 -3.5;
-#N canvas 0 22 450 300 coord 0;
-#X obj 123 100 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummys \$0-dummyr empty
-0 -8 0 10 -262144 -1 -1 0.49 256;
-#X obj 159 100 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummys \$0-dummyr empty
-0 -8 0 10 -262144 -1 -1 0.99 256;
-#X obj 100 159 pack 0 0, f 15;
-#X obj 160 120 t b f;
-#X obj 100 140 f 0, f 4;
-#X obj 100 181 outlet;
-#X text 100 99 x/y;
-#X connect 0 0 4 0;
-#X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 3 1 2 1;
-#X connect 4 0 2 0;
-#X coords 0 -1 1 1 95 14 2 100 100;
-#X restore 207 129 pd coord;
-#N canvas 0 22 450 300 coord 0;
-#X obj 123 100 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummys \$0-dummyr empty
-0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 159 100 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummys \$0-dummyr empty
-0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 100 159 pack 0 0, f 15;
-#X obj 160 120 t b f;
-#X obj 100 140 f 0, f 4;
-#X obj 100 181 outlet;
-#X text 100 99 x/y;
-#X connect 0 0 4 0;
-#X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 3 1 2 1;
-#X connect 4 0 2 0;
-#X coords 0 -1 1 1 95 14 2 100 100;
-#X restore 13 129 pd coord;
-#N canvas 0 22 450 300 coord 0;
-#X obj 123 100 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummys \$0-dummyr empty
-0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 159 100 nbx 3 14 -1e+37 1e+37 0 0 \$0-dummys \$0-dummyr empty
-0 -8 0 10 -262144 -1 -1 0 256;
-#X obj 100 159 pack 0 0, f 15;
-#X obj 160 120 t b f;
-#X obj 100 140 f 0, f 4;
-#X obj 100 181 outlet;
-#X text 100 99 x/y;
-#X connect 0 0 4 0;
-#X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 4 0;
-#X connect 3 1 2 1;
-#X connect 4 0 2 0;
-#X coords 0 -1 1 1 95 14 2 100 100;
-#X restore 100 149 pd coord;
+#X obj 13 144 mat.2d.distance;
+#X obj 207 169 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 207 142 mat.2d.distance 1.2 -3.5;
+#X obj 207 120 mat.gnbx2;
+#X obj 13 120 mat.gnbx2;
+#X obj 100 120 mat.gnbx2;
 #X connect 4 0 1 0;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
