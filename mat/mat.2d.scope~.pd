@@ -1,4 +1,4 @@
-#N canvas 82 271 561 453 10;
+#N canvas 82 271 557 316 10;
 #X obj 85 16 spam.in 0;
 #X obj 12 16 spam.in~;
 #X obj 159 81 loadbang;
