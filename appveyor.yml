@@ -24,6 +24,9 @@ build_script:
     - cmake --build .
 
 after_build:
+    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_in_tilde.dll spam.in~.dll
+    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_out_tilde.dll spam.out~.dll
+    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_tilde.dll spam~.dll
     - cd ..\
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.pdb
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
