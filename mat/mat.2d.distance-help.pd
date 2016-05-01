@@ -1,4 +1,4 @@
-#N canvas 217 441 379 209 10;
+#N canvas 217 441 380 262 10;
 #N canvas 443 106 450 300 header 0;
 #X obj 3 3 cnv 18 18 18 empty empty mat.2d.distance 2 8 0 14 -262144
 -66577 0;
@@ -12,15 +12,19 @@ two points with their cartesian coordinates.;
 #X text 4 61 The inlets expect a list of two values that represent
 the abscissa and the ordinate of each point. The position of the second
 point can be set at the creation with the arguments.;
-#X obj 13 144 mat.2d.distance;
 #X obj 207 169 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 207 142 mat.2d.distance 1.2 -3.5;
 #X obj 207 120 mat.gnbx2;
 #X obj 13 120 mat.gnbx2;
-#X obj 100 120 mat.gnbx2;
-#X connect 4 0 1 0;
+#X obj 83 120 mat.gnbx2;
+#X obj 13 144 mat.2d.distance, f 24;
+#X text 4 191 The third inlet expects a blur value superior or equal
+to zero.;
+#X text 4 221 The equation is d = √(x1 - x2)^2 + (y1 - y2)^2 + b^2)
+;
+#X connect 5 0 4 0;
 #X connect 6 0 5 0;
-#X connect 7 0 6 0;
-#X connect 8 0 4 0;
-#X connect 9 0 4 1;
+#X connect 7 0 9 0;
+#X connect 8 0 9 1;
+#X connect 9 0 1 0;
