@@ -1,0 +1,297 @@
+#N canvas 451 133 1049 742 10;
+#X obj 65 18 sig~ 1;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 78 222 pd nbx~;
+#X obj 65 40 s~ \$0-sig;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 138 222 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 198 222 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 258 222 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 78 242 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 138 242 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 198 242 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 258 242 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 78 262 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 138 262 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 198 262 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 258 262 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 78 282 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 138 282 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 198 282 pd nbx~;
+#N canvas 508 77 450 300 nbx~ 0;
+#X obj 169 45 metro 100;
+#X obj 169 5 loadbang;
+#X obj 169 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 100 69 snapshot~;
+#X obj 100 100 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 25 inlet~;
+#X obj 100 124 outlet;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 0;
+#X connect 3 0 4 0;
+#X connect 4 0 6 0;
+#X connect 5 0 3 0;
+#X coords 0 -1 1 1 54 14 2 100 100;
+#X restore 258 282 pd nbx~;
+#X obj 78 197 spam~ 16 mat.2d.encoder~ 4 4, f 38;
+#X connect 0 0 2 0;
+#X connect 18 0 1 0;
+#X connect 18 1 3 0;
+#X connect 18 2 4 0;
+#X connect 18 3 5 0;
