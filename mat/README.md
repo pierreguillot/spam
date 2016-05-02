@@ -11,3 +11,9 @@ ToDo List:
 * mat.2d.vbap~ (for decoder)
 * clean the scope and add colors and line width properties and use env~ instead of snapshot~.
 * Helps of the main abstractions
+* Add spread value for encoding
+  [t b f]
+  |     |
+  [f w] [min w]
+  |     |
+  [-    ]

@@ -10,7 +10,6 @@
 #include <string.h>
 #include <stdarg.h>
 
-extern t_class* canvas_class;
 static t_class* spam_process_inlet_class;
 static t_class* spam_process_outlet_class;
 
