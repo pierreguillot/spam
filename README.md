@@ -3,3 +3,8 @@
 [![Build Status](https://ci.appveyor.com/api/projects/status/github/pierreguillot/spam?branch=master&svg=true)](https://ci.appveyor.com/project/pierreguillot/spam)   
 
 Multi patches externals for Pure Data
+
+Projects:
+* mat - matricial spatialization
+* hoa - high order ambisonics
+* wfs - wave field synthesis

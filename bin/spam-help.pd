@@ -4,91 +4,91 @@
 ;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
-#X restore 6 8 pd header;
-#X text 6 30 The object loads several instances of a patch. It acts
+#X restore 6 6 pd header;
+#X text 6 28 The object loads several instances of a patch. It acts
 in a similar way to the clone object but allows to differentiate the
 inputs and outputs of each instance. This specificity can be useful
 to implement vectorial or matricial operations especially for spatialization
 techniques.;
-#X text 6 100 The first argument is the number of instances. The second
+#X text 6 98 The first argument is the number of instances. The second
 argument is the name of the patch. The other arguments are sent to
 each instance. Nevertheless the first argument of each instance is
 its number \, starting with zero., f 60;
-#X text 6 280 The first inlet can also be used to send messages to
+#X text 6 278 The first inlet can also be used to send messages to
 the object instead of the patches. The only message available for the
 moment is vis with the index of an instance that displays the patch.
 Perhaps in the futur other messages will be used.;
-#X text 6 160 Depending on the objects spam.in \, spam.out \, spam.in~
+#X text 6 158 Depending on the objects spam.in \, spam.out \, spam.in~
 and spam.out~ in the patch \, the number of inlet and outlet of the
 object varies but their distribution always follows a specific order.
 The first inlets and outlets match to the signal \, starting with the
 inlets and outlets specifics to each instance and finishing with the
 inlets and outlets shared by all the instances. The inlets and outlets
 for messages are always at the end.;
-#X msg 403 173 vis \$1;
-#X obj 403 143 nbx 5 14 0 3 0 0 empty empty empty 0 -8 0 10 -262144
+#X msg 403 171 vis \$1;
+#X obj 403 141 nbx 5 14 0 3 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
-#X obj 467 96 sig~ 1;
-#X obj 467 485 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 2 256;
-#X obj 467 464 snapshot~;
-#X obj 475 444 r \$0-b;
-#X obj 418 97 s \$0-b;
-#X obj 418 74 metro 20;
-#X obj 418 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 467 94 sig~ 1;
+#X obj 467 483 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 467 462 snapshot~;
+#X obj 475 442 r \$0-b;
+#X obj 418 95 s \$0-b;
+#X obj 418 72 metro 20;
+#X obj 418 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 427 40 \; pd dsp \$1;
-#X obj 496 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 4 256;
-#X obj 496 404 snapshot~;
-#X obj 504 384 r \$0-b;
-#X obj 492 116 sig~ 2;
-#X obj 517 137 sig~ 3;
-#X obj 542 157 sig~ 4;
-#X obj 526 365 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 6 256;
-#X obj 526 344 snapshot~;
-#X obj 534 324 r \$0-b;
-#X obj 555 305 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 8 256;
-#X obj 555 284 snapshot~;
-#X obj 563 264 r \$0-b;
-#X obj 568 76 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X msg 427 38 \; pd dsp \$1;
+#X obj 496 423 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 593 120 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 496 402 snapshot~;
+#X obj 504 382 r \$0-b;
+#X obj 492 114 sig~ 2;
+#X obj 517 135 sig~ 3;
+#X obj 542 155 sig~ 4;
+#X obj 526 363 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 585 425 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
-#X obj 585 404 snapshot~;
-#X obj 593 384 r \$0-b;
-#X obj 614 356 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 20 256;
-#X obj 614 335 snapshot~;
-#X obj 622 315 r \$0-b;
-#X obj 644 286 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 526 342 snapshot~;
+#X obj 534 322 r \$0-b;
+#X obj 555 303 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 618 159 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 555 282 snapshot~;
+#X obj 563 262 r \$0-b;
+#X obj 568 74 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 644 179 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 593 118 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X text 440 19 Turn on the dsp.;
-#X obj 593 138 sig~ 0;
-#X obj 702 305 + 1;
-#X obj 677 327 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 585 423 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 644 262 t f b, f 6;
-#X obj 644 198 t f b, f 8;
-#X obj 690 265 f 1;
-#X obj 677 305 f 1;
-#X obj 568 96 sig~ 2;
-#X obj 467 230 spam~ 4 spam.example 8 shadoks;
-#X text 6 360 If you don't have any spam.in~ objects but you do have
+#X obj 585 402 snapshot~;
+#X obj 593 382 r \$0-b;
+#X obj 614 354 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 614 333 snapshot~;
+#X obj 622 313 r \$0-b;
+#X obj 644 284 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 618 157 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 644 177 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 440 17 Turn on the dsp.;
+#X obj 593 136 sig~ 0;
+#X obj 702 303 + 1;
+#X obj 677 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 644 260 t f b, f 6;
+#X obj 644 196 t f b, f 8;
+#X obj 690 263 f 1;
+#X obj 677 303 f 1;
+#X obj 568 94 sig~ 2;
+#X obj 467 228 spam~ 4 spam.example 8 shadoks;
+#X text 6 358 If you don't have any spam.in~ objects but you do have
 a spam.in object in your patch \, the first inlet will be used for
 the first spam.in object and the spam~ object. The inlets and outlets
 for messages are always shared by all the instance and there is no
 methods to target a specfic instance so you you should use route the
 messages within the patches.;
-#X text 6 460 Important: If you edit the patch \, you have to recreate
+#X text 6 458 Important: If you edit the patch \, you have to recreate
 the spam~ object to reflect the changes.;
 #X connect 5 0 47 0;
 #X connect 6 0 5 0;
