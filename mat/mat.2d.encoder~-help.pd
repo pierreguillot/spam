@@ -1,64 +1,59 @@
-#N struct 1034-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6816-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1032-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6814-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1030-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6812-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1028-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6810-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1026-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6808-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1024-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6806-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1022-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6804-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1020-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6802-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1018-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6800-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1016-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6798-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1014-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6796-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1012-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6794-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1010-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6792-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1008-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6790-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1006-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6788-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1004-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 6786-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N canvas 456 23 1050 821 10;
+#N canvas 173 23 388 792 10;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 1034-t-scope 0.75 0.75 1 1 999 0 1 \;;
-#X scalar 1032-t-scope 0.75 0.5 1 0.75 999 0 1 \;;
-#X scalar 1030-t-scope 0.75 0.25 1 0.5 999 0 1 \;;
-#X scalar 1028-t-scope 0.75 0 1 0.25 999 0 1 \;;
-#X scalar 1026-t-scope 0.5 0.75 0.75 1 999 0 1 \;;
-#X scalar 1024-t-scope 0.5 0.5 0.75 0.75 999 0 1 \;;
-#X scalar 1022-t-scope 0.5 0.25 0.75 0.5 999 0 1 \;;
-#X scalar 1020-t-scope 0.5 0 0.75 0.25 999 0 1 \;;
-#X scalar 1018-t-scope 0.25 0.75 0.5 1 999 0 1 \;;
-#X scalar 1016-t-scope 0.25 0.5 0.5 0.75 999 0 1 \;;
-#X scalar 1014-t-scope 0.25 0.25 0.5 0.5 999 0 1 \;;
-#X scalar 1012-t-scope 0.25 0 0.5 0.25 999 0 1 \;;
-#X scalar 1010-t-scope 0 0.75 0.25 1 999 0 1 \;;
-#X scalar 1008-t-scope 0 0.5 0.25 0.75 999 0 1 \;;
-#X scalar 1006-t-scope 0 0.25 0.25 0.5 999 0 1 \;;
-#X scalar 1004-t-scope 0 0 0.25 0.25 999 0 1 \;;
+#X scalar 6816-t-scope 0.75 0.75 1 1 91 0 1 \;;
+#X scalar 6814-t-scope 0.75 0.5 1 0.75 91 0 1 \;;
+#X scalar 6812-t-scope 0.75 0.25 1 0.5 91 0 1 \;;
+#X scalar 6810-t-scope 0.75 0 1 0.25 91 0 1 \;;
+#X scalar 6808-t-scope 0.5 0.75 0.75 1 91 0 1 \;;
+#X scalar 6806-t-scope 0.5 0.5 0.75 0.75 91 0 1 \;;
+#X scalar 6804-t-scope 0.5 0.25 0.75 0.5 91 0 1 \;;
+#X scalar 6802-t-scope 0.5 0 0.75 0.25 91 0 1 \;;
+#X scalar 6800-t-scope 0.25 0.75 0.5 1 91 0 1 \;;
+#X scalar 6798-t-scope 0.25 0.5 0.5 0.75 451 0 1 \;;
+#X scalar 6796-t-scope 0.25 0.25 0.5 0.5 91 0 1 \;;
+#X scalar 6794-t-scope 0.25 0 0.5 0.25 91 0 1 \;;
+#X scalar 6792-t-scope 0 0.75 0.25 1 91 0 1 \;;
+#X scalar 6790-t-scope 0 0.5 0.25 0.75 451 0 1 \;;
+#X scalar 6788-t-scope 0 0.25 0.25 0.5 91 0 1 \;;
+#X scalar 6786-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X coords 0 0 1 1 116 112 2 100 100;
-#X restore 566 364 pd \$0-scope;
-#X obj 79 166 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 321 247 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X restore 67 432 pd \$0-scope;
+#X obj 14 562 spam~ 16 mat.2d.scope~ 4 4 \$0-scope, f 38;
+#X obj 148 386 mat.gnbx2;
+#X obj 148 336 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 77 312 spam~ 16 mat.2d.scope~ 4 4 \$0-scope, f 41;
-#X obj 303 216 mat.gnbx2;
-#X obj 303 166 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 321 270 metro 100;
 #N canvas 0 22 573 343 trajectory 0;
 #X obj 54 191 t f f, f 15;
 #X obj 54 279 pack f f, f 15;
@@ -97,185 +92,113 @@ float c2 float lw;
 #X connect 14 1 10 0;
 #X connect 15 0 10 0;
 #X connect 16 0 14 0;
-#X restore 303 190 pd trajectory;
-#X obj 90 462 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 140 432 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 190 432 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 240 462 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 90 562 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 140 602 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 190 602 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 240 562 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
-#X obj 78 369 env~;
-#X obj 78 391 - 100;
-#X obj 113 369 env~;
-#X obj 113 391 - 100;
-#X obj 559 183 mat.2d.decoder.dbap~ 0 4 4 8;
-#X obj 78 347 spam~ 16 mat.2d.decoder.dbap~ 4 4 8, f 41;
-#N canvas 161 390 439 403 gen_circle 0;
-#X obj 126 240 cos;
-#X obj 171 240 sin;
-#X obj 126 171 / 360;
-#X obj 126 196 * 6.28319;
-#X obj 126 262 * 1;
-#X obj 171 262 * 1;
-#X obj 126 150 + 90;
-#X obj 166 29 inlet;
-#X msg 126 79 8;
-#X obj 126 101 until;
-#X obj 126 123 f 22.5;
-#X obj 176 123 + 45;
-#X obj 163 101 f 22.5;
-#X obj 226 29 inlet;
-#X obj 126 218 t f f, f 8;
-#X obj 126 284 pack f f;
-#X obj 126 306 list prepend;
-#X obj 126 328 list;
-#X obj 130 361 outlet;
-#X obj 226 51 t b f b;
-#X obj 166 51 t b f b;
-#X connect 0 0 4 0;
-#X connect 1 0 5 0;
-#X connect 2 0 3 0;
-#X connect 3 0 14 0;
-#X connect 4 0 15 0;
-#X connect 5 0 15 1;
-#X connect 6 0 2 0;
-#X connect 7 0 20 0;
-#X connect 8 0 9 0;
+#X restore 148 360 pd trajectory;
+#X obj 258 682 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 15 682 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 14 639 env~;
+#X obj 14 661 - 100;
+#X obj 257 639 env~;
+#X obj 257 661 - 100;
+#X obj 14 247 noise~;
+#X obj 14 617 dac~, f 41;
+#X obj 239 360 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 14 407 spam~ 16 mat.2d.encoder~ 4 4, f 38;
+#X msg 239 379 blur \$1;
+#X obj 14 597 spam~ 16 mat.2d.decoder.dbap~ 4 4 2, f 41;
+#X msg 257 543 positions -0.75 0.75 0.75 0.75, f 11;
+#X obj 257 521 loadbang;
+#X obj 29 270 osc~ 3;
+#X obj 29 292 *~;
+#X obj 14 315 *~;
+#X obj 77 312 dbtorms;
+#X obj 77 292 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 90 256;
+#X obj 77 334 pack f 20;
+#X obj 77 356 line~;
+#X obj 14 379 *~, f 11;
+#X obj 77 247 loadbang;
+#X msg 77 269 90;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty mat.2d.encoder~ 2 8 0 14 -262144
+-66577 0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 6 pd header;
+#X text 4 31 The abstraction encodes a signal into a matrix depending
+on cartesian coordinates. The weight of the signal in each cell is
+computed using the distance between the encoding position and the cell
+position. To allow an adaptation of the encoding to all the sizes of
+matrices \, the coordinates are scaled between -1 and 1 The weight
+of the signal decreases with the distance and when the distance reaches
+its maximum the weight is null. To sound a bit more natural \, the
+weight is transposed on a cosinus scaled. By default \, the distance
+is limited in order to never exceed the distance between two cells.
+Thus the signal can't be inside of more than five cells. Nevertheless
+\, a blur factor allows to stretch the limit and to spread the signal
+over a larger set of cells.;
+#X text 4 209 The arguments expected by the abstraction are the number
+of rows \, the number of columns., f 60;
+#X text 142 245 Uses a list of two float to set the abscissa and the
+ordinate position of encoding., f 37;
+#X text 142 290 Uses the blur message with a float value to spread
+the signal., f 37;
+#X connect 2 0 14 1;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
 #X connect 9 0 10 0;
-#X connect 10 0 11 0;
-#X connect 10 0 6 0;
-#X connect 11 0 10 1;
-#X connect 12 0 10 1;
-#X connect 13 0 19 0;
-#X connect 14 0 0 0;
-#X connect 14 1 1 0;
-#X connect 15 0 16 0;
-#X connect 16 0 17 0;
-#X connect 16 0 18 0;
-#X connect 17 0 16 1;
-#X connect 19 0 8 0;
-#X connect 19 1 4 1;
-#X connect 19 1 5 1;
-#X connect 19 2 16 1;
-#X connect 20 0 8 0;
-#X connect 20 1 12 0;
-#X connect 20 2 16 1;
-#X restore 376 443 pd gen_circle;
-#X msg 376 414 22.5;
-#X obj 376 487 list trim;
-#X msg 376 510 positions -0.287014 0.692909 -0.69291 0.287011 -0.692909
--0.287014 -0.28701 -0.692911 0.287015 -0.692909 0.692911 -0.28701 0.692908
-0.287016 0.287009 0.692911;
-#X obj 376 465 list prepend set positions;
-#X obj 153 369 env~;
-#X obj 153 391 - 100;
-#X obj 193 369 env~;
-#X obj 193 391 - 100;
-#X obj 238 369 env~;
-#X obj 238 391 - 100;
-#X obj 273 369 env~;
-#X obj 273 391 - 100;
-#X obj 313 369 env~;
-#X obj 313 391 - 100;
-#X obj 353 369 env~;
-#X obj 353 391 - 100;
-#X obj 78 187 noise~;
-#X obj 326 628 dac~;
-#X obj 462 389 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X msg 410 326 rolloff 6;
-#X obj 429 158 env~;
-#X obj 422 204 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X msg 422 223 spread \$1;
-#X msg 457 413 0.75;
-#X obj 457 359 loadbang;
-#X msg 447 265 blur 0.1;
-#X obj 78 229 *~ 1;
-#X obj 145 199 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 78 257 spam~ 16 mat.2d.encoder~ 4 4, f 38;
-#X obj 448 31 spam.connect;
-#X obj 444 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X connect 1 0 39 0;
-#X connect 2 0 6 0;
-#X connect 4 0 51 1;
-#X connect 5 0 7 0;
-#X connect 7 0 4 0;
-#X connect 16 0 17 0;
-#X connect 17 0 9 0;
-#X connect 18 0 19 0;
-#X connect 19 0 8 0;
-#X connect 21 0 16 0;
-#X connect 21 0 40 0;
-#X connect 21 1 18 0;
-#X connect 21 2 27 0;
-#X connect 21 3 29 0;
-#X connect 21 4 31 0;
-#X connect 21 5 33 0;
-#X connect 21 6 35 0;
-#X connect 21 7 37 0;
-#X connect 21 7 40 1;
-#X connect 22 0 26 0;
+#X connect 10 0 5 0;
+#X connect 11 0 21 0;
+#X connect 13 0 15 0;
+#X connect 14 0 1 0;
+#X connect 14 0 16 0;
+#X connect 14 1 1 1;
+#X connect 14 1 16 1;
+#X connect 14 2 1 2;
+#X connect 14 2 16 2;
+#X connect 14 3 1 3;
+#X connect 14 3 16 3;
+#X connect 14 4 1 4;
+#X connect 14 4 16 4;
+#X connect 14 5 1 5;
+#X connect 14 5 16 5;
+#X connect 14 6 1 6;
+#X connect 14 6 16 6;
+#X connect 14 7 1 7;
+#X connect 14 7 16 7;
+#X connect 14 8 1 8;
+#X connect 14 8 16 8;
+#X connect 14 9 1 9;
+#X connect 14 9 16 9;
+#X connect 14 10 1 10;
+#X connect 14 10 16 10;
+#X connect 14 11 1 11;
+#X connect 14 11 16 11;
+#X connect 14 12 1 12;
+#X connect 14 12 16 12;
+#X connect 14 13 1 13;
+#X connect 14 13 16 13;
+#X connect 14 14 1 14;
+#X connect 14 14 16 14;
+#X connect 14 15 1 15;
+#X connect 14 15 16 15;
+#X connect 15 0 14 1;
+#X connect 16 0 7 0;
+#X connect 16 0 12 0;
+#X connect 16 1 9 0;
+#X connect 16 1 12 1;
+#X connect 17 0 16 16;
+#X connect 18 0 17 0;
+#X connect 19 0 20 0;
+#X connect 19 0 20 1;
+#X connect 20 0 21 1;
+#X connect 21 0 26 0;
+#X connect 22 0 24 0;
 #X connect 23 0 22 0;
 #X connect 24 0 25 0;
-#X connect 25 0 21 16;
-#X connect 26 0 24 0;
+#X connect 25 0 26 1;
+#X connect 26 0 14 0;
 #X connect 27 0 28 0;
-#X connect 28 0 12 0;
-#X connect 29 0 30 0;
-#X connect 30 0 13 0;
-#X connect 31 0 32 0;
-#X connect 32 0 14 0;
-#X connect 33 0 34 0;
-#X connect 34 0 15 0;
-#X connect 35 0 36 0;
-#X connect 36 0 11 0;
-#X connect 37 0 38 0;
-#X connect 38 0 10 0;
-#X connect 39 0 49 0;
-#X connect 41 0 22 1;
-#X connect 42 0 21 16;
-#X connect 44 0 45 0;
-#X connect 45 0 51 1;
-#X connect 46 0 22 1;
-#X connect 47 0 46 0;
-#X connect 48 0 21 16;
-#X connect 49 0 51 0;
-#X connect 50 0 49 1;
-#X connect 51 0 3 0;
-#X connect 51 0 21 0;
-#X connect 51 1 3 1;
-#X connect 51 1 21 1;
-#X connect 51 2 3 2;
-#X connect 51 2 21 2;
-#X connect 51 3 3 3;
-#X connect 51 3 21 3;
-#X connect 51 4 3 4;
-#X connect 51 4 21 4;
-#X connect 51 5 3 5;
-#X connect 51 5 21 5;
-#X connect 51 6 3 6;
-#X connect 51 6 21 6;
-#X connect 51 7 3 7;
-#X connect 51 7 21 7;
-#X connect 51 8 3 8;
-#X connect 51 8 21 8;
-#X connect 51 9 3 9;
-#X connect 51 9 21 9;
-#X connect 51 10 3 10;
-#X connect 51 10 21 10;
-#X connect 51 11 3 11;
-#X connect 51 11 21 11;
-#X connect 51 12 3 12;
-#X connect 51 12 21 12;
-#X connect 51 13 3 13;
-#X connect 51 13 21 13;
-#X connect 51 14 3 14;
-#X connect 51 14 21 14;
-#X connect 51 15 3 15;
-#X connect 51 15 21 15;
-#X connect 53 0 52 0;
+#X connect 28 0 23 0;

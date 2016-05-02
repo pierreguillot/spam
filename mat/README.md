@@ -10,4 +10,5 @@ A set of abstractions for sound spatialization in Pure Data based on a matricial
 - [ ] mat.2d.decoder.hoa~
 - [ ] mat.2d.granular~
 - [ ] mat.2d.delay~
+- [ ] Explain how the cell are ordered
 - etc.
