@@ -26,7 +26,7 @@ static int spam_iolets_get_noutsig(t_spam_iolets* iolets, int nstatics)
 static void spam_iolets_init(t_spam_iolets* iolets)
 {
     iolets->staticins   = 0;
-    iolets->nins_message= 1;
+    iolets->nins_message= 0;
     iolets->nins_signal = 0;
     iolets->staticout   = 0;
     iolets->nout_message= 0;
