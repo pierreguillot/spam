@@ -1,0 +1,12 @@
+#N canvas 195 202 669 305 10;
+#X obj 357 177 f \$0;
+#X obj 357 158 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 31 26 spam.in~;
+#X obj 31 78 s~ \$0-in;
+#X obj 127 111 mat.2d.dbap, f 32;
+#X obj 492 12 namecanvas \$0-dbap;
+#X msg 357 203 \; \$1-dbap obj 280 80 mat.2d.speaker~;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
