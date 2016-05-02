@@ -103,15 +103,6 @@ if(${WIN32})
 		target_link_libraries(spam_in_tilde pd)
 endif()
 
-set(SPAMCONNECT
-${PROJECT_SOURCE_DIR}/src/spam.connect.c)
-source_group(src FILES ${SPAMCONNECT})
-add_library(spam_connect SHARED ${SPAMCONNECT})
-set_target_properties(spam_connect PROPERTIES LIBRARY_OUTPUT_NAME spam.connect)
-if(${WIN32})
-		target_link_libraries(spam_connect pd)
-endif()
-
 set(SPAMOUTTILDESRC
 	${PROJECT_SOURCE_DIR}/src/spam.tie.h
 	${PROJECT_SOURCE_DIR}/src/spam.tie.c
@@ -123,6 +114,15 @@ add_library(spam_out_tilde SHARED ${SPAMOUTTILDESRC})
 set_target_properties(spam_out_tilde PROPERTIES LIBRARY_OUTPUT_NAME spam.out~)
 if(${WIN32})
 		target_link_libraries(spam_out_tilde pd)
+endif()
+
+set(SPAMCONNECT
+${PROJECT_SOURCE_DIR}/src/spam.connect.c)
+source_group(src FILES ${SPAMCONNECT})
+add_library(spam_connect SHARED ${SPAMCONNECT})
+set_target_properties(spam_connect PROPERTIES LIBRARY_OUTPUT_NAME spam.connect)
+if(${WIN32})
+		target_link_libraries(spam_connect pd)
 endif()
 
 if(${GSPA})
