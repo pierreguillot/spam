@@ -1,130 +1,130 @@
-#N struct 3160-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5403-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3158-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5401-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3156-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5399-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3154-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5397-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3152-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5395-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3150-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5393-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3148-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5391-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3146-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5389-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3144-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5387-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3142-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5385-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3140-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5383-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3138-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5381-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3136-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5379-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3134-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5377-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3132-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5375-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3130-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5373-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3128-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5371-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3126-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5369-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3124-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5367-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3122-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5365-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3120-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5363-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3118-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5361-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3116-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5359-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3114-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5357-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3112-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5355-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3110-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5353-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3108-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5351-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3106-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5349-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3104-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5347-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3102-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5345-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3100-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5343-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3098-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5341-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3096-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5339-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3094-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5337-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3092-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5335-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3090-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5333-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3088-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5331-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3086-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5329-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3084-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5327-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3082-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5325-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3080-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5323-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3078-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5321-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3076-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5319-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3074-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5317-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3072-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5315-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3070-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5313-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3068-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5311-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3066-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5309-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3064-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5307-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3062-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5305-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3060-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5303-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3058-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5301-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3056-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5299-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3054-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5297-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3052-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5295-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3050-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5293-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3048-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5291-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3046-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5289-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3044-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5287-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3042-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5285-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3040-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5283-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3038-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5281-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3036-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5279-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 3034-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 5277-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
 #N canvas 525 71 386 569 10;
 #N canvas 443 106 450 300 header 0;
@@ -139,75 +139,75 @@ the rendering are disable but in a close future \, I'll try to add
 attributes like line width \, a set of colors for cold \, tepid and
 hot signals and a trigger time.;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 3160-t-scope 0.875 0.875 1 1 91 0 1 \;;
-#X scalar 3158-t-scope 0.875 0.75 1 0.875 91 0 1 \;;
-#X scalar 3156-t-scope 0.875 0.625 1 0.75 91 0 1 \;;
-#X scalar 3154-t-scope 0.875 0.5 1 0.625 91 0 1 \;;
-#X scalar 3152-t-scope 0.875 0.375 1 0.5 91 0 1 \;;
-#X scalar 3150-t-scope 0.875 0.25 1 0.375 91 0 1 \;;
-#X scalar 3148-t-scope 0.875 0.125 1 0.25 91 0 1 \;;
-#X scalar 3146-t-scope 0.875 0 1 0.125 91 0 1 \;;
-#X scalar 3144-t-scope 0.75 0.875 0.875 1 91 0 1 \;;
-#X scalar 3142-t-scope 0.75 0.75 0.875 0.875 91 0 1 \;;
-#X scalar 3140-t-scope 0.75 0.625 0.875 0.75 91 0 1 \;;
-#X scalar 3138-t-scope 0.75 0.5 0.875 0.625 91 0 1 \;;
-#X scalar 3136-t-scope 0.75 0.375 0.875 0.5 91 0 1 \;;
-#X scalar 3134-t-scope 0.75 0.25 0.875 0.375 91 0 1 \;;
-#X scalar 3132-t-scope 0.75 0.125 0.875 0.25 91 0 1 \;;
-#X scalar 3130-t-scope 0.75 0 0.875 0.125 91 0 1 \;;
-#X scalar 3128-t-scope 0.625 0.875 0.75 1 91 0 1 \;;
-#X scalar 3126-t-scope 0.625 0.75 0.75 0.875 91 0 1 \;;
-#X scalar 3124-t-scope 0.625 0.625 0.75 0.75 91 0 1 \;;
-#X scalar 3122-t-scope 0.625 0.5 0.75 0.625 91 0 1 \;;
-#X scalar 3120-t-scope 0.625 0.375 0.75 0.5 91 0 1 \;;
-#X scalar 3118-t-scope 0.625 0.25 0.75 0.375 91 0 1 \;;
-#X scalar 3116-t-scope 0.625 0.125 0.75 0.25 91 0 1 \;;
-#X scalar 3114-t-scope 0.625 0 0.75 0.125 91 0 1 \;;
-#X scalar 3112-t-scope 0.5 0.875 0.625 1 91 0 1 \;;
-#X scalar 3110-t-scope 0.5 0.75 0.625 0.875 91 0 1 \;;
-#X scalar 3108-t-scope 0.5 0.625 0.625 0.75 91 0 1 \;;
-#X scalar 3106-t-scope 0.5 0.5 0.625 0.625 91 0 1 \;;
-#X scalar 3104-t-scope 0.5 0.375 0.625 0.5 91 0 1 \;;
-#X scalar 3102-t-scope 0.5 0.25 0.625 0.375 91 0 1 \;;
-#X scalar 3100-t-scope 0.5 0.125 0.625 0.25 91 0 1 \;;
-#X scalar 3098-t-scope 0.5 0 0.625 0.125 91 0 1 \;;
-#X scalar 3096-t-scope 0.375 0.875 0.5 1 91 0 1 \;;
-#X scalar 3094-t-scope 0.375 0.75 0.5 0.875 91 0 1 \;;
-#X scalar 3092-t-scope 0.375 0.625 0.5 0.75 91 0 1 \;;
-#X scalar 3090-t-scope 0.375 0.5 0.5 0.625 91 0 1 \;;
-#X scalar 3088-t-scope 0.375 0.375 0.5 0.5 91 0 1 \;;
-#X scalar 3086-t-scope 0.375 0.25 0.5 0.375 91 0 1 \;;
-#X scalar 3084-t-scope 0.375 0.125 0.5 0.25 91 0 1 \;;
-#X scalar 3082-t-scope 0.375 0 0.5 0.125 91 0 1 \;;
-#X scalar 3080-t-scope 0.25 0.875 0.375 1 91 0 1 \;;
-#X scalar 3078-t-scope 0.25 0.75 0.375 0.875 91 0 1 \;;
-#X scalar 3076-t-scope 0.25 0.625 0.375 0.75 91 0 1 \;;
-#X scalar 3074-t-scope 0.25 0.5 0.375 0.625 91 0 1 \;;
-#X scalar 3072-t-scope 0.25 0.375 0.375 0.5 91 0 1 \;;
-#X scalar 3070-t-scope 0.25 0.25 0.375 0.375 91 0 1 \;;
-#X scalar 3068-t-scope 0.25 0.125 0.375 0.25 91 0 1 \;;
-#X scalar 3066-t-scope 0.25 0 0.375 0.125 91 0 1 \;;
-#X scalar 3064-t-scope 0.125 0.875 0.25 1 91 0 1 \;;
-#X scalar 3062-t-scope 0.125 0.75 0.25 0.875 91 0 1 \;;
-#X scalar 3060-t-scope 0.125 0.625 0.25 0.75 91 0 1 \;;
-#X scalar 3058-t-scope 0.125 0.5 0.25 0.625 91 0 1 \;;
-#X scalar 3056-t-scope 0.125 0.375 0.25 0.5 91 0 1 \;;
-#X scalar 3054-t-scope 0.125 0.25 0.25 0.375 91 0 1 \;;
-#X scalar 3052-t-scope 0.125 0.125 0.25 0.25 91 0 1 \;;
-#X scalar 3050-t-scope 0.125 0 0.25 0.125 91 0 1 \;;
-#X scalar 3048-t-scope 0 0.875 0.125 1 91 0 1 \;;
-#X scalar 3046-t-scope 0 0.75 0.125 0.875 91 0 1 \;;
-#X scalar 3044-t-scope 0 0.625 0.125 0.75 91 0 1 \;;
-#X scalar 3042-t-scope 0 0.5 0.125 0.625 91 0 1 \;;
-#X scalar 3040-t-scope 0 0.375 0.125 0.5 91 0 1 \;;
-#X scalar 3038-t-scope 0 0.25 0.125 0.375 91 0 1 \;;
-#X scalar 3036-t-scope 0 0.125 0.125 0.25 91 0 1 \;;
-#X scalar 3034-t-scope 0 0 0.125 0.125 901 0 1 \;;
+#X scalar 5403-t-scope 0.875 0.875 1 1 91 0 1 \;;
+#X scalar 5401-t-scope 0.875 0.75 1 0.875 91 0 1 \;;
+#X scalar 5399-t-scope 0.875 0.625 1 0.75 91 0 1 \;;
+#X scalar 5397-t-scope 0.875 0.5 1 0.625 91 0 1 \;;
+#X scalar 5395-t-scope 0.875 0.375 1 0.5 91 0 1 \;;
+#X scalar 5393-t-scope 0.875 0.25 1 0.375 91 0 1 \;;
+#X scalar 5391-t-scope 0.875 0.125 1 0.25 91 0 1 \;;
+#X scalar 5389-t-scope 0.875 0 1 0.125 91 0 1 \;;
+#X scalar 5387-t-scope 0.75 0.875 0.875 1 91 0 1 \;;
+#X scalar 5385-t-scope 0.75 0.75 0.875 0.875 91 0 1 \;;
+#X scalar 5383-t-scope 0.75 0.625 0.875 0.75 91 0 1 \;;
+#X scalar 5381-t-scope 0.75 0.5 0.875 0.625 91 0 1 \;;
+#X scalar 5379-t-scope 0.75 0.375 0.875 0.5 91 0 1 \;;
+#X scalar 5377-t-scope 0.75 0.25 0.875 0.375 91 0 1 \;;
+#X scalar 5375-t-scope 0.75 0.125 0.875 0.25 91 0 1 \;;
+#X scalar 5373-t-scope 0.75 0 0.875 0.125 91 0 1 \;;
+#X scalar 5371-t-scope 0.625 0.875 0.75 1 91 0 1 \;;
+#X scalar 5369-t-scope 0.625 0.75 0.75 0.875 91 0 1 \;;
+#X scalar 5367-t-scope 0.625 0.625 0.75 0.75 91 0 1 \;;
+#X scalar 5365-t-scope 0.625 0.5 0.75 0.625 91 0 1 \;;
+#X scalar 5363-t-scope 0.625 0.375 0.75 0.5 91 0 1 \;;
+#X scalar 5361-t-scope 0.625 0.25 0.75 0.375 91 0 1 \;;
+#X scalar 5359-t-scope 0.625 0.125 0.75 0.25 91 0 1 \;;
+#X scalar 5357-t-scope 0.625 0 0.75 0.125 91 0 1 \;;
+#X scalar 5355-t-scope 0.5 0.875 0.625 1 91 0 1 \;;
+#X scalar 5353-t-scope 0.5 0.75 0.625 0.875 91 0 1 \;;
+#X scalar 5351-t-scope 0.5 0.625 0.625 0.75 91 0 1 \;;
+#X scalar 5349-t-scope 0.5 0.5 0.625 0.625 91 0 1 \;;
+#X scalar 5347-t-scope 0.5 0.375 0.625 0.5 91 0 1 \;;
+#X scalar 5345-t-scope 0.5 0.25 0.625 0.375 91 0 1 \;;
+#X scalar 5343-t-scope 0.5 0.125 0.625 0.25 91 0 1 \;;
+#X scalar 5341-t-scope 0.5 0 0.625 0.125 91 0 1 \;;
+#X scalar 5339-t-scope 0.375 0.875 0.5 1 91 0 1 \;;
+#X scalar 5337-t-scope 0.375 0.75 0.5 0.875 91 0 1 \;;
+#X scalar 5335-t-scope 0.375 0.625 0.5 0.75 91 0 1 \;;
+#X scalar 5333-t-scope 0.375 0.5 0.5 0.625 91 0 1 \;;
+#X scalar 5331-t-scope 0.375 0.375 0.5 0.5 91 0 1 \;;
+#X scalar 5329-t-scope 0.375 0.25 0.5 0.375 91 0 1 \;;
+#X scalar 5327-t-scope 0.375 0.125 0.5 0.25 91 0 1 \;;
+#X scalar 5325-t-scope 0.375 0 0.5 0.125 91 0 1 \;;
+#X scalar 5323-t-scope 0.25 0.875 0.375 1 91 0 1 \;;
+#X scalar 5321-t-scope 0.25 0.75 0.375 0.875 91 0 1 \;;
+#X scalar 5319-t-scope 0.25 0.625 0.375 0.75 91 0 1 \;;
+#X scalar 5317-t-scope 0.25 0.5 0.375 0.625 91 0 1 \;;
+#X scalar 5315-t-scope 0.25 0.375 0.375 0.5 91 0 1 \;;
+#X scalar 5313-t-scope 0.25 0.25 0.375 0.375 91 0 1 \;;
+#X scalar 5311-t-scope 0.25 0.125 0.375 0.25 91 0 1 \;;
+#X scalar 5309-t-scope 0.25 0 0.375 0.125 91 0 1 \;;
+#X scalar 5307-t-scope 0.125 0.875 0.25 1 91 0 1 \;;
+#X scalar 5305-t-scope 0.125 0.75 0.25 0.875 91 0 1 \;;
+#X scalar 5303-t-scope 0.125 0.625 0.25 0.75 631 0 1 \;;
+#X scalar 5301-t-scope 0.125 0.5 0.25 0.625 91 0 1 \;;
+#X scalar 5299-t-scope 0.125 0.375 0.25 0.5 91 0 1 \;;
+#X scalar 5297-t-scope 0.125 0.25 0.25 0.375 91 0 1 \;;
+#X scalar 5295-t-scope 0.125 0.125 0.25 0.25 91 0 1 \;;
+#X scalar 5293-t-scope 0.125 0 0.25 0.125 91 0 1 \;;
+#X scalar 5291-t-scope 0 0.875 0.125 1 91 0 1 \;;
+#X scalar 5289-t-scope 0 0.75 0.125 0.875 721 0 1 \;;
+#X scalar 5287-t-scope 0 0.625 0.125 0.75 901 0 1 \;;
+#X scalar 5285-t-scope 0 0.5 0.125 0.625 91 0 1 \;;
+#X scalar 5283-t-scope 0 0.375 0.125 0.5 91 0 1 \;;
+#X scalar 5281-t-scope 0 0.25 0.125 0.375 91 0 1 \;;
+#X scalar 5279-t-scope 0 0.125 0.125 0.25 91 0 1 \;;
+#X scalar 5277-t-scope 0 0 0.125 0.125 91 0 1 \;;
 #X coords 0 0 1 1 180 180 2 100 100;
 #X restore 15 124 pd \$0-scope;
 #X text 15 102 \$0-scope canvas;
 #X obj 249 330 mat.gnbx2;
-#X obj 249 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 249 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 0 22 573 343 trajectory 0;
 #X obj 54 191 t f f, f 15;
