@@ -1,53 +1,53 @@
-#N struct 1971-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1034-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1969-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1032-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1967-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1030-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1965-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1028-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1963-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1026-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1961-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1024-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1959-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1022-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1957-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1020-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1955-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1018-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1953-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1016-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1951-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1014-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1949-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1012-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1947-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1010-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1945-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1008-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1943-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1006-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1941-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1004-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
 #N canvas 456 23 1050 821 10;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 1971-t-scope 0.75 0.75 1 1 91 0 1 \;;
-#X scalar 1969-t-scope 0.75 0.5 1 0.75 91 0 1 \;;
-#X scalar 1967-t-scope 0.75 0.25 1 0.5 91 0 1 \;;
-#X scalar 1965-t-scope 0.75 0 1 0.25 91 0 1 \;;
-#X scalar 1963-t-scope 0.5 0.75 0.75 1 91 0 1 \;;
-#X scalar 1961-t-scope 0.5 0.5 0.75 0.75 91 0 1 \;;
-#X scalar 1959-t-scope 0.5 0.25 0.75 0.5 91 0 1 \;;
-#X scalar 1957-t-scope 0.5 0 0.75 0.25 91 0 1 \;;
-#X scalar 1955-t-scope 0.25 0.75 0.5 1 91 0 1 \;;
-#X scalar 1953-t-scope 0.25 0.5 0.5 0.75 91 0 1 \;;
-#X scalar 1951-t-scope 0.25 0.25 0.5 0.5 91 0 1 \;;
-#X scalar 1949-t-scope 0.25 0 0.5 0.25 91 0 1 \;;
-#X scalar 1947-t-scope 0 0.75 0.25 1 91 0 1 \;;
-#X scalar 1945-t-scope 0 0.5 0.25 0.75 91 0 1 \;;
-#X scalar 1943-t-scope 0 0.25 0.25 0.5 91 0 1 \;;
-#X scalar 1941-t-scope 0 0 0.25 0.25 91 0 1 \;;
+#X scalar 1034-t-scope 0.75 0.75 1 1 999 0 1 \;;
+#X scalar 1032-t-scope 0.75 0.5 1 0.75 999 0 1 \;;
+#X scalar 1030-t-scope 0.75 0.25 1 0.5 999 0 1 \;;
+#X scalar 1028-t-scope 0.75 0 1 0.25 999 0 1 \;;
+#X scalar 1026-t-scope 0.5 0.75 0.75 1 999 0 1 \;;
+#X scalar 1024-t-scope 0.5 0.5 0.75 0.75 999 0 1 \;;
+#X scalar 1022-t-scope 0.5 0.25 0.75 0.5 999 0 1 \;;
+#X scalar 1020-t-scope 0.5 0 0.75 0.25 999 0 1 \;;
+#X scalar 1018-t-scope 0.25 0.75 0.5 1 999 0 1 \;;
+#X scalar 1016-t-scope 0.25 0.5 0.5 0.75 999 0 1 \;;
+#X scalar 1014-t-scope 0.25 0.25 0.5 0.5 999 0 1 \;;
+#X scalar 1012-t-scope 0.25 0 0.5 0.25 999 0 1 \;;
+#X scalar 1010-t-scope 0 0.75 0.25 1 999 0 1 \;;
+#X scalar 1008-t-scope 0 0.5 0.25 0.75 999 0 1 \;;
+#X scalar 1006-t-scope 0 0.25 0.25 0.5 999 0 1 \;;
+#X scalar 1004-t-scope 0 0 0.25 0.25 999 0 1 \;;
 #X coords 0 0 1 1 116 112 2 100 100;
 #X restore 566 364 pd \$0-scope;
 #X obj 79 166 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
@@ -197,11 +197,13 @@ float c2 float lw;
 #X obj 145 199 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 78 257 spam~ 16 mat.2d.encoder~ 4 4, f 38;
+#X obj 448 31 spam.connect;
+#X obj 444 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 1 0 39 0;
 #X connect 2 0 6 0;
 #X connect 4 0 51 1;
 #X connect 5 0 7 0;
-#X connect 6 0 3 16;
 #X connect 7 0 4 0;
 #X connect 16 0 17 0;
 #X connect 17 0 9 0;
@@ -276,3 +278,4 @@ float c2 float lw;
 #X connect 51 14 21 14;
 #X connect 51 15 3 15;
 #X connect 51 15 21 15;
+#X connect 53 0 52 0;

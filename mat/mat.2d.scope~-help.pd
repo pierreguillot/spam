@@ -1,9 +1,330 @@
-#N canvas 217 441 424 363 10;
+#N struct 2749-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2747-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2745-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2743-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2741-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2739-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2737-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2735-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2733-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2731-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2729-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2727-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2725-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2723-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2721-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2719-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2717-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2715-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2713-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2711-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2709-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2707-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2705-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2703-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2701-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2699-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2697-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2695-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2693-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2691-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2689-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2687-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2685-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2683-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2681-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2679-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2677-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2675-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2673-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2671-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2669-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2667-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2665-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2663-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2661-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2659-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2657-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2655-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2653-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2651-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2649-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2647-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2645-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2643-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2641-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2639-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2637-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2635-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2633-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2631-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2629-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2627-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2625-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N struct 2623-t-scope float x1 float y1 float x2 float y2 float c1
+float c2 float lw;
+#N canvas 525 71 386 569 10;
 #N canvas 443 106 450 300 header 0;
 #X obj 3 3 cnv 18 18 18 empty empty mat.2d.scope~ 2 8 0 14 -262144
 -66577 0;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 6 pd header;
-#X text 4 31 The abstraction displays the rms of each signal in .;
-#X text 4 61 todo;
+#X text 4 31 The abstraction displays the rms amplitude of each signal
+of a matrix inside a canvas. For the moment the parameters to control
+the rendering are disable but in a close future \, I'll try to add
+attributes like line width \, a set of colors for cold \, tepid and
+hot signals and a trigger time.;
+#N canvas 0 22 223 200 \$0-scope 0;
+#X scalar 2749-t-scope 0.875 0.875 1 1 811 0 1 \;;
+#X scalar 2747-t-scope 0.875 0.75 1 0.875 541 0 1 \;;
+#X scalar 2745-t-scope 0.875 0.625 1 0.75 91 0 1 \;;
+#X scalar 2743-t-scope 0.875 0.5 1 0.625 91 0 1 \;;
+#X scalar 2741-t-scope 0.875 0.375 1 0.5 91 0 1 \;;
+#X scalar 2739-t-scope 0.875 0.25 1 0.375 91 0 1 \;;
+#X scalar 2737-t-scope 0.875 0.125 1 0.25 91 0 1 \;;
+#X scalar 2735-t-scope 0.875 0 1 0.125 91 0 1 \;;
+#X scalar 2733-t-scope 0.75 0.875 0.875 1 811 0 1 \;;
+#X scalar 2731-t-scope 0.75 0.75 0.875 0.875 91 0 1 \;;
+#X scalar 2729-t-scope 0.75 0.625 0.875 0.75 91 0 1 \;;
+#X scalar 2727-t-scope 0.75 0.5 0.875 0.625 91 0 1 \;;
+#X scalar 2725-t-scope 0.75 0.375 0.875 0.5 91 0 1 \;;
+#X scalar 2723-t-scope 0.75 0.25 0.875 0.375 91 0 1 \;;
+#X scalar 2721-t-scope 0.75 0.125 0.875 0.25 91 0 1 \;;
+#X scalar 2719-t-scope 0.75 0 0.875 0.125 91 0 1 \;;
+#X scalar 2717-t-scope 0.625 0.875 0.75 1 91 0 1 \;;
+#X scalar 2715-t-scope 0.625 0.75 0.75 0.875 91 0 1 \;;
+#X scalar 2713-t-scope 0.625 0.625 0.75 0.75 91 0 1 \;;
+#X scalar 2711-t-scope 0.625 0.5 0.75 0.625 91 0 1 \;;
+#X scalar 2709-t-scope 0.625 0.375 0.75 0.5 91 0 1 \;;
+#X scalar 2707-t-scope 0.625 0.25 0.75 0.375 91 0 1 \;;
+#X scalar 2705-t-scope 0.625 0.125 0.75 0.25 91 0 1 \;;
+#X scalar 2703-t-scope 0.625 0 0.75 0.125 91 0 1 \;;
+#X scalar 2701-t-scope 0.5 0.875 0.625 1 91 0 1 \;;
+#X scalar 2699-t-scope 0.5 0.75 0.625 0.875 91 0 1 \;;
+#X scalar 2697-t-scope 0.5 0.625 0.625 0.75 91 0 1 \;;
+#X scalar 2695-t-scope 0.5 0.5 0.625 0.625 91 0 1 \;;
+#X scalar 2693-t-scope 0.5 0.375 0.625 0.5 91 0 1 \;;
+#X scalar 2691-t-scope 0.5 0.25 0.625 0.375 91 0 1 \;;
+#X scalar 2689-t-scope 0.5 0.125 0.625 0.25 91 0 1 \;;
+#X scalar 2687-t-scope 0.5 0 0.625 0.125 91 0 1 \;;
+#X scalar 2685-t-scope 0.375 0.875 0.5 1 91 0 1 \;;
+#X scalar 2683-t-scope 0.375 0.75 0.5 0.875 91 0 1 \;;
+#X scalar 2681-t-scope 0.375 0.625 0.5 0.75 91 0 1 \;;
+#X scalar 2679-t-scope 0.375 0.5 0.5 0.625 91 0 1 \;;
+#X scalar 2677-t-scope 0.375 0.375 0.5 0.5 91 0 1 \;;
+#X scalar 2675-t-scope 0.375 0.25 0.5 0.375 91 0 1 \;;
+#X scalar 2673-t-scope 0.375 0.125 0.5 0.25 91 0 1 \;;
+#X scalar 2671-t-scope 0.375 0 0.5 0.125 91 0 1 \;;
+#X scalar 2669-t-scope 0.25 0.875 0.375 1 91 0 1 \;;
+#X scalar 2667-t-scope 0.25 0.75 0.375 0.875 91 0 1 \;;
+#X scalar 2665-t-scope 0.25 0.625 0.375 0.75 91 0 1 \;;
+#X scalar 2663-t-scope 0.25 0.5 0.375 0.625 91 0 1 \;;
+#X scalar 2661-t-scope 0.25 0.375 0.375 0.5 91 0 1 \;;
+#X scalar 2659-t-scope 0.25 0.25 0.375 0.375 91 0 1 \;;
+#X scalar 2657-t-scope 0.25 0.125 0.375 0.25 91 0 1 \;;
+#X scalar 2655-t-scope 0.25 0 0.375 0.125 91 0 1 \;;
+#X scalar 2653-t-scope 0.125 0.875 0.25 1 91 0 1 \;;
+#X scalar 2651-t-scope 0.125 0.75 0.25 0.875 91 0 1 \;;
+#X scalar 2649-t-scope 0.125 0.625 0.25 0.75 91 0 1 \;;
+#X scalar 2647-t-scope 0.125 0.5 0.25 0.625 91 0 1 \;;
+#X scalar 2645-t-scope 0.125 0.375 0.25 0.5 91 0 1 \;;
+#X scalar 2643-t-scope 0.125 0.25 0.25 0.375 91 0 1 \;;
+#X scalar 2641-t-scope 0.125 0.125 0.25 0.25 91 0 1 \;;
+#X scalar 2639-t-scope 0.125 0 0.25 0.125 91 0 1 \;;
+#X scalar 2637-t-scope 0 0.875 0.125 1 91 0 1 \;;
+#X scalar 2635-t-scope 0 0.75 0.125 0.875 91 0 1 \;;
+#X scalar 2633-t-scope 0 0.625 0.125 0.75 91 0 1 \;;
+#X scalar 2631-t-scope 0 0.5 0.125 0.625 91 0 1 \;;
+#X scalar 2629-t-scope 0 0.375 0.125 0.5 91 0 1 \;;
+#X scalar 2627-t-scope 0 0.25 0.125 0.375 91 0 1 \;;
+#X scalar 2625-t-scope 0 0.125 0.125 0.25 91 0 1 \;;
+#X scalar 2623-t-scope 0 0 0.125 0.125 91 0 1 \;;
+#X coords 0 0 1 1 180 180 2 100 100;
+#X restore 15 124 pd \$0-scope;
+#X text 15 102 \$0-scope canvas;
+#X obj 249 330 mat.gnbx2;
+#X obj 249 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 0 22 573 343 trajectory 0;
+#X obj 54 191 t f f, f 15;
+#X obj 54 279 pack f f, f 15;
+#X obj 54 237 * 6.28319;
+#X obj 141 237 * 6.28319;
+#X obj 54 128 line 0;
+#X obj 54 257 sin;
+#X obj 141 257 sin;
+#X obj 54 215 * 3;
+#X obj 141 215 * 1;
+#X msg 54 104 \$1 \, 1 10000;
+#X obj 54 80 f 0;
+#X obj 144 96 sel 1;
+#X obj 54 301 outlet;
+#X msg 17 104 stop;
+#X obj 17 53 sel 0 1, f 13;
+#X obj 144 118 f 0;
+#X obj 17 25 inlet;
+#X connect 0 0 7 0;
+#X connect 0 1 8 0;
+#X connect 1 0 12 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 4 0 11 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
+#X connect 11 0 15 0;
+#X connect 11 1 10 1;
+#X connect 13 0 4 0;
+#X connect 14 0 13 0;
+#X connect 14 1 10 0;
+#X connect 15 0 10 0;
+#X connect 16 0 14 0;
+#X restore 249 304 pd trajectory;
+#X obj 249 255 loadbang;
+#X text 4 431 The arguments expected by the abstraction are the number
+of rows \, the number of columns and the name of the canvas. The abstraction
+uses the Pure Data structures to paint the canvas \, so you must always
+ensure that the canvas has been created before the abstraction. You
+can resize the canvas without;
+#X obj 24 387 spam~ 64 mat.2d.scope~ 8 8 \$0-scope, f 38;
+#X obj 24 351 spam~ 64 mat.2d.encoder~ 8 8, f 38;
+#X msg 168 312 spread 0.3;
+#X obj 24 321 sig~ 1;
+#X connect 4 0 10 1;
+#X connect 5 0 6 0;
+#X connect 6 0 4 0;
+#X connect 7 0 5 0;
+#X connect 10 0 9 0;
+#X connect 10 1 9 1;
+#X connect 10 2 9 2;
+#X connect 10 3 9 3;
+#X connect 10 4 9 4;
+#X connect 10 5 9 5;
+#X connect 10 6 9 6;
+#X connect 10 7 9 7;
+#X connect 10 8 9 8;
+#X connect 10 9 9 9;
+#X connect 10 10 9 10;
+#X connect 10 11 9 11;
+#X connect 10 12 9 12;
+#X connect 10 13 9 13;
+#X connect 10 14 9 14;
+#X connect 10 15 9 15;
+#X connect 10 16 9 16;
+#X connect 10 17 9 17;
+#X connect 10 18 9 18;
+#X connect 10 19 9 19;
+#X connect 10 20 9 20;
+#X connect 10 21 9 21;
+#X connect 10 22 9 22;
+#X connect 10 23 9 23;
+#X connect 10 24 9 24;
+#X connect 10 25 9 25;
+#X connect 10 26 9 26;
+#X connect 10 27 9 27;
+#X connect 10 28 9 28;
+#X connect 10 29 9 29;
+#X connect 10 30 9 30;
+#X connect 10 31 9 31;
+#X connect 10 32 9 32;
+#X connect 10 33 9 33;
+#X connect 10 34 9 34;
+#X connect 10 35 9 35;
+#X connect 10 36 9 36;
+#X connect 10 37 9 37;
+#X connect 10 38 9 38;
+#X connect 10 39 9 39;
+#X connect 10 40 9 40;
+#X connect 10 41 9 41;
+#X connect 10 42 9 42;
+#X connect 10 43 9 43;
+#X connect 10 44 9 44;
+#X connect 10 45 9 45;
+#X connect 10 46 9 46;
+#X connect 10 47 9 47;
+#X connect 10 48 9 48;
+#X connect 10 49 9 49;
+#X connect 10 50 9 50;
+#X connect 10 51 9 51;
+#X connect 10 52 9 52;
+#X connect 10 53 9 53;
+#X connect 10 54 9 54;
+#X connect 10 55 9 55;
+#X connect 10 56 9 56;
+#X connect 10 57 9 57;
+#X connect 10 58 9 58;
+#X connect 10 59 9 59;
+#X connect 10 60 9 60;
+#X connect 10 61 9 61;
+#X connect 10 62 9 62;
+#X connect 10 63 9 63;
+#X connect 11 0 10 1;
+#X connect 12 0 10 0;
