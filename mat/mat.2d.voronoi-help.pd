@@ -1,0 +1,17 @@
+#N canvas 560 244 591 432 10;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty mat.2d.voronoi 2 8 0 14 -262144
+-66577 0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 6 pd header;
+#X text 4 31 The abstraction computes the voronoi diagram of a set
+of points. As the abstraction is used inside a matrix \, the result
+is not the voronoi diagram for all the point but for one point. In
+a matricial context \, this approach increases the number of calculus
+but it simplifies the patching.;
+#X obj 284 169 text define -k \$0-points;
+#A set -1 1 \; 1 1 \; 1 -1 \; -1 -1 \;;
+#X obj 76 175 mat.2d.voronoi \$0-points;
+#X msg 76 150 0 0;
+#X connect 4 0 3 0;
