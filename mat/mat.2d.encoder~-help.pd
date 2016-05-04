@@ -1,57 +1,57 @@
-#N struct 8426-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1645-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8424-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1643-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8422-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1641-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8420-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1639-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8418-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1637-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8416-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1635-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8414-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1633-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8412-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1631-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8410-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1629-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8408-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1627-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8406-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1625-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8404-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1623-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8402-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1621-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8400-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1619-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8398-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1617-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 8396-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1615-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
 #N canvas 173 23 388 792 10;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 8426-t-scope 0.75 0.75 1 1 91 0 1 \;;
-#X scalar 8424-t-scope 0.75 0.5 1 0.75 91 0 1 \;;
-#X scalar 8422-t-scope 0.75 0.25 1 0.5 91 0 1 \;;
-#X scalar 8420-t-scope 0.75 0 1 0.25 91 0 1 \;;
-#X scalar 8418-t-scope 0.5 0.75 0.75 1 91 0 1 \;;
-#X scalar 8416-t-scope 0.5 0.5 0.75 0.75 91 0 1 \;;
-#X scalar 8414-t-scope 0.5 0.25 0.75 0.5 91 0 1 \;;
-#X scalar 8412-t-scope 0.5 0 0.75 0.25 91 0 1 \;;
-#X scalar 8410-t-scope 0.25 0.75 0.5 1 91 0 1 \;;
-#X scalar 8408-t-scope 0.25 0.5 0.5 0.75 91 0 1 \;;
-#X scalar 8406-t-scope 0.25 0.25 0.5 0.5 91 0 1 \;;
-#X scalar 8404-t-scope 0.25 0 0.5 0.25 91 0 1 \;;
-#X scalar 8402-t-scope 0 0.75 0.25 1 91 0 1 \;;
-#X scalar 8400-t-scope 0 0.5 0.25 0.75 91 0 1 \;;
-#X scalar 8398-t-scope 0 0.25 0.25 0.5 91 0 1 \;;
-#X scalar 8396-t-scope 0 0 0.25 0.25 91 0 1 \;;
+#X scalar 1645-t-scope 0.75 0.75 1 1 91 0 1 \;;
+#X scalar 1643-t-scope 0.75 0.5 1 0.75 91 0 1 \;;
+#X scalar 1641-t-scope 0.75 0.25 1 0.5 91 0 1 \;;
+#X scalar 1639-t-scope 0.75 0 1 0.25 91 0 1 \;;
+#X scalar 1637-t-scope 0.5 0.75 0.75 1 91 0 1 \;;
+#X scalar 1635-t-scope 0.5 0.5 0.75 0.75 451 0 1 \;;
+#X scalar 1633-t-scope 0.5 0.25 0.75 0.5 451 0 1 \;;
+#X scalar 1631-t-scope 0.5 0 0.75 0.25 91 0 1 \;;
+#X scalar 1629-t-scope 0.25 0.75 0.5 1 91 0 1 \;;
+#X scalar 1627-t-scope 0.25 0.5 0.5 0.75 451 0 1 \;;
+#X scalar 1625-t-scope 0.25 0.25 0.5 0.5 451 0 1 \;;
+#X scalar 1623-t-scope 0.25 0 0.5 0.25 91 0 1 \;;
+#X scalar 1621-t-scope 0 0.75 0.25 1 91 0 1 \;;
+#X scalar 1619-t-scope 0 0.5 0.25 0.75 91 0 1 \;;
+#X scalar 1617-t-scope 0 0.25 0.25 0.5 91 0 1 \;;
+#X scalar 1615-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X coords 0 0 1 1 116 112 2 100 100;
 #X restore 67 432 pd \$0-scope;
 #X obj 14 562 spam~ 16 mat.2d.scope~ 4 4 \$0-scope, f 38;
-#X obj 148 372 mat.gnbx2;
+#X obj 148 365 mat.gnbx2;
 #X obj 148 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 22 573 343 trajectory 0;
@@ -92,7 +92,7 @@ float c2 float lw;
 #X connect 14 1 10 0;
 #X connect 15 0 10 0;
 #X connect 16 0 14 0;
-#X restore 148 347 pd trajectory;
+#X restore 148 344 pd trajectory;
 #X obj 258 682 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
 #X obj 15 682 vu 12 80 empty empty -1 -8 0 10 -66577 -1 1 0;
 #X obj 14 639 env~;
@@ -122,24 +122,10 @@ float c2 float lw;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 6 pd header;
-#X text 4 31 The abstraction encodes a signal into a matrix depending
-on cartesian coordinates. The weight of the signal in each cell is
-computed using the distance between the encoding position and the cell
-position. To allow an adaptation of the encoding to all the sizes of
-matrices \, the coordinates are scaled between -1 and 1 The weight
-of the signal decreases with the distance and when the distance reaches
-its maximum the weight is null. To sound a bit more natural \, the
-weight is transposed on a cosinus scaled. By default \, the distance
-is limited in order to never exceed the distance between two cells.
-Thus the signal can't be inside of more than five cells. Nevertheless
-\, a blur factor allows to stretch the limit and to spread the signal
-over a larger set of cells.;
 #X text 4 209 The arguments expected by the abstraction are the number
 of rows \, the number of columns., f 60;
 #X text 142 245 Uses a list of two float to set the abscissa and the
 ordinate position of encoding., f 37;
-#X text 142 290 Uses the blur message with a float value to spread
-the signal., f 37;
 #X obj 239 323 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 22 240 385 blurry 0;
@@ -176,9 +162,24 @@ the signal., f 37;
 #X connect 12 0 13 0;
 #X connect 13 0 5 0;
 #X connect 14 0 1 0;
-#X restore 239 347 pd blurry;
-#X obj 239 369 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X restore 239 344 pd blurry;
+#X obj 239 364 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
+#X msg 239 383 spread \$1;
+#X text 4 31 The abstraction encodes a signal into a matrix depending
+on cartesian coordinates. The weight of the signal in each cell is
+computed using the distance between the encoding position and the cell
+position. To allow an adaptation of the encoding to all the sizes of
+matrices \, the coordinates are scaled between -1 and 1 The weight
+of the signal decreases with the distance and when the distance reaches
+its maximum the weight is null. To sound a bit more natural \, the
+weight is transposed on a cosinus scaled. By default \, the distance
+is limited in order to never exceed the distance between two cells.
+Thus the signal can't be inside of more than five cells. Nevertheless
+\, a spread factor allows to stretch the limit and to spread the signal
+over a larger set of cells.;
+#X text 142 290 Uses the spread message with a float value to spread
+the signal., f 37;
 #X connect 2 0 13 1;
 #X connect 3 0 4 0;
 #X connect 4 0 2 0;
@@ -236,6 +237,7 @@ the signal., f 37;
 #X connect 24 0 13 0;
 #X connect 25 0 26 0;
 #X connect 26 0 21 0;
+#X connect 30 0 31 0;
+#X connect 31 0 32 0;
 #X connect 32 0 33 0;
-#X connect 33 0 34 0;
-#X connect 34 0 13 1;
+#X connect 33 0 13 1;
