@@ -1,27 +1,48 @@
-#N canvas 663 301 379 262 10;
+#N canvas 703 415 386 316 10;
 #N canvas 443 106 450 300 header 0;
 #X obj 3 3 cnv 18 18 18 empty empty mat.2d.rctocar 2 8 0 14 -262144
 -66577 0;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 6 pd header;
-#X obj 13 212 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1.5 256;
-#X obj 70 212 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.5 256;
-#X obj 13 188 unpack, f 10;
 #X text 4 31 The abstraction transforms a row index and a column index
 of a matrix (the position of an element inside a matrix) into a cartesian
 position between -1 and 1 on the abscissa and ordinate axes depending
 on the total number of rows and columns in the matrix.;
-#X text 4 101 The first argument is the number of rows in the matrix
-and the second argument is the number of column in the matrix.;
-#X obj 13 166 mat.2d.rctocar 4 4;
-#X obj 13 140 mat.gnbx2;
-#X text 82 139 Use intergers;
-#X text 11 232 abscissa;
-#X text 71 232 ordinate;
-#X connect 3 0 1 0;
-#X connect 3 1 2 0;
-#X connect 6 0 3 0;
-#X connect 7 0 6 0;
+#X obj 13 190 mat.gnbx2;
+#X text 82 159 Use intergers;
+#X text 4 101 The first inlet expects a list for the row index and
+the column index. The second inlet expects a list for the dimension
+of the matrix \, total number of rows and columns in the matrix.;
+#X obj 94 174 loadbang;
+#X msg 94 196 5 5;
+#X msg 134 196 4 2;
+#X text 11 171 row;
+#X text 47 171 col;
+#X obj 223 205 mat.2d.itorc;
+#X obj 292 158 loadbang;
+#X msg 292 182 5 3;
+#X obj 223 230 mat.gnbx2;
+#X obj 13 250 mat.gnbx2;
+#X text 11 267 abs;
+#X text 46 267 ord;
+#X obj 223 183 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 15 256;
+#X obj 223 252 mat.2d.rctocar;
+#X obj 223 276 mat.gnbx2;
+#X text 221 293 abs;
+#X text 256 293 ord;
+#X text 221 165 index;
+#X obj 13 226 mat.2d.rctocar;
+#X connect 2 0 23 0;
+#X connect 5 0 6 0;
+#X connect 6 0 23 1;
+#X connect 7 0 23 1;
+#X connect 10 0 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 10 1;
+#X connect 12 0 18 1;
+#X connect 13 0 18 0;
+#X connect 17 0 10 0;
+#X connect 18 0 19 0;
+#X connect 23 0 14 0;
