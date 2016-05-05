@@ -1,0 +1,58 @@
+#N canvas 658 275 411 346 10;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty mat.2d.itorc 2 8 0 14 -262144 -66577
+0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 6 pd header;
+#X text 4 280 The result is a list containing the row index and a column
+index inside the matrix.;
+#X text 4 31 The abstraction transforms an index of a vector (the position
+of an element inside a vector) into a row index and a column index
+of a matrix (the position of an element inside a matrix) depending
+on the total number of rows and columns in the matrix.;
+#X obj 253 148 loadbang;
+#X text 4 101 The first inlet expects the position index from the vector.
+The second inlet expects the dimension of the matrix \, the number
+of rows and the number of column in the matrix.;
+#X obj 253 170 t b b, f 12;
+#X msg 253 192 14;
+#X msg 322 192 7 6;
+#X obj 13 215 mat.2d.itorc;
+#X obj 132 148 loadbang;
+#X obj 132 170 t b b, f 12;
+#X obj 13 148 loadbang;
+#X obj 13 170 t b b, f 12;
+#X msg 201 192 3 3;
+#X msg 132 192 4;
+#X msg 13 192 12;
+#X msg 82 192 5 3;
+#X obj 253 215 mat.2d.itorc;
+#X obj 133 215 mat.2d.itorc;
+#X text 11 261 row;
+#X text 47 261 col;
+#X obj 13 240 mat.gnbx2;
+#X obj 133 240 mat.gnbx2;
+#X text 131 261 row;
+#X text 167 261 col;
+#X obj 253 240 mat.gnbx2;
+#X text 251 261 row;
+#X text 287 261 col;
+#X connect 3 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 6 0 17 0;
+#X connect 7 0 17 1;
+#X connect 8 0 21 0;
+#X connect 9 0 10 0;
+#X connect 10 0 14 0;
+#X connect 10 1 13 0;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 12 1 16 0;
+#X connect 13 0 18 1;
+#X connect 14 0 18 0;
+#X connect 15 0 8 0;
+#X connect 16 0 8 1;
+#X connect 17 0 25 0;
+#X connect 18 0 22 0;

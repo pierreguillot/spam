@@ -1,0 +1,24 @@
+#N canvas 217 441 380 262 10;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty mat.2d.distance 2 8 0 14 -262144
+-66577 0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 6 pd header;
+#X obj 13 171 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 4 31 The abstraction computes the euclidean distance between
+two points with their cartesian coordinates.;
+#X obj 13 120 mat.gnbx2;
+#X obj 89 120 mat.gnbx2;
+#X obj 13 144 mat.2d.distance, f 26;
+#X text 4 61 The two first inlets expect a list of two values that
+represent the abscissa and the ordinate of each point. The third inlet
+is a weight factor for the abscissa and the ordiante.;
+#X obj 167 120 mat.gnbx2;
+#X text 4 211 The equation is d = √((x1 - x2)*wx)^2 + ((y1 - y2)*wy)^2)
+;
+#X connect 3 0 5 0;
+#X connect 4 0 5 1;
+#X connect 5 0 1 0;
+#X connect 7 0 5 2;

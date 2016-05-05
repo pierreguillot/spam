@@ -1,0 +1,12 @@
+#N canvas 399 150 183 176 10;
+#X obj 20 94 list split 1;
+#X obj 54 119 outlet;
+#X msg 20 29 symbol mat.dim;
+#X obj 20 4 inlet;
+#X obj 20 50 text search \$1;
+#X obj 20 72 text get \$1;
+#X connect 0 1 1 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 0 0;

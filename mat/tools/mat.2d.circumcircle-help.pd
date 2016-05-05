@@ -1,0 +1,38 @@
+#N canvas 52 459 376 280 10;
+#N canvas 443 106 450 300 header 0;
+#X obj 3 3 cnv 18 18 18 empty empty mat.2d.distance 2 8 0 14 -262144
+-66577 0;
+#X text 215 4 by Pierre Guillot - 2016;
+#X coords 0 -1 1 1 365 20 2 2 2;
+#X restore 6 6 pd header;
+#X obj 190 154 mat.gnbx2;
+#X obj 13 154 mat.gnbx2;
+#X obj 101 154 mat.gnbx2;
+#X obj 13 194 mat.gnbx2;
+#X text 4 31 The abstraction computes the center and the radius of
+the circumscribed circle of a triangle. Each inlet expects the cartesian
+coordinates of a vertex of the triangle. The computation is triggered
+by the left most inlet.;
+#X obj 13 172 mat.2d.circumcircle, f 30;
+#X obj 190 193 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1.25 256;
+#X obj 13 91 loadbang;
+#X msg 101 133 1 0;
+#X msg 190 133 -1 0;
+#X msg 13 133 0 2;
+#X obj 13 113 t b b b, f 30;
+#X text 4 211 The left outlet outputs the cartesian coordinates of
+the center of the circumscribed circle and the right inlet is the radius
+of the circumscribed circle.;
+#X connect 1 0 6 2;
+#X connect 2 0 6 0;
+#X connect 3 0 6 1;
+#X connect 6 0 4 0;
+#X connect 6 1 7 0;
+#X connect 8 0 12 0;
+#X connect 9 0 3 0;
+#X connect 10 0 1 0;
+#X connect 11 0 2 0;
+#X connect 12 0 11 0;
+#X connect 12 1 9 0;
+#X connect 12 2 10 0;

@@ -34,6 +34,7 @@ after_build:
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
     - rename %APPVEYOR_BUILD_FOLDER%\bin spam
     - 7z a %ZIP%.zip %APPVEYOR_BUILD_FOLDER%\spam\
+    - cd %APPVEYOR_BUILD_FOLDER%\
 
 artifacts:
   - path: '*.zip'
