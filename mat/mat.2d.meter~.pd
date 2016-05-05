@@ -154,7 +154,7 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 20 0 21 0;
 #X connect 21 0 0 0;
 #X restore 615 73 pd set_colors;
-#N canvas 0 22 450 300 set_channel 0;
+#N canvas 0 22 584 342 set_channel 0;
 #X obj 12 110 list split 1;
 #N canvas 368 171 450 300 l_it2 0;
 #X obj 43 180 until;
@@ -204,6 +204,10 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X msg 12 44 symbol ls_positions;
 #X obj 12 66 text search \$3;
 #X obj 12 88 text get \$3;
+#X obj 204 113 == -1;
+#X obj 204 135 sel 1;
+#X obj 204 194 print mat.2d.meter~;
+#X msg 204 170 warning no ls_positions in the configuration;
 #X connect 0 1 1 0;
 #X connect 1 0 7 0;
 #X connect 1 1 3 0;
@@ -220,7 +224,11 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 11 0 10 0;
 #X connect 12 0 13 0;
 #X connect 13 0 14 0;
+#X connect 13 0 15 0;
 #X connect 14 0 0 0;
+#X connect 15 0 16 0;
+#X connect 16 0 18 0;
+#X connect 18 0 17 0;
 #X restore 426 72 pd set_channel;
 #X obj 380 342 r \$0-s1;
 #X obj 404 321 r \$0-s2;

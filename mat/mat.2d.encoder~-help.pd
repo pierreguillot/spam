@@ -1,53 +1,53 @@
-#N struct 1645-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2197-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1643-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2195-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1641-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2193-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1639-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2191-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1637-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2189-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1635-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2187-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1633-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2185-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1631-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2183-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1629-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2181-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1627-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2179-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1625-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2177-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1623-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2175-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1621-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2173-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1619-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2171-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1617-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2169-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
-#N struct 1615-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 2167-t-scope float x1 float y1 float x2 float y2 float c1
 float c2 float lw;
 #N canvas 173 23 388 792 10;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 1645-t-scope 0.75 0.75 1 1 91 0 1 \;;
-#X scalar 1643-t-scope 0.75 0.5 1 0.75 91 0 1 \;;
-#X scalar 1641-t-scope 0.75 0.25 1 0.5 91 0 1 \;;
-#X scalar 1639-t-scope 0.75 0 1 0.25 91 0 1 \;;
-#X scalar 1637-t-scope 0.5 0.75 0.75 1 91 0 1 \;;
-#X scalar 1635-t-scope 0.5 0.5 0.75 0.75 451 0 1 \;;
-#X scalar 1633-t-scope 0.5 0.25 0.75 0.5 451 0 1 \;;
-#X scalar 1631-t-scope 0.5 0 0.75 0.25 91 0 1 \;;
-#X scalar 1629-t-scope 0.25 0.75 0.5 1 91 0 1 \;;
-#X scalar 1627-t-scope 0.25 0.5 0.5 0.75 451 0 1 \;;
-#X scalar 1625-t-scope 0.25 0.25 0.5 0.5 451 0 1 \;;
-#X scalar 1623-t-scope 0.25 0 0.5 0.25 91 0 1 \;;
-#X scalar 1621-t-scope 0 0.75 0.25 1 91 0 1 \;;
-#X scalar 1619-t-scope 0 0.5 0.25 0.75 91 0 1 \;;
-#X scalar 1617-t-scope 0 0.25 0.25 0.5 91 0 1 \;;
-#X scalar 1615-t-scope 0 0 0.25 0.25 91 0 1 \;;
+#X scalar 2197-t-scope 0.75 0.75 1 1 451 0 1 \;;
+#X scalar 2195-t-scope 0.75 0.5 1 0.75 451 0 1 \;;
+#X scalar 2193-t-scope 0.75 0.25 1 0.5 451 0 1 \;;
+#X scalar 2191-t-scope 0.75 0 1 0.25 451 0 1 \;;
+#X scalar 2189-t-scope 0.5 0.75 0.75 1 451 0 1 \;;
+#X scalar 2187-t-scope 0.5 0.5 0.75 0.75 451 0 1 \;;
+#X scalar 2185-t-scope 0.5 0.25 0.75 0.5 451 0 1 \;;
+#X scalar 2183-t-scope 0.5 0 0.75 0.25 451 0 1 \;;
+#X scalar 2181-t-scope 0.25 0.75 0.5 1 451 0 1 \;;
+#X scalar 2179-t-scope 0.25 0.5 0.5 0.75 451 0 1 \;;
+#X scalar 2177-t-scope 0.25 0.25 0.5 0.5 451 0 1 \;;
+#X scalar 2175-t-scope 0.25 0 0.5 0.25 451 0 1 \;;
+#X scalar 2173-t-scope 0 0.75 0.25 1 451 0 1 \;;
+#X scalar 2171-t-scope 0 0.5 0.25 0.75 451 0 1 \;;
+#X scalar 2169-t-scope 0 0.25 0.25 0.5 451 0 1 \;;
+#X scalar 2167-t-scope 0 0 0.25 0.25 451 0 1 \;;
 #X coords 0 0 1 1 116 112 2 100 100;
 #X restore 67 432 pd \$0-scope;
 #X obj 14 562 spam~ 16 mat.2d.scope~ 4 4 \$0-scope, f 38;
@@ -163,8 +163,8 @@ ordinate position of encoding., f 37;
 #X connect 13 0 5 0;
 #X connect 14 0 1 0;
 #X restore 239 344 pd blurry;
-#X obj 239 364 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+#X obj 239 364 nbx 5 14 1 100 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 58.57 256;
 #X msg 239 383 spread \$1;
 #X text 4 31 The abstraction encodes a signal into a matrix depending
 on cartesian coordinates. The weight of the signal in each cell is

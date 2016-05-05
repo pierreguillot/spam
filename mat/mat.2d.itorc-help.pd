@@ -1,4 +1,4 @@
-#N canvas 167 257 381 313 10;
+#N canvas 167 257 430 324 10;
 #N canvas 443 106 450 300 header 0;
 #X obj 3 3 cnv 18 18 18 empty empty mat.2d.itorc 2 8 0 14 -262144 -66577
 0;
@@ -9,9 +9,9 @@
 The second argument is the number of rows in the matrix and the third
 argument is the number of column in the matrix.;
 #X obj 133 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1 256;
 #X obj 190 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 2 256;
 #X obj 133 185 mat.2d.itorc 6 4 4;
 #X obj 13 185 mat.2d.itorc 0 4 4;
 #X obj 133 207 unpack, f 10;
@@ -21,9 +21,9 @@ argument is the number of column in the matrix.;
 -262144 -1 -1 0 256;
 #X obj 13 207 unpack, f 10;
 #X obj 253 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 3 256;
 #X obj 310 243 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 2 256;
 #X obj 253 207 unpack, f 10;
 #X text 4 270 The result is a list containing the row index and a column
 index inside the matrix.;
