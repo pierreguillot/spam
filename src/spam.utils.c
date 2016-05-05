@@ -274,6 +274,19 @@ char spam_master_free(t_spam_master* master)
     return -1;
 }
 
+char spam_master_loadbang(t_spam_master* master)
+{
+    int i;
+    if(master->s_n && master->s_subcanvas)
+    {
+        for(i = 0; i < master->s_n; ++i)
+        {
+            canvas_loadbang(master->s_subcanvas[i]);
+        }
+    }
+    return 0;
+}
+
 char spam_master_visible(t_spam_master* master, int index)
 {
     if(master->s_n && master->s_subcanvas && index < master->s_n)
