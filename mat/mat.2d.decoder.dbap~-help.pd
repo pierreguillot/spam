@@ -52,20 +52,20 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X scalar 1879-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1877-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1875-t-scope 0 0 0.25 0.25 91 0 1 \;;
-#X scalar 1873-t-scope 0 0 0.25 0.25 91 0 1 \;;
-#X scalar 1871-t-scope 0 0 0.25 0.25 811 0 1 \;;
-#X scalar 1869-t-scope 0 0 0.25 0.25 811 0 1 \;;
+#X scalar 1873-t-scope 0 0 0.25 0.25 811 0 1 \;;
+#X scalar 1871-t-scope 0 0 0.25 0.25 91 0 1 \;;
+#X scalar 1869-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1867-t-scope 0 0 0.25 0.25 91 0 1 \;;
-#X scalar 1865-t-scope 0 0 0.25 0.25 91 0 1 \;;
-#X scalar 1863-t-scope 0 0 0.25 0.25 811 0 1 \;;
-#X scalar 1861-t-scope 0 0 0.25 0.25 811 0 1 \;;
+#X scalar 1865-t-scope 0 0 0.25 0.25 901 0 1 \;;
+#X scalar 1863-t-scope 0 0 0.25 0.25 181 0 1 \;;
+#X scalar 1861-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1859-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1857-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1855-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1853-t-scope 0 0 0.25 0.25 91 0 1 \;;
 #X scalar 1851-t-scope 0 0 0.25 0.25 91 0 1 \;;
-#X coords 0 0 1 1 116 112 2 100 100;
-#X restore 89 400 pd \$0-scope;
+#X coords 0 0 1 1 150 150 2 100 100;
+#X restore 317 303 pd \$0-scope;
 #X obj 269 266 mat.gnbx2;
 #X obj 269 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -131,7 +131,7 @@ is limited in order to never exceed the distance between two cells.
 Thus the signal can't be inside of more than five cells. Nevertheless
 \, a blur factor allows to stretch the limit and to spread the signal
 over a larger set of cells.;
-#X obj 389 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 389 216 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 0 22 573 343 trajectory 0;
 #X obj 54 191 t f f, f 15;
@@ -174,7 +174,7 @@ over a larger set of cells.;
 #X restore 389 240 pd trajectory;
 #X msg 198 251 spread \$1;
 #X obj 451 151 text define -k \$0-config;
-#A set matrix_size 4 4 \; ls_positions -0.530331 0.530329 -0.75 -1.67489e-06
+#A set mat.dim 4 4 \; ls_positions -0.530331 0.530329 -0.75 -1.67489e-06
 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332 -0.530328 0.75 3.34978e-06
 0.530328 0.530333 -4.18723e-06 0.75 \; rolloff 10 \; blur 0.01 \;;
 #N canvas 0 22 450 300 \$0-meter 0;
@@ -195,7 +195,7 @@ over a larger set of cells.;
 #X scalar 1651-t-meter -0.530331 0.530329 8 16 24 32 555 90 990 950
 900 \;;
 #X coords -1 1 1 -1 150 150 2 100 100;
-#X restore 83 632 pd \$0-meter;
+#X restore 317 468 pd \$0-meter;
 #X obj 467 67 spam.connect;
 #X obj 476 49 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
