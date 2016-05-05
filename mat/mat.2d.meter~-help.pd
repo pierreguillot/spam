@@ -1,10 +1,10 @@
-#N struct 1054-t-meter float x1 float y1 float s1 float s2 float s3
+#N struct 1834-t-meter float x1 float y1 float s1 float s2 float s3
 float s4 float c0 float c1 float c2 float c3 float c4;
-#N struct 1053-t-meter float x1 float y1 float s1 float s2 float s3
+#N struct 1833-t-meter float x1 float y1 float s1 float s2 float s3
 float s4 float c0 float c1 float c2 float c3 float c4;
-#N struct 1052-t-meter float x1 float y1 float s1 float s2 float s3
+#N struct 1832-t-meter float x1 float y1 float s1 float s2 float s3
 float s4 float c0 float c1 float c2 float c3 float c4;
-#N struct 1051-t-meter float x1 float y1 float s1 float s2 float s3
+#N struct 1831-t-meter float x1 float y1 float s1 float s2 float s3
 float s4 float c0 float c1 float c2 float c3 float c4;
 #N canvas 634 23 393 570 10;
 #N canvas 443 106 450 300 header 0;
@@ -14,26 +14,25 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 6 pd header;
 #N canvas 0 22 450 300 \$0-meter 0;
-#X scalar 1054-t-meter 0.6 0 12 24 36 48 555 90 990 950 900 \;;
-#X scalar 1053-t-meter 0 -0.6 12 24 36 48 555 90 990 950 900 \;;
-#X scalar 1052-t-meter -0.6 0 12 24 36 48 555 90 990 950 900 \;;
-#X scalar 1051-t-meter 0 0.6 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1834-t-meter 0.6 0 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1833-t-meter 0 -0.6 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1832-t-meter -0.6 0 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1831-t-meter 0 0.6 12 24 36 48 555 90 990 950 900 \;;
 #X coords -1 1 1 -1 180 180 2 100 100;
 #X restore 23 259 pd \$0-meter;
 #X text 22 242 \$0-meter canvas;
 #X obj 225 349 text define -k \$0-config;
 #A set ls_positions 0 0.6 -0.6 0 0 -0.6 0.6 0 \; led_colors 555 90
 990 950 900 \; led_sizes 12 48 \;;
-#X obj 108 475 *~ 2;
-#X obj 108 453 phasor~ 1;
+#X obj 104 475 *~ 2;
+#X obj 104 453 phasor~ 1;
 #X obj 25 502 sig~;
 #X obj 25 476 nbx 5 14 0 1 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
-#X obj 108 497 -~ 0.8;
-#X obj 191 497 *~ 1.2;
-#X obj 25 520 spam~ 4 mat.2d.meter~ 4 \$0-meter \$0-config;
-#X obj 191 475 osc~ 1;
-#X obj 274 495 noise~;
+#X obj 104 497 -~ 0.8;
+#X obj 183 497 *~ 1.2;
+#X obj 183 475 osc~ 1;
+#X obj 262 495 noise~;
 #X text 4 31 The abstraction displays the contributions of a set of
 loudspeakers in a space. The abstraction expects the name of the canvas
 to draw and the name of a text to retrieve the information about how
@@ -49,11 +48,12 @@ message must be followed by the "no signal" color \, the cold color
 \, the tepid color \, the warm color and the hot color.;
 #X text 224 316 The text object used to define the configuration,
 f 24;
+#X obj 25 530 spam~ 4 mat.2d.meter~ \$0-meter \$0-config;
 #X connect 4 0 8 0;
 #X connect 5 0 4 0;
-#X connect 6 0 10 0;
+#X connect 6 0 14 0;
 #X connect 7 0 6 0;
-#X connect 8 0 10 1;
-#X connect 9 0 10 2;
-#X connect 11 0 9 0;
-#X connect 12 0 10 3;
+#X connect 8 0 14 1;
+#X connect 9 0 14 2;
+#X connect 10 0 9 0;
+#X connect 11 0 14 3;
