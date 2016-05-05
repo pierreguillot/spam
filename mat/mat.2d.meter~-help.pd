@@ -1,47 +1,59 @@
-#N struct 1631-t-meter float x1 float y1 float s float c;
-#N struct 1630-t-meter float x1 float y1 float s float c;
-#N struct 1629-t-meter float x1 float y1 float s float c;
-#N struct 1628-t-meter float x1 float y1 float s float c;
-#N struct 1627-t-meter float x1 float y1 float s float c;
-#N struct 1626-t-meter float x1 float y1 float s float c;
-#N struct 1625-t-meter float x1 float y1 float s float c;
-#N struct 1624-t-meter float x1 float y1 float s float c;
-#N canvas 584 23 442 528 10;
+#N struct 1054-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1053-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1052-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1051-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N canvas 634 23 393 570 10;
 #N canvas 443 106 450 300 header 0;
-#X obj 3 3 cnv 18 18 18 empty empty mat.2d.scope~ 2 8 0 14 -262144
+#X obj 3 3 cnv 18 18 18 empty empty mat.2d.meter~ 2 8 0 14 -262144
 -66577 0;
 #X text 215 4 by Pierre Guillot - 2016;
 #X coords 0 -1 1 1 365 20 2 2 2;
 #X restore 6 6 pd header;
 #N canvas 0 22 450 300 \$0-meter 0;
-#X scalar 1631-t-meter 0.267869 0.64672 29.0211 811 \;;
-#X scalar 1630-t-meter 0.646712 0.267888 10 91 \;;
-#X scalar 1629-t-meter 0.646719 -0.26787 10 91 \;;
-#X scalar 1628-t-meter 0.267886 -0.646712 10 91 \;;
-#X scalar 1627-t-meter -0.267871 -0.646719 29.1496 811 \;;
-#X scalar 1626-t-meter -0.646713 -0.267886 10 91 \;;
-#X scalar 1625-t-meter -0.646719 0.267871 10 91 \;;
-#X scalar 1624-t-meter -0.267885 0.646713 27.9305 811 \;;
-#X coords -1 -1 1 1 180 180 2 100 100;
-#X restore 23 149 pd \$0-meter;
-#X text 22 132 \$0-meter canvas;
-#X text 4 31 ...;
-#X obj 257 159 text define -k \$0-config;
-#A set channels -0.267885 0.646713 -0.646719 0.267871 -0.646713 -0.267886
--0.267871 -0.646719 0.267886 -0.646712 0.646719 -0.26787 0.646712 0.267888
-0.267869 0.64672 \;;
-#X obj 45 450 spam~ 8 mat.2d.meter~ 8 \$0-meter \$0-config;
-#X obj 294 374 noise~;
-#X obj 45 362 clip~ 0 1;
-#X obj 151 365 *~ 2;
-#X obj 151 387 -~ 1;
-#X obj 151 409 clip~ 0 1;
-#X obj 45 340 osc~ 2;
-#X obj 151 343 phasor~ 1;
-#X connect 6 0 5 7;
-#X connect 7 0 5 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 10 0 5 3;
-#X connect 11 0 7 0;
-#X connect 12 0 8 0;
+#X scalar 1054-t-meter 0.6 0 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1053-t-meter 0 -0.6 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1052-t-meter -0.6 0 12 24 36 48 555 90 990 950 900 \;;
+#X scalar 1051-t-meter 0 0.6 12 24 36 48 555 90 990 950 900 \;;
+#X coords -1 1 1 -1 180 180 2 100 100;
+#X restore 23 259 pd \$0-meter;
+#X text 22 242 \$0-meter canvas;
+#X obj 225 349 text define -k \$0-config;
+#A set ls_positions 0 0.6 -0.6 0 0 -0.6 0.6 0 \; led_colors 555 90
+990 950 900 \; led_sizes 12 48 \;;
+#X obj 108 475 *~ 2;
+#X obj 108 453 phasor~ 1;
+#X obj 25 502 sig~;
+#X obj 25 476 nbx 5 14 0 1 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 108 497 -~ 0.8;
+#X obj 191 497 *~ 1.2;
+#X obj 25 520 spam~ 4 mat.2d.meter~ 4 \$0-meter \$0-config;
+#X obj 191 475 osc~ 1;
+#X obj 274 495 noise~;
+#X text 4 31 The abstraction displays the contributions of a set of
+loudspeakers in a space. The abstraction expects the name of the canvas
+to draw and the name of a text to retrieve the information about how
+to place and to display the contributions of the loudspeakers. The
+text object need a least one line beginning by ls_positions followed
+by a set of cartesian coordinates for each loudspeaker. Like for the
+decoder \, the coordinates must be normalized between -1 and 1 You
+can use another line beginning by led_sizes with the size followed
+by the size of the cold led and the size of the hot led (perhaps in
+the furture \, this syntax will change). At least \, another line can
+be used to define the set of colours with the message led_colors. The
+message must be followed by the "no signal" color \, the cold color
+\, the tepid color \, the warm color and the hot color.;
+#X text 224 316 The text object used to define the configuration,
+f 24;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 10 0;
+#X connect 7 0 6 0;
+#X connect 8 0 10 1;
+#X connect 9 0 10 2;
+#X connect 11 0 9 0;
+#X connect 12 0 10 3;
