@@ -65,6 +65,11 @@ static void spam_tilde_vis(t_spam_tilde *x, t_floatarg index)
     }
 }
 
+static void spam_tilde_loadbang(t_spam_tilde *x, t_float f)
+{
+    //spam_master_loadbang(&(x->s_master));
+}
+
 static void spam_tilde_click(t_spam_tilde *x, t_floatarg xp, t_floatarg yp, t_floatarg s, t_floatarg c, t_floatarg a)
 {
     spam_tilde_vis(x, 0);
@@ -113,6 +118,8 @@ extern void spam_tilde_setup(void)
         class_addmethod(c, (t_method)spam_tilde_click,    gensym("click"), A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_tilde_vis,      gensym("vis"), A_FLOAT, 0);
         class_addmethod(c, (t_method)spam_tilde_dsp,      gensym("dsp"), A_CANT, 0);
+        class_addmethod(c, (t_method)spam_tilde_loadbang, gensym("loadbang"), A_DEFFLOAT, 0);
+        
         class_addmethod(c, (t_method)spam_tilde_io_init,  gensym(__spam_io_init__), A_CANT, 0);
         class_addmethod(c, (t_method)spam_tilde_io_dsp,   gensym(__spam_io_dsp__), A_CANT, 0);
         CLASS_MAINSIGNALIN(c, t_spam_tilde, s_f);

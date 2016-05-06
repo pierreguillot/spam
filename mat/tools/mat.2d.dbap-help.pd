@@ -27,7 +27,7 @@ environment).;
 #X msg 19 271 0 0;
 #X msg 292 292 blur 1;
 #X msg 312 321 rolloff 4;
-#X obj 19 295 tools/mat.gnbx2;
+#X obj 19 295 mat.gnbx2;
 #X connect 0 0 5 0;
 #X connect 5 0 7 0;
 #X connect 6 0 0 1;

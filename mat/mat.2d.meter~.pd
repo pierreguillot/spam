@@ -4,10 +4,10 @@
 #X obj 426 15 loadbang;
 #X obj 486 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 426 45 t b b b, f 32;
-#X obj 333 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 426 65 t b b b, f 32;
+#X obj 333 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 353 239 r \$0-draw;
+#X obj 353 209 r \$0-draw;
 #X obj 333 267 t b b b, f 43;
 #X obj 333 319 list;
 #X obj 354 297 r \$0-pt;
@@ -52,7 +52,6 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X obj 333 390 append \$0-t-meter x1 y1 s1 s2 s3 s4 c0 c1 c2 c3 c4
 , f 22;
 #X obj 475 342 r \$0-c0;
-#X obj 63 184 filledpolygon c1 c1 s1 x1 y1 x1 y1;
 #X obj 63 164 >= 1;
 #N canvas 0 22 450 300 set_colors 0;
 #X obj 63 117 t l l;
@@ -147,7 +146,7 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 15 0 17 0;
 #X connect 17 0 16 0;
 #X connect 18 0 0 0;
-#X restore 615 73 pd set_colors;
+#X restore 615 93 pd set_colors;
 #N canvas 0 22 584 342 set_channel 0;
 #N canvas 368 171 450 300 l_it2 0;
 #X obj 43 180 until;
@@ -216,12 +215,12 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 12 0 14 0;
 #X connect 14 0 13 0;
 #X connect 15 0 0 0;
-#X restore 426 72 pd set_channel;
+#X restore 426 92 pd set_channel;
 #X obj 380 342 r \$0-s1;
 #X obj 404 321 r \$0-s2;
 #X obj 427 342 r \$0-s3;
 #X obj 451 321 r \$0-s4;
-#N canvas 0 22 590 300 set_sizes 1;
+#N canvas 0 22 590 300 set_sizes 0;
 #X obj 194 198 sel 1;
 #X obj 194 244 print mat.2d.meter~;
 #X obj 59 126 unpack;
@@ -261,14 +260,18 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 15 0 1 0;
 #X connect 17 0 2 0;
 #X connect 17 0 13 0;
-#X restore 520 73 pd set_sizes;
+#X restore 520 93 pd set_sizes;
+#X obj 426 37 delay 10;
+#X obj 63 184 filledpolygon c1 c1 s1 x1 y1 x1 y1;
+#X obj 59 50 loadbang;
+#X msg 59 72 0;
 #X connect 0 0 1 0;
 #X connect 1 0 16 0;
-#X connect 2 0 4 0;
+#X connect 2 0 36 0;
 #X connect 3 0 4 0;
-#X connect 4 0 31 0;
-#X connect 4 1 36 0;
-#X connect 4 2 30 0;
+#X connect 4 0 30 0;
+#X connect 4 1 35 0;
+#X connect 4 2 29 0;
 #X connect 5 0 7 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
@@ -284,14 +287,17 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 16 0 18 0;
 #X connect 16 1 20 0;
 #X connect 16 2 22 0;
-#X connect 16 3 29 0;
+#X connect 16 3 28 0;
 #X connect 18 0 17 0;
 #X connect 20 0 19 0;
 #X connect 22 0 21 0;
 #X connect 24 0 26 0;
 #X connect 27 0 24 6;
-#X connect 29 0 28 0;
-#X connect 32 0 24 2;
-#X connect 33 0 24 3;
-#X connect 34 0 24 4;
-#X connect 35 0 24 5;
+#X connect 28 0 37 0;
+#X connect 31 0 24 2;
+#X connect 32 0 24 3;
+#X connect 33 0 24 4;
+#X connect 34 0 24 5;
+#X connect 36 0 4 0;
+#X connect 38 0 39 0;
+#X connect 39 0 16 0;

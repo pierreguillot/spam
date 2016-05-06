@@ -47,6 +47,7 @@ typedef struct _spam_master
 void spam_master_setup(void);
 char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_atom* argv);
 char spam_master_free(t_spam_master* master);
+char spam_master_loadbang(t_spam_master* master);
 char spam_master_visible(t_spam_master* master, int index);
 char spam_master_dsp(t_spam_master* master, t_signal **sp);
 void spam_master_io_init(t_spam_master* master, t_spam_io* io);
