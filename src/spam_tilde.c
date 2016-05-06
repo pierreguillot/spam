@@ -67,7 +67,7 @@ static void spam_tilde_vis(t_spam_tilde *x, t_floatarg index)
 
 static void spam_tilde_loadbang(t_spam_tilde *x, t_float f)
 {
-    spam_master_loadbang(&(x->s_master));
+    //spam_master_loadbang(&(x->s_master));
 }
 
 static void spam_tilde_click(t_spam_tilde *x, t_floatarg xp, t_floatarg yp, t_floatarg s, t_floatarg c, t_floatarg a)

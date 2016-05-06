@@ -1,6 +1,6 @@
 #N canvas 55 97 1028 649 10;
-#X obj 251 54 spam.in~;
-#X obj 251 106 s~ \$0-in;
+#X obj 379 94 spam.in~;
+#X obj 379 146 s~ \$0-in;
 #X obj 374 26 namecanvas \$0-dbap;
 #X obj 550 1 loadbang;
 #N canvas 0 22 450 300 create_speakers 0;
@@ -36,7 +36,7 @@ of loudspeakers;
 #X connect 8 0 9 0;
 #X connect 9 0 7 2;
 #X connect 10 0 2 0;
-#X restore 251 26 pd create_speakers;
+#X restore 379 66 pd create_speakers;
 #X obj 550 429 until;
 #X obj 550 451 f 0;
 #X obj 580 451 + 1;
