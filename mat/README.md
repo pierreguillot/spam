@@ -12,4 +12,5 @@ A set of abstractions for sound spatialization in Pure Data based on a matricial
 - [ ] mat.2d.delay~
 - [ ] Explain how the cell are ordered
 - [ ] Use text instead of list for decoder - channels, blur, rolloff.
+- [ ] Add gain to scope and meter
 - etc.
