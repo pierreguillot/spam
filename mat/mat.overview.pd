@@ -1,0 +1,28 @@
+#N canvas 599 25 418 492 10;
+#X obj 5 7 tools/mat.header mat;
+#X obj 4 450 tools/mat.footer;
+#X text 4 31 The mat library is a set of abtractions for sound spatialization
+based on a matricial representation of the space. The abstractions
+must be used with the spam objects and generally use a text object
+to define the configuration., f 67;
+#X obj 5 123 mat.2d.brush~;
+#X text 4 93 mat.2d.brush~ synthesizes the signals of a matrix with
+a sound source depending on cartesian coordinates., f 67;
+#X obj 5 173 mat.2d.eraser~;
+#X text 4 143 mat.2d.eraser~ decreases the amplitude of a set signals
+of a matrix depending on cartesian coordiantes., f 67;
+#X obj 5 223 mat.2d.smudge~;
+#X text 4 193 mat.2d.smudge~ synthesizes the signals of matrix using
+variable delay lines without flanging effect., f 67;
+#X obj 5 273 mat.2d.spray~;
+#X text 4 293 mat.2d.scope~ displays the rms amplitude of each signal
+of a matrix inside a canvas., f 67;
+#X obj 5 423 mat.2d.dec.dbap~;
+#X obj 5 373 mat.2d.meter~;
+#X obj 5 323 mat.2d.scope~;
+#X text 4 343 mat.2d.meter~ displays the contributions of a set of
+loudspeakers in a space., f 67;
+#X text 4 243 mat.2d.spray~ synthesizes the signals of matrix with
+a quasi-synchronous granular synthesizer., f 67;
+#X text 4 393 mat.2d.dec.dbap~ decodes a matrix for a set of loudspeakers
+using distance based amplitude panning (DBAP)., f 67;
