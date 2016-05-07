@@ -1,4 +1,5 @@
 #N canvas 146 23 469 782 10;
+#X declare -stdpath spam;
 #X obj 12 372 *~;
 #X obj 12 404 spam.out~;
 #X obj 27 133 spam.in 0;
@@ -120,6 +121,7 @@
 #X connect 13 1 14 0;
 #X connect 14 0 4 1;
 #X restore 27 282 pd hardness;
+#X obj 319 9 declare -stdpath spam;
 #X connect 0 0 1 0;
 #X connect 2 0 21 0;
 #X connect 3 0 4 0;
