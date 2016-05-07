@@ -1,0 +1,244 @@
+#N struct 1680-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1675-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1670-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1665-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1660-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1655-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1650-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1645-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1640-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1635-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1630-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1625-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1620-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1615-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1610-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1605-t-scope float x1 float y1 float x2 float y2 float c1
+float c2;
+#N struct 1713-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1709-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1705-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1701-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1697-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1693-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1689-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1685-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N canvas 484 23 427 660 10;
+#X declare -stdpath spam;
+#X obj 77 239 dbtorms;
+#X obj 77 219 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+-1 -1 100 256;
+#X obj 77 261 pack f 20;
+#X obj 77 283 line~;
+#X obj 14 316 *~, f 11;
+#X obj 155 250 nbx 5 14 0.5 100 0 0 empty \$0-spread empty 0 -8 0 10
+-262144 -1 -1 3 256;
+#X obj 303 251 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-delay empty 0 -8
+0 10 -262144 -1 -1 250 256;
+#X msg 303 269 delay \$1;
+#N canvas 0 22 223 200 \$0-scope 0;
+#X scalar 1680-t-scope 0.5 -0.5 1 -1 999 0 \;;
+#X scalar 1675-t-scope 0 -0.5 0.5 -1 999 0 \;;
+#X scalar 1670-t-scope -0.5 -0.5 0 -1 999 0 \;;
+#X scalar 1665-t-scope -1 -0.5 -0.5 -1 999 0 \;;
+#X scalar 1660-t-scope 0.5 -0 1 -0.5 999 0 \;;
+#X scalar 1655-t-scope 0 -0 0.5 -0.5 999 0 \;;
+#X scalar 1650-t-scope -0.5 -0 0 -0.5 999 0 \;;
+#X scalar 1645-t-scope -1 -0 -0.5 -0.5 999 0 \;;
+#X scalar 1640-t-scope 0.5 0.5 1 -0 999 0 \;;
+#X scalar 1635-t-scope 0 0.5 0.5 -0 999 0 \;;
+#X scalar 1630-t-scope -0.5 0.5 0 -0 999 0 \;;
+#X scalar 1625-t-scope -1 0.5 -0.5 -0 999 0 \;;
+#X scalar 1620-t-scope 0.5 1 1 0.5 999 0 \;;
+#X scalar 1615-t-scope 0 1 0.5 0.5 999 0 \;;
+#X scalar 1610-t-scope -0.5 1 0 0.5 999 0 \;;
+#X scalar 1605-t-scope -1 1 -0.5 0.5 999 0 \;;
+#X coords -1 1 1 -1 150 150 2 100 100;
+#X restore 16 385 pd \$0-scope;
+#X obj 228 250 tools/mat.gnbx2;
+#X obj 10 155 text define -k \$0-config;
+#A set mat.dim 4 4 \; mat.dec.nls 8 \; mat.dec.positions -0.530331
+0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332
+-0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \; mat.dec.rolloff
+10 \; mat.dec.blur 0.01 \; mat.meter.nls 8 \; mat.meter.positions -0.530331
+0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332
+-0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \;;
+#X f 25;
+#X obj 14 584 dac~ 1 2 3 4 5 6 7 8, f 56;
+#X obj 14 360 spam~ 16 mat.2d.scope~ \$0-config \$0-scope, f 56;
+#X obj 14 563 spam~ 8 mat.2d.meter~ \$0-config \$0-meter, f 56;
+#N canvas 0 22 450 300 \$0-meter 0;
+#X scalar 1713-t-meter -4.18723e-06 0.75 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1709-t-meter 0.530328 0.530333 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1705-t-meter 0.75 3.34978e-06 8 16 24 32 555 90 990 950 900
+\;;
+#X scalar 1701-t-meter 0.530332 -0.530328 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1697-t-meter 2.51234e-06 -0.75 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1693-t-meter -0.530329 -0.530332 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1689-t-meter -0.75 -1.67489e-06 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1685-t-meter -0.530331 0.530329 8 16 24 32 555 90 990 950
+900 \;;
+#X coords -1 1 1 -1 153 153 2 100 100;
+#X restore 201 385 pd \$0-meter;
+#N canvas 0 22 450 300 init 0;
+#X obj 13 42 loadbang;
+#X msg 13 64 100;
+#X obj 13 86 s \$0-gain;
+#X obj 173 42 loadbang;
+#X obj 173 87 s \$0-delay;
+#X obj 106 41 loadbang;
+#X obj 106 86 s \$0-auto;
+#X msg 173 64 250;
+#X msg 106 63 0;
+#X obj 106 122 loadbang;
+#X msg 106 144 3;
+#X obj 106 167 s \$0-spread;
+#X obj 196 122 loadbang;
+#X obj 196 167 s \$0-pos;
+#X msg 196 144 1 1;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 7 0;
+#X connect 5 0 8 0;
+#X connect 7 0 4 0;
+#X connect 8 0 6 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X restore 14 179 pd init;
+#X obj 14 290 *~;
+#N canvas 334 63 191 239 e 0;
+#X obj 50 195 outlet~;
+#X obj 50 167 line~;
+#X obj 50 84 metro 2000;
+#X obj 50 66 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X msg 91 128 0 40;
+#X msg 50 128 1 20;
+#X obj 91 106 delay 50;
+#X obj 48 23 loadbang;
+#X msg 48 45 1;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 2 0 6 0;
+#X connect 3 0 2 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 4 0;
+#X connect 7 0 8 0;
+#X connect 8 0 3 0;
+#X restore 29 264 pd e;
+#X obj 14 542 spam~ 16 mat.2d.dec.dbap~ \$0-config, f 56;
+#X obj 14 221 noise~;
+#X text 4 138 The text object must define the dimensions of the matrix.
+;
+#X obj 296 315 r \$0-vd;
+#X obj 303 291 s \$0-vd;
+#X obj 228 291 s \$0-vd;
+#X obj 155 291 s \$0-vd;
+#X obj 228 229 r \$0-pos;
+#X text 4 28 The abstraction synthesizes the signals of matrix using
+variable delay lines without flanging effect. The goal is to create
+a spatial smudge effect. When a cell is distant from the encoding position
+the delay increases resulting in a sound that is spread progressively
+from the encoding position toward the rest of the space while the sound
+decreases.;
+#X obj 6 7 declare -stdpath spam;
+#X obj 14 337 spam~ 16 mat.2d.bucket~ \$0-config, f 56;
+#X obj 5 5 tools/mat.header mat.2d.meter~;
+#X obj 6 612 tools/mat.footer;
+#X msg 155 269 size \$1;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 1;
+#X connect 4 0 28 0;
+#X connect 5 0 31 0;
+#X connect 6 0 7 0;
+#X connect 7 0 22 0;
+#X connect 9 0 23 0;
+#X connect 16 0 4 0;
+#X connect 17 0 16 1;
+#X connect 18 0 11 0;
+#X connect 18 0 13 0;
+#X connect 18 1 11 1;
+#X connect 18 1 13 1;
+#X connect 18 2 11 2;
+#X connect 18 2 13 2;
+#X connect 18 3 11 3;
+#X connect 18 3 13 3;
+#X connect 18 4 11 4;
+#X connect 18 4 13 4;
+#X connect 18 5 11 5;
+#X connect 18 5 13 5;
+#X connect 18 6 11 6;
+#X connect 18 6 13 6;
+#X connect 18 7 11 7;
+#X connect 18 7 13 7;
+#X connect 19 0 16 0;
+#X connect 21 0 28 1;
+#X connect 25 0 9 0;
+#X connect 28 0 12 0;
+#X connect 28 0 18 0;
+#X connect 28 1 12 1;
+#X connect 28 1 18 1;
+#X connect 28 2 12 2;
+#X connect 28 2 18 2;
+#X connect 28 3 12 3;
+#X connect 28 3 18 3;
+#X connect 28 4 12 4;
+#X connect 28 4 18 4;
+#X connect 28 5 12 5;
+#X connect 28 5 18 5;
+#X connect 28 6 12 6;
+#X connect 28 6 18 6;
+#X connect 28 7 12 7;
+#X connect 28 7 18 7;
+#X connect 28 8 12 8;
+#X connect 28 8 18 8;
+#X connect 28 9 12 9;
+#X connect 28 9 18 9;
+#X connect 28 10 12 10;
+#X connect 28 10 18 10;
+#X connect 28 11 12 11;
+#X connect 28 11 18 11;
+#X connect 28 12 12 12;
+#X connect 28 12 18 12;
+#X connect 28 13 12 13;
+#X connect 28 13 18 13;
+#X connect 28 14 12 14;
+#X connect 28 14 18 14;
+#X connect 28 15 12 15;
+#X connect 28 15 18 15;
+#X connect 31 0 24 0;
+#X coords 0 660 1 659 85 60 0;
