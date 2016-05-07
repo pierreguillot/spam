@@ -1,6 +1,9 @@
 #N canvas 599 25 427 487 10;
 #X declare -stdpath spam;
-#X obj 5 7 tools/mat.header mat;
+#X declare -stdpath spam;
+#X declare -stdpath spam;
+#X declare -stdpath spam;
+#X declare -stdpath spam;
 #X obj 4 450 tools/mat.footer;
 #X text 4 31 The mat library is a set of abtractions for sound spatialization
 based on a matricial representation of the space. The abstractions
@@ -28,3 +31,4 @@ a quasi-synchronous granular synthesizer., f 67;
 #X text 4 393 mat.2d.dec.dbap~ decodes a matrix for a set of loudspeakers
 using distance based amplitude panning (DBAP)., f 67;
 #X obj 7 9 declare -stdpath spam;
+#X obj 5 7 tools/mat.header mat;
