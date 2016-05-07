@@ -1,10 +1,11 @@
 #N canvas 300 149 712 456 10;
+#X declare -stdpath spam;
 #X obj 12 16 spam.in~;
 #X obj 12 38 env~;
 #X obj 426 15 loadbang;
 #X obj 486 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 426 65 t b b b, f 32;
+#X obj 426 145 t b b b, f 32;
 #X obj 333 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 353 209 r \$0-draw;
@@ -37,14 +38,14 @@
 #X obj 570 342 r \$0-c4;
 #X obj 498 321 r \$0-c1;
 #X obj 522 342 r \$0-c2;
-#X obj 12 95 t f f f f;
-#X obj 12 307 filledpolygon c4 c4 s4 x1 y1 x1 y1;
-#X obj 12 286 >= 100;
-#X obj 29 265 filledpolygon c3 c3 s3 x1 y1 x1 y1;
-#X obj 29 246 >= 94;
-#X obj 46 225 filledpolygon c2 c2 s2 x1 y1 x1 y1;
-#X obj 46 206 >= 88;
-#X obj 73 140 filledpolygon c0 c0 s1 x1 y1 x1 y1;
+#X obj 12 185 t f f f f;
+#X obj 12 397 filledpolygon c4 c4 s4 x1 y1 x1 y1;
+#X obj 12 376 >= 100;
+#X obj 29 355 filledpolygon c3 c3 s3 x1 y1 x1 y1;
+#X obj 29 336 >= 94;
+#X obj 46 315 filledpolygon c2 c2 s2 x1 y1 x1 y1;
+#X obj 46 296 >= 88;
+#X obj 73 230 filledpolygon c0 c0 s1 x1 y1 x1 y1;
 #X obj 333 366 pack f f 8 16 24 32 555 90 990 950 900, f 40;
 #X obj 195 14 struct \$0-t-meter float x1 float y1 float s1 float s2
 float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
@@ -52,7 +53,7 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X obj 333 390 append \$0-t-meter x1 y1 s1 s2 s3 s4 c0 c1 c2 c3 c4
 , f 22;
 #X obj 475 342 r \$0-c0;
-#X obj 63 164 >= 1;
+#X obj 63 254 >= 1;
 #N canvas 0 22 450 300 set_colors 0;
 #X obj 63 117 t l l;
 #X obj 90 139 list length;
@@ -146,7 +147,7 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 15 0 17 0;
 #X connect 17 0 16 0;
 #X connect 18 0 0 0;
-#X restore 615 93 pd set_colors;
+#X restore 615 173 pd set_colors;
 #N canvas 0 22 584 342 set_channel 0;
 #N canvas 368 171 450 300 l_it2 0;
 #X obj 43 180 until;
@@ -215,7 +216,7 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 12 0 14 0;
 #X connect 14 0 13 0;
 #X connect 15 0 0 0;
-#X restore 426 92 pd set_channel;
+#X restore 426 172 pd set_channel;
 #X obj 380 342 r \$0-s1;
 #X obj 404 321 r \$0-s2;
 #X obj 427 342 r \$0-s3;
@@ -260,13 +261,32 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 15 0 1 0;
 #X connect 17 0 2 0;
 #X connect 17 0 13 0;
-#X restore 520 93 pd set_sizes;
+#X restore 520 173 pd set_sizes;
 #X obj 426 37 delay 10;
-#X obj 63 184 filledpolygon c1 c1 s1 x1 y1 x1 y1;
-#X obj 59 50 loadbang;
-#X msg 59 72 0;
+#X obj 63 274 filledpolygon c1 c1 s1 x1 y1 x1 y1;
+#X obj 534 14 declare -stdpath spam;
+#N canvas 0 22 450 300 activate 0;
+#X obj 29 70 text get \$2;
+#X obj 29 49 f 0;
+#X obj 29 92 bang;
+#X obj 29 114 f 1;
+#X obj 29 26 inlet;
+#X obj 29 136 s \$0-active;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 4 0 1 0;
+#X restore 453 78 pd activate;
+#X obj 426 57 t b b;
+#X obj 426 125 spigot 0;
+#X obj 471 103 r \$0-active;
+#X obj 12 162 spigot 0;
+#X obj 31 138 f 0;
+#X obj 31 116 t b b;
+#X obj 57 138 f 1;
 #X connect 0 0 1 0;
-#X connect 1 0 16 0;
+#X connect 1 0 43 0;
 #X connect 2 0 36 0;
 #X connect 3 0 4 0;
 #X connect 4 0 30 0;
@@ -292,12 +312,20 @@ float s3 float s4 float c0 float c1 float c2 float c3 float c4, f
 #X connect 20 0 19 0;
 #X connect 22 0 21 0;
 #X connect 24 0 26 0;
+#X connect 26 0 45 0;
 #X connect 27 0 24 6;
 #X connect 28 0 37 0;
 #X connect 31 0 24 2;
 #X connect 32 0 24 3;
 #X connect 33 0 24 4;
 #X connect 34 0 24 5;
-#X connect 36 0 4 0;
-#X connect 38 0 39 0;
-#X connect 39 0 16 0;
+#X connect 36 0 40 0;
+#X connect 40 0 41 0;
+#X connect 40 1 39 0;
+#X connect 41 0 4 0;
+#X connect 42 0 41 1;
+#X connect 43 0 16 0;
+#X connect 44 0 43 0;
+#X connect 45 0 44 0;
+#X connect 45 1 46 0;
+#X connect 46 0 43 1;
