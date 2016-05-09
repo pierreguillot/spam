@@ -1,0 +1,35 @@
+#N canvas 747 165 388 496 10;
+#X text 4 31 The abstraction the amplitude coefficients of a set of
+loudspeakers for a virtual sound source using distance based amplitude
+panning (DBAP). The principles of DBAP are explained in the paper by
+Trond Lossius \, Pascal Baltazar and Theo de la Hogue at the International
+Computer Music Conference (ICMC). Montreal \, 2009;
+#X text 4 121 The first inlet is used for the position of source in
+cartesian coordinates. The second inlet is used for the positions of
+the loudspeakers in cartesian coordinates. The third inlet is used
+for the blur value (superior or equal to zero) and the rolloff value
+in dB (generally 6dB or between 3dB and 5dB for close or semi-close
+environment).;
+#X text 4 201 Only the first inlet triggers the computation.;
+#X obj 19 389 list prepend set;
+#X msg 155 292 -3.5 -3.5 3.5 -3.5 3.5 3.5 -3.5 3.5, f 11;
+#X obj 19 411 list trim;
+#X msg 19 433 0.479266 0.479266 0.519908 0.519908;
+#X obj 19 227 loadbang;
+#X obj 19 249 t b b b, f 46;
+#X msg 19 271 0 0;
+#X msg 292 292 blur 1;
+#X msg 312 321 rolloff 4;
+#X obj 19 367 hoa.2d.projector~, f 46;
+#X connect 3 0 5 0;
+#X connect 4 0 12 1;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 8 1 4 0;
+#X connect 8 2 10 0;
+#X connect 8 2 11 0;
+#X connect 9 0 12 0;
+#X connect 10 0 12 2;
+#X connect 11 0 12 2;
+#X connect 12 0 3 0;

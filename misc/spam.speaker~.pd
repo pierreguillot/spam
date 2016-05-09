@@ -1,0 +1,8 @@
+#N canvas 111 465 224 86 10;
+#X obj 12 54 spam.out~ \$1;
+#X obj 12 12 r~ \$2;
+#X obj 69 12 r \$3;
+#X obj 12 34 *~ \$4, f 10;
+#X connect 1 0 3 0;
+#X connect 2 0 3 1;
+#X connect 3 0 0 0;
