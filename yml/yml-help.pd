@@ -1,7 +1,7 @@
-#N struct 2120-t-scope float x array bufr 2120-t-scope-value-r array
-bufg 2120-t-scope-value-g;
-#N struct 2120-t-scope-value-r float x float y;
-#N struct 2120-t-scope-value-g float x float y;
+#N struct 1090-t-scope float x array bufr 1090-t-scope-value-r array
+bufg 1090-t-scope-value-g;
+#N struct 1090-t-scope-value-r float x float y;
+#N struct 1090-t-scope-value-g float x float y;
 #N canvas 186 36 686 774 10;
 #X declare -stdpath spam;
 #X obj 14 85 text define -k \$0-config;
@@ -58,7 +58,7 @@ bufg 2120-t-scope-value-g;
 harmonics..., f 67;
 #X obj 4 735 ../misc/spam.footer;
 #N canvas 0 22 450 300 \$0-scope 0;
-#X scalar 2120-t-scope 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+#X scalar 1090-t-scope 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
@@ -105,44 +105,44 @@ harmonics..., f 67;
 #X obj 242 308 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 253 335 t b f;
-#X obj 22 473 spam~ 7 hoa.2d.scope~ \$0-config \$0-scope, f 51;
 #X obj 127 269 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X obj 253 357 pack 1 f;
-#X obj 22 426 spam~ 7 hoa.2d.encoder~ \$0-config, f 51;
-#X obj 22 505 spam~ 7 hoa.2d.decoder~ \$0-config, f 51;
 #X obj 475 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 475 146 spam.connect;
 #X msg 211 374 vis 2;
 #X msg 256 396 vis 1;
+#X obj 22 426 spam~ 7 yml.2d.encoder~ \$0-config, f 51;
+#X obj 22 505 spam~ 7 yml.2d.decoder~ \$0-config, f 51;
+#X obj 22 473 spam~ 7 yml.2d.scope~ \$0-config \$0-scope, f 51;
 #X connect 2 0 8 0;
-#X connect 3 0 22 0;
+#X connect 3 0 25 0;
 #X connect 4 0 3 0;
 #X connect 8 0 3 1;
 #X connect 9 0 1 0;
 #X connect 9 0 1 1;
 #X connect 15 0 18 0;
-#X connect 15 0 21 1;
-#X connect 16 0 22 0;
-#X connect 17 0 21 0;
-#X connect 18 0 21 0;
-#X connect 20 0 14 0;
-#X connect 21 0 22 1;
-#X connect 22 0 19 0;
-#X connect 22 0 23 0;
-#X connect 22 1 19 1;
-#X connect 22 1 23 1;
-#X connect 22 2 19 2;
-#X connect 22 2 23 2;
-#X connect 22 3 19 3;
-#X connect 22 3 23 3;
-#X connect 22 4 19 4;
-#X connect 22 4 23 4;
-#X connect 22 5 19 5;
-#X connect 22 5 23 5;
-#X connect 22 6 19 6;
-#X connect 22 6 23 6;
-#X connect 24 0 25 0;
-#X connect 26 0 23 0;
-#X connect 27 0 23 0;
+#X connect 15 0 20 1;
+#X connect 16 0 25 0;
+#X connect 17 0 20 0;
+#X connect 18 0 20 0;
+#X connect 19 0 14 0;
+#X connect 20 0 25 1;
+#X connect 21 0 22 0;
+#X connect 23 0 26 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 0;
+#X connect 25 0 27 0;
+#X connect 25 1 26 1;
+#X connect 25 1 27 1;
+#X connect 25 2 26 2;
+#X connect 25 2 27 2;
+#X connect 25 3 26 3;
+#X connect 25 3 27 3;
+#X connect 25 4 26 4;
+#X connect 25 4 27 4;
+#X connect 25 5 26 5;
+#X connect 25 5 27 5;
+#X connect 25 6 26 6;
+#X connect 25 6 27 6;
