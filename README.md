@@ -6,4 +6,5 @@ Multi patches externals for Pure Data
 
 Projects:
 * mat - matricial spatialization
-* hoa - high order ambisonics
+* ylm - high order ambisonics
+* pts.
