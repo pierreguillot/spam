@@ -38,7 +38,9 @@ after_build:
     - xcopy /E %APPVEYOR_BUILD_FOLDER%\ylm\* %APPVEYOR_BUILD_FOLDER%\spam\ylm\*
     - rename %APPVEYOR_BUILD_FOLDER%\spam\ylm\README.md readme.txt
     - xcopy /E %APPVEYOR_BUILD_FOLDER%\mat\* %APPVEYOR_BUILD_FOLDER%\spam\mat\*
-    - rename %APPVEYOR_BUILD_FOLDER%\spam\spam\README.md readme.txt
+    - rename %APPVEYOR_BUILD_FOLDER%\spam\mat\README.md readme.txt
+    - xcopy /E %APPVEYOR_BUILD_FOLDER%\README.md %APPVEYOR_BUILD_FOLDER%\spam\README.txt
+    - xcopy /E %APPVEYOR_BUILD_FOLDER%\LICENSE %APPVEYOR_BUILD_FOLDER%\spam\LICENSE
     - 7z a %ZIP%.zip %APPVEYOR_BUILD_FOLDER%\spam\
 
 artifacts:
