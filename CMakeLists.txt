@@ -137,7 +137,7 @@ set(SPAMSRC
 	${PROJECT_SOURCE_DIR}/src/spam.out.c
 	${PROJECT_SOURCE_DIR}/src/spam.in_tilde.c
 	${PROJECT_SOURCE_DIR}/src/spam.out_tilde.c
-  ${PROJECT_SOURCE_DIR}/src/spam.connect.c)
+  ${PROJECT_SOURCE_DIR}/src/spam.connect.c
 	${PROJECT_SOURCE_DIR}/src/spam.c)
 source_group(src FILES ${SPAMSRC})
 add_library(spam SHARED ${SPAMSRC})
