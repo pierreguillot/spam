@@ -20,11 +20,8 @@ Installation:
 - Download the latest [release](https://github.com/pierreguillot/spam/releases).
 - Unzip the file.
 - Put the *spam* folder in the [Pure Data library folder](https://puredata.info/docs/faq/how-do-i-install-externals-and-help-files).
-- Add spam in the Pure Data's startup windows from the menu:
-  - Pd
-  - Preferences
-  - Startup...
-  - New...
+- Add spam in the Pure Data's startup windows from the menu (optional):
+  - Pd/Preferences/Startup...  [New...]
 
 Author: Pierre Guillot  
 Organizations: Université Paris 8 | CICM | Labex Arts H2H
