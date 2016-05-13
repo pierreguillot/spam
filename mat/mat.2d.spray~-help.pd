@@ -344,9 +344,9 @@ The second argument defines the buffer of the envelope of the grains.
 #X obj 153 351 s \$0-qsgs;
 #X obj 315 352 s \$0-qsgs;
 #X obj 232 351 s \$0-qsgs;
-#X obj 6 783 tools/mat.footer;
+#X obj 6 783 mat.footer;
 #X obj 7 8 declare -stdpath spam;
-#X obj 5 7 tools/mat.header mat.2d.spray~;
+#X obj 5 7 mat.header mat.2d.spray~;
 #X msg 232 329 grainsize \$1;
 #X msg 155 443 size \$1;
 #X text 4 32 The abstraction synthesizes the signals of matrix with

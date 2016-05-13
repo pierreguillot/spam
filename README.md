@@ -10,7 +10,7 @@ Externals:
 - spam.in~: The inlet object for signal.
 - spam.out: The outlet object for messages.
 - spam.out~: The outlet object for signal.
-- spam.connect: The object that creates several connection in one click.
+- spam.connect: The object that creates several connections in one click.
 - spam : The all-in-one library
 
 Abstractions:

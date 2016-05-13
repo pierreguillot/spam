@@ -146,8 +146,8 @@ float c2;
 #X obj 324 685 spam~ 25 mat.2d.dec.dbap~ \$0-config, f 51;
 #X obj 324 428 spam~ 25 mat.2d.eraser~ \$0-config, f 51;
 #X obj 7 9 declare -stdpath spam;
-#X obj 5 7 tools/mat.header mat.2d.eraser~;
-#X obj 4 730 tools/mat.footer;
+#X obj 5 7 mat.header mat.2d.eraser~;
+#X obj 4 730 mat.footer;
 #X obj 658 458 r \$0-eraser;
 #X obj 98 171 tgl 15 0 empty \$0-auto empty 17 7 0 10 -262144 -1 -1
 0 1;

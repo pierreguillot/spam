@@ -267,9 +267,9 @@ matrix \, the number of loudspeakers and their relative positions between
 on and minus one. It also can be used to define the rolloff and the
 blur parameters.;
 #X obj 38 258 spam~ 36 mat.2d.brush~ \$0-config, f 39;
-#X obj 4 760 tools/mat.footer;
+#X obj 4 760 mat.footer;
 #X obj 9 9 declare -stdpath spam;
-#X obj 5 7 tools/mat.header mat.2d.dec.dbap~;
+#X obj 5 7 mat.header mat.2d.dec.dbap~;
 #X connect 0 0 1 0;
 #X connect 1 0 9 0;
 #X connect 2 0 11 0;

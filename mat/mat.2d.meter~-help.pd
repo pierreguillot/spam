@@ -35,8 +35,8 @@ the loudspeakers and be used to define the colors and the sizes of
 the representation of the loudspeakers. The second argument is the
 canvas to paint, f 67;
 #X obj 7 8 declare -stdpath spam;
-#X obj 5 7 tools/mat.header mat.2d.meter~;
-#X obj 6 415 tools/mat.footer;
+#X obj 5 7 mat.header mat.2d.meter~;
+#X obj 6 415 mat.footer;
 #X connect 3 0 7 0;
 #X connect 4 0 3 0;
 #X connect 5 0 11 0;

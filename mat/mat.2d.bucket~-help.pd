@@ -317,8 +317,8 @@ the delay increases resulting in a sound that is spread progressively
 from the encoding position toward the rest of the space while the sound
 decreases.;
 #X obj 6 7 declare -stdpath spam;
-#X obj 5 5 tools/mat.header mat.2d.meter~;
-#X obj 6 612 tools/mat.footer;
+#X obj 5 5 mat.header mat.2d.meter~;
+#X obj 6 612 mat.footer;
 #X msg 155 269 size \$1;
 #X obj 14 221 noise~;
 #X obj 342 179 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
