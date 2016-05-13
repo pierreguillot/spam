@@ -238,11 +238,9 @@
 #X connect 26 1 24 0;
 #X restore 74 140 pd directional;
 #X obj 211 68 array define \$3-buffer-\$1 180;
-#N canvas 236 44 665 431 \$0-t-scope 0;
+#N canvas 677 84 665 431 \$0-t-scope 0;
 #X obj 6 8 struct \$0-t-scope float x array bufr \$0-t-scope-value-r
 array bufg \$0-t-scope-value-g;
-#X obj 8 202 drawcurve -x 0 1 1.08 0 0.7668 0.7668 0 1.08 -0.7668 0.7668
--1.08 0 -0.7668 -0.7668 0 -1.08 0.7668 -0.7668 1.08 0;
 #X obj 8 242 drawcurve -x 0 1 0.81 0 0.5751 0.5751 0 0.81 -0.5751 0.5751
 -0.81 0 -0.5751 -0.5751 0 -0.81 0.5751 -0.5751 0.81 0;
 #X obj 8 282 drawcurve -x 0 1 0.54 0 0.3834 0.3834 0 0.54 -0.3834 0.3834
@@ -255,6 +253,8 @@ array bufg \$0-t-scope-value-g;
 #X obj 7 170 drawpolygon -x 0 1 0 -1 0 -0.24;
 #X obj 7 53 plot bufr 900 1 0 0 0;
 #X obj 7 73 plot bufg 9 1 0 0 0;
+#X obj 8 202 drawcurve -x 0 1 1.08 0 0.7668 0.7668 0 1.079 -0.7668
+0.7668 -1.079 0 -0.7668 -0.7668 0 -1.08 0.7668 -0.7668 1.08 0;
 #X restore 211 8 pd \$0-t-scope;
 #X obj 17 204 spigot, f 7;
 #X obj 17 226 unpack f f;
