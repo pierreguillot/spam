@@ -13,10 +13,10 @@ externals:
 - spam.connect: The object that creates several connection in one click.
 
 abstractions:
-* mat - matricial spatialization tools
-* ylm - high order ambisonics spatialization tools
+- mat - matricial spatialization tools
+- ylm - high order ambisonics spatialization tools
 
 Author: Pierre Guillot  
 Organizations: Université Paris 8 | CICM | Labex Arts H2H
 Website: https://github.com/pierreguillot/spam  
-License: see LICENSE.txt
+License: BSD - see LICENSE
