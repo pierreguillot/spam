@@ -1,5 +1,4 @@
 #N canvas 214 137 687 558 10;
-#X declare -stdpath spam;
 #X obj 12 16 spam.in~;
 #X obj 132 85 loadbang;
 #X obj 12 485 set \$0-t-scope c1, f 25;
@@ -295,7 +294,6 @@ float c1 float c2;
 #X connect 2 0 0 0;
 #X restore 237 191 pd set_gain;
 #X obj 177 216 r \$0-active;
-#X obj 534 14 declare -stdpath spam;
 #X connect 0 0 20 0;
 #X connect 1 0 10 0;
 #X connect 3 0 4 0;
