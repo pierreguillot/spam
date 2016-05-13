@@ -20,12 +20,12 @@
 #X obj 37 420 osc~ 5;
 #X obj 22 479 *~;
 #X obj 132 722 dac~ 1 2 3 4 5 6 7 8, f 33;
-#X obj 6 10 misc/ylm.header ylm.2d.syn.directional;
+#X obj 6 10 ylm.header ylm.2d.syn.directional;
 #X obj 22 536 spam~ 7 ylm.2d.syn.directional~ 3;
 #X obj 350 688 text define -k \$0-pro-attrs;
 #A set angles 45 90 135 180 225 270 315 360 \;;
 #X obj 132 605 spam~ 7 ylm.2d.projector~ 3 8 \$0-pro-attrs, f 33;
-#X obj 9 750 misc/ylm.footer;
+#X obj 9 750 ylm.footer;
 #N canvas 0 22 450 300 init 0;
 #X obj 23 32 loadbang;
 #X msg 23 54 80;

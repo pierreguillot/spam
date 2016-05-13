@@ -90,8 +90,8 @@ bufg 1225-t-scope-value-g;
 #A set gain 118 \; interval 100 \;;
 #X obj 22 213 spam~ 7 ylm.2d.scope~ 3 \$0-scope \$0-scope-attrs, f
 51;
-#X obj 9 450 misc/ylm.footer;
-#X obj 6 7 misc/ylm.header ylm.2d.scope~;
+#X obj 9 450 ylm.footer;
+#X obj 6 7 ylm.header ylm.2d.scope~;
 #N canvas 0 22 1203 672 circular_harmonics_generator____________________
 0;
 #X obj 22 205 cos~;

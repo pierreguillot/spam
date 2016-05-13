@@ -34,6 +34,8 @@ after_build:
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.pdb
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
     - rename %APPVEYOR_BUILD_FOLDER%\bin spam
+    - xcopy %APPVEYOR_BUILD_FOLDER%\ylm %APPVEYOR_BUILD_FOLDER%\spam\ylm
+    - xcopy %APPVEYOR_BUILD_FOLDER%\mat %APPVEYOR_BUILD_FOLDER%\spam\mat
     - 7z a %ZIP%.zip %APPVEYOR_BUILD_FOLDER%\spam\
 
 artifacts:

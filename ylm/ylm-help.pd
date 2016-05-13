@@ -1,7 +1,7 @@
 #N canvas 606 55 446 580 10;
 #X declare -stdpath spam;
-#X obj 9 7 misc/ylm.header ylm;
-#X obj 16 542 misc/ylm.footer;
+#X obj 9 7 ylm.header ylm;
+#X obj 16 542 ylm.footer;
 #X obj 9 89 ylm.2d.syn.directional~;
 #X obj 9 408 ylm.2d.scope~;
 #X obj 9 458 ylm.2d.projector~;
