@@ -11,6 +11,7 @@ Externals:
 - spam.out: The outlet object for messages.
 - spam.out~: The outlet object for signal.
 - spam.connect: The object that creates several connection in one click.
+- spam : The all-in-one library
 
 Abstractions:
 - mat - matricial spatialization tools
@@ -20,8 +21,13 @@ Installation:
 - Download the latest [release](https://github.com/pierreguillot/spam/releases).
 - Unzip the file.
 - Put the *spam* folder in the [Pure Data library folder](https://puredata.info/docs/faq/how-do-i-install-externals-and-help-files).
-- Add spam in the Pure Data's startup windows from the menu (optional):
+- Add spam in the Pure Data's startup window from the menu (optional):
   - Pd/Preferences/Startup...  [New...]
+
+Compilation
+- cd build
+- cmake ..
+- cmake --build .
 
 Author: Pierre Guillot  
 Organizations: Université Paris 8 | CICM | Labex Arts H2H
