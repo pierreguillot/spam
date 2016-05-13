@@ -20,5 +20,5 @@ The abstraction displays the weighted sum of the circular harmonics in a canvas.
 The abstraction projects the signals of the circular harmonics onto a set of plane waves.
 
 Author: Pierre Guillot  
-Organizations: Université Paris 8 | CICM | Labex Arts H2H
+Organizations: Université Paris 8 | CICM | Labex Arts H2H   
 Website: https://github.com/pierreguillot/spam
