@@ -42,7 +42,7 @@
 #X obj 53 30 list length;
 #X obj 38 56 !=;
 #X obj 38 78 sel 1;
-#X obj 38 100 print hoa.2d.decoder~ error: wrong number of angles for
+#X obj 38 100 print hoa.2d.projector~ error: wrong number of angles for
 loudpeakers., f 12;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;

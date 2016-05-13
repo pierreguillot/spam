@@ -1,6 +1,6 @@
 # ylm
 
-A set of abstractions for sound spatialization in Pure Data based on a ambisonics.
+A set of abstractions for sound spatialization based on high order ambisonics.
 
 - ylm.2d.syn.directional~:   
 The abstraction synthesizes the signals of the circular harmonics of a source sound depending on coordinates.
@@ -16,5 +16,5 @@ The abstraction synthesizes the signals of the circular harmonics with a source 
 The abstraction synthesizes the signals of the circular harmonics with a source signal using phasing effect.
 - ylm.2d.scope~:   
 The abstraction displays the weighted sum of the circular harmonics in a canvas.
-- ylm.2d.decoder~:   
-...
+- ylm.2d.projector~:  
+The abstraction projects the signals of the circular harmonics onto a set of plane waves.

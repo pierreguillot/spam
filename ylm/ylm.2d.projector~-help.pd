@@ -1,0 +1,294 @@
+#N canvas 296 26 678 799 10;
+#X declare -stdpath spam;
+#X obj 37 442 *~;
+#X obj 49 465 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+-1 -1 80 256;
+#X obj 22 509 *~, f 5;
+#X obj 22 400 noise~;
+#X obj 350 667 declare -stdpath spam;
+#N canvas 0 22 450 300 gain 0;
+#X obj 10 45 dbtorms;
+#X obj 10 67 pack f 20;
+#X obj 10 89 line~;
+#X obj 10 25 inlet;
+#X obj 10 111 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X restore 49 485 pd gain;
+#X obj 37 420 osc~ 5;
+#X obj 22 479 *~;
+#X obj 132 722 dac~ 1 2 3 4 5 6 7 8, f 33;
+#X obj 6 10 misc/ylm.header ylm.2d.syn.directional;
+#X obj 22 536 spam~ 7 ylm.2d.syn.directional~ 3;
+#X obj 350 688 text define -k \$0-pro-attrs;
+#A set angles 45 90 135 180 225 270 315 360 \;;
+#X obj 132 605 spam~ 7 ylm.2d.projector~ 3 8 \$0-pro-attrs, f 33;
+#X obj 9 750 misc/ylm.footer;
+#N canvas 0 22 450 300 init 0;
+#X obj 23 32 loadbang;
+#X msg 23 54 80;
+#X obj 23 76 s \$0-gain;
+#X obj 93 32 loadbang;
+#X obj 93 76 s \$0-pos;
+#X msg 93 54 1 0;
+#X obj 163 32 loadbang;
+#X msg 163 54 1;
+#X obj 163 76 s \$0-traj;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X restore 350 646 pd init;
+#N canvas 217 367 450 300 pos 0;
+#X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.279252 256;
+#X obj 100 100 nbx 4 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 119 77 t b f;
+#X obj 101 150 pack 1 f;
+#X obj 101 18 r \$0-pos;
+#X obj 101 40 unpack f f;
+#X obj 101 172 outlet;
+#X obj 164 19 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 90 14 2 100 100;
+#X restore 134 512 pd pos;
+#X obj 134 463 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 22 450 406 trajectory 0;
+#X obj 158 109 + 1;
+#X obj 128 173 / 180;
+#X obj 128 195 * 6.28318;
+#X obj 128 153 f -1;
+#X obj 128 131 sel 179 0;
+#X obj 128 109 f 0;
+#X obj 83 106 + 1;
+#X obj 53 150 f -1;
+#X obj 93 150 f 1;
+#X obj 53 106 f 0;
+#X obj 53 128 sel 499 0;
+#X obj 53 235 t b f;
+#X obj 53 257 f 1;
+#X obj 53 279 -, f 5;
+#X obj 53 79 t b b, f 13;
+#X obj 53 55 metro 20;
+#X obj 53 301 pack f f, f 13;
+#X obj 53 33 inlet;
+#X obj 53 323 outlet;
+#X obj 159 153 f 1;
+#X obj 53 170 max 300;
+#X obj 53 192 - 300;
+#X obj 53 214 / 200;
+#X connect 0 0 5 1;
+#X connect 1 0 2 0;
+#X connect 2 0 16 1;
+#X connect 3 0 0 1;
+#X connect 4 0 3 0;
+#X connect 4 1 19 0;
+#X connect 5 0 0 0;
+#X connect 5 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 1;
+#X connect 7 0 6 1;
+#X connect 8 0 6 1;
+#X connect 9 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 0 20 0;
+#X connect 10 0 7 0;
+#X connect 10 1 8 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 1;
+#X connect 12 0 13 0;
+#X connect 13 0 16 0;
+#X connect 14 0 9 0;
+#X connect 14 1 5 0;
+#X connect 15 0 14 0;
+#X connect 16 0 18 0;
+#X connect 17 0 15 0;
+#X connect 19 0 0 1;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 11 0;
+#X restore 134 486 pd trajectory;
+#X text 4 31 The abstraction projects the signals of the circular harmonics
+onto a set of plane waves. The projection (or decoding) is the most
+basic operation to render a sound field from the domain of the spatial
+harmonics to a set of loudspeakers. To ensure a good restitution \,
+the loudspeakers must be equally spaced on a circle and the number
+of loudspeakers must at least equal to the number of harmonics. If
+the system of restitution is irregular \, one way to make up the artefact
+is to combine the projection with another spatialization technique
+like VBAP \, DBAP \, Binaural \, etc., f 67;
+#X text 4 149 The projection operation for one planewave amounts to
+compute the dot product of the signals of the circular harmonics of
+the sound field with the coefficients of the circular harmonics resulting
+from the synthesis of an unitary signal in the direction of the plane
+wave:, f 67;
+#X text 4 213 g(θ) = Y[0 \, 0] * G[0 \, 0](θ) + Y[1 \, -1] * G[1
+\, -1](θ) + Y[1 \, 1] * G[1 \, 1](θ) + ... + Y[N*2+1 \, N*2+1] *
+G[N*2+1 \, N*2+1](θ), f 67;
+#X text 4 240 whith θ the angle of the plane wave \, Y[l \, m] the
+signal of the circular harmonic of degree l and azimuthal order m \,
+G[0 \, 0] the coefficient resulting from synthesis of an unitary signal
+in the direction of the plane wave and N the order of decomposition.
+In practice \, the Y[0 \, 0] * G[0 \, 0](θ) part is divided by 2 because
+the harmonics are not normalized bedore the projection. The unitary
+signal is equal to 1/(N+1)., f 67;
+#X obj 267 442 *~;
+#X obj 279 465 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+-1 -1 80 256;
+#X obj 252 509 *~, f 5;
+#N canvas 0 22 450 300 gain 0;
+#X obj 10 45 dbtorms;
+#X obj 10 67 pack f 20;
+#X obj 10 89 line~;
+#X obj 10 25 inlet;
+#X obj 10 111 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X restore 279 485 pd gain;
+#X obj 267 420 osc~ 5;
+#X obj 252 479 *~;
+#X obj 252 536 spam~ 7 ylm.2d.syn.directional~ 3;
+#N canvas 217 367 450 300 pos 0;
+#X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.279252 256;
+#X obj 100 100 nbx 4 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 119 77 t b f;
+#X obj 101 150 pack 1 f;
+#X obj 101 18 r \$0-pos;
+#X obj 101 40 unpack f f;
+#X obj 101 172 outlet;
+#X obj 164 19 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 90 14 2 100 100;
+#X restore 448 512 pd pos;
+#X obj 448 463 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 22 450 406 trajectory 0;
+#X obj 158 109 + 1;
+#X obj 128 173 / 180;
+#X obj 128 195 * 6.28318;
+#X obj 128 153 f -1;
+#X obj 128 131 sel 179 0;
+#X obj 128 109 f 0;
+#X obj 83 106 + 1;
+#X obj 53 150 f -1;
+#X obj 93 150 f 1;
+#X obj 53 128 sel 499 0;
+#X obj 53 235 t b f;
+#X obj 53 257 f 1;
+#X obj 53 279 -, f 5;
+#X obj 53 79 t b b, f 13;
+#X obj 53 55 metro 20;
+#X obj 53 301 pack f f, f 13;
+#X obj 53 33 inlet;
+#X obj 53 323 outlet;
+#X obj 159 153 f 1;
+#X obj 53 170 max 300;
+#X obj 53 192 - 300;
+#X obj 53 214 / 200;
+#X obj 53 106 f 200;
+#X connect 0 0 5 1;
+#X connect 1 0 2 0;
+#X connect 2 0 15 1;
+#X connect 3 0 0 1;
+#X connect 4 0 3 0;
+#X connect 4 1 18 0;
+#X connect 5 0 0 0;
+#X connect 5 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 22 1;
+#X connect 7 0 6 1;
+#X connect 8 0 6 1;
+#X connect 9 0 7 0;
+#X connect 9 1 8 0;
+#X connect 10 0 11 0;
+#X connect 10 1 12 1;
+#X connect 11 0 12 0;
+#X connect 12 0 15 0;
+#X connect 13 0 22 0;
+#X connect 13 1 5 0;
+#X connect 14 0 13 0;
+#X connect 15 0 17 0;
+#X connect 16 0 14 0;
+#X connect 18 0 0 1;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 10 0;
+#X connect 22 0 6 0;
+#X connect 22 0 9 0;
+#X connect 22 0 19 0;
+#X restore 448 486 pd trajectory;
+#X obj 252 400 osc~ 220;
+#X text 4 340 The abstraction expects the order of decomposition as
+the first argument and the number of planwaves as the second argument
+and the third argument must the name of a text object containing the
+angles of the plane waves., f 67;
+#X connect 0 0 7 1;
+#X connect 1 0 5 0;
+#X connect 2 0 10 0;
+#X connect 3 0 7 0;
+#X connect 5 0 2 1;
+#X connect 6 0 0 0;
+#X connect 6 0 0 1;
+#X connect 7 0 2 0;
+#X connect 10 0 12 0;
+#X connect 10 1 12 1;
+#X connect 10 2 12 2;
+#X connect 10 3 12 3;
+#X connect 10 4 12 4;
+#X connect 10 5 12 5;
+#X connect 10 6 12 6;
+#X connect 12 0 8 0;
+#X connect 12 1 8 1;
+#X connect 12 2 8 2;
+#X connect 12 3 8 3;
+#X connect 12 4 8 4;
+#X connect 12 5 8 5;
+#X connect 12 6 8 6;
+#X connect 12 7 8 7;
+#X connect 15 0 10 1;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 22 0 27 1;
+#X connect 23 0 25 0;
+#X connect 24 0 28 0;
+#X connect 25 0 24 1;
+#X connect 26 0 22 0;
+#X connect 26 0 22 1;
+#X connect 27 0 24 0;
+#X connect 28 0 12 0;
+#X connect 28 1 12 1;
+#X connect 28 2 12 2;
+#X connect 28 3 12 3;
+#X connect 28 4 12 4;
+#X connect 28 5 12 5;
+#X connect 28 6 12 6;
+#X connect 29 0 28 1;
+#X connect 30 0 31 0;
+#X connect 31 0 29 0;
+#X connect 32 0 27 0;

@@ -4,7 +4,7 @@
 #X obj 16 542 misc/ylm.footer;
 #X obj 9 89 ylm.2d.syn.directional~;
 #X obj 9 408 ylm.2d.scope~;
-#X obj 9 456 ylm.2d.decoder~;
+#X obj 9 458 ylm.2d.projector~;
 #X obj 288 520 declare -stdpath spam;
 #X obj 9 139 ylm.2d.syn.delay~;
 #X obj 9 204 ylm.2d.syn.grain~;
@@ -22,9 +22,11 @@ harmonics of a sound source using quasi-synchronous granular synthesis
 (QSGS)., f 64;
 #X text 8 226 The abstraction synthesizes the signals of the circular
 harmonics of a sound source using ring modulation., f 64;
-#X text 8 276 The abstraction synthesizes the signals of the circular
-harmonics with a source signal using flanging effect., f 64;
 #X obj 9 304 ylm.2d.syn.flanger~;
 #X obj 9 354 ylm.2d.syn.phaser~;
+#X text 8 276 The abstraction synthesizes the signals of the circular
+harmonics of a sound source using flanging effect., f 64;
 #X text 8 326 The abstraction synthesizes the signals of the circular
-harmonics with a source signal using phasing effect., f 64;
+harmonics of a sound source using phasing effect., f 64;
+#X text 8 429 The abstraction projects the signals of the circular
+harmonics onto a set of plane waves., f 64;
