@@ -48,8 +48,8 @@ script:
 before_deploy:
   - cd ../
   - mv bin spam
-  - cp LICENSE spam/LICENSE
-  - cp README.md spam/README.txt
+  - cp LICENSE spam/license.txt
+  - cp README.md spam/readme.txt
   - cp -r ylm spam/ylm
   - mv spam/ylm/README.md spam/ylm/readme.txt
   - cp -r mat spam/mat
