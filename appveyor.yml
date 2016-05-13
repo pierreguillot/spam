@@ -35,7 +35,9 @@ after_build:
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
     - rename %APPVEYOR_BUILD_FOLDER%\bin spam
     - xcopy /E %APPVEYOR_BUILD_FOLDER%\ylm\* %APPVEYOR_BUILD_FOLDER%\spam\ylm\*
+    - rename %APPVEYOR_BUILD_FOLDER%\spam\ylm\README.md readme.txt
     - xcopy /E %APPVEYOR_BUILD_FOLDER%\mat\* %APPVEYOR_BUILD_FOLDER%\spam\mat\*
+    - rename %APPVEYOR_BUILD_FOLDER%\spam\spam\README.md readme.txt
     - 7z a %ZIP%.zip %APPVEYOR_BUILD_FOLDER%\spam\
 
 artifacts:
