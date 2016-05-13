@@ -67,7 +67,7 @@ static void spam_connect_bang(t_spam_connect *x)
     }
 }
 
-void setup_spam0x2econnect(void)
+extern void setup_spam0x2econnect(void)
 {
     t_class* c = class_new(gensym("spam.connect"), (t_newmethod)spam_connect_new, NULL, (short)sizeof(t_spam_connect), 0, 0);
     if(c)

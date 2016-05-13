@@ -1,219 +1,238 @@
-#N struct 7650-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1319-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7645-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1314-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7640-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1309-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7635-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1304-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7630-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1299-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7625-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1294-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7620-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1289-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7615-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1284-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7610-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1279-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7605-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1274-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7600-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1269-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7595-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1264-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7590-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1259-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7585-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1254-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7580-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1249-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7575-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1244-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7570-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1239-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7565-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1234-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7560-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1229-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7555-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1224-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7550-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1219-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7545-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1214-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7540-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1209-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7535-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1204-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7530-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1199-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7525-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1194-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7520-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1189-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7515-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1184-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7510-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1179-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7505-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1174-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7500-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1169-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7495-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1164-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7490-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1159-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7485-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1154-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7480-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1149-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7475-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1144-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7470-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1139-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7465-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1134-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7460-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1129-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7455-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1124-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7450-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1119-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7445-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1114-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7440-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1109-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7435-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1104-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7430-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1099-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7425-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1094-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7420-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1089-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7415-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1084-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7410-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1079-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7405-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1074-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7400-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1069-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7395-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1064-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7390-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1059-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7385-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1054-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7380-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1049-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7375-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1044-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7370-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1039-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7365-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1034-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7360-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1029-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7355-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1024-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7350-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1019-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7345-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1014-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7340-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1009-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N struct 7335-t-scope float x1 float y1 float x2 float y2 float c1
+#N struct 1004-t-scope float x1 float y1 float x2 float y2 float c1
 float c2;
-#N canvas 719 23 439 818 10;
+#N struct 1682-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1677-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1672-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1667-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1662-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1657-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1652-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N struct 1647-t-meter float x1 float y1 float s1 float s2 float s3
+float s4 float c0 float c1 float c2 float c3 float c4;
+#N canvas 338 23 610 810 10;
 #X declare -stdpath spam;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 7650-t-scope 0.75 -0.75 1 -1 999 0 \;;
-#X scalar 7645-t-scope 0.5 -0.75 0.75 -1 999 0 \;;
-#X scalar 7640-t-scope 0.25 -0.75 0.5 -1 999 0 \;;
-#X scalar 7635-t-scope 0 -0.75 0.25 -1 999 0 \;;
-#X scalar 7630-t-scope -0.25 -0.75 0 -1 999 0 \;;
-#X scalar 7625-t-scope -0.5 -0.75 -0.25 -1 999 0 \;;
-#X scalar 7620-t-scope -0.75 -0.75 -0.5 -1 999 0 \;;
-#X scalar 7615-t-scope -1 -0.75 -0.75 -1 999 0 \;;
-#X scalar 7610-t-scope 0.75 -0.5 1 -0.75 999 0 \;;
-#X scalar 7605-t-scope 0.5 -0.5 0.75 -0.75 999 0 \;;
-#X scalar 7600-t-scope 0.25 -0.5 0.5 -0.75 999 0 \;;
-#X scalar 7595-t-scope 0 -0.5 0.25 -0.75 999 0 \;;
-#X scalar 7590-t-scope -0.25 -0.5 0 -0.75 999 0 \;;
-#X scalar 7585-t-scope -0.5 -0.5 -0.25 -0.75 999 0 \;;
-#X scalar 7580-t-scope -0.75 -0.5 -0.5 -0.75 999 0 \;;
-#X scalar 7575-t-scope -1 -0.5 -0.75 -0.75 999 0 \;;
-#X scalar 7570-t-scope 0.75 -0.25 1 -0.5 999 0 \;;
-#X scalar 7565-t-scope 0.5 -0.25 0.75 -0.5 999 0 \;;
-#X scalar 7560-t-scope 0.25 -0.25 0.5 -0.5 999 0 \;;
-#X scalar 7555-t-scope 0 -0.25 0.25 -0.5 999 0 \;;
-#X scalar 7550-t-scope -0.25 -0.25 0 -0.5 999 0 \;;
-#X scalar 7545-t-scope -0.5 -0.25 -0.25 -0.5 999 0 \;;
-#X scalar 7540-t-scope -0.75 -0.25 -0.5 -0.5 999 0 \;;
-#X scalar 7535-t-scope -1 -0.25 -0.75 -0.5 999 0 \;;
-#X scalar 7530-t-scope 0.75 -0 1 -0.25 999 0 \;;
-#X scalar 7525-t-scope 0.5 -0 0.75 -0.25 999 0 \;;
-#X scalar 7520-t-scope 0.25 -0 0.5 -0.25 999 0 \;;
-#X scalar 7515-t-scope 0 -0 0.25 -0.25 90 0 \;;
-#X scalar 7510-t-scope -0.25 -0 0 -0.25 90 0 \;;
-#X scalar 7505-t-scope -0.5 -0 -0.25 -0.25 999 0 \;;
-#X scalar 7500-t-scope -0.75 -0 -0.5 -0.25 999 0 \;;
-#X scalar 7495-t-scope -1 -0 -0.75 -0.25 999 0 \;;
-#X scalar 7490-t-scope 0.75 0.25 1 -0 999 0 \;;
-#X scalar 7485-t-scope 0.5 0.25 0.75 -0 999 0 \;;
-#X scalar 7480-t-scope 0.25 0.25 0.5 -0 999 0 \;;
-#X scalar 7475-t-scope 0 0.25 0.25 -0 90 0 \;;
-#X scalar 7470-t-scope -0.25 0.25 0 -0 90 0 \;;
-#X scalar 7465-t-scope -0.5 0.25 -0.25 -0 999 0 \;;
-#X scalar 7460-t-scope -0.75 0.25 -0.5 -0 999 0 \;;
-#X scalar 7455-t-scope -1 0.25 -0.75 -0 999 0 \;;
-#X scalar 7450-t-scope 0.75 0.5 1 0.25 999 0 \;;
-#X scalar 7445-t-scope 0.5 0.5 0.75 0.25 999 0 \;;
-#X scalar 7440-t-scope 0.25 0.5 0.5 0.25 999 0 \;;
-#X scalar 7435-t-scope 0 0.5 0.25 0.25 999 0 \;;
-#X scalar 7430-t-scope -0.25 0.5 0 0.25 999 0 \;;
-#X scalar 7425-t-scope -0.5 0.5 -0.25 0.25 999 0 \;;
-#X scalar 7420-t-scope -0.75 0.5 -0.5 0.25 999 0 \;;
-#X scalar 7415-t-scope -1 0.5 -0.75 0.25 999 0 \;;
-#X scalar 7410-t-scope 0.75 0.75 1 0.5 999 0 \;;
-#X scalar 7405-t-scope 0.5 0.75 0.75 0.5 999 0 \;;
-#X scalar 7400-t-scope 0.25 0.75 0.5 0.5 999 0 \;;
-#X scalar 7395-t-scope 0 0.75 0.25 0.5 999 0 \;;
-#X scalar 7390-t-scope -0.25 0.75 0 0.5 999 0 \;;
-#X scalar 7385-t-scope -0.5 0.75 -0.25 0.5 999 0 \;;
-#X scalar 7380-t-scope -0.75 0.75 -0.5 0.5 999 0 \;;
-#X scalar 7375-t-scope -1 0.75 -0.75 0.5 999 0 \;;
-#X scalar 7370-t-scope 0.75 1 1 0.75 999 0 \;;
-#X scalar 7365-t-scope 0.5 1 0.75 0.75 999 0 \;;
-#X scalar 7360-t-scope 0.25 1 0.5 0.75 999 0 \;;
-#X scalar 7355-t-scope 0 1 0.25 0.75 999 0 \;;
-#X scalar 7350-t-scope -0.25 1 0 0.75 999 0 \;;
-#X scalar 7345-t-scope -0.5 1 -0.25 0.75 999 0 \;;
-#X scalar 7340-t-scope -0.75 1 -0.5 0.75 999 0 \;;
-#X scalar 7335-t-scope -1 1 -0.75 0.75 999 0 \;;
+#X scalar 1319-t-scope 0.75 -0.75 1 -1 999 0 \;;
+#X scalar 1314-t-scope 0.5 -0.75 0.75 -1 999 0 \;;
+#X scalar 1309-t-scope 0.25 -0.75 0.5 -1 999 0 \;;
+#X scalar 1304-t-scope 0 -0.75 0.25 -1 999 0 \;;
+#X scalar 1299-t-scope -0.25 -0.75 0 -1 999 0 \;;
+#X scalar 1294-t-scope -0.5 -0.75 -0.25 -1 999 0 \;;
+#X scalar 1289-t-scope -0.75 -0.75 -0.5 -1 999 0 \;;
+#X scalar 1284-t-scope -1 -0.75 -0.75 -1 999 0 \;;
+#X scalar 1279-t-scope 0.75 -0.5 1 -0.75 999 0 \;;
+#X scalar 1274-t-scope 0.5 -0.5 0.75 -0.75 999 0 \;;
+#X scalar 1269-t-scope 0.25 -0.5 0.5 -0.75 999 0 \;;
+#X scalar 1264-t-scope 0 -0.5 0.25 -0.75 999 0 \;;
+#X scalar 1259-t-scope -0.25 -0.5 0 -0.75 999 0 \;;
+#X scalar 1254-t-scope -0.5 -0.5 -0.25 -0.75 999 0 \;;
+#X scalar 1249-t-scope -0.75 -0.5 -0.5 -0.75 999 0 \;;
+#X scalar 1244-t-scope -1 -0.5 -0.75 -0.75 999 0 \;;
+#X scalar 1239-t-scope 0.75 -0.25 1 -0.5 999 0 \;;
+#X scalar 1234-t-scope 0.5 -0.25 0.75 -0.5 999 0 \;;
+#X scalar 1229-t-scope 0.25 -0.25 0.5 -0.5 999 0 \;;
+#X scalar 1224-t-scope 0 -0.25 0.25 -0.5 999 0 \;;
+#X scalar 1219-t-scope -0.25 -0.25 0 -0.5 999 0 \;;
+#X scalar 1214-t-scope -0.5 -0.25 -0.25 -0.5 999 0 \;;
+#X scalar 1209-t-scope -0.75 -0.25 -0.5 -0.5 999 0 \;;
+#X scalar 1204-t-scope -1 -0.25 -0.75 -0.5 999 0 \;;
+#X scalar 1199-t-scope 0.75 -0 1 -0.25 999 0 \;;
+#X scalar 1194-t-scope 0.5 -0 0.75 -0.25 999 0 \;;
+#X scalar 1189-t-scope 0.25 -0 0.5 -0.25 999 0 \;;
+#X scalar 1184-t-scope 0 -0 0.25 -0.25 999 0 \;;
+#X scalar 1179-t-scope -0.25 -0 0 -0.25 999 0 \;;
+#X scalar 1174-t-scope -0.5 -0 -0.25 -0.25 999 0 \;;
+#X scalar 1169-t-scope -0.75 -0 -0.5 -0.25 999 0 \;;
+#X scalar 1164-t-scope -1 -0 -0.75 -0.25 999 0 \;;
+#X scalar 1159-t-scope 0.75 0.25 1 -0 999 0 \;;
+#X scalar 1154-t-scope 0.5 0.25 0.75 -0 999 0 \;;
+#X scalar 1149-t-scope 0.25 0.25 0.5 -0 999 0 \;;
+#X scalar 1144-t-scope 0 0.25 0.25 -0 999 0 \;;
+#X scalar 1139-t-scope -0.25 0.25 0 -0 999 0 \;;
+#X scalar 1134-t-scope -0.5 0.25 -0.25 -0 999 0 \;;
+#X scalar 1129-t-scope -0.75 0.25 -0.5 -0 999 0 \;;
+#X scalar 1124-t-scope -1 0.25 -0.75 -0 999 0 \;;
+#X scalar 1119-t-scope 0.75 0.5 1 0.25 999 0 \;;
+#X scalar 1114-t-scope 0.5 0.5 0.75 0.25 999 0 \;;
+#X scalar 1109-t-scope 0.25 0.5 0.5 0.25 999 0 \;;
+#X scalar 1104-t-scope 0 0.5 0.25 0.25 999 0 \;;
+#X scalar 1099-t-scope -0.25 0.5 0 0.25 999 0 \;;
+#X scalar 1094-t-scope -0.5 0.5 -0.25 0.25 999 0 \;;
+#X scalar 1089-t-scope -0.75 0.5 -0.5 0.25 999 0 \;;
+#X scalar 1084-t-scope -1 0.5 -0.75 0.25 999 0 \;;
+#X scalar 1079-t-scope 0.75 0.75 1 0.5 999 0 \;;
+#X scalar 1074-t-scope 0.5 0.75 0.75 0.5 999 0 \;;
+#X scalar 1069-t-scope 0.25 0.75 0.5 0.5 999 0 \;;
+#X scalar 1064-t-scope 0 0.75 0.25 0.5 999 0 \;;
+#X scalar 1059-t-scope -0.25 0.75 0 0.5 999 0 \;;
+#X scalar 1054-t-scope -0.5 0.75 -0.25 0.5 999 0 \;;
+#X scalar 1049-t-scope -0.75 0.75 -0.5 0.5 999 0 \;;
+#X scalar 1044-t-scope -1 0.75 -0.75 0.5 999 0 \;;
+#X scalar 1039-t-scope 0.75 1 1 0.75 999 0 \;;
+#X scalar 1034-t-scope 0.5 1 0.75 0.75 999 0 \;;
+#X scalar 1029-t-scope 0.25 1 0.5 0.75 999 0 \;;
+#X scalar 1024-t-scope 0 1 0.25 0.75 999 0 \;;
+#X scalar 1019-t-scope -0.25 1 0 0.75 999 0 \;;
+#X scalar 1014-t-scope -0.5 1 -0.25 0.75 999 0 \;;
+#X scalar 1009-t-scope -0.75 1 -0.5 0.75 999 0 \;;
+#X scalar 1004-t-scope -1 1 -0.75 0.75 999 0 \;;
 #X coords -1 1 1 -1 200 200 2 100 100;
-#X restore 63 523 pd \$0-scope;
+#X restore 63 503 pd \$0-scope;
 #X obj 14 245 text define -k \$0-config;
-#A set mat.dim 8 8 \; mat.dec.nls 2 \; mat.dec.positions -0.5 1 0.5
-1 \; mat.dec.rolloff 10 \; mat.dec.blur 0.1 \;;
+#A set mat.dim 8 8 \; mat.meter.nls 8 \; mat.meter.positions -0.530331
+0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332
+-0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \; mat.meter.gain
+140 \; mat.scope.colors 999 90 990 950 900 \; mat.scope.gain 150 \;
+mat.dec.rolloff 8 \; mat.dec.blur 0.1 \; mat.dec.nls 8 \; mat.dec.positions
+-0.530331 0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06
+-0.75 0.530332 -0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06
+0.75 \;;
 #X obj 116 284 tgl 15 0 empty \$0-auto empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 29 332 *~;
 #X obj 14 355 *~;
 #X obj 41 355 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
--1 -1 100 256;
+-1 -1 60 256;
 #X obj 14 399 *~, f 5;
 #X obj 14 287 noise~;
-#X obj 14 487 spam~ 64 mat.2d.scope~ \$0-config \$0-scope, f 51;
-#X obj 14 762 dac~ 1 2, f 51;
-#X obj 14 740 spam~ 64 mat.2d.dec.dbap~ \$0-config, f 51;
+#X obj 14 477 spam~ 64 mat.2d.scope~ \$0-config \$0-scope, f 51;
 #X text 4 216 The text object must define the dimensions of the matrix.
 ;
 #N canvas 0 22 450 300 init 0;
 #X obj 13 42 loadbang;
-#X msg 13 64 100;
 #X obj 13 86 s \$0-gain;
 #X obj 82 42 loadbang;
 #X msg 82 64 0 0;
@@ -227,16 +246,17 @@ float c2;
 #X obj 322 42 loadbang;
 #X obj 322 86 s \$0-size;
 #X msg 322 64 1;
-#X connect 0 0 1 0;
-#X connect 1 0 2 0;
+#X msg 13 64 60;
+#X connect 0 0 14 0;
+#X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 5 0;
+#X connect 5 0 6 0;
 #X connect 6 0 7 0;
-#X connect 7 0 8 0;
-#X connect 9 0 11 0;
-#X connect 11 0 10 0;
-#X connect 12 0 14 0;
-#X connect 14 0 13 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 11 0 13 0;
+#X connect 13 0 12 0;
+#X connect 14 0 1 0;
 #X restore 14 266 pd init;
 #X obj 4 785 tools/mat.footer;
 #X obj 7 9 declare -stdpath spam;
@@ -326,150 +346,190 @@ of the sound source. The opacity an be seen as a global gain., f 67
 ;
 #X obj 29 310 osc~ 5;
 #X obj 14 453 spam~ 64 mat.2d.brush~ \$0-config, f 51;
-#X connect 2 0 33 0;
+#X obj 14 738 spam~ 8 mat.2d.meter~ \$0-config \$0-meter, f 51;
+#X obj 458 264 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 458 284 spam.connect;
+#X obj 14 762 dac~ 1 2 3 4 5 6 7 8, f 51;
+#N canvas 0 22 450 300 \$0-meter 0;
+#X scalar 1682-t-meter -4.18723e-06 0.75 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1677-t-meter 0.530328 0.530333 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1672-t-meter 0.75 3.34978e-06 8 16 24 32 555 90 990 950 900
+\;;
+#X scalar 1667-t-meter 0.530332 -0.530328 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1662-t-meter 2.51234e-06 -0.75 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1657-t-meter -0.530329 -0.530332 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1652-t-meter -0.75 -1.67489e-06 8 16 24 32 555 90 990 950
+900 \;;
+#X scalar 1647-t-meter -0.530331 0.530329 8 16 24 32 555 90 990 950
+900 \;;
+#X coords -1 1 1 -1 200 200 2 100 100;
+#X restore 342 502 pd \$0-meter;
+#X obj 14 710 spam~ 64 mat.2d.dec.dbap~ \$0-config, f 51;
+#X connect 2 0 31 0;
 #X connect 3 0 4 1;
 #X connect 4 0 6 0;
-#X connect 5 0 32 0;
-#X connect 6 0 36 0;
+#X connect 5 0 30 0;
+#X connect 6 0 34 0;
 #X connect 7 0 4 0;
-#X connect 10 0 9 0;
-#X connect 10 1 9 1;
-#X connect 16 0 30 0;
-#X connect 17 0 16 0;
-#X connect 18 0 19 0;
-#X connect 19 0 21 0;
-#X connect 20 0 36 1;
+#X connect 14 0 28 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 19 0;
+#X connect 18 0 34 1;
+#X connect 20 0 21 0;
+#X connect 21 0 29 0;
 #X connect 22 0 23 0;
-#X connect 23 0 31 0;
-#X connect 24 0 25 0;
-#X connect 32 0 6 1;
-#X connect 35 0 3 0;
-#X connect 35 0 3 1;
-#X connect 36 0 8 0;
-#X connect 36 0 10 0;
-#X connect 36 1 8 1;
-#X connect 36 1 10 1;
-#X connect 36 2 8 2;
-#X connect 36 2 10 2;
-#X connect 36 3 8 3;
-#X connect 36 3 10 3;
-#X connect 36 4 8 4;
-#X connect 36 4 10 4;
-#X connect 36 5 8 5;
-#X connect 36 5 10 5;
-#X connect 36 6 8 6;
-#X connect 36 6 10 6;
-#X connect 36 7 8 7;
-#X connect 36 7 10 7;
-#X connect 36 8 8 8;
-#X connect 36 8 10 8;
-#X connect 36 9 8 9;
-#X connect 36 9 10 9;
-#X connect 36 10 8 10;
-#X connect 36 10 10 10;
-#X connect 36 11 8 11;
-#X connect 36 11 10 11;
-#X connect 36 12 8 12;
-#X connect 36 12 10 12;
-#X connect 36 13 8 13;
-#X connect 36 13 10 13;
-#X connect 36 14 8 14;
-#X connect 36 14 10 14;
-#X connect 36 15 8 15;
-#X connect 36 15 10 15;
-#X connect 36 16 8 16;
-#X connect 36 16 10 16;
-#X connect 36 17 8 17;
-#X connect 36 17 10 17;
-#X connect 36 18 8 18;
-#X connect 36 18 10 18;
-#X connect 36 19 8 19;
-#X connect 36 19 10 19;
-#X connect 36 20 8 20;
-#X connect 36 20 10 20;
-#X connect 36 21 8 21;
-#X connect 36 21 10 21;
-#X connect 36 22 8 22;
-#X connect 36 22 10 22;
-#X connect 36 23 8 23;
-#X connect 36 23 10 23;
-#X connect 36 24 8 24;
-#X connect 36 24 10 24;
-#X connect 36 25 8 25;
-#X connect 36 25 10 25;
-#X connect 36 26 8 26;
-#X connect 36 26 10 26;
-#X connect 36 27 8 27;
-#X connect 36 27 10 27;
-#X connect 36 28 8 28;
-#X connect 36 28 10 28;
-#X connect 36 29 8 29;
-#X connect 36 29 10 29;
-#X connect 36 30 8 30;
-#X connect 36 30 10 30;
-#X connect 36 31 8 31;
-#X connect 36 31 10 31;
-#X connect 36 32 8 32;
-#X connect 36 32 10 32;
-#X connect 36 33 8 33;
-#X connect 36 33 10 33;
-#X connect 36 34 8 34;
-#X connect 36 34 10 34;
-#X connect 36 35 8 35;
-#X connect 36 35 10 35;
-#X connect 36 36 8 36;
-#X connect 36 36 10 36;
-#X connect 36 37 8 37;
-#X connect 36 37 10 37;
-#X connect 36 38 8 38;
-#X connect 36 38 10 38;
-#X connect 36 39 8 39;
-#X connect 36 39 10 39;
-#X connect 36 40 8 40;
-#X connect 36 40 10 40;
-#X connect 36 41 8 41;
-#X connect 36 41 10 41;
-#X connect 36 42 8 42;
-#X connect 36 42 10 42;
-#X connect 36 43 8 43;
-#X connect 36 43 10 43;
-#X connect 36 44 8 44;
-#X connect 36 44 10 44;
-#X connect 36 45 8 45;
-#X connect 36 45 10 45;
-#X connect 36 46 8 46;
-#X connect 36 46 10 46;
-#X connect 36 47 8 47;
-#X connect 36 47 10 47;
-#X connect 36 48 8 48;
-#X connect 36 48 10 48;
-#X connect 36 49 8 49;
-#X connect 36 49 10 49;
-#X connect 36 50 8 50;
-#X connect 36 50 10 50;
-#X connect 36 51 8 51;
-#X connect 36 51 10 51;
-#X connect 36 52 8 52;
-#X connect 36 52 10 52;
-#X connect 36 53 8 53;
-#X connect 36 53 10 53;
-#X connect 36 54 8 54;
-#X connect 36 54 10 54;
-#X connect 36 55 8 55;
-#X connect 36 55 10 55;
-#X connect 36 56 8 56;
-#X connect 36 56 10 56;
-#X connect 36 57 8 57;
-#X connect 36 57 10 57;
-#X connect 36 58 8 58;
-#X connect 36 58 10 58;
-#X connect 36 59 8 59;
-#X connect 36 59 10 59;
-#X connect 36 60 8 60;
-#X connect 36 60 10 60;
-#X connect 36 61 8 61;
-#X connect 36 61 10 61;
-#X connect 36 62 8 62;
-#X connect 36 62 10 62;
-#X connect 36 63 8 63;
-#X connect 36 63 10 63;
+#X connect 30 0 6 1;
+#X connect 33 0 3 0;
+#X connect 33 0 3 1;
+#X connect 34 0 8 0;
+#X connect 34 0 40 0;
+#X connect 34 1 8 1;
+#X connect 34 1 40 1;
+#X connect 34 2 8 2;
+#X connect 34 2 40 2;
+#X connect 34 3 8 3;
+#X connect 34 3 40 3;
+#X connect 34 4 8 4;
+#X connect 34 4 40 4;
+#X connect 34 5 8 5;
+#X connect 34 5 40 5;
+#X connect 34 6 8 6;
+#X connect 34 6 40 6;
+#X connect 34 7 8 7;
+#X connect 34 7 40 7;
+#X connect 34 8 8 8;
+#X connect 34 8 40 8;
+#X connect 34 9 8 9;
+#X connect 34 9 40 9;
+#X connect 34 10 8 10;
+#X connect 34 10 40 10;
+#X connect 34 11 8 11;
+#X connect 34 11 40 11;
+#X connect 34 12 8 12;
+#X connect 34 12 40 12;
+#X connect 34 13 8 13;
+#X connect 34 13 40 13;
+#X connect 34 14 8 14;
+#X connect 34 14 40 14;
+#X connect 34 15 8 15;
+#X connect 34 15 40 15;
+#X connect 34 16 8 16;
+#X connect 34 16 40 16;
+#X connect 34 17 8 17;
+#X connect 34 17 40 17;
+#X connect 34 18 8 18;
+#X connect 34 18 40 18;
+#X connect 34 19 8 19;
+#X connect 34 19 40 19;
+#X connect 34 20 8 20;
+#X connect 34 20 40 20;
+#X connect 34 21 8 21;
+#X connect 34 21 40 21;
+#X connect 34 22 8 22;
+#X connect 34 22 40 22;
+#X connect 34 23 8 23;
+#X connect 34 23 40 23;
+#X connect 34 24 8 24;
+#X connect 34 24 40 24;
+#X connect 34 25 8 25;
+#X connect 34 25 40 25;
+#X connect 34 26 8 26;
+#X connect 34 26 40 26;
+#X connect 34 27 8 27;
+#X connect 34 27 40 27;
+#X connect 34 28 8 28;
+#X connect 34 28 40 28;
+#X connect 34 29 8 29;
+#X connect 34 29 40 29;
+#X connect 34 30 8 30;
+#X connect 34 30 40 30;
+#X connect 34 31 8 31;
+#X connect 34 31 40 31;
+#X connect 34 32 8 32;
+#X connect 34 32 40 32;
+#X connect 34 33 8 33;
+#X connect 34 33 40 33;
+#X connect 34 34 8 34;
+#X connect 34 34 40 34;
+#X connect 34 35 8 35;
+#X connect 34 35 40 35;
+#X connect 34 36 8 36;
+#X connect 34 36 40 36;
+#X connect 34 37 8 37;
+#X connect 34 37 40 37;
+#X connect 34 38 8 38;
+#X connect 34 38 40 38;
+#X connect 34 39 8 39;
+#X connect 34 39 40 39;
+#X connect 34 40 8 40;
+#X connect 34 40 40 40;
+#X connect 34 41 8 41;
+#X connect 34 41 40 41;
+#X connect 34 42 8 42;
+#X connect 34 42 40 42;
+#X connect 34 43 8 43;
+#X connect 34 43 40 43;
+#X connect 34 44 8 44;
+#X connect 34 44 40 44;
+#X connect 34 45 8 45;
+#X connect 34 45 40 45;
+#X connect 34 46 8 46;
+#X connect 34 46 40 46;
+#X connect 34 47 8 47;
+#X connect 34 47 40 47;
+#X connect 34 48 8 48;
+#X connect 34 48 40 48;
+#X connect 34 49 8 49;
+#X connect 34 49 40 49;
+#X connect 34 50 8 50;
+#X connect 34 50 40 50;
+#X connect 34 51 8 51;
+#X connect 34 51 40 51;
+#X connect 34 52 8 52;
+#X connect 34 52 40 52;
+#X connect 34 53 8 53;
+#X connect 34 53 40 53;
+#X connect 34 54 8 54;
+#X connect 34 54 40 54;
+#X connect 34 55 8 55;
+#X connect 34 55 40 55;
+#X connect 34 56 8 56;
+#X connect 34 56 40 56;
+#X connect 34 57 8 57;
+#X connect 34 57 40 57;
+#X connect 34 58 8 58;
+#X connect 34 58 40 58;
+#X connect 34 59 8 59;
+#X connect 34 59 40 59;
+#X connect 34 60 8 60;
+#X connect 34 60 40 60;
+#X connect 34 61 8 61;
+#X connect 34 61 40 61;
+#X connect 34 62 8 62;
+#X connect 34 62 40 62;
+#X connect 34 63 8 63;
+#X connect 34 63 40 63;
+#X connect 36 0 37 0;
+#X connect 40 0 35 0;
+#X connect 40 0 38 0;
+#X connect 40 1 35 1;
+#X connect 40 1 38 1;
+#X connect 40 2 35 2;
+#X connect 40 2 38 2;
+#X connect 40 3 35 3;
+#X connect 40 3 38 3;
+#X connect 40 4 35 4;
+#X connect 40 4 38 4;
+#X connect 40 5 35 5;
+#X connect 40 5 38 5;
+#X connect 40 6 35 6;
+#X connect 40 6 38 6;
+#X connect 40 7 35 7;
+#X connect 40 7 38 7;

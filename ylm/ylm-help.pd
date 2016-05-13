@@ -1,0 +1,32 @@
+#N canvas 606 55 446 580 10;
+#X declare -stdpath spam;
+#X obj 9 7 ylm.header ylm;
+#X obj 16 542 ylm.footer;
+#X obj 9 89 ylm.2d.syn.directional~;
+#X obj 9 408 ylm.2d.scope~;
+#X obj 9 458 ylm.2d.projector~;
+#X obj 288 520 declare -stdpath spam;
+#X obj 9 139 ylm.2d.syn.delay~;
+#X obj 9 204 ylm.2d.syn.grain~;
+#X obj 9 254 ylm.2d.syn.ringmod~;
+#X text 8 31 A set of abtractions for high order ambisonics spatialization.
+, f 64;
+#X text 8 379 The abstraction displays the weighted sum of the circular
+harmonics in a canvas., f 64;
+#X text 8 61 The abstraction synthesizes the signals of the circular
+harmonics of a source sound depending on coordinates., f 64;
+#X text 8 111 The abstraction synthesizes the signals of the circular
+harmonics of a sound source using delay lines., f 64;
+#X text 8 162 The abstraction synthesizes the signals of the circular
+harmonics of a sound source using quasi-synchronous granular synthesis
+(QSGS)., f 64;
+#X text 8 226 The abstraction synthesizes the signals of the circular
+harmonics of a sound source using ring modulation., f 64;
+#X obj 9 304 ylm.2d.syn.flanger~;
+#X obj 9 354 ylm.2d.syn.phaser~;
+#X text 8 276 The abstraction synthesizes the signals of the circular
+harmonics of a sound source using flanging effect., f 64;
+#X text 8 326 The abstraction synthesizes the signals of the circular
+harmonics of a sound source using phasing effect., f 64;
+#X text 8 429 The abstraction projects the signals of the circular
+harmonics onto a set of plane waves., f 64;

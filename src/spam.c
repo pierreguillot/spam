@@ -6,19 +6,21 @@
 
 #include "spam.utils.h"
 
-extern void setup_spam0x2eprocess_tilde(void);
+extern void spam_tilde_setup(void);
 extern void setup_spam0x2ein(void);
 extern void setup_spam0x2eout(void);
 extern void setup_spam0x2ein_tilde(void);
 extern void setup_spam0x2eout_tilde(void);
+extern void setup_spam0x2econnect(void);
 
 extern void spam_setup(void)
 {
-    setup_spam0x2eprocess_tilde();
+    spam_tilde_setup();
     setup_spam0x2ein();
     setup_spam0x2eout();
     setup_spam0x2ein_tilde();
     setup_spam0x2eout_tilde();
+    setup_spam0x2econnect();
 }
 
 

@@ -289,7 +289,7 @@ char spam_master_loadbang(t_spam_master* master)
 
 char spam_master_visible(t_spam_master* master, int index)
 {
-    if(master->s_n && master->s_subcanvas && index < master->s_n)
+    if(master->s_n && master->s_subcanvas && index >= 0 && index < master->s_n)
     {
         canvas_vis(master->s_subcanvas[index], 1);
         return 0;

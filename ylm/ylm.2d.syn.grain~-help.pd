@@ -1,0 +1,350 @@
+#N struct 1194-t-scope float x array bufr 1194-t-scope-value-r array
+bufg 1194-t-scope-value-g;
+#N struct 1194-t-scope-value-r float x float y;
+#N struct 1194-t-scope-value-g float x float y;
+#N canvas 606 23 528 825 10;
+#X declare -stdpath spam;
+#X obj 37 382 *~;
+#X obj 49 405 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+-1 -1 80 256;
+#X obj 22 449 *~, f 5;
+#X obj 22 340 noise~;
+#X obj 320 719 declare -stdpath spam;
+#N canvas 0 22 450 300 gain 0;
+#X obj 10 45 dbtorms;
+#X obj 10 67 pack f 20;
+#X obj 10 89 line~;
+#X obj 10 25 inlet;
+#X obj 10 111 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X restore 49 425 pd gain;
+#X obj 37 360 osc~ 5;
+#N canvas 0 22 450 300 \$0-scope 0;
+#X scalar 1194-t-scope 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; \;;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 64 526 pd \$0-scope;
+#X obj 22 419 *~;
+#X obj 22 762 dac~ 1 2 3 4 5 6 7 8, f 47;
+#X obj 6 10 ylm.header ylm.2d.syn.grain~;
+#X obj 320 739 text define -k \$0-scope-attrs;
+#A set gain 150 \; interval 100 \;;
+#X obj 320 760 text define -k \$0-pro-attrs;
+#A set angles 45 90 135 180 225 270 315 360 \;;
+#X obj 22 735 spam~ 7 ylm.2d.projector~ 3 8 \$0-pro-attrs, f 47;
+#X obj 9 790 ylm.footer;
+#N canvas 0 22 450 300 init 0;
+#X obj 23 32 loadbang;
+#X msg 23 54 80;
+#X obj 23 76 s \$0-gain;
+#X obj 93 32 loadbang;
+#X obj 93 76 s \$0-pos;
+#X msg 93 54 1 0;
+#X obj 163 32 loadbang;
+#X msg 163 54 1;
+#X obj 163 76 s \$0-traj;
+#X obj 23 102 loadbang;
+#X obj 23 146 s \$0-delay;
+#X msg 23 124 3000;
+#X obj 163 102 loadbang;
+#X msg 163 124 1;
+#X obj 163 146 s \$0-diff;
+#N canvas 237 132 503 391 grain_env 0;
+#X obj 270 148 / 256;
+#X obj 270 247 * 0.5;
+#X obj 270 219 sin;
+#X obj 270 271 + 0.5;
+#X obj 270 120 t f f;
+#X obj 270 299 pack;
+#X obj 270 169 - 0.5;
+#X obj 271 32 t b b;
+#X obj 270 76 until;
+#X obj 270 97 f;
+#X obj 297 98 + 1;
+#X msg 270 55 512;
+#X obj 271 8 loadbang;
+#X obj 270 193 * 3.14159;
+#X obj 310 55 f 0;
+#X obj 335 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 270 323 tabwrite \$0-grain-env;
+#X connect 0 0 6 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 4 1 5 1;
+#X connect 5 0 16 0;
+#X connect 6 0 13 0;
+#X connect 7 0 11 0;
+#X connect 7 0 14 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 1;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X connect 13 0 2 0;
+#X connect 14 0 9 1;
+#X connect 15 0 7 0;
+#X restore 24 11 pd grain_env;
+#X obj 240 148 s \$0-rarefaction;
+#X obj 240 102 loadbang;
+#X msg 240 124 0;
+#X obj 240 77 s \$0-size;
+#X obj 240 32 loadbang;
+#X msg 240 54 100;
+#X obj 307 31 loadbang;
+#X obj 307 77 s \$0-feedback;
+#X msg 307 53 50;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 17 0 18 0;
+#X connect 18 0 16 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 0;
+#X connect 22 0 24 0;
+#X connect 24 0 23 0;
+#X restore 320 698 pd init;
+#X obj 22 503 spam~ 7 ylm.2d.scope~ 3 \$0-scope \$0-scope-attrs;
+#N canvas 217 367 450 300 pos 0;
+#X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4.22369 256;
+#X obj 100 100 nbx 4 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 119 77 t b f;
+#X obj 101 150 pack 1 f;
+#X obj 101 18 r \$0-pos;
+#X obj 101 40 unpack f f;
+#X obj 101 172 outlet;
+#X obj 164 19 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 90 14 2 100 100;
+#X restore 341 489 pd pos;
+#X obj 341 443 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 22 450 406 trajectory 0;
+#X obj 158 109 + 1;
+#X obj 128 173 / 180;
+#X obj 128 195 * 6.28318;
+#X obj 128 153 f -1;
+#X obj 128 131 sel 179 0;
+#X obj 128 109 f 0;
+#X obj 83 106 + 1;
+#X obj 53 150 f -1;
+#X obj 93 150 f 1;
+#X obj 53 106 f 0;
+#X obj 53 128 sel 499 0;
+#X obj 53 235 t b f;
+#X obj 53 257 f 1;
+#X obj 53 279 -, f 5;
+#X obj 53 79 t b b, f 13;
+#X obj 53 55 metro 20;
+#X obj 53 341 pack f f, f 13;
+#X obj 53 33 inlet;
+#X obj 53 363 outlet;
+#X obj 159 153 f 1;
+#X obj 53 170 max 300;
+#X obj 53 192 - 300;
+#X obj 53 214 / 200;
+#X connect 0 0 5 1;
+#X connect 1 0 2 0;
+#X connect 2 0 16 1;
+#X connect 3 0 0 1;
+#X connect 4 0 3 0;
+#X connect 4 1 19 0;
+#X connect 5 0 0 0;
+#X connect 5 0 1 0;
+#X connect 5 0 4 0;
+#X connect 6 0 9 1;
+#X connect 7 0 6 1;
+#X connect 8 0 6 1;
+#X connect 9 0 6 0;
+#X connect 9 0 10 0;
+#X connect 9 0 20 0;
+#X connect 10 0 7 0;
+#X connect 10 1 8 0;
+#X connect 11 0 12 0;
+#X connect 11 1 13 1;
+#X connect 12 0 13 0;
+#X connect 13 0 16 0;
+#X connect 14 0 9 0;
+#X connect 14 1 5 0;
+#X connect 15 0 14 0;
+#X connect 16 0 18 0;
+#X connect 17 0 15 0;
+#X connect 19 0 0 1;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 11 0;
+#X restore 341 466 pd trajectory;
+#X obj 132 428 nbx 5 14 0 5000 0 0 empty \$0-delay empty 0 -8 0 10
+-262144 -1 -1 3000 256;
+#X obj 341 398 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 12.7143 256;
+#X msg 341 416 diffusion \$1;
+#X msg 132 447 delay \$1;
+#X obj 341 352 tgl 15 0 empty \$0-diff empty 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 22 450 406 diffuse 0;
+#X obj 53 150 f -1;
+#X obj 93 150 f 1;
+#X obj 53 55 metro 20;
+#X obj 53 33 inlet;
+#X obj 33 263 outlet;
+#X obj 53 106 f 0;
+#X obj 83 106 + 1;
+#X obj 32 198 - 150;
+#X obj 53 128 sel 999 0;
+#X obj 32 176 clip 150 850;
+#X obj 32 224 / 7;
+#X connect 0 0 6 1;
+#X connect 1 0 6 1;
+#X connect 2 0 5 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 5 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 5 1;
+#X connect 7 0 10 0;
+#X connect 8 0 0 0;
+#X connect 8 1 1 0;
+#X connect 9 0 7 0;
+#X connect 10 0 4 0;
+#X restore 341 375 pd diffuse;
+#X obj 320 651 table \$0-grain-env 512, f 14;
+#X obj 22 476 spam~ 7 ylm.2d.syn.grain~ 3 \$0-grain-env, f 47;
+#X text 4 175 size[l \, m] = delay * 1 -(2m / 2N) if m >= 0, f 67
+;
+#X text 4 188 size[l \, m] = delay * 1 - ((2m-1) / 2N) if m < 0, f
+67;
+#X text 4 201 with l the degree \, m the azimuthal order of the harmonics
+and N the order of decomposition., f 67;
+#X text 4 228 The delay time and the factor of diffusion are scaled
+in a similar way to the delay synthesis., f 67;
+#X text 4 254 The abstraction expects the order of decomposition as
+the first argument and the name of the buffer to use for the envellope
+of amplitude of the grains as the second argument. The maximum delay
+time is 10000 ms. For an order of decomposition N \, there are 2N+1
+harmonics. The left inlet expects the signal to synthesize and the
+right inlet expects all the others messages., f 67;
+#X msg 194 447 rarefaction \$1;
+#X obj 194 428 nbx 5 14 0 5000 0 0 empty \$0-rarefaction empty 0 -8
+0 10 -262144 -1 -1 0 256;
+#X msg 132 397 size \$1;
+#X obj 132 378 nbx 5 14 0 5000 0 0 empty \$0-size empty 0 -8 0 10 -262144
+-1 -1 100 256;
+#X obj 194 378 nbx 5 14 0 5000 0 0 empty \$0-feedback empty 0 -8 0
+10 -262144 -1 -1 50 256;
+#X msg 194 397 feedback \$1;
+#X text 4 31 The abstraction synthesizes the signals of the circular
+harmonics with a source signal using quasi-synchronous granular synthesis
+(QSGS). Like for the delay synthesis \, the idea behind this implementation
+is to decorrelate the signal depending a factor of diffusion. When
+the diffussion is 100% \, all the signal are decorrelated. Decreasing
+the factor of diffusion toward zero brings back linearly to a directional
+synthesis. The granulation offers four parameters \, the size of the
+grain in ms \, the delay time in ms \, the feedback in % and the rarefaction
+in %. The size of the grain is scaled depending on the degree and the
+azimuthal order of the harmonics and the diffusion factor following
+this equation:, f 67;
+#X connect 0 0 8 1;
+#X connect 1 0 5 0;
+#X connect 2 0 27 0;
+#X connect 3 0 8 0;
+#X connect 5 0 2 1;
+#X connect 6 0 0 0;
+#X connect 6 0 0 1;
+#X connect 8 0 2 0;
+#X connect 13 0 9 0;
+#X connect 13 1 9 1;
+#X connect 13 2 9 2;
+#X connect 13 3 9 3;
+#X connect 13 4 9 4;
+#X connect 13 5 9 5;
+#X connect 13 6 9 6;
+#X connect 13 7 9 7;
+#X connect 17 0 27 1;
+#X connect 18 0 19 0;
+#X connect 19 0 17 0;
+#X connect 20 0 23 0;
+#X connect 21 0 22 0;
+#X connect 22 0 27 1;
+#X connect 23 0 27 1;
+#X connect 24 0 25 0;
+#X connect 25 0 21 0;
+#X connect 27 0 13 0;
+#X connect 27 0 16 0;
+#X connect 27 1 13 1;
+#X connect 27 1 16 1;
+#X connect 27 2 13 2;
+#X connect 27 2 16 2;
+#X connect 27 3 13 3;
+#X connect 27 3 16 3;
+#X connect 27 4 13 4;
+#X connect 27 4 16 4;
+#X connect 27 5 13 5;
+#X connect 27 5 16 5;
+#X connect 27 6 13 6;
+#X connect 27 6 16 6;
+#X connect 33 0 27 1;
+#X connect 34 0 33 0;
+#X connect 35 0 27 1;
+#X connect 36 0 35 0;
+#X connect 37 0 38 0;
+#X connect 38 0 27 1;
