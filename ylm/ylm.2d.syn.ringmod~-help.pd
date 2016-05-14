@@ -223,7 +223,7 @@ and the diffusion value., f 67;
 ;
 #X msg 112 387 rate \$1;
 #X text 4 31 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using ring modulation. The idea behind
+harmonics for a sound source using ring modulation. The idea behind
 this implementation is again to decorrelate the signal depending a
 factor of diffusion. When the diffussion is 100% \, all the signal
 are decorrelated. Decreasing the factor of diffusion toward zero brings

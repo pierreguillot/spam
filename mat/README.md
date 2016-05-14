@@ -2,6 +2,8 @@
 
 A set of abstractions for sound spatialization in Pure Data based on a matricial representation of sound field.
 
+- mat.2d.syn.brush~:  
+The abstraction synthesizes the signals of the cells of a matrix for a sound source depending on coordinates.
 
 - [x] mat.2d.encoder~ (spread or blur ?)
 - [x] mat.2d.scope~ (colors, line width)

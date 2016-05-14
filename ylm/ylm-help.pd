@@ -14,19 +14,19 @@
 #X text 8 379 The abstraction displays the weighted sum of the circular
 harmonics in a canvas., f 64;
 #X text 8 61 The abstraction synthesizes the signals of the circular
-harmonics of a source sound depending on coordinates., f 64;
+harmonics for a source sound depending on coordinates., f 64;
 #X text 8 111 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using delay lines., f 64;
+harmonics for a sound source using delay lines., f 64;
 #X text 8 162 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using quasi-synchronous granular synthesis
+harmonics for a sound source using quasi-synchronous granular synthesis
 (QSGS)., f 64;
 #X text 8 226 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using ring modulation., f 64;
+harmonics for a sound source using ring modulation., f 64;
 #X obj 9 304 ylm.2d.syn.flanger~;
 #X obj 9 354 ylm.2d.syn.phaser~;
 #X text 8 276 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using flanging effect., f 64;
+harmonics for a sound source using flanging effect., f 64;
 #X text 8 326 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using phasing effect., f 64;
+harmonics for a sound source using phasing effect., f 64;
 #X text 8 429 The abstraction projects the signals of the circular
 harmonics onto a set of plane waves., f 64;
