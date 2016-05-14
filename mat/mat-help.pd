@@ -5,8 +5,6 @@
 based on a matricial representation of the space. The abstractions
 must be used with the spam objects and generally use a text object
 to define the configuration., f 67;
-#X text 4 153 mat.2d.eraser~ decreases the amplitude of a set signals
-of a matrix depending on cartesian coordiantes., f 67;
 #X obj 5 443 mat.2d.meter~;
 #X obj 5 383 mat.2d.scope~;
 #X obj 276 548 declare -stdpath spam;
@@ -31,3 +29,5 @@ effect., f 67;
 a matrix for a sound source depending on coordinates., f 67;
 #X text 4 353 The abstraction displays the rms amplitude of the signals
 of the cells of a matrix inside a canvas., f 67;
+#X text 4 153 The abstraction decreases the amplitude of the signals
+of a set of the cells of a matrix., f 67;

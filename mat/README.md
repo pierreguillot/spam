@@ -9,7 +9,7 @@ The abstraction synthesizes the signals of the cells of a matrix for a sound sou
 - mat.2d.syn.spray~:  
 The abstraction synthesizes the signals of the cells of a matrix for a sound source using a quasi-synchronous granular synthesizer (QSGS).
 - mat.2d.fx.eraser~:  
-Help todo
+The abstraction decreases the amplitude of the signals of a set of the cells of a matrix.
 - mat.2d.scope~:   
 The abstraction displays the rms amplitude of the signals of the cells of a matrix inside a canvas.
 - mat.2d.meter~:  
