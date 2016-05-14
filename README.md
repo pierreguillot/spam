@@ -32,6 +32,6 @@ A set of externals and abstractions for sound spatialization.
 - cmake --build .
 
 **Author**: Pierre Guillot  
-**Organizations**: Université Paris 8 | CICM | Labex Arts H2H
-**Website**: https://github.com/pierreguillot/spam      
+**Organizations**: Université Paris 8 | CICM | Labex Arts H2H   
+**Website**: https://github.com/pierreguillot/spam   
 **License**: BSD - see LICENSE   
