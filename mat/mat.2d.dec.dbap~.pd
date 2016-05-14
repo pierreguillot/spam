@@ -1,5 +1,4 @@
 #N canvas 55 97 1028 649 10;
-#X declare -stdpath spam;
 #X obj 379 94 spam.in~;
 #X obj 379 146 s~ \$0-in;
 #X obj 374 26 namecanvas \$0-dbap;
@@ -68,7 +67,6 @@ of loudspeakers;
 #X obj 769 167 tools/mat.2d.txt.get \$2 mat.dec.nls;
 #X obj 769 194 s \$0-nspeakers;
 #X obj 644 315 tools/mat.2d.txt.get \$2 mat.dec.positions;
-#X obj 694 12 declare -stdpath spam;
 #X connect 0 0 1 0;
 #X connect 3 0 19 0;
 #X connect 5 0 6 0;

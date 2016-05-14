@@ -12,7 +12,9 @@ The abstraction synthesizes the signals of the cells of a matrix for a sound sou
 Help todo
 - mat.2d.scope~:   
 The abstraction displays the rms amplitude of the signals of the cells of a matrix inside a canvas.
+- mat.2d.meter~:  
+The abstraction displays the contributions of a set of loudspeakers in a space.
 
-- [x] mat.2d.decoder.dbap~
-- [ ] mat.2d.decoder.vbap~
-- [ ] mat.2d.decoder.hoa~
+todo:
+mat-help.pd
+all the helps
