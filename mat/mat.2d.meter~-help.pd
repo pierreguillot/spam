@@ -27,10 +27,10 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X obj 212 257 declare -stdpath spam;
 #X obj 5 7 mat.header mat.2d.meter~;
 #X obj 6 415 mat.footer;
-#X obj 210 280 text define -k \$0-mater-attrs;
+#X obj 210 280 text define -k \$0-meter-attrs;
 #A set positions 0 0.6 -0.6 0 0 -0.6 0.6 0 \; colors 555 90 990 950
 900 \; sizes 12 48 \;;
-#X obj 25 390 spam~ 4 mat.2d.meter~ 4 \$0-meter \$0-mater-attrs;
+#X obj 25 390 spam~ 4 mat.2d.meter~ 4 \$0-meter \$0-meter-attrs;
 #X text 4 31 The abstraction displays the contributions of a set of
 loudspeakers in a space. The first argument is the number of louspeakers.
 The second argument is the canvas to paint. The third argument is the
