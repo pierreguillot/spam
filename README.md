@@ -14,7 +14,7 @@ Externals:
 - spam : The all-in-one library
 
 Abstractions:
-- mat - matricial spatialization tools
+- xel - matricial spatialization tools
 - ylm - high order ambisonics spatialization tools
 
 Installation:
