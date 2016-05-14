@@ -1,30 +1,33 @@
-#N canvas 599 25 427 487 10;
+#N canvas 599 25 472 674 10;
 #X declare -stdpath spam;
-#X obj 4 450 mat.footer;
+#X obj 4 570 mat.footer;
 #X text 4 31 The mat library is a set of abtractions for sound spatialization
 based on a matricial representation of the space. The abstractions
 must be used with the spam objects and generally use a text object
 to define the configuration., f 67;
-#X text 4 93 mat.2d.brush~ synthesizes the signals of a matrix with
-a sound source depending on cartesian coordinates., f 67;
-#X text 4 143 mat.2d.eraser~ decreases the amplitude of a set signals
+#X text 4 153 mat.2d.eraser~ decreases the amplitude of a set signals
 of a matrix depending on cartesian coordiantes., f 67;
-#X text 4 293 mat.2d.scope~ displays the rms amplitude of each signal
-of a matrix inside a canvas., f 67;
-#X obj 5 423 mat.2d.dec.dbap~;
-#X obj 5 373 mat.2d.meter~;
-#X obj 5 323 mat.2d.scope~;
-#X text 4 343 mat.2d.meter~ displays the contributions of a set of
-loudspeakers in a space., f 67;
-#X text 4 243 mat.2d.spray~ synthesizes the signals of matrix with
-a quasi-synchronous granular synthesizer., f 67;
-#X text 4 393 mat.2d.dec.dbap~ decodes a matrix for a set of loudspeakers
-using distance based amplitude panning (DBAP)., f 67;
-#X obj 166 428 declare -stdpath spam;
-#X obj 9 8 mat.header mat;
-#X text 4 193 mat.2d.bucket~ synthesizes the signals of matrix using
-variable delay lines without flanging effect., f 67;
+#X obj 5 443 mat.2d.meter~;
+#X obj 5 383 mat.2d.scope~;
+#X obj 276 548 declare -stdpath spam;
+#X obj 5 8 mat.header mat;
 #X obj 5 123 mat.2d.syn.brush~;
-#X obj 5 173 mat.2d.fx.eraser~;
-#X obj 5 223 mat.2d.syn.bucket~;
-#X obj 5 273 mat.2d.syn.spray~;
+#X obj 5 183 mat.2d.fx.eraser~;
+#X obj 5 253 mat.2d.syn.bucket~;
+#X obj 5 326 mat.2d.syn.spray~;
+#X obj 5 515 mat.2d.projector.dbap~;
+#X text 4 471 The abstraction projects the signals of the cells of
+a matrix onto a set of loudspeakers using distance based amplitude
+panning (DBAP)., f 67;
+#X text 4 413 The abstraction displays the contributions of a set of
+loudspeakers in a space., f 67;
+#X text 4 283 The abstraction synthesizes the signals of the cells
+of a matrix for a sound source using a quasi-synchronous granular synthesizer
+(QSGS)., f 67;
+#X text 4 213 The abstraction synthesizes the signals of the cells
+of a matrix for a sound source using variable delay lines without flanging
+effect., f 67;
+#X text 4 93 The abstraction synthesizes the signals of the cells of
+a matrix for a sound source depending on coordinates., f 67;
+#X text 4 353 The abstraction displays the rms amplitude of the signals
+of the cells of a matrix inside a canvas., f 67;

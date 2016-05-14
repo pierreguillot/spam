@@ -14,6 +14,8 @@ Help todo
 The abstraction displays the rms amplitude of the signals of the cells of a matrix inside a canvas.
 - mat.2d.meter~:  
 The abstraction displays the contributions of a set of loudspeakers in a space.
+- mat.2d.projector.dbap~:
+The abstraction projects the signals of the cells of a matrix onto a set of loudspeakers using distance based amplitude panning (DBAP).
 
 todo:
 mat-help.pd

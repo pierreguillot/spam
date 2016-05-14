@@ -141,7 +141,7 @@ float c2;
 #X connect 28 0 22 0;
 #X connect 29 0 16 0;
 #X restore 12 158 pd init;
-#X obj 324 685 spam~ 25 mat.2d.dec.dbap~ \$0-config, f 51;
+#X obj 324 685 spam~ 25 mat.2d.projector.dbap~ \$0-config, f 51;
 #X obj 41 662 declare -stdpath spam;
 #X obj 5 7 mat.header mat.2d.fx.eraser~;
 #X obj 4 730 mat.footer;
