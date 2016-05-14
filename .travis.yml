@@ -52,9 +52,9 @@ after_success:
   - cp README.md spam/readme.txt
   - cp -r ylm spam/ylm
   - mv spam/ylm/README.md spam/ylm/readme.txt
-  - cp -r mat spam/xel
+  - cp -r xel spam/xel
   - mv spam/xel/README.md spam/xel/readme.txt
-  - zip -r spam_$zip.zip spam  
+  - zip -r spam_$zip.zip spam
 
 deploy:
   provider: releases
