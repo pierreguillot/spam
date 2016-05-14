@@ -240,7 +240,7 @@ this equation:, f 67;
 #X text 4 186 offset[l \, m] = (2m-1) / (2N+1) if m < 0, f 67;
 #X obj 22 476 spam~ 7 ylm.2d.syn.phaser~ 3, f 47;
 #X text 4 31 The abstraction synthesizes the signals of the circular
-harmonics of a sound source using phasing effect. The idea behind this
+harmonics for a sound source using phasing effect. The idea behind this
 implementation is again and again to decorrelate the signal depending
 a factor of diffusion. When the diffussion is 100% \, all the signal
 are decorrelated. Decreasing the factor of diffusion toward zero brings

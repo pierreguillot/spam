@@ -186,7 +186,7 @@ expects the coordinates as a list., f 67;
 #X text 4 225 with l the degree and m the azimuthal order of the harmonics.
 , f 67;
 #X text 4 31 The abstraction synthesizes the signals of the circular
-harmonics of a source sound depending on coordinates. By default the
+harmonics for a source sound depending on coordinates. By default the
 coordinates are polar (radius r and azimuth θ). Using the car message
 \, the coordinates can be given in cartesian (abscissa and ordinate).
 The abstraction follows the mathematical representation of the space

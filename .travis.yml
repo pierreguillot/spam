@@ -45,16 +45,16 @@ script:
   - cmake .. -DCONF=$bits
   - cmake --build .
 
-before_deploy:
+after_success:
   - cd ../
   - mv bin spam
   - cp LICENSE spam/license.txt
   - cp README.md spam/readme.txt
   - cp -r ylm spam/ylm
   - mv spam/ylm/README.md spam/ylm/readme.txt
-  - cp -r mat spam/mat
-  - mv spam/mat/README.md spam/mat/readme.txt
-  - zip -r spam_$zip.zip spam
+  - cp -r mat spam/xel
+  - mv spam/xel/README.md spam/xel/readme.txt
+  - zip -r spam_$zip.zip spam  
 
 deploy:
   provider: releases
