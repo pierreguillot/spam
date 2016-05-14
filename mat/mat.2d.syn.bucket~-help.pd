@@ -356,7 +356,7 @@ of columns.;
 #N canvas 217 367 450 300 pos 0;
 #X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 1 256;
-#X obj 100 100 nbx 4 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+#X obj 100 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 1 256;
 #X obj 119 77 t b f;
 #X obj 101 150 pack 1 f;
