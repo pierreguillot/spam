@@ -251,8 +251,8 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X connect 12 0 11 0;
 #X connect 13 0 1 0;
 #X restore 341 708 pd init;
-#X obj 4 755 mat.footer;
-#X obj 5 9 mat.header mat.2d.syn.brush~;
+#X obj 4 755 xel.footer;
+#X obj 5 9 xel.header xel.2d.syn.brush~;
 #X msg 285 356 opacity \$1;
 #X obj 285 334 nbx 5 14 0 100 0 0 empty \$0-opacity empty 0 -8 0 10
 -262144 -1 -1 100 256;
@@ -321,7 +321,7 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X connect 15 0 13 0;
 #X restore 107 275 pd traj;
 #X obj 29 280 osc~ 5;
-#X obj 14 708 spam~ 8 mat.2d.meter~ 8 \$0-meter \$0-config, f 51;
+#X obj 14 708 spam~ 8 xel.2d.meter~ 8 \$0-meter \$0-config, f 51;
 #X obj 14 732 dac~ 1 2 3 4 5 6 7 8, f 51;
 #N canvas 0 22 450 300 \$0-meter 0;
 #X scalar 1538-t-meter -4.18723e-06 0.75 8 16 24 32 555 90 990 950
@@ -345,9 +345,9 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X text 4 216 The arguments are the dimensions of the matrix \, the
 number of rows and the number of columns., f 67;
 #X obj 391 708 declare -stdpath spam;
-#X obj 14 447 spam~ 64 mat.2d.scope~ 8 8 \$0-scope \$0-config,
+#X obj 14 447 spam~ 64 xel.2d.scope~ 8 8 \$0-scope \$0-config,
 f 51;
-#X obj 14 423 spam~ 64 mat.2d.syn.brush~ 8 8, f 51;
+#X obj 14 423 spam~ 64 xel.2d.syn.brush~ 8 8, f 51;
 #X text 4 31 The abstraction synthesizes the signals of the cells of
 a matrix for a sound source depending on coordinates. The weight of
 the signal in each cell is computed using the distance between the
@@ -385,7 +385,7 @@ be seen as a global gain., f 67;
 #X coords 0 -1 1 1 90 14 2 100 100;
 #X restore 107 336 pd pos;
 #X text 285 295 Opacity (0 to 100), f 10;
-#X obj 14 680 spam~ 64 mat.2d.projector.dbap~ 8 8 8 \$0-config, f
+#X obj 14 680 spam~ 64 xel.2d.projector.dbap~ 8 8 8 \$0-config, f
 51;
 #X connect 2 0 26 0;
 #X connect 3 0 4 1;

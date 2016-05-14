@@ -239,10 +239,10 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 -4.18723e-06 0.75 \; rolloff 40 \; blur 0.0001 \; gain 140 \;;
 #X f 25;
 #X obj 14 756 dac~ 1 2 3 4 5 6 7 8, f 56;
-#X obj 14 714 spam~ 36 mat.2d.projector.dbap~ 6 6 8 \$0-config, f
+#X obj 14 714 spam~ 36 xel.2d.projector.dbap~ 6 6 8 \$0-config, f
 56;
-#X obj 14 532 spam~ 36 mat.2d.scope~ 6 6 \$0-scope \$0-config, f 56;
-#X obj 14 735 spam~ 8 mat.2d.meter~ 8 \$0-meter \$0-config, f 56;
+#X obj 14 532 spam~ 36 xel.2d.scope~ 6 6 \$0-scope \$0-config, f 56;
+#X obj 14 735 spam~ 8 xel.2d.meter~ 8 \$0-meter \$0-config, f 56;
 #N canvas 0 22 450 300 \$0-meter 0;
 #X scalar 2865-t-meter -4.18723e-06 0.75 8 16 24 32 555 90 990 950
 900 \;;
@@ -334,13 +334,13 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X obj 153 349 s \$0-qsgs;
 #X obj 315 350 s \$0-qsgs;
 #X obj 232 349 s \$0-qsgs;
-#X obj 6 781 mat.footer;
+#X obj 6 781 xel.footer;
 #X obj 364 754 declare -stdpath spam;
-#X obj 5 5 mat.header mat.2d.syn.spray~;
+#X obj 5 5 xel.header xel.2d.syn.spray~;
 #X msg 232 327 grainsize \$1;
 #X msg 155 441 size \$1;
 #X obj 14 450 noise~;
-#X obj 14 509 spam~ 36 mat.2d.syn.spray~ 6 6 \$0-grain-env, f 56;
+#X obj 14 509 spam~ 36 xel.2d.syn.spray~ 6 6 \$0-grain-env, f 56;
 #X text 4 30 The abstraction synthesizes the signals of the cells of
 a matrix for a sound source using a quasi-synchronous granular synthesizer
 (QSGS). The idea is to create a spatial spray effect. In this implementation

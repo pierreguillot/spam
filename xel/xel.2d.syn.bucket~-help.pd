@@ -228,8 +228,8 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 -4.18723e-06 0.75 \; rolloff 40 \; blur 0.001 \; gain 140 \;;
 #X f 25;
 #X obj 14 586 dac~ 1 2 3 4 5 6 7 8, f 56;
-#X obj 14 322 spam~ 64 mat.2d.scope~ 8 8 \$0-scope \$0-config, f 56;
-#X obj 14 565 spam~ 8 mat.2d.meter~ 8 \$0-meter \$0-config, f 56;
+#X obj 14 322 spam~ 64 xel.2d.scope~ 8 8 \$0-scope \$0-config, f 56;
+#X obj 14 565 spam~ 8 xel.2d.meter~ 8 \$0-meter \$0-config, f 56;
 #N canvas 0 22 450 300 \$0-meter 0;
 #X scalar 2451-t-meter -4.18723e-06 0.75 8 16 24 32 555 90 990 950
 900 \;;
@@ -303,11 +303,11 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X obj 293 223 s \$0-vd;
 #X obj 155 223 s \$0-vd;
 #X obj 370 563 declare -stdpath spam;
-#X obj 5 7 mat.header mat.2d.syn.bucket~;
-#X obj 6 614 mat.footer;
+#X obj 5 7 xel.header xel.2d.syn.bucket~;
+#X obj 6 614 xel.footer;
 #X msg 155 201 size \$1;
 #X obj 14 183 noise~;
-#X obj 14 544 spam~ 64 mat.2d.projector.dbap~ 8 8 8 \$0-config, f
+#X obj 14 544 spam~ 64 xel.2d.projector.dbap~ 8 8 8 \$0-config, f
 56;
 #X obj 293 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -344,7 +344,7 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X connect 12 0 0 0;
 #X connect 13 0 10 0;
 #X restore 293 180 pd trajectory;
-#X obj 14 299 spam~ 64 mat.2d.syn.bucket~ 8 8, f 56;
+#X obj 14 299 spam~ 64 xel.2d.syn.bucket~ 8 8, f 56;
 #X text 4 30 The abstraction synthesizes the signals of the cells of
 a matrix for a sound source using variable delay lines without flanging
 effect. The goal is to create a spatial smudge effect. When a cell

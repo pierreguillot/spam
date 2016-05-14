@@ -246,12 +246,12 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 900 \;;
 #X coords -1 1 1 -1 153 153 2 100 100;
 #X restore 80 592 pd \$0-meter;
-#X obj 4 781 mat.footer;
+#X obj 4 781 xel.footer;
 #X obj 284 728 declare -stdpath spam;
-#X obj 5 7 mat.header mat.2d.projector.dbap~;
-#X obj 38 318 spam~ 36 mat.2d.syn.brush~ 6 6, f 39;
-#X obj 38 556 spam~ 8 mat.2d.meter~ 8 \$0-meter \$0-config, f 39;
-#X obj 38 340 spam~ 36 mat.2d.scope~ 6 6 \$0-scope \$0-config, f 39;
+#X obj 5 7 xel.header xel.2d.projector.dbap~;
+#X obj 38 318 spam~ 36 xel.2d.syn.brush~ 6 6, f 39;
+#X obj 38 556 spam~ 8 xel.2d.meter~ 8 \$0-meter \$0-config, f 39;
+#X obj 38 340 spam~ 36 xel.2d.scope~ 6 6 \$0-scope \$0-config, f 39;
 #X text 4 31 The abstraction projects the signals of the cells of a
 matrix onto a set of loudspeakers using distance based amplitude panning
 (DBAP). The principles of DBAP are explained in the paper by Trond
@@ -262,7 +262,7 @@ of columns. The third argument is the number of loudspeakers. The last
 argument is the name of the text object that defines the positions
 of the loudspeakers \, it can also be used to define the rolloff and
 the blur values.;
-#X obj 38 523 spam~ 36 mat.2d.projector.dbap~ 6 6 8 \$0-config, f
+#X obj 38 523 spam~ 36 xel.2d.projector.dbap~ 6 6 8 \$0-config, f
 39;
 #N canvas 217 367 450 300 pos 0;
 #X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10

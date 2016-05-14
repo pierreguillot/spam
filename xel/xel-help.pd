@@ -1,19 +1,19 @@
 #N canvas 599 25 472 674 10;
 #X declare -stdpath spam;
-#X obj 4 570 mat.footer;
+#X obj 4 570 xel.footer;
 #X text 4 31 The mat library is a set of abtractions for sound spatialization
 based on a matricial representation of the space. The abstractions
 must be used with the spam objects and generally use a text object
 to define the configuration., f 67;
-#X obj 5 443 mat.2d.meter~;
-#X obj 5 383 mat.2d.scope~;
+#X obj 5 443 xel.2d.meter~;
+#X obj 5 383 xel.2d.scope~;
 #X obj 276 548 declare -stdpath spam;
-#X obj 5 8 mat.header mat;
-#X obj 5 123 mat.2d.syn.brush~;
-#X obj 5 183 mat.2d.fx.eraser~;
-#X obj 5 253 mat.2d.syn.bucket~;
-#X obj 5 326 mat.2d.syn.spray~;
-#X obj 5 515 mat.2d.projector.dbap~;
+#X obj 5 8 xel.header mat;
+#X obj 5 123 xel.2d.syn.brush~;
+#X obj 5 183 xel.2d.fx.eraser~;
+#X obj 5 253 xel.2d.syn.bucket~;
+#X obj 5 326 xel.2d.syn.spray~;
+#X obj 5 515 xel.2d.projector.dbap~;
 #X text 4 471 The abstraction projects the signals of the cells of
 a matrix onto a set of loudspeakers using distance based amplitude
 panning (DBAP)., f 67;

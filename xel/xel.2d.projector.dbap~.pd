@@ -147,7 +147,7 @@
 #X obj 8 49 sel 1;
 #X obj 8 6 inlet;
 #X msg 8 71 list has an odd number of coordinates;
-#X obj 8 93 print mat.2d.dec~ warning;
+#X obj 8 93 print xel.2d.dec~ warning;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;
@@ -272,7 +272,7 @@
 #X obj 8 49 sel 1;
 #X obj 8 6 inlet;
 #X msg 8 71 list has an odd number of coordinates;
-#X obj 8 93 print mat.2d.dec~ warning;
+#X obj 8 93 print xel.2d.dec~ warning;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 0 0;

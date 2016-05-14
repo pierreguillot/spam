@@ -278,12 +278,12 @@ float c2;
 #X connect 14 0 1 0;
 #X restore 267 287 pd blurry;
 #X obj 261 396 declare -stdpath spam;
-#X obj 5 7 mat.header mat.2d.scope~;
-#X obj 6 444 mat.footer;
+#X obj 5 7 xel.header xel.2d.scope~;
+#X obj 6 444 xel.footer;
 #X msg 267 328 size \$1;
 #X obj 261 419 text define -k \$0-scope-attr;
 #A set colors 999 90 990 950 900 \; gain 0 \;;
-#X obj 20 407 spam~ 64 mat.2d.scope~ 8 8 \$0-scope \$0-scope-attr,
+#X obj 20 407 spam~ 64 xel.2d.scope~ 8 8 \$0-scope \$0-scope-attr,
 f 38;
 #X text 4 31 The abstraction displays the rms amplitude of the signals
 of the cells of a matrix inside a canvas. The two first arguments are
@@ -291,7 +291,7 @@ the dimension of the matrix \, the number of rows and the number of
 columns. The third argument is the canvas to paint. The last argument
 can be the name of a text object to define the colors or the gain.
 ;
-#X obj 20 371 spam~ 64 mat.2d.syn.brush~ 8 8, f 38;
+#X obj 20 371 spam~ 64 xel.2d.syn.brush~ 8 8, f 38;
 #N canvas 217 367 450 300 pos 0;
 #X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 -0.993611 256;
