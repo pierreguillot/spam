@@ -4,7 +4,7 @@ A set of externals and abstractions for sound spatialization.
 
 [![Build Status](https://travis-ci.org/pierreguillot/spam.svg?branch=master)](https://travis-ci.org/pierreguillot/spam) [![Build Status](https://ci.appveyor.com/api/projects/status/github/pierreguillot/spam?branch=master&svg=true)](https://ci.appveyor.com/project/pierreguillot/spam)   
 
-![image](/Users/Pierre/Desktop/img.png)
+![image](https://cloud.githubusercontent.com/assets/1409918/15268247/bf1d2056-19d8-11e6-8ab3-b1a26e3482a0.png)
 
 #### Externals:
 - **spam~**: The object loads several instances of a patch.
