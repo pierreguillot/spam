@@ -2,7 +2,7 @@
 #X obj 17 16 spam.in~;
 #X obj 17 62 *~ 1;
 #X obj 17 89 snapshot~;
-#N canvas 386 27 567 623 omni 1;
+#N canvas 386 27 567 623 omni 0;
 #X obj 93 6 inlet;
 #X obj 93 295 +, f 11;
 #X obj 166 264 array get \$3-buffer-0;
