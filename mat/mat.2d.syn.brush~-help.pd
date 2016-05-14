@@ -212,11 +212,11 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X coords -1 1 1 -1 200 200 2 100 100;
 #X restore 63 473 pd \$0-scope;
 #X obj 330 700 text define -k \$0-config;
-#A set mat.dim 8 8 \; mat.meter.nls 8 \; mat.meter.positions -0.530331
+#A set mat.dim 8 8 \; mat.meter.positions -0.530331
 0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332
 -0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \; mat.meter.gain
 140 \; mat.scope.colors 999 90 990 950 900 \; mat.scope.gain 150 \;
-mat.dec.rolloff 8 \; mat.dec.blur 0.1 \; mat.dec.nls 8 \; mat.dec.positions
+rolloff 8 \; blur 0.1 \; positions
 -0.530331 0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06
 -0.75 0.530332 -0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06
 0.75 \;;

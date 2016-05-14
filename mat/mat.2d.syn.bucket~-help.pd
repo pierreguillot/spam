@@ -224,10 +224,10 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X restore 16 387 pd \$0-scope;
 #X obj 399 235 tools/mat.gnbx2;
 #X obj 10 157 text define -k \$0-config;
-#A set mat.dim 8 8 \; mat.dec.nls 8 \; mat.dec.positions -0.530331
+#A set mat.dim 8 8 \; positions -0.530331
 0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332
--0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \; mat.dec.rolloff
-40 \; mat.dec.blur 0.001 \; mat.meter.nls 8 \; mat.meter.positions
+-0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \; rolloff
+40 \; blur 0.001 \; mat.meter.positions
 -0.530331 0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332 2.51234e-06
 -0.75 0.530332 -0.530328 0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06
 0.75 \;;
