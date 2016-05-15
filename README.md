@@ -16,7 +16,7 @@ A set of externals and abstractions for sound spatialization.
 - **spam** : The all-in-one library
 
 #### Abstractions:
-- **xel** - matricial spatialization tools
+- **xel** - matrix spatialization tools
 - **ylm** - high order ambisonics spatialization tools
 - **zpt** - point source spatialization tools
 

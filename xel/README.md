@@ -1,6 +1,6 @@
 # mat
 
-A set of abstractions for sound spatialization in Pure Data based on a matricial representation of sound field.
+A set of abstractions for sound spatialization in Pure Data based on a representation of the space in the form of a matrix.
 
 - **xel.2d.syn.brush~**: The abstraction synthesizes the signals of the cells of a matrix for a sound source using amplitude gains depending on coordinates.
 - **xel.2d.syn.bucket~**: The abstraction synthesizes the signals of the cells of a matrix for a sound source using variable delay lines without flanging effect.

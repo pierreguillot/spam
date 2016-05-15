@@ -8,7 +8,7 @@
 #X text 6 28 The object loads several instances of a patch. It acts
 in a similar way to the clone object but allows to differentiate the
 inputs and outputs of each instance. This specificity can be useful
-to implement vectorial or matricial operations especially for spatialization
+to implement vector or matrix operations especially for spatialization
 techniques.;
 #X text 6 98 The first argument is the number of instances. The second
 argument is the name of the patch. The other arguments are sent to

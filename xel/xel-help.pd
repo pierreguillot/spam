@@ -2,7 +2,7 @@
 #X declare -stdpath spam;
 #X obj 4 510 xel.footer;
 #X text 4 31 The mat library is a set of abtractions for sound spatialization
-based on a matricial representation of the space. The abstractions
+based on a representation of the space n the form of a matrix. The abstractions
 must be used with the spam objects and generally use a text object
 to define the configuration., f 67;
 #X obj 5 383 xel.2d.scope~;
