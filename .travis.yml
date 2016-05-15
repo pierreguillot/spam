@@ -54,6 +54,8 @@ after_success:
   - mv spam/ylm/README.md spam/ylm/readme.txt
   - cp -r xel spam/xel
   - mv spam/xel/README.md spam/xel/readme.txt
+  - cp -r zpt spam/zpt
+  - mv spam/zpt/README.md spam/zpt/readme.txt
   - zip -r spam_$zip.zip spam
 
 deploy:
