@@ -18,6 +18,7 @@ A set of externals and abstractions for sound spatialization.
 #### Abstractions:
 - **xel** - matricial spatialization tools
 - **ylm** - high order ambisonics spatialization tools
+- **zpt** - point source spatialization tools
 
 #### Installation:
 - Download the latest [release](https://github.com/pierreguillot/spam/releases).
