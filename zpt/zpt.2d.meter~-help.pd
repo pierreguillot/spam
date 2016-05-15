@@ -1,47 +1,43 @@
-#N struct 3646-t-meter float x1 float y1 float s1 float s2 float s3
-float s4 float c0 float c1 float c2 float c3 float c4;
-#N struct 3645-t-meter float x1 float y1 float s1 float s2 float s3
-float s4 float c0 float c1 float c2 float c3 float c4;
-#N struct 3644-t-meter float x1 float y1 float s1 float s2 float s3
-float s4 float c0 float c1 float c2 float c3 float c4;
-#N struct 3643-t-meter float x1 float y1 float s1 float s2 float s3
-float s4 float c0 float c1 float c2 float c3 float c4;
-#N canvas 387 325 433 453 10;
+#N struct 1030-t-meter float x array ls 1030-t-meter-value;
+#N struct 1030-t-meter-value float x1 float y1 float s1 float s2 float
+s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
+v2 float v3 float v4;
+#N canvas 176 310 438 462 10;
 #X declare -stdpath spam;
-#N canvas 0 22 450 300 \$0-meter 0;
-#X scalar 3646-t-meter 0.6 0 8 16 24 32 555 90 990 950 900 \;;
-#X scalar 3645-t-meter 0 -0.6 8 16 24 32 555 90 990 950 900 \;;
-#X scalar 3644-t-meter -0.6 0 8 16 24 32 555 90 990 950 900 \;;
-#X scalar 3643-t-meter 0 0.6 8 16 24 32 555 90 990 950 900 \;;
+#N canvas 0 22 730 563 \$0-meter 0;
+#X scalar 1030-t-meter 0 \; 0 0.6 12 24 36 48 555 90 990 950 900 1
+1 1 0 \; -0.6 0 12 24 36 48 555 90 990 950 900 1 1 1 0 \; 0 -0.6 12
+24 36 48 555 90 990 950 900 1 1 1 0 \; 0.6 0 12 24 36 48 555 90 990
+950 900 1 1 1 0 \; \;;
 #X coords -1 1 1 -1 180 180 2 100 100;
-#X restore 23 119 pd \$0-meter;
+#X restore 22 121 pd \$0-meter;
 #X obj 118 335 *~ 2;
 #X obj 118 313 phasor~ 1;
 #X obj 25 362 sig~;
 #X obj 25 336 nbx 5 14 0 1 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 0 256;
+-1 -1 0.98 256;
 #X obj 118 357 -~ 0.8;
 #X obj 211 357 *~ 1.2;
 #X obj 211 335 osc~ 1;
 #X obj 304 355 noise~;
 #X obj 212 257 declare -stdpath spam;
-#X obj 5 7 xel.header xel.2d.meter~;
-#X obj 6 415 xel.footer;
 #X obj 210 280 text define -k \$0-meter-attrs;
 #A set positions 0 0.6 -0.6 0 0 -0.6 0.6 0 \; colors 555 90 990 950
 900 \; sizes 12 48 \;;
-#X obj 25 390 spam~ 4 xel.2d.meter~ 4 \$0-meter \$0-meter-attrs;
 #X text 4 31 The abstraction displays the contributions of a set of
 loudspeakers in a space. The first argument is the number of louspeakers.
 The second argument is the canvas to paint. The third argument is the
 name of the text object that must define the position of the loudspeakers
 and can also be used to define the colors and the sizes of the representation
 of the loudspeakers., f 67;
+#X obj 6 415 zpt.footer;
+#X obj 5 7 zpt.header zpt.2d.meter~;
+#X obj 25 390 spam~ 4 zpt.2d.meter~ 4 \$0-meter \$0-meter-attrs;
 #X connect 1 0 5 0;
 #X connect 2 0 1 0;
-#X connect 3 0 13 0;
+#X connect 3 0 14 0;
 #X connect 4 0 3 0;
-#X connect 5 0 13 1;
-#X connect 6 0 13 2;
+#X connect 5 0 14 1;
+#X connect 6 0 14 2;
 #X connect 7 0 6 0;
-#X connect 8 0 13 3;
+#X connect 8 0 14 3;
