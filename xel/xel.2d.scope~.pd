@@ -135,7 +135,7 @@ y2 float c1 float c2;
 #X obj 29 6 inlet;
 #X obj 248 204 > 5;
 #X obj 248 226 sel 1;
-#X obj 248 272 print xel.2d.meter~;
+#X obj 248 272 print ../zpt/zpt.2d.meter~;
 #X msg 248 248 warning extra colors arguments;
 #X obj 29 95 list split 1;
 #X obj 29 27 symbol colors;
