@@ -1,11 +1,15 @@
-#N canvas 296 26 678 799 10;
+#N struct 1309-t-meter float x array ls 1309-t-meter-value;
+#N struct 1309-t-meter-value float x1 float y1 float s1 float s2 float
+s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
+v2 float v3 float v4;
+#N canvas 462 45 645 803 10;
 #X declare -stdpath spam;
-#X obj 37 442 *~;
-#X obj 49 465 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+#X obj 97 442 *~;
+#X obj 109 465 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
 -1 -1 80 256;
-#X obj 22 509 *~, f 5;
-#X obj 22 400 noise~;
-#X obj 350 667 declare -stdpath spam;
+#X obj 82 509 *~, f 5;
+#X obj 82 400 noise~;
+#X obj 7 681 declare -stdpath spam;
 #N canvas 0 22 450 300 gain 0;
 #X obj 10 45 dbtorms;
 #X obj 10 67 pack f 20;
@@ -16,15 +20,15 @@
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
-#X restore 49 485 pd gain;
-#X obj 37 420 osc~ 5;
-#X obj 22 479 *~;
-#X obj 132 722 dac~ 1 2 3 4 5 6 7 8, f 33;
+#X restore 109 485 pd gain;
+#X obj 97 420 osc~ 5;
+#X obj 82 479 *~;
+#X obj 192 722 dac~ 1 2 3 4 5 6 7 8, f 33;
 #X obj 6 10 ylm.header ylm.2d.syn.directional;
-#X obj 22 536 spam~ 7 ylm.2d.syn.directional~ 3;
-#X obj 350 688 text define -k \$0-pro-attrs;
+#X obj 82 536 spam~ 7 ylm.2d.syn.directional~ 3;
+#X obj 7 702 text define -k \$0-pro-attrs;
 #A set angles 45 90 135 180 225 270 315 360 \;;
-#X obj 132 605 spam~ 7 ylm.2d.projector~ 3 8 \$0-pro-attrs, f 33;
+#X obj 192 605 spam~ 7 ylm.2d.projector~ 3 8 \$0-pro-attrs, f 33;
 #X obj 9 750 ylm.footer;
 #N canvas 0 22 450 300 init 0;
 #X obj 23 32 loadbang;
@@ -42,10 +46,10 @@
 #X connect 5 0 4 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X restore 350 646 pd init;
+#X restore 7 660 pd init;
 #N canvas 217 367 450 300 pos 0;
 #X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.279252 256;
+-262144 -1 -1 6.10865 256;
 #X obj 100 100 nbx 4 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 1 256;
 #X obj 119 77 t b f;
@@ -64,8 +68,8 @@
 #X connect 5 1 0 0;
 #X connect 7 0 5 0;
 #X coords 0 -1 1 1 90 14 2 100 100;
-#X restore 134 512 pd pos;
-#X obj 134 463 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
+#X restore 194 512 pd pos;
+#X obj 194 463 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
 1 1;
 #N canvas 0 22 450 406 trajectory 0;
 #X obj 158 109 + 1;
@@ -121,7 +125,7 @@
 #X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 11 0;
-#X restore 134 486 pd trajectory;
+#X restore 194 486 pd trajectory;
 #X text 4 31 The abstraction projects the signals of the circular harmonics
 onto a set of plane waves. The projection (or decoding) is the most
 basic operation to render a sound field from the domain of the spatial
@@ -146,10 +150,10 @@ in the direction of the plane wave and N the order of decomposition.
 In practice \, the Y[0 \, 0] * G[0 \, 0](θ) part is divided by 2 because
 the harmonics are not normalized bedore the projection. The unitary
 signal is equal to 1/(N+1)., f 67;
-#X obj 267 442 *~;
-#X obj 279 465 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+#X obj 327 442 *~;
+#X obj 339 465 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
 -1 -1 80 256;
-#X obj 252 509 *~, f 5;
+#X obj 312 509 *~, f 5;
 #N canvas 0 22 450 300 gain 0;
 #X obj 10 45 dbtorms;
 #X obj 10 67 pack f 20;
@@ -160,15 +164,15 @@ signal is equal to 1/(N+1)., f 67;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
-#X restore 279 485 pd gain;
-#X obj 267 420 osc~ 5;
-#X obj 252 479 *~;
-#X obj 252 536 spam~ 7 ylm.2d.syn.directional~ 3;
+#X restore 339 485 pd gain;
+#X obj 327 420 osc~ 5;
+#X obj 312 479 *~;
+#X obj 312 536 spam~ 7 ylm.2d.syn.directional~ 3;
 #N canvas 217 367 450 300 pos 0;
 #X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0.279252 256;
+-262144 -1 -1 6.10865 256;
 #X obj 100 100 nbx 4 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 1 256;
+-1 -1 0.125 256;
 #X obj 119 77 t b f;
 #X obj 101 150 pack 1 f;
 #X obj 101 18 r \$0-pos;
@@ -185,8 +189,8 @@ signal is equal to 1/(N+1)., f 67;
 #X connect 5 1 0 0;
 #X connect 7 0 5 0;
 #X coords 0 -1 1 1 90 14 2 100 100;
-#X restore 448 512 pd pos;
-#X obj 448 463 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
+#X restore 508 512 pd pos;
+#X obj 508 463 tgl 15 0 empty \$0-traj empty 17 7 0 10 -262144 -1 -1
 1 1;
 #N canvas 0 22 450 406 trajectory 0;
 #X obj 158 109 + 1;
@@ -242,12 +246,28 @@ signal is equal to 1/(N+1)., f 67;
 #X connect 22 0 6 0;
 #X connect 22 0 9 0;
 #X connect 22 0 19 0;
-#X restore 448 486 pd trajectory;
-#X obj 252 400 osc~ 220;
+#X restore 508 486 pd trajectory;
+#X obj 312 400 osc~ 220;
 #X text 4 340 The abstraction expects the order of decomposition as
 the first argument and the number of planwaves as the second argument
 and the third argument must the name of a text object containing the
 angles of the plane waves., f 67;
+#N canvas 0 22 450 300 \$0-meter 0;
+#X scalar 1309-t-meter 0 \; 0.424264 0.424264 8 16 24 32 555 90 990
+950 900 1 0 0 0 \; 0 0.6 8 16 24 32 555 90 990 950 900 1 0 0 0 \; -0.424264
+0.424264 8 16 24 32 555 90 990 950 900 1 0 0 0 \; -0.6 0 8 16 24 32
+555 90 990 950 900 1 0 0 0 \; -0.424264 -0.424264 8 16 24 32 555 90
+990 950 900 1 0 0 0 \; 0 -0.6 8 16 24 32 555 90 990 950 900 1 0 0 0
+\; 0.424264 -0.424264 8 16 24 32 555 90 990 950 900 1 0 0 0 \; 0.6
+0 8 16 24 32 555 90 990 950 900 1 0 0 0 \; \;;
+#X coords -1 1 1 -1 180 180 2 100 100;
+#X restore 410 558 pd \$0-meter;
+#X obj 7 722 text define -k \$0-meter-attrs;
+#A set positions 0.424264 0.424264 0 0.6 -0.424264 0.424264 -0.6 0
+-0.424264 -0.424264 0 -0.6 0.424264 -0.424264 0.6 0 \; gain 135 \;
+;
+#X obj 192 646 spam~ 8 ../zpt/zpt.2d.meter~ 8 \$0-meter \$0-meter-attrs
+, f 33;
 #X connect 0 0 7 1;
 #X connect 1 0 5 0;
 #X connect 2 0 10 0;
@@ -264,13 +284,21 @@ angles of the plane waves., f 67;
 #X connect 10 5 12 5;
 #X connect 10 6 12 6;
 #X connect 12 0 8 0;
+#X connect 12 0 36 0;
 #X connect 12 1 8 1;
+#X connect 12 1 36 1;
 #X connect 12 2 8 2;
+#X connect 12 2 36 2;
 #X connect 12 3 8 3;
+#X connect 12 3 36 3;
 #X connect 12 4 8 4;
+#X connect 12 4 36 4;
 #X connect 12 5 8 5;
+#X connect 12 5 36 5;
 #X connect 12 6 8 6;
+#X connect 12 6 36 6;
 #X connect 12 7 8 7;
+#X connect 12 7 36 7;
 #X connect 15 0 10 1;
 #X connect 16 0 17 0;
 #X connect 17 0 15 0;
