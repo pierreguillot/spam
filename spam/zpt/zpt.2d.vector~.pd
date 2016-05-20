@@ -224,7 +224,7 @@
 #X obj 39 112 array set \$3-val-0 \$1;
 #X obj 12 315 spam.out 0;
 #X obj 12 228 t f f, f 20;
-#N canvas 0 23 453 384 compute_velocity 0;
+#N canvas 382 125 453 384 compute_velocity 1;
 #X obj 36 7 inlet;
 #X obj 36 358 outlet;
 #N canvas 386 33 450 300 counter 0;
