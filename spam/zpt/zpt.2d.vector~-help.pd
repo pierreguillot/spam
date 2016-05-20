@@ -1,0 +1,109 @@
+#N struct 1021-t-meter float x array ls 1021-t-meter-value;
+#N struct 1021-t-meter-value float x1 float y1 float s1 float s2 float
+s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
+v2 float v3 float v4;
+#N struct 1014-t-vector float x1 float y1 float x2 float y2;
+#N canvas 117 191 802 586 10;
+#X declare -stdpath spam;
+#N canvas 0 22 730 563 \$0-meter 0;
+#X scalar 1021-t-meter 0 \; 0 0.6 12 24 36 48 555 90 990 950 900 1
+1 1 0 \; -0.6 0 12 24 36 48 555 90 990 950 900 1 1 0 0 \; 0 -0.6 12
+24 36 48 555 90 990 950 900 1 1 0 0 \; 0.6 0 12 24 36 48 555 90 990
+950 900 1 1 1 0 \; \;;
+#X coords -1 1 1 -1 180 180 2 100 100;
+#X restore 12 121 pd \$0-meter;
+#X obj 370 397 declare -stdpath spam;
+#X obj 370 420 text define -k \$0-meter-attrs;
+#A set positions 0 0.6 -0.6 0 0 -0.6 0.6 0 \; colors 555 90 990 950
+900 \; sizes 12 48 \;;
+#X text 4 31 The abstraction displays the contributions of a set of
+loudspeakers in a space. The first argument is the number of louspeakers.
+The second argument is the canvas to paint. The third argument is the
+name of the text object that must define the position of the loudspeakers
+and can also be used to define the colors and the sizes of the representation
+of the loudspeakers., f 67;
+#X obj 6 555 zpt.footer;
+#X obj 5 7 zpt.header zpt.2d.meter~;
+#X obj 25 460 spam~ 4 zpt.2d.vector~ 4 \$0-meter-attrs, f 47;
+#X obj 25 430 spam~ 4 zpt.2d.meter~ 4 \$0-meter \$0-meter-attrs;
+#N canvas 736 262 450 300 \$0-t-vector 0;
+#X obj 27 18 struct \$0-t-vector float x1 float y1 float x2 float y2
+;
+#X obj 27 39 filledpolygon 900 900 7 x1 y1 x1 y1;
+#X obj 27 64 filledpolygon 9 9 7 x2 y2 x2 y2;
+#X restore 390 169 pd \$0-t-vector;
+#X obj 567 283 pointer;
+#N canvas 0 22 450 300 \$0-vector 0;
+#X scalar 1014-t-vector 0.102876 0.281484 -1 1 \;;
+#X coords -1 1 1 -1 180 180 2 100 100;
+#X restore 12 121 pd \$0-vector;
+#X obj 527 156 loadbang;
+#X obj 527 178 t b b b, f 14;
+#X obj 607 200 f \$0;
+#X msg 607 223 \; pd-\$1-vector clear;
+#X obj 567 200 f \$0;
+#X msg 567 259 traverse pd-\$1-vector \, bang;
+#X obj 211 375 osc~ 0.1;
+#X obj 118 375 osc~ 0.1;
+#X obj 25 375 osc~ 0.1;
+#X obj 304 375 osc~ 0.1;
+#X obj 527 307 append \$0-t-vector x1 y1 x2 y2;
+#X msg 527 200 0 0 0 0;
+#X obj 25 527 set \$0-t-vector x1 y1, f 24;
+#X obj 304 528 set \$0-t-vector x2 y2, f 24;
+#X obj 304 484 unpack, f 12;
+#X obj 304 506 clip -1 1;
+#X obj 374 506 clip -1 1;
+#X obj 25 484 unpack, f 12;
+#X obj 25 506 clip -1 1;
+#X obj 95 506 clip -1 1;
+#X obj 70 347 unpack f f f f, f 47;
+#X msg 70 304 0 0.125 0.25 0.315;
+#X msg 80 324 0 0.25 0.5 0.75;
+#X msg 188 304 0 0 0 0;
+#X msg 190 324 0 0.5 0.25 0.75;
+#X obj 25 397 *~ 1;
+#X obj 118 397 *~ 1;
+#X obj 211 397 *~ 1;
+#X obj 304 395 *~ 1;
+#X connect 6 0 28 0;
+#X connect 6 1 25 0;
+#X connect 9 0 21 4;
+#X connect 11 0 12 0;
+#X connect 12 0 22 0;
+#X connect 12 1 15 0;
+#X connect 12 2 13 0;
+#X connect 13 0 14 0;
+#X connect 15 0 16 0;
+#X connect 16 0 9 0;
+#X connect 17 0 38 0;
+#X connect 18 0 37 0;
+#X connect 19 0 36 0;
+#X connect 20 0 39 0;
+#X connect 21 0 23 2;
+#X connect 21 0 24 2;
+#X connect 22 0 21 0;
+#X connect 25 0 26 0;
+#X connect 25 1 27 0;
+#X connect 26 0 24 0;
+#X connect 27 0 24 1;
+#X connect 28 0 29 0;
+#X connect 28 1 30 0;
+#X connect 29 0 23 0;
+#X connect 30 0 23 1;
+#X connect 31 0 19 1;
+#X connect 31 1 18 1;
+#X connect 31 2 17 1;
+#X connect 31 3 20 1;
+#X connect 32 0 31 0;
+#X connect 33 0 31 0;
+#X connect 34 0 31 0;
+#X connect 35 0 31 0;
+#X connect 36 0 6 0;
+#X connect 36 0 7 0;
+#X connect 37 0 6 1;
+#X connect 37 0 7 1;
+#X connect 38 0 6 2;
+#X connect 38 0 7 2;
+#X connect 39 0 6 3;
+#X connect 39 0 7 3;

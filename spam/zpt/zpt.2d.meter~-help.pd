@@ -1,13 +1,13 @@
-#N struct 1849-t-meter float x array ls 1849-t-meter-value;
-#N struct 1849-t-meter-value float x1 float y1 float s1 float s2 float
+#N struct 1086-t-meter float x array ls 1086-t-meter-value;
+#N struct 1086-t-meter-value float x1 float y1 float s1 float s2 float
 s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
 v2 float v3 float v4;
 #N canvas 176 310 438 462 10;
 #X declare -stdpath spam;
 #N canvas 0 22 730 563 \$0-meter 0;
-#X scalar 1849-t-meter 0 \; 0 0.6 12 24 36 48 555 90 990 950 900 0
-0 0 0 \; -0.6 0 12 24 36 48 555 90 990 950 900 1 1 0 0 \; 0 -0.6 12
-24 36 48 555 90 990 950 900 1 1 0 0 \; 0.6 0 12 24 36 48 555 90 990
+#X scalar 1086-t-meter 0 \; 0 0.6 12 24 36 48 555 90 990 950 900 0
+0 0 0 \; -0.6 0 12 24 36 48 555 90 990 950 900 1 1 1 1 \; 0 -0.6 12
+24 36 48 555 90 990 950 900 1 1 1 1 \; 0.6 0 12 24 36 48 555 90 990
 950 900 1 1 1 0 \; \;;
 #X coords -1 1 1 -1 180 180 2 100 100;
 #X restore 22 121 pd \$0-meter;
@@ -20,7 +20,7 @@ v2 float v3 float v4;
 #X obj 211 357 *~ 1.2;
 #X obj 211 335 osc~ 1;
 #X obj 304 355 noise~;
-#X obj 212 257 declare -stdpath spam;
+#X obj 210 257 declare -stdpath spam;
 #X obj 210 280 text define -k \$0-meter-attrs;
 #A set positions 0 0.6 -0.6 0 0 -0.6 0.6 0 \; colors 555 90 990 950
 900 \; sizes 12 48 \;;
