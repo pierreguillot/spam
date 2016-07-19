@@ -1,10 +1,10 @@
-#N struct 1051-t-vector float x1 float y1 float x2 float y2 float x3
+#N struct 1036-t-vector float x1 float y1 float x2 float y2 float x3
 float y3;
-#N struct 1054-t-meter float x array ls 1054-t-meter-value;
-#N struct 1054-t-meter-value float x1 float y1 float s1 float s2 float
+#N struct 1039-t-meter float x array ls 1039-t-meter-value;
+#N struct 1039-t-meter-value float x1 float y1 float s1 float s2 float
 s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
 v2 float v3 float v4;
-#N canvas 170 213 593 507 10;
+#N canvas 772 132 593 507 10;
 #X declare -stdpath spam;
 #X obj 430 7 declare -stdpath spam;
 #X obj 6 447 tutos.footer;
@@ -16,51 +16,18 @@ v2 float v3 float v4;
 #X obj 25 230 spam~ 2 ../zpt/zpt.2d.vector~ 2 \$0-attrs, f 48;
 #X text 4 31 ..., f 67;
 #N canvas 0 22 730 563 \$0-meter 0;
-#X scalar 1051-t-vector -0.0677261 0.707106 -0.033941 0.707106 -0.0314107
-0.999507 \;;
-#X scalar 1054-t-meter 0 \; -0.707106 0.707106 12 24 36 48 555 90 990
+#X scalar 1036-t-vector -0.0443995 0.707106 -0.0222217 0.707106 -0.0376902
+0.999289 \;;
+#X scalar 1039-t-meter 0 \; -0.707106 0.707106 12 24 36 48 555 90 990
 950 900 1 1 0 0 \; 0.707106 0.707106 12 24 36 48 555 90 990 950 900
 1 1 0 0 \; \;;
 #X coords -1 1.1 1 0 292 90 2 100 100;
 #X restore 24 331 pd \$0-meter;
 #X obj 25 121 noise~;
-#N canvas 732 307 450 300 trajectory 0;
-#X obj 50 143 * 90;
-#X obj 50 165 - 45;
-#X msg 50 207 \$1 5000;
-#X obj 50 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 49 229 line 0 20;
-#X obj 49 261 outlet;
-#X obj 121 187 loadbang;
-#X obj 121 209 f 0;
-#X obj 50 28 r pd;
-#X obj 50 50 route dsp;
-#X obj 50 98 metro 5000;
-#X msg 131 120 stop;
-#X obj 131 78 sel 0 1;
-#X obj 50 187 f;
-#X connect 0 0 1 0;
-#X connect 1 0 13 0;
-#X connect 2 0 4 0;
-#X connect 3 0 0 0;
-#X connect 4 0 5 0;
-#X connect 6 0 7 0;
-#X connect 7 0 4 0;
-#X connect 8 0 9 0;
-#X connect 9 0 10 0;
-#X connect 9 0 12 0;
-#X connect 10 0 3 0;
-#X connect 11 0 4 0;
-#X connect 12 0 11 0;
-#X connect 12 1 13 0;
-#X connect 13 0 2 0;
-#X restore 310 109 pd trajectory;
-#X obj 25 155 tut.linear.panner~, f 48;
 #X msg 435 109 \; pd dsp 1;
 #X msg 435 69 \; pd dsp 0;
 #X obj 310 134 nbx 5 14 -1e+37 1e+37 0 0 \$0-pos empty empty 0 -8 0
-10 -262144 -1 -1 -1.8 256;
+10 -262144 -1 -1 -2.16 256;
 #X obj 25 303 dac~ 1 2, f 48;
 #N canvas 250 390 1084 400 draw_analyse_vectors_________________________
 0;
@@ -96,9 +63,9 @@ float x3 float y3;
 #X obj 92 213 cos;
 #X obj 65 136 / 180;
 #X obj 328 100 nbx 6 14 -1e+37 1e+37 0 0 \$0-zzdu1 \$0-zzdu2 empty
-0 -8 0 10 -262144 -258113 -1 -2.74816 256;
+0 -8 0 10 -262144 -258113 -1 -1.80007 256;
 #X obj 265 100 nbx 6 14 -1e+37 1e+37 0 0 \$0-zzdu1 \$0-zzdu2 empty
-0 -8 0 10 -262144 -258113 -1 0.70792 256;
+0 -8 0 10 -262144 -258113 -1 0.707455 256;
 #X text 315 99 r;
 #X text 378 99 a;
 #N canvas 0 22 450 300 cartopoll 0;
@@ -138,9 +105,9 @@ float x3 float y3;
 #X connect 14 0 8 0;
 #X restore 330 58 pd cartopoll;
 #X obj 163 100 nbx 6 14 -1e+37 1e+37 0 0 \$0-zzdu1 \$0-zzdu2 empty
-0 -8 0 10 -262144 -4160 -1 -5.47114 256;
+0 -8 0 10 -262144 -4160 -1 -3.59298 256;
 #X obj 100 100 nbx 6 14 -1e+37 1e+37 0 0 \$0-zzdu1 \$0-zzdu2 empty
-0 -8 0 10 -262144 -4160 -1 0.710342 256;
+0 -8 0 10 -262144 -4160 -1 0.708499 256;
 #X text 150 99 r;
 #X text 213 99 a;
 #N canvas 0 22 450 300 cartopoll 0;
@@ -223,14 +190,48 @@ float x3 float y3;
 #X coords 0 -1 1 1 290 14 2 100 100;
 #X restore 25 270 pd draw_analyse_vectors_________________________
 ;
-#X connect 5 0 15 0;
-#X connect 5 1 15 1;
-#X connect 8 0 10 0;
-#X connect 9 0 10 1;
-#X connect 9 0 13 0;
-#X connect 10 0 4 0;
-#X connect 10 0 5 0;
-#X connect 10 0 14 0;
-#X connect 10 1 4 1;
-#X connect 10 1 5 1;
-#X connect 10 1 14 1;
+#X obj 25 155 tut.power.panner~, f 48;
+#N canvas 93 250 450 300 trajectory 1;
+#X obj 50 123 * 90;
+#X obj 50 145 - 45;
+#X msg 50 167 \$1 5000;
+#X obj 50 103 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 49 189 line 0 20;
+#X obj 49 221 outlet;
+#X obj 121 167 loadbang;
+#X obj 121 189 f 0;
+#X obj 50 28 r pd;
+#X obj 50 50 route dsp;
+#X obj 50 72 metro 5000;
+#X msg 131 100 stop;
+#X obj 131 78 sel 0 1;
+#X msg 94 104 0;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 0 12 0;
+#X connect 10 0 3 0;
+#X connect 11 0 4 0;
+#X connect 12 0 11 0;
+#X connect 12 0 13 0;
+#X connect 12 1 7 0;
+#X connect 13 0 3 0;
+#X restore 310 109 pd trajectory;
+#X connect 5 0 13 0;
+#X connect 5 1 13 1;
+#X connect 8 0 14 0;
+#X connect 14 0 4 0;
+#X connect 14 0 5 0;
+#X connect 14 0 12 0;
+#X connect 14 1 4 1;
+#X connect 14 1 5 1;
+#X connect 14 1 12 1;
+#X connect 15 0 11 0;
+#X connect 15 0 14 1;
