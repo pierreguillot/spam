@@ -1,8 +1,6 @@
 # spam
 
-A set of externals and abstractions for sound spatialization.
-
-[![Build Status](https://travis-ci.org/pierreguillot/spam.svg?branch=master)](https://travis-ci.org/pierreguillot/spam) [![Build Status](https://ci.appveyor.com/api/projects/status/github/pierreguillot/spam?branch=master&svg=true)](https://ci.appveyor.com/project/pierreguillot/spam)   
+A set of externals and abstractions for sound spatialization. 
 
 ![image](https://cloud.githubusercontent.com/assets/1409918/15268247/bf1d2056-19d8-11e6-8ab3-b1a26e3482a0.png)
 
@@ -28,11 +26,18 @@ A set of externals and abstractions for sound spatialization.
   Pd → Preferences → Startup... → [New...] → *spam*
 
 #### Compilation
-- cd build
-- cmake ..
-- cmake --build .
+
+[![Travis](https://img.shields.io/travis/pierreguillot/spam.svg)](https://travis-ci.org/pierreguillot/spam)  
+[![Appveyor](https://img.shields.io/appveyor/ci/pierreguillot/spam.svg)](https://ci.appveyor.com/project/pierreguillot/spam)
+```
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
 
 **Author**: Pierre Guillot  
 **Organizations**: Université Paris 8 | CICM | Labex Arts H2H   
-**Website**: https://github.com/pierreguillot/spam   
-**License**: BSD - see LICENSE   
+**Website**: https://github.com/pierreguillot/spam    
+
+[![license](https://img.shields.io/github/license/pierreguillot/spam.svg?maxAge=2592000)](https://github.com/pierreguillot/spam/blob/master/LICENSE)
