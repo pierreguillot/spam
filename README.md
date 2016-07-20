@@ -1,6 +1,6 @@
 # spam
 
-A set of externals and abstractions for sound spatialization. 
+A set of externals and abstractions for sound spatialization.
 
 ![image](https://cloud.githubusercontent.com/assets/1409918/15268247/bf1d2056-19d8-11e6-8ab3-b1a26e3482a0.png)
 
@@ -19,11 +19,11 @@ A set of externals and abstractions for sound spatialization.
 - **zpt** - point source spatialization tools
 
 #### Installation:
-- Download the latest [release](https://github.com/pierreguillot/spam/releases).
+- Download the [![Release](https://img.shields.io/github/release/pierreguillot/spam.svg)](https://github.com/pierreguillot/spam/releases/latest) .
 - Unzip the file.
 - Put the *spam* folder in the [Pure Data library folder](https://puredata.info/docs/faq/how-do-i-install-externals-and-help-files).
-- Add spam in the Pure Data's startup window from the menu (optional):  
-  Pd → Preferences → Startup... → [New...] → *spam*
+- Add *spam* in the Pure Data's startup window from the menu (optional):  
+  `Pd → Preferences → Startup... → [New...] → spam`
 
 #### Compilation
 
