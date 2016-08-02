@@ -14,7 +14,6 @@ install:
     - git submodule update --init --recursive
     - git clone -q --branch=master https://github.com/pierreguillot/pdwinlib.git
     - cd pdwinlib
-    - dir /s /b /o:gn
     - cd ..\
 
 build_script:
@@ -24,6 +23,7 @@ build_script:
     - cmake --build .
 
 after_build:
+    - dir /s /b /o:gn
     - cd ..\
     - rename %APPVEYOR_BUILD_FOLDER%\spam\spam_in.dll spam.in.dll
     - rename %APPVEYOR_BUILD_FOLDER%\spam\spam_out.dll spam.out.dll
