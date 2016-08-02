@@ -27,8 +27,8 @@ A set of externals and abstractions for sound spatialization.
 
 #### Compilation
 
-[![Travis](https://img.shields.io/travis/pierreguillot/spam.svg)](https://travis-ci.org/pierreguillot/spam)  
-[![Appveyor](https://img.shields.io/appveyor/ci/pierreguillot/spam.svg)](https://ci.appveyor.com/project/pierreguillot/spam)
+[![Travis](https://img.shields.io/travis/pierreguillot/spam.svg?label=travis)](https://travis-ci.org/pierreguillot/spam)  
+[![Appveyor](https://img.shields.io/appveyor/ci/pierreguillot/spam.svg?label=appveyor)](https://ci.appveyor.com/project/pierreguillot/spam)
 ```
 mkdir build
 cd build
