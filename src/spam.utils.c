@@ -188,7 +188,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
     master->s_tie       = NULL;
     
     spam_iolets_init(&(master->s_iolets));
-    master->s_canvas = canvas_new(NULL, gensym(""), 0, NULL);
+    master->s_canvas = canvas_new(NULL, &s_, 0, NULL);
     
     if(master->s_canvas)
     {
@@ -200,23 +200,24 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
         pd_typedmess((t_pd *)master->s_canvas, gensym("obj"), 3, av);
         SETSYMBOL(av+2, gensym("spam.tie"));
         pd_typedmess((t_pd *)master->s_canvas, gensym("obj"), 3, av);
+        
         master->s_block = spam_mater_get_object(master->s_canvas,  "block~", 6);
         if(!master->s_block)
         {
-            error("spam.process~: can't allocate master switch~ object.");
+            error("spam~: can't allocate switch~ object.");
             return -1;
         }
         master->s_tie  = spam_mater_get_object(master->s_canvas,  "spam.tie", 8);
         if(!master->s_block)
         {
-            error("spam.process~: can't allocate tie object.");
+            error("spam~: can't allocate tie object.");
             return -1;
         }
         mess1((t_pd *)master->s_tie, gensym("setprocess"), (t_object*)master);
     }
     else
     {
-        error("spam.process~: can't allocate master canvas.");
+        error("spam~: can't allocate master canvas.");
         return -1;
     }
     
