@@ -10,6 +10,7 @@ A set of externals and abstractions for sound spatialization.
 - **spam.in~**: The inlet object for signal.
 - **spam.out**: The outlet object for messages.
 - **spam.out~**: The outlet object for signal.
+- **spam.loadbang**: The (init) loadbang object for spam patches.
 - **spam.connect**: The object that creates several connections in one click.
 - **spam** : The all-in-one library
 

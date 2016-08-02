@@ -115,11 +115,20 @@ if(${WIN32})
 		target_link_libraries(spam_out_tilde pd)
 endif()
 
+set(SPAM_LOADBANG ${PROJECT_SOURCE_DIR}/src/spam.loadbang.c)
+source_group(src FILES ${SPAM_LOADBANG})
+add_library(spam_loadbang SHARED ${SPAM_LOADBANG})
+set_target_properties(spam_loadbang PROPERTIES LIBRARY_OUTPUT_NAME spam.loadbang)
+if(${WIN32})
+		target_link_libraries(spam_loadbang pd)
+endif()
+
 set(SPAMCONNECT
 ${PROJECT_SOURCE_DIR}/src/spam.connect.c)
 source_group(src FILES ${SPAMCONNECT})
 add_library(spam_connect SHARED ${SPAMCONNECT})
 set_target_properties(spam_connect PROPERTIES LIBRARY_OUTPUT_NAME spam.connect)
+set_target_properties(spam_connect PROPERTIES OUTPUT_NAME spam.connect)
 if(${WIN32})
 		target_link_libraries(spam_connect pd)
 endif()
@@ -138,6 +147,7 @@ set(SPAMSRC
 	${PROJECT_SOURCE_DIR}/src/spam.in_tilde.c
 	${PROJECT_SOURCE_DIR}/src/spam.out_tilde.c
   ${PROJECT_SOURCE_DIR}/src/spam.connect.c
+  ${PROJECT_SOURCE_DIR}/src/spam.loadbang.c
 	${PROJECT_SOURCE_DIR}/src/spam.c)
 source_group(src FILES ${SPAMSRC})
 add_library(spam SHARED ${SPAMSRC})
