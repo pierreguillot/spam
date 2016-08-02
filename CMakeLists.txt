@@ -43,6 +43,15 @@ endif()
 
 include_directories(${PROJECT_SOURCE_DIR}/pd/src/)
 
+macro(add_external EXTERNAL_PROJECT EXTERNAL_SOURCES EXTERNAL_NAME)
+source_group(src FILES ${EXTERNAL_SOURCES})
+add_library(${EXTERNAL_PROJECT} SHARED ${EXTERNAL_SOURCES})
+set_target_properties(${EXTERNAL_PROJECT} PROPERTIES OUTPUT_NAME ${EXTERNAL_NAME})
+if(${WIN32})
+		target_link_libraries(${EXTERNAL_PROJECT} pd)
+endif()
+
+endmacro(add_external)
 
 
 set(SPAMTILDESRC
@@ -116,22 +125,11 @@ if(${WIN32})
 endif()
 
 set(SPAM_LOADBANG ${PROJECT_SOURCE_DIR}/src/spam.loadbang.c)
-source_group(src FILES ${SPAM_LOADBANG})
-add_library(spam_loadbang SHARED ${SPAM_LOADBANG})
-set_target_properties(spam_loadbang PROPERTIES LIBRARY_OUTPUT_NAME spam.loadbang)
-if(${WIN32})
-		target_link_libraries(spam_loadbang pd)
-endif()
+add_external(spam_loadbang ${SPAM_LOADBANG} spam.loadbang)
 
-set(SPAMCONNECT
-${PROJECT_SOURCE_DIR}/src/spam.connect.c)
-source_group(src FILES ${SPAMCONNECT})
-add_library(spam_connect SHARED ${SPAMCONNECT})
-set_target_properties(spam_connect PROPERTIES LIBRARY_OUTPUT_NAME spam.connect)
-set_target_properties(spam_connect PROPERTIES OUTPUT_NAME spam.connect)
-if(${WIN32})
-		target_link_libraries(spam_connect pd)
-endif()
+set(SPAM_CONNECT ${PROJECT_SOURCE_DIR}/src/spam.connect.c)
+add_external(spam_connect ${SPAM_CONNECT} spam.connect)
+
 
 set(SPAMSRC
 	${PROJECT_SOURCE_DIR}/src/spam.def.h
