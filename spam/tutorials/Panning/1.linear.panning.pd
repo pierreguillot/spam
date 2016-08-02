@@ -1,5 +1,5 @@
-#N struct 1007-t-meter float x;
-#N struct 1007-t-vector float x1 float y1 float x2 float y2 float x3
+#N struct 1012-t-meter float x;
+#N struct 1012-t-vector float x1 float y1 float x2 float y2 float x3
 float y3 float g1 float g2;
 #N canvas 434 44 444 654 10;
 #X obj 6 607 tutos.footer;
@@ -9,7 +9,7 @@ float y3 float g1 float g2;
 #X obj 50 143 * 90;
 #X obj 50 165 - 45;
 #X msg 50 207 \$1 5000;
-#X obj 50 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 50 123 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 49 229 line 0 20;
 #X obj 49 261 outlet;
@@ -39,12 +39,12 @@ float y3 float g1 float g2;
 #X msg 298 283 \; pd dsp 1;
 #X msg 298 243 \; pd dsp 0;
 #X obj 256 174 nbx 5 14 -45 45 0 0 \$0-pos empty empty 0 -8 0 10 -262144
--1 -1 -44.64 256;
+-1 -1 6 256;
 #X obj 25 433 dac~ 1 2, f 39;
 #N canvas 0 22 450 300 \$0-monitor 0;
-#X scalar 1007-t-meter 0 \;;
-#X scalar 1007-t-vector -0.70265 0.711536 -0.707106 0.715528 0.005
--0.02 0.004 0.996 \;;
+#X scalar 1012-t-meter 0 \;;
+#X scalar 1012-t-vector 0.104528 0.994522 0.185268 1.28116 0.294 2.228
+0.566 0.433 \;;
 #X coords -1 1.5 1 0 150 150 2 100 100;
 #X restore 65 261 pd \$0-monitor;
 #X obj 25 228 tut.linear.analyzer~ \$0-monitor \$0-pos, f 39;
@@ -57,15 +57,15 @@ g1 and g2 the respective gains of the first and the second loudspeakers.
 #X text 312 173 θ in degree;
 #X text 4 31 The linear panning is the most simple approach for positioning
 a sound source between two loudspeakers., f 67;
-#X obj 256 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 256 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 4 464 The grey point represents the expected sound source while
 the blue point represents the perceived sound source. The representation
-highlights the artefacts of this approach \, the small azimuthal deviation
-Δθ and the augmentation of the radius Δr toward 0° due to the law
-of sound intensity defined by I = √(g1^2 + g2^2). Indeed when θ
-= 0° \, I = √(0.5^2 + 0.5^2) = 0.707 instead of 1 resulting in a
-"hole" in middle., f 67;
+highlights the augmentation of the radius Δr toward 0° due to the
+law of sound intensity defined by I = √(g1^2 + g2^2). Indeed when
+θ = 0° \, I = √(0.5^2 + 0.5^2) = 0.707 instead of 1 resulting in
+a "hole" in middle. The small azimuthal deviation Δθ is negligible.
+, f 67;
 #X connect 2 0 4 0;
 #X connect 3 0 7 0;
 #X connect 4 0 8 0;

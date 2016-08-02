@@ -1,0 +1,206 @@
+#N struct 1689-t-scope float x array bufr 1689-t-scope-value-r array
+bufg 1689-t-scope-value-g;
+#N struct 1689-t-scope-value-r float x float y;
+#N struct 1689-t-scope-value-g float x float y;
+#N struct 1703-t-meter float x array ls 1703-t-meter-value;
+#N struct 1703-t-meter-value float x1 float y1 float s1 float s2 float
+s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
+v2 float v3 float v4;
+#N canvas 255 23 965 829 10;
+#X declare -stdpath spam;
+#X obj 570 226 sig~ 1;
+#X text 541 210 Source synthesis;
+#X text 1 48 Ambisonics is a set of techniques for the recording \,
+synthesis \, transformation and restitution of sound field based on
+a physical representation of the sound space in the spherical or circular
+harmonics domain or in the planewaves domain that allows a wide range
+of sound and space processings., f 65;
+#X text 426 88 A sound source is encoded in a two-dimensional space.
+The synthesized sound field owns the sound and its spatial informations
+in the form of circular harmonics. Thereafter \, the sound field is
+decoded for a set of planewaves that matches with a loudspeakers system.
+, f 66;
+#X text 426 58 This first example presents the simplest process of
+the Ambisonics, f 68;
+#X text 1 128 Ambisonics offers several advantages:, f 65;
+#X text 2 515 • The restitution system is restricted by the order
+of decomposition. The number of loudspeakers must be higher than or
+equal to the number of harmonics. Futhermore \, the loudspeakers must
+be placed on a circle or a sphere at equal distance from each other.
+However \, these restrictions can be bypassed to the detriment of the
+quality of the sound field restitution. Thus \, in practise \, it is
+\, in fact \, possible to project the sound field on many loudspeakers
+systems from stereo to an infinity of loudspeakers through all irregular
+configurations such as 5.1 \, 7.1 and headphones (see hoa.decoder~
+object)., f 65;
+#X text 2 398 Ambisonics also implies some restrictions:, f 66;
+#X text 2 234 • Ambisonics offers an homogeneous rendering of the
+sound field over the sphere and the circle. Unlike other techniques
+where the angular resolution varies depending on the sources directions
+\, Ambisonics provides a constant angular resolution., f 65;
+#X text 2 301 • Ambisonics offers a wide range of "classical" sound
+field transformations in the harmonics and the planewaves domains like
+rotation or distorsion. This model gives representations of the sound
+field that also allows to explore new techniques of sound field synthesis
+and transformations with a high musical potential., f 65;
+#X text 2 415 • With Ambisonics \, the auditor should ideally be
+placed at the center of the loudspeakers array otherwise the sound
+field resitution will be distorted. However \, the use of the maxRe
+or inPhase optimizations (see hoa.optim~ object) can make up this artefact
+(to the detriment of the spatial resolution) and offers the possibility
+of an audience spread all over the circle., f 65;
+#X text 1 667 This set of tutorials returns to these principles and
+presents the key concept to understand and explore the possibilities
+of Ambsionics., f 66;
+#X text 2 145 • Ambisonics allows to synthesize several sound fields
+and to decode them with only one operation wich reduce the CPU usage.The
+separation of these two operations allows also to record the sound
+field in the harmonics domain. Thus \, it is possible to decode the
+sound field to the many speakers arrangements without recomputing all
+the sound field., f 65;
+#X obj 427 160 declare -stdpath spam;
+#N canvas 0 22 450 300 \$0-scope 0;
+#X scalar 1689-t-scope 0 \; 0.875 0 \; 0.872308 0.030632 \; 0.864266
+0.0607741 \; 0.850979 0.0899449 \; 0.83262 0.11768 \; 0.809427 0.143538
+\; 0.781698 0.167111 \; 0.749789 0.188031 \; 0.714105 0.205973 \; 0.675096
+0.220663 \; 0.633249 0.231884 \; 0.589079 0.239475 \; 0.543121 0.243338
+\; 0.495924 0.243437 \; 0.448038 0.239798 \; 0.400011 0.23251 \; 0.352376
+0.221721 \; 0.305642 0.207636 \; 0.260294 0.190515 \; 0.216778 0.170663
+\; 0.175496 0.148429 \; 0.136806 0.124199 \; 0.101012 0.098387 \; 0.0683609
+0.0714282 \; 0.0390434 0.0437724 \; 0.0131892 0.0158748 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; -0 0 \; -0
+0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0.00418118 0.0160735
+\; -0.0100704 0.0337973 \; -0.0168846 0.0501615 \; -0.024426 0.0649341
+\; -0.0324767 0.0779213 \; -0.040803 0.0889699 \; -0.0491624 0.0979695
+\; -0.0573086 0.104853 \; -0.0649979 0.109598 \; -0.071995 0.112223
+\; -0.0780783 0.11279 \; -0.0830458 0.111398 \; -0.0867189 0.108184
+\; -0.0889473 0.103315 \; -0.0896123 0.0969844 \; -0.0886297 0.0894106
+\; -0.0859517 0.0808274 \; -0.0815682 0.0714804 \; -0.0755075 0.0616214
+\; -0.0678353 0.0515021 \; -0.0586539 0.0413688 \; -0.0481003 0.0314571
+\; -0.0363429 0.0219867 \; -0.0235784 0.0131569 \; -0.0100274 0.0051425
+\; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \;
+-0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 -0 \; -0 -0 \; -0 -0 \;
+-0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0
+\; -0 -0 \; -0 -0 \; -0.0100292 -0.00514345 \; -0.02358 -0.013158 \;
+-0.0363446 -0.021988 \; -0.0481017 -0.0314583 \; -0.0586552 -0.0413701
+\; -0.0678363 -0.0515034 \; -0.0755083 -0.0616227 \; -0.0815688 -0.0714816
+\; -0.0859521 -0.0808285 \; -0.0886299 -0.0894116 \; -0.0896123 -0.0969853
+\; -0.0889471 -0.103315 \; -0.0867185 -0.108185 \; -0.0830452 -0.111399
+\; -0.0780776 -0.11279 \; -0.0719941 -0.112222 \; -0.064997 -0.109597
+\; -0.0573076 -0.104852 \; -0.0491614 -0.0979685 \; -0.0408019 -0.0889686
+\; -0.0324756 -0.0779198 \; -0.024425 -0.0649324 \; -0.0168836 -0.0501595
+\; -0.0100697 -0.0337952 \; -0.00418047 -0.0160711 \; -0 -0 \; -0 -0
+\; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; 0 -0 \; 0 -0 \; 0 -0
+\; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \;
+0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0.0131921
+-0.0158782 \; 0.0390471 -0.0437761 \; 0.0683647 -0.0714316 \; 0.101016
+-0.0983906 \; 0.136811 -0.124203 \; 0.175501 -0.148432 \; 0.216783
+-0.170665 \; 0.2603 -0.190517 \; 0.305648 -0.207638 \; 0.352381 -0.221722
+\; 0.400018 -0.232511 \; 0.448045 -0.239798 \; 0.49593 -0.243437 \;
+0.543127 -0.243338 \; 0.589085 -0.239474 \; 0.633255 -0.231882 \; 0.675101
+-0.220661 \; 0.714109 -0.205971 \; 0.749793 -0.188028 \; 0.781701 -0.167109
+\; 0.80943 -0.143535 \; 0.832623 -0.117676 \; 0.850981 -0.0899412 \;
+0.864267 -0.0607704 \; 0.872308 -0.0306279 \; 0.875 3.90808e-06 \;
+\; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0
+-0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \;
+-0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0 \; -0 -0
+\; -0 -0 \; -0 -0 \; -0 -0 \; 0.00913187 0.0118112 \; 0.0279094 0.0388425
+\; 0.0431905 0.0647931 \; 0.0550776 0.0892621 \; 0.0637241 0.11188
+\; 0.0693303 0.132315 \; 0.0721378 0.150278 \; 0.0724238 0.165526 \;
+0.0704949 0.177868 \; 0.0666796 0.187166 \; 0.0613217 0.193337 \; 0.0547732
+0.196354 \; 0.0473866 0.196242 \; 0.0395085 0.193083 \; 0.0314723 0.187008
+\; 0.0235923 0.178196 \; 0.0161578 0.166869 \; 0.00942789 0.153289
+\; 0.00362708 0.137749 \; -0.00105821 0.120569 \; -0.00448249 0.102092
+\; -0.00654298 0.0826714 \; -0.00718054 0.0626689 \; -0.00637962 0.042446
+\; -0.00416737 0.0223572 \; -0.000611737 0.00274352 \; 0 -0 \; 0 -0
+\; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \;
+0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0
+\; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; 0 -0 \; -0.00406952 0.00190973
+\; -0.0184577 0.00788368 \; -0.0328732 0.0126961 \; -0.0470479 0.0162973
+\; -0.0607162 0.0186728 \; -0.0736199 0.0198417 \; -0.0855135 0.0198564
+\; -0.0961695 0.0188003 \; -0.105384 0.0167857 \; -0.112978 0.01395
+\; -0.118806 0.0104523 \; -0.122756 0.00646909 \; -0.12475 0.0021894
+\; -0.12475 -0.00218998 \; -0.122756 -0.00646962 \; -0.118806 -0.0104528
+\; -0.112977 -0.0139504 \; -0.105383 -0.016786 \; -0.0961682 -0.0188005
+\; -0.085512 -0.0198564 \; -0.0736183 -0.0198416 \; -0.0607146 -0.0186726
+\; -0.0470461 -0.016297 \; -0.0328713 -0.0126955 \; -0.0184559 -0.00788299
+\; -0.00406788 -0.00190898 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0
+0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \;
+0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0 \; 0 0
+\; -0.000612227 -0.00274578 \; -0.00416777 -0.0223599 \; -0.00637982
+-0.0424486 \; -0.00718055 -0.0626717 \; -0.00654281 -0.082674 \; -0.00448214
+-0.102094 \; -0.00105767 -0.120572 \; 0.00362775 -0.137751 \; 0.00942865
+-0.153291 \; 0.0161587 -0.166871 \; 0.0235933 -0.178197 \; 0.0314732
+-0.187009 \; 0.0395095 -0.193083 \; 0.0473876 -0.196242 \; 0.054774
+-0.196353 \; 0.0613225 -0.193337 \; 0.0666802 -0.187165 \; 0.0704952
+-0.177866 \; 0.072424 -0.165524 \; 0.0721376 -0.150276 \; 0.0693298
+-0.132313 \; 0.0637233 -0.111878 \; 0.0550763 -0.0892591 \; 0.0431889
+-0.0647899 \; 0.0279073 -0.0388393 \; 0.00912932 -0.0118078 \; -0 0
+\; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \;
+-0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0
+0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 0 \; -0 -0
+\; \;;
+#X coords -1 1 1 -1 180 180 2 100 100;
+#X restore 613 317 pd \$0-scope;
+#X obj 427 181 text define -k \$0-attrs;
+#A set angles 45 90 135 180 225 270 315 360 \; positions 0.424264 0.424264
+0 0.6 -0.424264 0.424264 -0.6 0 -0.424264 -0.424264 0 -0.6 0.424264
+-0.424264 0.6 0 \;;
+#N canvas 0 22 450 300 \$0-meter 0;
+#X scalar 1703-t-meter 0 \; 0.424264 0.424264 8 16 24 32 555 90 990
+950 900 1 0 0 0 \; 0 0.6 8 16 24 32 555 90 990 950 900 1 0 0 0 \; -0.424264
+0.424264 8 16 24 32 555 90 990 950 900 1 0 0 0 \; -0.6 0 8 16 24 32
+555 90 990 950 900 1 0 0 0 \; -0.424264 -0.424264 8 16 24 32 555 90
+990 950 900 1 0 0 0 \; 0 -0.6 8 16 24 32 555 90 990 950 900 1 0 0 0
+\; 0.424264 -0.424264 8 16 24 32 555 90 990 950 900 1 0 0 0 \; 0.6
+0 8 16 24 32 555 90 990 950 900 1 1 1 0 \; \;;
+#X coords -1 1 1 -1 180 180 2 100 100;
+#X restore 613 619 pd \$0-meter;
+#X text 430 252 1 - Encoding in the circular harmonics domain, f 21
+;
+#X text 435 376 Representation of the weigthed sum of the circular
+harmonics, f 19;
+#X text 432 505 2 - Decoding for a set of planewaves or loudspeakers
+, f 18;
+#X text 436 690 Representation of the contributions of 16 loudspeakers
+, f 18;
+#X obj 570 262 spam~ 7 ../../ylm/ylm.2d.syn.directional~ 3;
+#X obj 570 282 spam~ 7 ../../ylm/ylm.2d.scope~ 3 \$0-scope \$0-attrs
+, f 43;
+#X obj 570 505 spam~ 7 ../../ylm/ylm.2d.projector~ 3 8 \$0-attrs,
+f 43;
+#X obj 570 545 dac~ 1 2 3 4 5 6 7 8, f 43;
+#X obj 570 578 spam~ 8 ../../zpt/zpt.2d.meter~ 8 \$0-meter \$0-attrs
+, f 43;
+#X connect 0 0 21 0;
+#X connect 21 0 22 0;
+#X connect 21 0 23 0;
+#X connect 21 1 22 1;
+#X connect 21 1 23 1;
+#X connect 21 2 22 2;
+#X connect 21 2 23 2;
+#X connect 21 3 22 3;
+#X connect 21 3 23 3;
+#X connect 21 4 22 4;
+#X connect 21 4 23 4;
+#X connect 21 5 22 5;
+#X connect 21 5 23 5;
+#X connect 21 6 22 6;
+#X connect 21 6 23 6;
+#X connect 23 0 24 0;
+#X connect 23 0 25 0;
+#X connect 23 1 24 1;
+#X connect 23 1 25 1;
+#X connect 23 2 24 2;
+#X connect 23 2 25 2;
+#X connect 23 3 24 3;
+#X connect 23 3 25 3;
+#X connect 23 4 24 4;
+#X connect 23 4 25 4;
+#X connect 23 5 24 5;
+#X connect 23 5 25 5;
+#X connect 23 6 24 6;
+#X connect 23 6 25 6;
+#X connect 23 7 24 7;
+#X connect 23 7 25 7;
