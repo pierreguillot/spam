@@ -37,4 +37,4 @@ set(SPAM_SRC
   ${PROJECT_SOURCE_DIR}/src/spam.connect.c
   ${PROJECT_SOURCE_DIR}/src/spam.loadbang.c
 	${PROJECT_SOURCE_DIR}/src/spam.c)
-add_external(spam spam "${SPAM_SRC}")
+#add_external(spam spam "${SPAM_SRC}")
