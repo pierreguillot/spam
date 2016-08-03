@@ -4,7 +4,7 @@ project(spam)
 include(pd.cmake)
 
 include_directories(${PROJECT_SOURCE_DIR}/pd/src/)
-if(${MSYS})
+if(${WIN32})
   link_directories(${PROJECT_SOURCE_DIR}/pdwinlib)
 endif()
 
