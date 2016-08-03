@@ -13,8 +13,9 @@ matrix:
     compiler: gcc
     env:
       - zip=linux_32
-    before_install:
-      - sudo apt-get install g++-multilib libc6-dev-i386
+    install:
+      - sudo apt-get install -y gcc-multilib
+      - sudo apt-get install -y zlib1g-dev:i386
     script:
       - mkdir build && cd build
       - cmake .. -DCMAKE_C_FLAGS=-m32
