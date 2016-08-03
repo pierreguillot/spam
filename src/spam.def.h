@@ -21,6 +21,11 @@
 #define __spam_io_init__ "ioinit"
 #define __spam_io_dsp__ "iodsp"
 
+#define spam_string_owned       "owned"
+#define spam_string_borrowed    "borrowed"
+#define spam_string_shared      "shared"
+#define spam_string_in          "in"
+
 
 typedef struct _spam_tie
 {
