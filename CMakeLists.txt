@@ -9,13 +9,6 @@ if(${MSYS})
 endif()
 
 set_external_path("${PROJECT_SOURCE_DIR}/spam/")
-set(SPAM_TILDE_SRC ${PROJECT_SOURCE_DIR}/src/spam_tilde.c
-	${PROJECT_SOURCE_DIR}/src/spam.tie.c
-	${PROJECT_SOURCE_DIR}/src/spam.utils.h
-  ${PROJECT_SOURCE_DIR}/src/spam.tie.h
-  ${PROJECT_SOURCE_DIR}/src/spam.utils.c)
-add_external(spam_tilde spam~ "${SPAM_TILDE_SRC}")
-
 set(SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
 add_external(spam_loadbang spam.loadbang ${SRC_DIR}/spam.loadbang.c)
 add_external(spam_connect spam.connect ${SRC_DIR}/spam.connect.c)
