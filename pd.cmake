@@ -16,7 +16,7 @@ else()
 	add_definitions("/D_CRT_SECURE_NO_WARNINGS /wd4091 /wd4996")
 endif()
 
-# The function adds an external to the project
+# The function adds an external to the project.
 # PROJECT_NAME is the name of your project (for example: freeverb_project)
 # EXTERNAL_NAME is the name of your external (for example: freeverb~)
 # EXTERNAL_SOURCES are the source files (for example: freeverb~.c)
@@ -37,7 +37,7 @@ function(add_external PROJECT_NAME EXTERNAL_NAME EXTERNAL_SOURCES)
 	endif()
 endfunction(add_external)
 
-# The macro defines the output path of the externals regardeless the configuration and the os
+# The macro defines the output path of the externals regardless the configuration and the OS.
 macro(set_external_path EXTERNAL_PATH)
 	set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/spam/)
 	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/spam/)

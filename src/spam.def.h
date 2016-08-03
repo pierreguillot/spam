@@ -6,7 +6,13 @@
 
 #ifndef spam_def_h
 #define spam_def_h
+
 #include "../pd/src/m_pd.h"
+
+#ifndef spam_def_canvas_h
+#define spam_def_canvas_h
+#include "../pd/src/g_canvas.h"
+#endif
 
 #define __spam_version_major__ 0
 #define __spam_version_minor__ 0
@@ -24,7 +30,10 @@
 #define spam_string_owned       "owned"
 #define spam_string_borrowed    "borrowed"
 #define spam_string_shared      "shared"
+
 #define spam_string_in          "in"
+
+#define spam_string_spam_tie    "spam.tie"
 
 
 typedef struct _spam_tie

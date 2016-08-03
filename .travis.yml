@@ -13,27 +13,26 @@ matrix:
     compiler: gcc
     env:
       - zip=linux_32
-      - bits=32
+    script:
+      - mkdir build && cd build
+      - cmake ..-DCMAKE_C_FLAGS=-m32
+      - cmake --build . --config Release
   - os: linux
     compiler: gcc
     env:
       - zip=linux_64
-      - bits=64
-  - os: linux
-    compiler: clang
-    env:
-      - zip=linux_64
-      - bits=64
+    script:
+      - mkdir build && cd build
+      - cmake ..-DCMAKE_C_FLAGS=-m64
+      - cmake --build . --config Release
   - os: osx
     compiler: gcc
     env:
       - zip=mac_universal
-      - bits=universal
-
-script:
-  - mkdir build && cd build
-  - cmake .. -DCONF=$bits
-  - cmake --build .
+    script:
+      - mkdir build && cd build
+      - cmake ..
+      - cmake --build . --config Release
 
 after_success:
   - cd ../
@@ -53,6 +52,5 @@ deploy:
   file:
     - spam_$zip.zip
   on:
-    condition: "$CC = gcc"
     tags: true
     repo: pierreguillot/spam

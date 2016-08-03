@@ -6,7 +6,6 @@
 
 #include "spam.utils.h"
 #include "spam.tie.h"
-#include "../pd/src/g_canvas.h"
 #include <string.h>
 #include <stdarg.h>
 

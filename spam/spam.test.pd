@@ -1,0 +1,4 @@
+#N canvas 101 203 603 446 10;
+#X obj 18 20 spam.in shared 1;
+#X obj 18 50 spam.in shared;
+#X obj 18 81 spam.in shared -1;
