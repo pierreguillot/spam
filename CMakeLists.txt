@@ -4,16 +4,6 @@ project(spam)
 include(pd.cmake)
 
 option(CONF "Build for configuration" "universal")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/spam/)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/spam/)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/spam/)
-foreach(OUTPUTCONFIG ${CMAKE_CONFIGURATION_TYPES})
-    string(TOUPPER ${OUTPUTCONFIG} OUTPUTCONFIG)
-    set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${PROJECT_SOURCE_DIR}/spam/)
-    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${PROJECT_SOURCE_DIR}/spam/)
-    set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY_${OUTPUTCONFIG} ${PROJECT_SOURCE_DIR}/spam/)
-endforeach(OUTPUTCONFIG CMAKE_CONFIGURATION_TYPES)
-
 include_directories(${PROJECT_SOURCE_DIR}/pd/src/)
 if((${UNIX}) AND (${CONF} EQUAL 32))
   set(CMAKE_CXX_FLAGS -m32)
@@ -21,6 +11,7 @@ elseif(${MSYS})
   link_directories(${PROJECT_SOURCE_DIR}/pdwinlib)
 endif()
 
+set_external_path("${PROJECT_SOURCE_DIR}/spam/")
 set(SPAM_TILDE_SRC ${PROJECT_SOURCE_DIR}/src/spam_tilde.c
 	${PROJECT_SOURCE_DIR}/src/spam.tie.c
 	${PROJECT_SOURCE_DIR}/src/spam.utils.h
