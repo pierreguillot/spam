@@ -1,10 +1,10 @@
 
 environment:
    matrix:
-      - CONFIGURATION: Debug
+      - CONFIGURATION: Release
         PLATFORM: Win32
         ZIP: spam_win_32
-      - CONFIGURATION: Debug
+      - CONFIGURATION: Release
         PLATFORM: x64
         ZIP: spam_win_64
 
