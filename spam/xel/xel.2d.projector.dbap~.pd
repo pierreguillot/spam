@@ -1,9 +1,9 @@
-#N canvas 49 39 1028 649 10;
-#X obj 379 94 spam.in~;
-#X obj 379 146 s~ \$0-in;
-#X obj 550 1 loadbang;
-#X obj 550 136 f \$1;
-#X obj 550 250 t l b b, f 8;
+#N canvas 455 55 621 676 10;
+#X obj 169 104 spam.in~;
+#X obj 169 156 s~ \$0-in;
+#X obj 340 11 loadbang;
+#X obj 340 146 f \$1;
+#X obj 340 260 t l b b, f 8;
 #N canvas 0 22 462 343 itorc 0;
 #X obj 48 115 int;
 #X obj 21 51 t f f;
@@ -30,11 +30,11 @@
 #X connect 9 0 2 1;
 #X connect 10 1 8 1;
 #X connect 10 1 9 1;
-#X restore 550 209 pd itorc;
-#X obj 607 138 t b b, f 8;
-#X obj 652 160 f \$3;
-#X obj 607 160 f \$2;
-#X obj 607 182 pack f f;
+#X restore 340 219 pd itorc;
+#X obj 397 148 t b b, f 8;
+#X obj 442 170 f \$3;
+#X obj 397 170 f \$2;
+#X obj 397 192 pack f f;
 #N canvas 0 22 450 300 rctocar 0;
 #X obj 13 263 outlet;
 #X obj 76 173 -, f 6;
@@ -72,7 +72,7 @@
 #X connect 14 1 9 0;
 #X connect 15 0 3 0;
 #X connect 15 1 1 0;
-#X restore 550 230 pd rctocar;
+#X restore 340 240 pd rctocar;
 #N canvas 0 22 199 234 get.blur 0;
 #X obj 26 115 list split 1;
 #X obj 60 160 outlet;
@@ -87,7 +87,7 @@
 #X connect 4 0 0 0;
 #X connect 5 0 3 0;
 #X connect 6 0 1 0;
-#X restore 595 273 pd get.blur;
+#X restore 385 283 pd get.blur;
 #N canvas 0 22 199 234 get.rolloff 0;
 #X obj 26 115 list split 1;
 #X obj 60 160 outlet;
@@ -102,7 +102,7 @@
 #X connect 4 0 0 0;
 #X connect 5 0 3 0;
 #X connect 6 0 1 0;
-#X restore 595 293 pd get.rolloff;
+#X restore 385 303 pd get.rolloff;
 #N canvas 0 22 199 234 get.rolloff 0;
 #X obj 26 115 list split 1;
 #X obj 60 140 outlet;
@@ -115,7 +115,7 @@
 #X connect 3 0 4 0;
 #X connect 4 0 0 0;
 #X connect 5 0 3 0;
-#X restore 572 316 pd get.rolloff;
+#X restore 362 326 pd get.rolloff;
 #N canvas 0 22 701 348 dbap_ 0;
 #X obj 375 6 inlet;
 #X obj 249 6 inlet;
@@ -422,8 +422,8 @@
 #X connect 17 0 12 0;
 #X connect 17 0 18 0;
 #X connect 18 0 14 0;
-#X restore 550 339 pd dbap_;
-#X msg 550 531 \; \$1-dbap-dec obj 10 \$3 pd speaker-\$1-\$2 \; pd-speaker-\$1-\$2
+#X restore 340 349 pd dbap_;
+#X msg 340 541 \; \$1-dbap-dec obj 10 \$3 pd speaker-\$1-\$2 \; pd-speaker-\$1-\$2
 vis 0 \; pd-speaker-\$1-\$2 obj 10 10 r~ \$1-in \; pd-speaker-\$1-\$2
 obj 10 30 *~ \$4 \; pd-speaker-\$1-\$2 obj 10 50 spam.out~ \$2 \; pd-speaker-\$1-\$2
 connect 0 0 1 0 \; pd-speaker-\$1-\$2 connect 1 0 2 0 \;;
@@ -445,22 +445,22 @@ connect 0 0 1 0 \; pd-speaker-\$1-\$2 connect 1 0 2 0 \;;
 #X connect 6 0 3 0;
 #X connect 7 0 6 0;
 #X connect 7 1 1 0;
-#X restore 550 380 pd counter;
-#X obj 550 359 t b l, f 33;
-#X obj 718 449 list split;
-#X obj 718 428 list, f 5;
-#X obj 746 472 unpack f;
-#X obj 550 425 f \$0;
-#X obj 662 432 * 20;
-#X obj 662 454 + 10;
-#X obj 550 403 t b f f b f, f 38;
-#X obj 550 502 pack f f f f, f 29;
-#X obj 550 114 t b b, f 10;
-#X obj 374 26 namecanvas \$0-dbap-dec;
-#X obj 550 23 t b b, f 8;
-#X obj 595 64 != 0;
-#X obj 595 42 f \$4;
-#X obj 550 90 spigot 0;
+#X restore 340 390 pd counter;
+#X obj 340 369 t b l, f 33;
+#X obj 508 459 list split;
+#X obj 508 438 list, f 5;
+#X obj 536 482 unpack f;
+#X obj 340 435 f \$0;
+#X obj 452 442 * 20;
+#X obj 452 464 + 10;
+#X obj 340 413 t b f f b f, f 38;
+#X obj 340 512 pack f f f f, f 29;
+#X obj 340 124 t b b, f 10;
+#X obj 164 36 namecanvas \$0-dbap-dec;
+#X obj 340 33 t b b, f 8;
+#X obj 385 74 != 0;
+#X obj 385 52 f \$4;
+#X obj 340 100 spigot 0;
 #X connect 0 0 1 0;
 #X connect 2 0 28 0;
 #X connect 3 0 5 0;

@@ -241,7 +241,7 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X obj 14 756 dac~ 1 2 3 4 5 6 7 8, f 56;
 #X obj 14 714 spam~ 36 xel.2d.projector.dbap~ 6 6 8 \$0-config, f
 56;
-#X obj 14 532 spam~ 36 xel.2d.scope~ 6 6 \$0-scope \$0-config, f 56;
+#X obj 14 532 spam~ 36 xel.2d.gui.scope~ 6 6 \$0-scope \$0-config, f 56;
 #X obj 14 735 spam~ 8 ../zpt/zpt.2d.meter~ 8 \$0-meter \$0-config, f 56;
 #N canvas 0 22 450 300 \$0-meter 0;
 #X scalar 2865-t-meter -4.18723e-06 0.75 8 16 24 32 555 90 990 950

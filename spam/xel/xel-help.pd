@@ -1,9 +1,8 @@
 #N canvas 599 25 451 564 10;
 #X declare -stdpath spam;
 #X obj 4 490 xel.footer;
-#X obj 5 363 xel.2d.scope~;
+#X obj 5 363 xel.2d.gui.scope~;
 #X obj 276 468 declare -stdpath spam;
-#X obj 5 8 xel.header mat;
 #X obj 5 103 xel.2d.syn.brush~;
 #X obj 5 163 xel.2d.fx.eraser~;
 #X obj 5 233 xel.2d.syn.bucket~;
@@ -24,6 +23,7 @@ a matrix for a sound source depending on coordinates., f 67;
 of the cells of a matrix inside a canvas., f 67;
 #X text 4 133 The abstraction decreases the amplitude of the signals
 of a set of the cells of a matrix., f 67;
-#X text 4 31 The mat library is a set of abtractions for sound spatialization
+#X text 4 31 The xel library is a set of abtractions for sound spatialization
 based on a representation of the space in the form of a matrix., f
 67;
+#X obj 5 8 xel.header xel;

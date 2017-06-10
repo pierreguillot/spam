@@ -1,0 +1,386 @@
+#N struct 1159-t-scope float x array cells 1159-t-scope-value;
+#N struct 1159-t-scope-value float x1 float y1 float x2 float y2 float
+c1 float c2;
+#N struct 1195-t-meter float x array ls 1195-t-meter-value;
+#N struct 1195-t-meter-value float x1 float y1 float s1 float s2 float
+s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
+v2 float v3 float v4;
+#N canvas 723 23 583 821 10;
+#X declare -stdpath spam;
+#X declare -stdlib Hoa;
+#X obj 228 381 tgl 15 0 empty \$0-auto empty 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 22 573 343 trajectory 0;
+#X obj 54 191 t f f, f 15;
+#X obj 54 279 pack f f, f 15;
+#X obj 54 237 * 6.28319;
+#X obj 141 237 * 6.28319;
+#X obj 54 128 line 0;
+#X obj 54 257 sin;
+#X obj 141 257 sin;
+#X obj 54 215 * 3;
+#X obj 141 215 * 1;
+#X msg 54 104 \$1 \, 1 10000;
+#X obj 54 80 f 0;
+#X obj 144 96 sel 1;
+#X obj 54 301 outlet;
+#X msg 17 104 stop;
+#X obj 17 53 sel 0 1, f 13;
+#X obj 144 118 f 0;
+#X obj 17 25 inlet;
+#X connect 0 0 7 0;
+#X connect 0 1 8 0;
+#X connect 1 0 12 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 4 0 11 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
+#X connect 11 0 15 0;
+#X connect 11 1 10 1;
+#X connect 13 0 4 0;
+#X connect 14 0 13 0;
+#X connect 14 1 10 0;
+#X connect 15 0 10 0;
+#X connect 16 0 14 0;
+#X restore 228 402 pd trajectory;
+#X obj 77 411 dbtorms;
+#X obj 77 391 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+-1 -1 60 256;
+#X obj 77 433 pack f 20;
+#X obj 77 455 line~;
+#X obj 14 478 *~, f 11;
+#X obj 155 381 tgl 15 0 empty \$0-auto empty 17 7 0 10 -262144 -1 -1
+1 1;
+#N canvas 0 22 293 454 blurry 0;
+#X obj 54 187 * 6.28319;
+#X obj 54 128 line 0;
+#X obj 54 207 sin;
+#X obj 54 80 f 0;
+#X obj 144 96 sel 1;
+#X obj 54 351 outlet;
+#X msg 17 104 stop;
+#X obj 17 53 sel 0 1, f 13;
+#X obj 144 118 f 0;
+#X obj 17 25 inlet;
+#X obj 54 229 t f f;
+#X obj 54 251 *, f 5;
+#X msg 54 104 \$1 \, 1 50000;
+#X obj 54 295 - 1;
+#X obj 54 273 * 13;
+#X obj 54 325 clip 1 10;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 1 0 0 0;
+#X connect 2 0 10 0;
+#X connect 3 0 12 0;
+#X connect 4 0 8 0;
+#X connect 4 1 3 1;
+#X connect 6 0 1 0;
+#X connect 7 0 6 0;
+#X connect 7 1 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 7 0;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 11 0 14 0;
+#X connect 12 0 1 0;
+#X connect 13 0 15 0;
+#X connect 14 0 13 0;
+#X connect 15 0 5 0;
+#X restore 155 402 pd blurry;
+#X obj 155 422 nbx 5 14 0.5 100 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 10 256;
+#X obj 9 312 table \$0-grain-env 512, f 14;
+#X obj 232 309 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-size empty 0 -8
+0 10 -262144 -1 -1 100 256;
+#X obj 315 310 nbx 5 14 -1e+37 1e+37 0 0 empty \$0-delay empty 0 -8
+0 10 -262144 -1 -1 1000 256;
+#X msg 315 328 delay \$1;
+#X obj 153 308 nbx 5 14 0 1 0 0 empty \$0-feedback empty 0 -8 0 10
+-262144 -1 -1 0.5 256;
+#X msg 153 327 feedback \$1;
+#N canvas 0 22 223 200 \$0-scope 0;
+#X scalar 1159-t-scope 0 \; -1 1 -0.666667 0.666667 999 0 \; -0.666667
+1 -0.333333 0.666667 999 0 \; -0.333333 1 2.98023e-08 0.666667 999
+0 \; 0 1 0.333333 0.666667 999 0 \; 0.333333 1 0.666667 0.666667 999
+0 \; 0.666667 1 1 0.666667 999 0 \; -1 0.666667 -0.666667 0.333333
+999 0 \; -0.666667 0.666667 -0.333333 0.333333 999 0 \; -0.333333 0.666667
+2.98023e-08 0.333333 999 0 \; 0 0.666667 0.333333 0.333333 999 0 \;
+0.333333 0.666667 0.666667 0.333333 999 0 \; 0.666667 0.666667 1 0.333333
+999 0 \; -1 0.333333 -0.666667 -2.98023e-08 999 0 \; -0.666667 0.333333
+-0.333333 -2.98023e-08 999 0 \; -0.333333 0.333333 2.98023e-08 -2.98023e-08
+999 0 \; 0 0.333333 0.333333 -2.98023e-08 999 0 \; 0.333333 0.333333
+0.666667 -2.98023e-08 999 0 \; 0.666667 0.333333 1 -2.98023e-08 999
+0 \; -1 -0 -0.666667 -0.333333 999 0 \; -0.666667 -0 -0.333333 -0.333333
+999 0 \; -0.333333 -0 2.98023e-08 -0.333333 999 0 \; 0 -0 0.333333
+-0.333333 999 0 \; 0.333333 -0 0.666667 -0.333333 999 0 \; 0.666667
+-0 1 -0.333333 999 0 \; -1 -0.333333 -0.666667 -0.666667 999 0 \; -0.666667
+-0.333333 -0.333333 -0.666667 999 0 \; -0.333333 -0.333333 2.98023e-08
+-0.666667 999 0 \; 0 -0.333333 0.333333 -0.666667 999 0 \; 0.333333
+-0.333333 0.666667 -0.666667 999 0 \; 0.666667 -0.333333 1 -0.666667
+999 0 \; -1 -0.666667 -0.666667 -1 999 0 \; -0.666667 -0.666667 -0.333333
+-1 999 0 \; -0.333333 -0.666667 2.98023e-08 -1 999 0 \; 0 -0.666667
+0.333333 -1 999 0 \; 0.333333 -0.666667 0.666667 -1 999 0 \; 0.666667
+-0.666667 1 -1 999 0 \; \;;
+#X coords -1 1 1 -1 150 150 2 100 100;
+#X restore 16 557 pd \$0-scope;
+#X obj 364 734 text define -k \$0-config;
+#A set positions -0.530331 0.530329 -0.75 -1.67489e-06 -0.530329 -0.530332
+2.51234e-06 -0.75 0.530332 -0.530328 0.75 3.34978e-06 0.530328 0.530333
+-4.18723e-06 0.75 \; rolloff 40 \; blur 0.0001 \; gain 140 \;;
+#X f 25;
+#X obj 14 714 spam~ 36 xel.2d.projector.dbap~ 6 6 8 \$0-config, f
+56;
+#X obj 14 532 spam~ 36 xel.2d.gui.scope~ 6 6 \$0-scope \$0-config, f 56
+;
+#X obj 14 735 spam~ 8 ../zpt/zpt.2d.meter~ 8 \$0-meter \$0-config,
+f 56;
+#N canvas 0 22 450 300 \$0-meter 0;
+#X scalar 1195-t-meter 0 \; -0.530331 0.530329 8 16 24 32 555 90 990
+950 900 0 0 0 0 \; -0.75 -1.67489e-06 8 16 24 32 555 90 990 950 900
+0 0 0 0 \; -0.530329 -0.530332 8 16 24 32 555 90 990 950 900 0 0 0
+0 \; 2.51234e-06 -0.75 8 16 24 32 555 90 990 950 900 0 0 0 0 \; 0.530332
+-0.530328 8 16 24 32 555 90 990 950 900 0 0 0 0 \; 0.75 3.34978e-06
+8 16 24 32 555 90 990 950 900 0 0 0 0 \; 0.530328 0.530333 8 16 24
+32 555 90 990 950 900 0 0 0 0 \; -4.18723e-06 0.75 8 16 24 32 555 90
+990 950 900 0 0 0 0 \; \;;
+#X coords -1 1 1 -1 153 153 2 100 100;
+#X restore 201 557 pd \$0-meter;
+#X obj 228 463 s \$0-qsgs;
+#X obj 155 463 s \$0-qsgs;
+#X obj 296 487 r \$0-qsgs;
+#N canvas 0 22 450 300 init 0;
+#N canvas 237 132 503 391 grain_env 0;
+#X obj 270 148 / 256;
+#X obj 270 247 * 0.5;
+#X obj 270 219 sin;
+#X obj 270 271 + 0.5;
+#X obj 270 120 t f f;
+#X obj 270 299 pack;
+#X obj 270 169 - 0.5;
+#X obj 271 32 t b b;
+#X obj 270 76 until;
+#X obj 270 97 f;
+#X obj 297 98 + 1;
+#X msg 270 55 512;
+#X obj 271 8 loadbang;
+#X obj 270 193 * 3.14159;
+#X obj 310 55 f 0;
+#X obj 335 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 270 323 tabwrite \$0-grain-env;
+#X connect 0 0 6 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 0 0;
+#X connect 4 1 5 1;
+#X connect 5 0 16 0;
+#X connect 6 0 13 0;
+#X connect 7 0 11 0;
+#X connect 7 0 14 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 1;
+#X connect 11 0 8 0;
+#X connect 12 0 7 0;
+#X connect 13 0 2 0;
+#X connect 14 0 9 1;
+#X connect 15 0 7 0;
+#X restore 5 12 pd grain_env;
+#X obj 13 42 loadbang;
+#X obj 13 86 s \$0-gain;
+#X obj 93 42 loadbang;
+#X msg 93 64 100;
+#X obj 93 87 s \$0-size;
+#X obj 173 42 loadbang;
+#X obj 173 87 s \$0-delay;
+#X msg 173 64 1000;
+#X obj 253 42 loadbang;
+#X obj 253 87 s \$0-feedback;
+#X msg 253 64 0.5;
+#X obj 353 42 loadbang;
+#X msg 353 64 1;
+#X obj 353 87 s \$0-auto;
+#X msg 13 64 60;
+#X connect 1 0 15 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 11 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 15 0 2 0;
+#X restore 365 713 pd init;
+#X obj 153 349 s \$0-qsgs;
+#X obj 315 350 s \$0-qsgs;
+#X obj 232 349 s \$0-qsgs;
+#X obj 6 781 xel.footer;
+#X obj 364 754 declare -stdpath spam;
+#X obj 5 5 xel.header xel.2d.syn.spray~;
+#X msg 232 327 grainsize \$1;
+#X msg 155 441 size \$1;
+#X obj 14 450 noise~;
+#X obj 14 509 spam~ 36 xel.2d.syn.spray~ 6 6 \$0-grain-env, f 56;
+#X text 4 30 The abstraction synthesizes the signals of the cells of
+a matrix for a sound source using a quasi-synchronous granular synthesizer
+(QSGS). The idea is to create a spatial spray effect. In this implementation
+\, the QSGS has four parameters \, the grain size \, the delay time
+\, the feedback and the rarefaction. The scaling of this parameters
+depends on the encoding coordinates and the size of the spray. With
+the default size \, the grain are concentrated around the encoding
+coordinates because the rarefaction of the cells that are distant from
+these coordinate is maximum. While the size increases \, the rarefaction
+of these cells decreases and the grains are spread over the space.
+Furthermore \, the size of the grain decreases and the delay time increases
+with the distance. Thus if the spray size is relatively important \,
+the main grains appear first around the encoding coordinates and are
+spread thereafter into smaller grains around the space. Only the feedback
+value is global to all the cells.;
+#X text 4 258 The arguments are the dimensions of the matrix \, the
+number of rows and the number of columns. The third argument is the
+name of the buffer that defines the enveloppe of the grains.;
+#N canvas 217 367 450 300 pos 0;
+#X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.0878513 256;
+#X obj 100 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.260842 256;
+#X obj 119 77 t b f;
+#X obj 101 150 pack 1 f;
+#X obj 101 18 r \$0-pos;
+#X obj 101 40 unpack f f;
+#X obj 101 172 outlet;
+#X obj 164 19 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 90 14 2 100 100;
+#X restore 228 422 pd pos;
+#X msg 448 348 \; pd dsp 0;
+#X msg 448 464 \; pd dsp 1;
+#X obj 14 756 hoa.dac~ 9:16, f 56;
+#X obj 385 191 declare -stdlib Hoa;
+#X connect 0 0 1 0;
+#X connect 1 0 38 0;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 1;
+#X connect 6 0 35 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 33 0;
+#X connect 11 0 32 0;
+#X connect 12 0 13 0;
+#X connect 13 0 27 0;
+#X connect 14 0 15 0;
+#X connect 15 0 26 0;
+#X connect 18 0 20 0;
+#X connect 18 0 41 0;
+#X connect 18 1 20 1;
+#X connect 18 1 41 1;
+#X connect 18 2 20 2;
+#X connect 18 2 41 2;
+#X connect 18 3 20 3;
+#X connect 18 3 41 3;
+#X connect 18 4 20 4;
+#X connect 18 4 41 4;
+#X connect 18 5 20 5;
+#X connect 18 5 41 5;
+#X connect 18 6 20 6;
+#X connect 18 6 41 6;
+#X connect 18 7 20 7;
+#X connect 18 7 41 7;
+#X connect 24 0 35 1;
+#X connect 32 0 28 0;
+#X connect 33 0 23 0;
+#X connect 34 0 6 0;
+#X connect 35 0 19 0;
+#X connect 35 0 18 0;
+#X connect 35 1 19 1;
+#X connect 35 1 18 1;
+#X connect 35 2 19 2;
+#X connect 35 2 18 2;
+#X connect 35 3 19 3;
+#X connect 35 3 18 3;
+#X connect 35 4 19 4;
+#X connect 35 4 18 4;
+#X connect 35 5 19 5;
+#X connect 35 5 18 5;
+#X connect 35 6 19 6;
+#X connect 35 6 18 6;
+#X connect 35 7 19 7;
+#X connect 35 7 18 7;
+#X connect 35 8 19 8;
+#X connect 35 8 18 8;
+#X connect 35 9 19 9;
+#X connect 35 9 18 9;
+#X connect 35 10 19 10;
+#X connect 35 10 18 10;
+#X connect 35 11 19 11;
+#X connect 35 11 18 11;
+#X connect 35 12 19 12;
+#X connect 35 12 18 12;
+#X connect 35 13 19 13;
+#X connect 35 13 18 13;
+#X connect 35 14 19 14;
+#X connect 35 14 18 14;
+#X connect 35 15 19 15;
+#X connect 35 15 18 15;
+#X connect 35 16 19 16;
+#X connect 35 16 18 16;
+#X connect 35 17 19 17;
+#X connect 35 17 18 17;
+#X connect 35 18 19 18;
+#X connect 35 18 18 18;
+#X connect 35 19 19 19;
+#X connect 35 19 18 19;
+#X connect 35 20 19 20;
+#X connect 35 20 18 20;
+#X connect 35 21 19 21;
+#X connect 35 21 18 21;
+#X connect 35 22 19 22;
+#X connect 35 22 18 22;
+#X connect 35 23 19 23;
+#X connect 35 23 18 23;
+#X connect 35 24 19 24;
+#X connect 35 24 18 24;
+#X connect 35 25 19 25;
+#X connect 35 25 18 25;
+#X connect 35 26 19 26;
+#X connect 35 26 18 26;
+#X connect 35 27 19 27;
+#X connect 35 27 18 27;
+#X connect 35 28 19 28;
+#X connect 35 28 18 28;
+#X connect 35 29 19 29;
+#X connect 35 29 18 29;
+#X connect 35 30 19 30;
+#X connect 35 30 18 30;
+#X connect 35 31 19 31;
+#X connect 35 31 18 31;
+#X connect 35 32 19 32;
+#X connect 35 32 18 32;
+#X connect 35 33 19 33;
+#X connect 35 33 18 33;
+#X connect 35 34 19 34;
+#X connect 35 34 18 34;
+#X connect 35 35 19 35;
+#X connect 35 35 18 35;
+#X connect 38 0 22 0;
+#X coords 0 821 1 820 85 60 0;

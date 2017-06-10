@@ -345,7 +345,7 @@ float s4 float c0 float c1 float c2 float c3 float c4;
 #X text 4 216 The arguments are the dimensions of the matrix \, the
 number of rows and the number of columns., f 67;
 #X obj 391 708 declare -stdpath spam;
-#X obj 14 447 spam~ 64 xel.2d.scope~ 8 8 \$0-scope \$0-config,
+#X obj 14 447 spam~ 64 xel.2d.gui.scope~ 8 8 \$0-scope \$0-config,
 f 51;
 #X obj 14 423 spam~ 64 xel.2d.syn.brush~ 8 8, f 51;
 #X text 4 31 The abstraction synthesizes the signals of the cells of
