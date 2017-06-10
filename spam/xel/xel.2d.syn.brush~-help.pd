@@ -385,7 +385,7 @@ be seen as a global gain., f 67;
 #X coords 0 -1 1 1 90 14 2 100 100;
 #X restore 107 336 pd pos;
 #X text 285 295 Opacity (0 to 100), f 10;
-#X obj 14 680 spam~ 64 xel.2d.projector.dbap~ 8 8 8 \$0-config, f
+#X obj 14 680 spam~ 64 xel.2d.proj.dbap~ 8 8 8 \$0-config, f
 51;
 #X connect 2 0 26 0;
 #X connect 3 0 4 1;

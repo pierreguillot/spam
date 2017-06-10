@@ -7,7 +7,7 @@ A set of abstractions for sound spatialization in Pure Data based on a represent
 - **xel.2d.syn.spray~**: The abstraction synthesizes the signals of the cells of a matrix for a sound source using a quasi-synchronous granular synthesizer (QSGS).
 - **xel.2d.fx.eraser~**: The abstraction decreases the amplitude of the signals of a set of the cells of a matrix.
 - **xel.2d.gui.scope~**: The abstraction displays the rms amplitude of the signals of the cells of a matrix inside a canvas.
-- **xel.2d.projector.dbap~**: The abstraction projects the signals of the cells of a matrix onto a set of loudspeakers using distance based amplitude panning (DBAP).
+- **xel.2d.proj.dbap~**: The abstraction projects the signals of the cells of a matrix onto a set of loudspeakers using distance based amplitude panning (DBAP).
 
 **Author**: Pierre Guillot  
 **Organizations**: Université Paris 8 | CICM | Labex Arts H2H   

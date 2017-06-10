@@ -135,7 +135,7 @@ v2 float v3 float v4;
 2.51234e-06 -0.75 0.530332 -0.530328 0.75 3.34978e-06 0.530328 0.530333
 -4.18723e-06 0.75 \; rolloff 40 \; blur 0.0001 \; gain 140 \;;
 #X f 25;
-#X obj 14 714 spam~ 36 xel.2d.projector.dbap~ 6 6 8 \$0-config, f
+#X obj 14 714 spam~ 36 xel.2d.proj.dbap~ 6 6 8 \$0-config, f
 56;
 #X obj 14 532 spam~ 36 xel.2d.gui.scope~ 6 6 \$0-scope \$0-config, f 56
 ;

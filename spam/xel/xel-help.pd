@@ -7,7 +7,7 @@
 #X obj 5 163 xel.2d.fx.eraser~;
 #X obj 5 233 xel.2d.syn.bucket~;
 #X obj 5 306 xel.2d.syn.spray~;
-#X obj 5 435 xel.2d.projector.dbap~;
+#X obj 5 435 xel.2d.proj.dbap~;
 #X text 4 391 The abstraction projects the signals of the cells of
 a matrix onto a set of loudspeakers using distance based amplitude
 panning (DBAP)., f 67;

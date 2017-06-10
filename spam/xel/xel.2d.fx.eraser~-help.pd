@@ -140,7 +140,7 @@ float c2;
 #X connect 28 0 22 0;
 #X connect 29 0 16 0;
 #X restore 693 686 pd init;
-#X obj 324 685 spam~ 25 xel.2d.projector.dbap~ 5 5 8 \$0-config, f
+#X obj 324 685 spam~ 25 xel.2d.proj.dbap~ 5 5 8 \$0-config, f
 51;
 #X obj 693 729 declare -stdpath spam;
 #X obj 5 7 xel.header xel.2d.fx.eraser~;

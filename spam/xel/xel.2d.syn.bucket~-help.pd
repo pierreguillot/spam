@@ -129,7 +129,7 @@ f 56;
 #X obj 6 614 xel.footer;
 #X msg 155 201 size \$1;
 #X obj 14 183 noise~;
-#X obj 14 544 spam~ 64 xel.2d.projector.dbap~ 8 8 8 \$0-config, f
+#X obj 14 544 spam~ 64 xel.2d.proj.dbap~ 8 8 8 \$0-config, f
 56;
 #X obj 293 156 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
