@@ -1,0 +1,27 @@
+#N canvas 803 145 469 459 10;
+#X obj 6 7 xel.header xel.2d.mat.blur.box;
+#X obj 6 364 xel.footer;
+#X obj 9 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 27 134 Outputs;
+#X obj 144 161 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X text 141 143 Number of Rows;
+#X obj 144 180 pack f f, f 17;
+#X obj 243 161 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X text 142 126 Matrix Size;
+#X text 240 143 Number of Columns;
+#X obj 9 109 loadbang;
+#X obj 9 229 list prepend set;
+#X obj 9 251 list trim;
+#X msg 9 273;
+#X obj 9 207 xel.2d.mat.blur.box 5 5;
+#X text 4 31 The abstraction generates a matrix ., f 67;
+#X connect 2 0 14 0;
+#X connect 4 0 6 0;
+#X connect 7 0 6 1;
+#X connect 10 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 11 0;
