@@ -1,0 +1,27 @@
+#N canvas 815 343 468 294 10;
+#X obj 6 7 xel.header xel.2d.get.nelems;
+#X obj 6 254 xel.footer;
+#X obj 19 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 37 124 Outputs;
+#X obj 19 99 loadbang;
+#X text 4 31 The abstraction compute number of elements in a matrix.
+The argument are the matrix size (the number of rows and the number
+of columns)., f 67;
+#X obj 19 209 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6 256;
+#X obj 98 131 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 3 256;
+#X text 95 113 Number of Rows;
+#X obj 98 150 pack f f, f 17;
+#X obj 197 131 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 3 256;
+#X text 96 96 Matrix Size;
+#X text 194 113 Number of Columns;
+#X obj 19 187 xel.2d.get.nelems 3 3;
+#X connect 2 0 13 0;
+#X connect 4 0 2 0;
+#X connect 7 0 9 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 1;
+#X connect 13 0 6 0;
