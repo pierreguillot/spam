@@ -1,0 +1,338 @@
+#N struct 1168-t-scope float x array cells 1168-t-scope-value;
+#N struct 1168-t-scope-value float x1 float y1 float x2 float y2 float
+c1 float c2;
+#N struct 1194-t-scope float x array cells 1194-t-scope-value;
+#N struct 1194-t-scope-value float x1 float y1 float x2 float y2 float
+c1 float c2;
+#N canvas 164 30 1031 814 10;
+#X declare -stdpath spam;
+#N canvas 0 22 223 200 \$0-scope 0;
+#X scalar 1168-t-scope 0 \; -1 1 -0.6 0.6 999 0 \; -0.6 1 -0.2 0.6
+999 0 \; -0.2 1 0.2 0.6 999 0 \; 0.2 1 0.6 0.6 999 0 \; 0.6 1 1 0.6
+999 0 \; -1 0.6 -0.6 0.2 999 0 \; -0.6 0.6 -0.2 0.2 999 0 \; -0.2 0.6
+0.2 0.2 999 0 \; 0.2 0.6 0.6 0.2 999 0 \; 0.6 0.6 1 0.2 999 0 \; -1
+0.2 -0.6 -0.2 999 0 \; -0.6 0.2 -0.2 -0.2 999 0 \; -0.2 0.2 0.2 -0.2
+999 0 \; 0.2 0.2 0.6 -0.2 999 0 \; 0.6 0.2 1 -0.2 999 0 \; -1 -0.2
+-0.6 -0.6 999 0 \; -0.6 -0.2 -0.2 -0.6 999 0 \; -0.2 -0.2 0.2 -0.6
+999 0 \; 0.2 -0.2 0.6 -0.6 999 0 \; 0.6 -0.2 1 -0.6 999 0 \; -1 -0.6
+-0.6 -1 999 0 \; -0.6 -0.6 -0.2 -1 999 0 \; -0.2 -0.6 0.2 -1 999 0
+\; 0.2 -0.6 0.6 -1 999 0 \; 0.6 -0.6 1 -1 999 0 \; \;;
+#X coords -1 1 1 -1 202 202 2 100 100;
+#X restore 786 211 pd \$0-scope;
+#X obj 340 731 text define -k \$0-config;
+#A set rolloff 8 \; blur 0.1 \; positions -0.530331 0.530329 -0.75
+-1.67489e-06 -0.530329 -0.530332 2.51234e-06 -0.75 0.530332 -0.530328
+0.75 3.34978e-06 0.530328 0.530333 -4.18723e-06 0.75 \; gain 100 \;
+;
+#X obj 107 45 tgl 15 0 empty \$0-auto empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 29 93 *~;
+#X obj 14 116 *~;
+#X obj 41 116 nbx 5 14 0 100 0 0 empty \$0-gain empty 0 -8 0 10 -262144
+-1 -1 60 256;
+#X obj 14 160 *~, f 5;
+#X obj 14 48 noise~;
+#N canvas 0 22 450 300 init 0;
+#X obj 13 42 loadbang;
+#X obj 13 86 s \$0-gain;
+#X obj 82 42 loadbang;
+#X msg 82 64 0 0;
+#X obj 152 42 loadbang;
+#X msg 152 64 0;
+#X obj 152 86 s \$0-hardness;
+#X obj 242 42 loadbang;
+#X obj 242 86 s \$0-opacity;
+#X msg 242 64 100;
+#X obj 322 42 loadbang;
+#X obj 322 86 s \$0-size;
+#X msg 322 64 1;
+#X msg 13 64 60;
+#X obj 82 86 s \$0-pos;
+#X connect 0 0 13 0;
+#X connect 2 0 3 0;
+#X connect 3 0 14 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 9 0;
+#X connect 9 0 8 0;
+#X connect 10 0 12 0;
+#X connect 12 0 11 0;
+#X connect 13 0 1 0;
+#X restore 341 709 pd init;
+#X obj 5 10 xel.header xel.2d.syn.kernel~;
+#X obj 150 193 r \$0-brush;
+#X obj 107 168 s \$0-brush;
+#X text 114 89 Coordinates (-1 to 1), f 12;
+#N canvas 0 22 450 300 gain 0;
+#X obj 10 45 dbtorms;
+#X obj 10 67 pack f 20;
+#X obj 10 89 line~;
+#X obj 10 25 inlet;
+#X obj 10 111 outlet~;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X restore 41 136 pd gain;
+#N canvas 0 22 573 343 traj 0;
+#X obj 54 191 t f f, f 15;
+#X obj 54 279 pack f f, f 15;
+#X obj 54 237 * 6.28319;
+#X obj 141 237 * 6.28319;
+#X obj 54 128 line 0;
+#X obj 54 257 sin;
+#X obj 141 257 sin;
+#X obj 54 215 * 3;
+#X obj 141 215 * 1;
+#X msg 54 104 \$1 \, 1 10000;
+#X obj 54 80 f 0;
+#X obj 144 96 sel 1;
+#X msg 17 104 stop;
+#X obj 17 53 sel 0 1, f 13;
+#X obj 144 118 f 0;
+#X obj 17 25 inlet;
+#X obj 54 301 outlet;
+#X connect 0 0 7 0;
+#X connect 0 1 8 0;
+#X connect 1 0 16 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 4 0 11 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 4 0;
+#X connect 10 0 9 0;
+#X connect 11 0 14 0;
+#X connect 11 1 10 1;
+#X connect 12 0 4 0;
+#X connect 13 0 12 0;
+#X connect 13 1 10 0;
+#X connect 14 0 10 0;
+#X connect 15 0 13 0;
+#X restore 107 66 pd traj;
+#X obj 29 71 osc~ 5;
+#X obj 391 709 declare -stdpath spam;
+#N canvas 217 367 450 300 pos 0;
+#X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 100 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 119 77 t b f;
+#X obj 101 150 pack 1 f;
+#X obj 101 18 r \$0-pos;
+#X obj 101 40 unpack f f;
+#X obj 101 172 outlet;
+#X obj 164 19 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 90 14 2 100 100;
+#X restore 107 127 pd pos;
+#X msg 285 147 opacity \$1;
+#X obj 285 125 nbx 5 14 0 100 0 0 empty \$0-opacity empty 0 -8 0 10
+-262144 -1 -1 100 256;
+#X obj 360 125 nbx 5 14 0 100 0 0 empty \$0-hardness empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 360 147 hardness \$1;
+#X obj 360 169 s \$0-brush;
+#X obj 207 127 nbx 5 14 1 10 0 0 empty \$0-size empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X msg 207 146 size \$1;
+#X text 206 88 Size (min 1), f 8;
+#X text 360 86 Hardness (0 to 100), f 10;
+#X obj 285 169 s \$0-brush;
+#X obj 207 168 s \$0-brush;
+#X text 285 86 Opacity (0 to 100), f 10;
+#X obj 14 214 spam~ 25 xel.2d.syn.brush~ 5 5, f 33;
+#X obj 14 340 spam~ 25 xel.2d.gui.scope~ 5 5 \$0-scope \$0-config,
+f 33;
+#X obj 4 756 xel.footer;
+#X msg 334 405 1 1 1;
+#X obj 537 160 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 502 226 spam.connect;
+#N canvas 0 22 450 300 \$0-scope-2 0;
+#X scalar 1194-t-scope 0 \; -1 1 -0.6 0.6 999 0 \; -0.6 1 -0.2 0.6
+999 0 \; -0.2 1 0.2 0.6 999 0 \; 0.2 1 0.6 0.6 999 0 \; 0.6 1 1 0.6
+999 0 \; -1 0.6 -0.6 0.2 999 0 \; -0.6 0.6 -0.2 0.2 999 0 \; -0.2 0.6
+0.2 0.2 999 0 \; 0.2 0.6 0.6 0.2 999 0 \; 0.6 0.6 1 0.2 999 0 \; -1
+0.2 -0.6 -0.2 999 0 \; -0.6 0.2 -0.2 -0.2 999 0 \; -0.2 0.2 0.2 -0.2
+999 0 \; 0.2 0.2 0.6 -0.2 999 0 \; 0.6 0.2 1 -0.2 999 0 \; -1 -0.2
+-0.6 -0.6 999 0 \; -0.6 -0.2 -0.2 -0.6 999 0 \; -0.2 -0.2 0.2 -0.6
+999 0 \; 0.2 -0.2 0.6 -0.6 999 0 \; 0.6 -0.2 1 -0.6 999 0 \; -1 -0.6
+-0.6 -1 999 0 \; -0.6 -0.6 -0.2 -1 999 0 \; -0.2 -0.6 0.2 -1 999 0
+\; 0.2 -0.6 0.6 -1 999 0 \; 0.6 -0.6 1 -1 999 0 \; \;;
+#X coords -1 1 1 -1 202 202 2 100 100;
+#X restore 785 424 pd \$0-scope-2;
+#X obj 14 490 spam~ 25 xel.2d.gui.scope~ 5 5 \$0-scope-2 \$0-config
+, f 34;
+#X obj 14 733 dac~ 1 2 3 4 5 6 7 8, f 33;
+#X obj 14 671 spam~ 25 xel.2d.proj.dbap~ 5 5 8 \$0-config, f 33;
+#X msg 573 80 \; pd dsp \$1;
+#X obj 560 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 263 194 3 3 0 0 0 0.5 1 0.5 0 0 0;
+#X obj 558 399 nbx 5 14 -1 1 0 0 \$0-k0-s \$0-k0-r empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 552 654 array define \$0-kernel 9;
+#X obj 552 630 array set \$0-kernel;
+#X obj 552 555 r \$0-k0-s;
+#X obj 508 657 s \$0-c;
+#X obj 463 465 list prepend 3 3;
+#X obj 463 421 r \$0-c;
+#X obj 463 443 array get \$0-kernel;
+#X obj 508 515 r \$0-k1-s;
+#X obj 618 399 nbx 5 14 -1 1 0 0 \$0-k1-s \$0-k1-r empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 508 637 bang;
+#X obj 678 399 nbx 5 14 -1 1 0 0 \$0-k2-s \$0-k2-r empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 605 515 r \$0-k2-s;
+#X obj 673 562 value;
+#X obj 552 577 t b f b;
+#X msg 591 600 0;
+#X obj 513 408 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 263 224 3 3 1 0 -1 0 0 0 -1 0 1;
+#X msg 263 254 3 3 0 0.25 0 0.25 -1 0.25 0 0.25 0;
+#X msg 263 284 3 3 -0.125 -0.125 -0.125 -0.125 1 -0.125 -0.125 -0.125
+-0.125;
+#X msg 263 324 3 3 0 -0.2 0 -0.2 1 -0.2 0 -0.2 0;
+#X msg 317 353 3 3 0.111111 0.111111 0.111111 0.111111 0.111111 0.111111
+0.111111 0.111111 0.111111;
+#X msg 540 104 3 3 -0.125 -0.125 -0.125 -0.125 1 -0.125 -0.125 -0.125
+-0.125;
+#X msg 312 439 ramp \$1;
+#X obj 398 426 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 14 456 spam~ 25 xel.2d.fx.kernel~ 5 5, f 34;
+#X connect 2 0 14 0;
+#X connect 3 0 4 1;
+#X connect 4 0 6 0;
+#X connect 5 0 13 0;
+#X connect 6 0 30 0;
+#X connect 7 0 4 0;
+#X connect 10 0 30 1;
+#X connect 13 0 6 1;
+#X connect 14 0 17 0;
+#X connect 15 0 3 0;
+#X connect 15 0 3 1;
+#X connect 17 0 11 0;
+#X connect 18 0 27 0;
+#X connect 19 0 18 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 23 0 24 0;
+#X connect 24 0 28 0;
+#X connect 30 0 31 0;
+#X connect 30 0 68 0;
+#X connect 30 1 31 1;
+#X connect 30 1 68 1;
+#X connect 30 2 31 2;
+#X connect 30 2 68 2;
+#X connect 30 3 31 3;
+#X connect 30 3 68 3;
+#X connect 30 4 31 4;
+#X connect 30 4 68 4;
+#X connect 30 5 31 5;
+#X connect 30 5 68 5;
+#X connect 30 6 31 6;
+#X connect 30 6 68 6;
+#X connect 30 7 31 7;
+#X connect 30 7 68 7;
+#X connect 30 8 31 8;
+#X connect 30 8 68 8;
+#X connect 30 9 31 9;
+#X connect 30 9 68 9;
+#X connect 30 10 31 10;
+#X connect 30 10 68 10;
+#X connect 30 11 31 11;
+#X connect 30 11 68 11;
+#X connect 30 12 31 12;
+#X connect 30 12 68 12;
+#X connect 30 13 31 13;
+#X connect 30 13 68 13;
+#X connect 30 14 31 14;
+#X connect 30 14 68 14;
+#X connect 30 15 31 15;
+#X connect 30 15 68 15;
+#X connect 30 16 31 16;
+#X connect 30 16 68 16;
+#X connect 30 17 31 17;
+#X connect 30 17 68 17;
+#X connect 30 18 31 18;
+#X connect 30 18 68 18;
+#X connect 30 19 31 19;
+#X connect 30 19 68 19;
+#X connect 30 20 31 20;
+#X connect 30 20 68 20;
+#X connect 30 21 31 21;
+#X connect 30 21 68 21;
+#X connect 30 22 31 22;
+#X connect 30 22 68 22;
+#X connect 30 23 31 23;
+#X connect 30 23 68 23;
+#X connect 30 24 31 24;
+#X connect 30 24 68 24;
+#X connect 33 0 68 25;
+#X connect 34 0 35 0;
+#X connect 39 0 38 0;
+#X connect 39 1 38 1;
+#X connect 39 2 38 2;
+#X connect 39 3 38 3;
+#X connect 39 4 38 4;
+#X connect 39 5 38 5;
+#X connect 39 6 38 6;
+#X connect 39 7 38 7;
+#X connect 41 0 40 0;
+#X connect 42 0 68 25;
+#X connect 46 0 57 0;
+#X connect 48 0 68 25;
+#X connect 49 0 50 0;
+#X connect 50 0 48 0;
+#X connect 53 0 47 0;
+#X connect 57 2 58 0;
+#X connect 59 0 50 0;
+#X connect 60 0 68 25;
+#X connect 61 0 68 25;
+#X connect 62 0 68 25;
+#X connect 63 0 68 25;
+#X connect 64 0 68 25;
+#X connect 65 0 68 25;
+#X connect 66 0 68 25;
+#X connect 67 0 66 0;
+#X connect 68 0 37 0;
+#X connect 68 1 37 1;
+#X connect 68 2 37 2;
+#X connect 68 3 37 3;
+#X connect 68 4 37 4;
+#X connect 68 5 37 5;
+#X connect 68 6 37 6;
+#X connect 68 7 37 7;
+#X connect 68 8 37 8;
+#X connect 68 9 37 9;
+#X connect 68 10 37 10;
+#X connect 68 11 37 11;
+#X connect 68 12 37 12;
+#X connect 68 13 37 13;
+#X connect 68 14 37 14;
+#X connect 68 15 37 15;
+#X connect 68 16 37 16;
+#X connect 68 17 37 17;
+#X connect 68 18 37 18;
+#X connect 68 19 37 19;
+#X connect 68 20 37 20;
+#X connect 68 21 37 21;
+#X connect 68 22 37 22;
+#X connect 68 23 37 23;
+#X connect 68 24 37 24;
+#X coords 0 814 1 813 85 60 0;
