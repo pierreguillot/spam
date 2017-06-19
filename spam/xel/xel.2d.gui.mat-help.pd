@@ -1,74 +1,83 @@
-#N struct 1034-stuct-matrix float x1 float y1 float x2 float y2 float
+#N struct 1789-stuct-matrix float x1 float y1 float x2 float y2 float
 xv float yv float c1 float c2 float val float index;
-#N canvas 26 37 721 484 10;
-#X declare -stdpath spam;
-#X obj 261 396 declare -stdpath spam;
+#N canvas 281 37 558 484 10;
 #X obj 5 7 xel.header xel.2d.gui.mat;
-#X obj 6 444 xel.footer;
-#X text 4 31 The abstraction displays coefficients of a matrix...;
+#X obj 6 424 xel.footer;
 #N canvas 0 22 1029 742 \$0-canvas 0;
-#X scalar 1034-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 0 0 \;;
-#X scalar 1034-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.76 999 0 0 1 \;
+#X scalar 1789-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 0 0 \;;
+#X scalar 1789-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.76 999 0 0 1 \;
 ;
-#X scalar 1034-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.76 999 0 0 2 \;;
-#X scalar 1034-stuct-matrix 0.2 1 0.6 0.6 0.3 0.76 999 0 0 3 \;;
-#X scalar 1034-stuct-matrix 0.6 1 1 0.6 0.7 0.76 999 0 0 4 \;;
-#X scalar 1034-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.36 999 0 0 5 \;
+#X scalar 1789-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.76 999 0 0 2 \;;
+#X scalar 1789-stuct-matrix 0.2 1 0.6 0.6 0.3 0.76 999 0 55 3 \;;
+#X scalar 1789-stuct-matrix 0.6 1 1 0.6 0.7 0.76 999 0 0 4 \;;
+#X scalar 1789-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.36 999 0 0 5 \;
 ;
-#X scalar 1034-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.36 999 0 0 6 \;
+#X scalar 1789-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.36 999 0 0 6 \;
 ;
-#X scalar 1034-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.36 999 0 70 7 \;
+#X scalar 1789-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.36 999 0 0 7 \;
 ;
-#X scalar 1034-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.36 999 0 84 8 \;
-;
-#X scalar 1034-stuct-matrix 0.6 0.6 1 0.2 0.7 0.36 999 0 0 9 \;;
-#X scalar 1034-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -0.04 999 0 0 10
+#X scalar 1789-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.36 999 0 0 8 \;;
+#X scalar 1789-stuct-matrix 0.6 0.6 1 0.2 0.7 0.36 999 0 0 9 \;;
+#X scalar 1789-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -0.04 999 0 0 10
 \;;
-#X scalar 1034-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -0.04 999 0 0 11
+#X scalar 1789-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -0.04 999 0 0 11
 \;;
-#X scalar 1034-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -0.04 999 0 76 12
-\;;
-#X scalar 1034-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -0.04 999 0 84 13
-\;;
-#X scalar 1034-stuct-matrix 0.6 0.2 1 -0.2 0.7 -0.04 999 0 0 14 \;
+#X scalar 1789-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -0.04 999 0 113
+12 \;;
+#X scalar 1789-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -0.04 999 0 0 13 \;
 ;
-#X scalar 1034-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.44 999 0 0 15
+#X scalar 1789-stuct-matrix 0.6 0.2 1 -0.2 0.7 -0.04 999 0 0 14 \;
+;
+#X scalar 1789-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.44 999 0 0 15
 \;;
-#X scalar 1034-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.44 999 0 0
+#X scalar 1789-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.44 999 0 0
 16 \;;
-#X scalar 1034-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.44 999 0 0 17
+#X scalar 1789-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.44 999 0 0 17
 \;;
-#X scalar 1034-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.44 999 0 0 18
+#X scalar 1789-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.44 999 0 0 18
 \;;
-#X scalar 1034-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.44 999 0 0 19 \;
+#X scalar 1789-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.44 999 0 0 19 \;
 ;
-#X scalar 1034-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.84 999 0 0 20 \;
+#X scalar 1789-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.84 999 0 0 20 \;
 ;
-#X scalar 1034-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.84 999 0 0 21
+#X scalar 1789-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.84 999 0 0 21
 \;;
-#X scalar 1034-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.84 999 0 0 22
+#X scalar 1789-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.84 999 0 0 22
 \;;
-#X scalar 1034-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.84 999 0 0 23 \;
+#X scalar 1789-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.84 999 0 0 23 \;
 ;
-#X scalar 1034-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.84 999 0 0 24 \;;
+#X scalar 1789-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.84 999 0 0 24 \;;
 #X coords -1 1 1 -1 201 201 2 100 100;
-#X restore 8 78 pd \$0-canvas;
-#X msg 365 113 matrix 5 5;
-#X msg 294 113 matrix 3 3;
-#X msg 294 83 matrix 1 1;
-#X obj 294 206 list prepend set;
-#X obj 294 228 list trim;
-#X msg 294 250 matrix 5 5 0 0 0 0 0 0 0 0.7 0.84 0 0 0 0.76 0.84 0
-0 0 0 0 0 0 0 0 0 0, f 32;
-#X msg 354 153 matrix 2 2 0.4 0.5 1.4 1.8;
-#X obj 294 184 xel.2d.gui.mat \$0-canvas 5 5;
-#X obj 255 152 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 7 188 pd \$0-canvas;
+#X msg 354 223 matrix 5 5;
+#X msg 283 223 matrix 3 3;
+#X msg 283 193 matrix 1 1;
+#X obj 283 316 list prepend set;
+#X obj 283 338 list trim;
+#X msg 283 360 matrix 5 5 0 0 0 0.55 0 0 0 0 0 0 0 0 1.13 0 0 0 0 0
+0 0 0 0 0 0 0, f 38;
+#X msg 343 263 matrix 2 2 0.4 0.5 1.4 1.8;
+#X obj 283 294 xel.2d.gui.mat \$0-canvas 5 5;
+#X obj 244 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X connect 5 0 12 0;
-#X connect 6 0 12 0;
-#X connect 7 0 12 0;
-#X connect 8 0 9 0;
+#X msg 374 193 matrix 3 4;
+#X text 4 31 The abstraction displays the coefficients of a matrix
+inside a canvas and allows to interact with them. The arguments are
+the name of the canvas and default dimension of the matrix., f 66
+;
+#X text 4 74 The values of the elements of the matrix are multiplied
+by 100 before being displayed to offer a better precision for interacting.
+, f 66;
+#X text 4 117 The syntax of the matrix is the same used by the iemmatrix
+abstraction library: the symbol matrix followed by the size \, the
+number of rows and the number of columns \, and the values of the elements.
+, f 66;
+#X connect 3 0 10 0;
+#X connect 4 0 10 0;
+#X connect 5 0 10 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
 #X connect 9 0 10 0;
-#X connect 11 0 12 0;
-#X connect 12 0 8 0;
-#X connect 13 0 12 0;
+#X connect 10 0 6 0;
+#X connect 11 0 10 0;
+#X connect 12 0 10 0;
