@@ -10,9 +10,10 @@ endif()
 
 set_external_path("${PROJECT_SOURCE_DIR}/spam/")
 set(SRC_DIR "${PROJECT_SOURCE_DIR}/src/")
+add_external(spam_in spam.in ${SRC_DIR}/spam.in.c)
+add_external(spam_in_tilde spam.in~ ${SRC_DIR}/spam.in_tilde.c)
 add_external(spam_loadbang spam.loadbang ${SRC_DIR}/spam.loadbang.c)
 add_external(spam_connect spam.connect ${SRC_DIR}/spam.connect.c)
-add_external(spam_in spam.in ${SRC_DIR}/spam.in.c)
 
 set(SPAM_SRC
 	${PROJECT_SOURCE_DIR}/src/spam.def.h
