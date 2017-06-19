@@ -32,6 +32,7 @@
 #define spam_string_shared      "shared"
 
 #define spam_string_in          "in"
+#define spam_string_out         "out"
 
 #define spam_string_spam_tie    "spam.tie"
 
@@ -39,7 +40,6 @@
 typedef struct _spam_tie
 {
     t_object  s_object;
-    int       s_index;
     t_object* s_process;
 } t_spam_tie;
 
