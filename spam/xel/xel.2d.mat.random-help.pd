@@ -1,70 +1,70 @@
-#N struct 1007-stuct-matrix float x1 float y1 float x2 float y2 float
+#N struct 1285-stuct-matrix float x1 float y1 float x2 float y2 float
 xv float yv float c1 float c2 float val float index;
-#N canvas 682 206 516 430 10;
+#N canvas 139 198 516 430 10;
 #X obj 6 7 xel.header xel.2d.mat.random;
 #X obj 6 384 xel.footer;
-#X obj 243 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 243 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 243 89 loadbang;
-#X obj 243 137 xel.2d.mat.random 5 5;
+#X obj 243 94 loadbang;
+#X obj 243 142 xel.2d.mat.random 5 5;
 #N canvas 0 22 1029 742 \$0-canvas 0;
-#X scalar 1007-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 0 0 \;;
-#X scalar 1007-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.76 999 0 0 1 \;
+#X scalar 1285-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 1 0 \;;
+#X scalar 1285-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.76 999 0 1 1 \;
 ;
-#X scalar 1007-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.76 999 0 6 2 \;;
-#X scalar 1007-stuct-matrix 0.2 1 0.6 0.6 0.3 0.76 999 0 0 3 \;;
-#X scalar 1007-stuct-matrix 0.6 1 1 0.6 0.7 0.76 999 0 8 4 \;;
-#X scalar 1007-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.36 999 0 4 5 \;
+#X scalar 1285-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.76 999 0 4 2 \;;
+#X scalar 1285-stuct-matrix 0.2 1 0.6 0.6 0.3 0.76 999 0 7 3 \;;
+#X scalar 1285-stuct-matrix 0.6 1 1 0.6 0.7 0.76 999 0 -3 4 \;;
+#X scalar 1285-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.36 999 0 2 5 \;
 ;
-#X scalar 1007-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.36 999 0 6 6 \;
+#X scalar 1285-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.36 999 0 7 6 \;
 ;
-#X scalar 1007-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.36 999 0 -4 7 \;
+#X scalar 1285-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.36 999 0 1 7 \;
 ;
-#X scalar 1007-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.36 999 0 8 8 \;;
-#X scalar 1007-stuct-matrix 0.6 0.6 1 0.2 0.7 0.36 999 0 1 9 \;;
-#X scalar 1007-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -0.04 999 0 -4 10
+#X scalar 1285-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.36 999 0 0 8 \;;
+#X scalar 1285-stuct-matrix 0.6 0.6 1 0.2 0.7 0.36 999 0 -6 9 \;;
+#X scalar 1285-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -0.04 999 0 -5 10
 \;;
-#X scalar 1007-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -0.04 999 0 7 11
+#X scalar 1285-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -0.04 999 0 3 11
 \;;
-#X scalar 1007-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -0.04 999 0 1 12
+#X scalar 1285-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -0.04 999 0 -2 12
 \;;
-#X scalar 1007-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -0.04 999 0 0 13 \;
+#X scalar 1285-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -0.04 999 0 1 13 \;
 ;
-#X scalar 1007-stuct-matrix 0.6 0.2 1 -0.2 0.7 -0.04 999 0 -2 14 \;
+#X scalar 1285-stuct-matrix 0.6 0.2 1 -0.2 0.7 -0.04 999 0 6 14 \;
 ;
-#X scalar 1007-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.44 999 0 0 15
+#X scalar 1285-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.44 999 0 -3 15
 \;;
-#X scalar 1007-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.44 999 0 3
+#X scalar 1285-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.44 999 0 -5
 16 \;;
-#X scalar 1007-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.44 999 0 0 17
+#X scalar 1285-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.44 999 0 7 17
 \;;
-#X scalar 1007-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.44 999 0 7 18
+#X scalar 1285-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.44 999 0 -4 18
 \;;
-#X scalar 1007-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.44 999 0 5 19 \;
+#X scalar 1285-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.44 999 0 6 19 \;
 ;
-#X scalar 1007-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.84 999 0 0 20 \;
+#X scalar 1285-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.84 999 0 0 20 \;
 ;
-#X scalar 1007-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.84 999 0 7 21
+#X scalar 1285-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.84 999 0 -1 21
 \;;
-#X scalar 1007-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.84 999 0 0 22
+#X scalar 1285-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.84 999 0 -7 22
 \;;
-#X scalar 1007-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.84 999 0 -6 23 \;
+#X scalar 1285-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.84 999 0 -5 23 \;
 ;
-#X scalar 1007-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.84 999 0 9 24 \;;
+#X scalar 1285-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.84 999 0 2 24 \;;
 #X coords -1 1 1 -1 201 201 2 100 100;
 #X restore 7 88 pd \$0-canvas;
 #X obj 243 186 list prepend set;
 #X obj 243 208 list trim;
-#X msg 243 230 matrix 5 5 -0.00740592 0.00490275 0.0625602 0.00472345
-0.0842894 0.0437508 0.0665045 -0.0494231 0.0840939 0.0159023 -0.0423842
-0.0718506 0.0188598 -0.00571153 -0.0219364 -0.00845498 0.0324406 0.00563221
-0.0763623 0.0551164 -0.00240155 0.0755753 0.000633945 -0.0684619 0.0906219
-, f 38;
+#X msg 243 230 matrix 5 5 0.0105261 0.0147688 0.0488208 0.0770526 -0.0302847
+0.0232688 0.0731995 0.0119445 0.00946837 -0.0652524 -0.0526947 0.0304099
+-0.0213896 0.012645 0.0612643 -0.0331166 -0.0553735 0.0785459 -0.0490874
+0.0661018 -0.00728364 -0.0139862 -0.0772736 -0.0513925 0.0248487,
+f 38;
 #X obj 243 164 xel.2d.gui.mat \$0-canvas 5 5;
-#X msg 266 113 matrix 5 5;
-#X text 4 31 The abstraction generates a matrix with random values.
-The sum of the absolutes values of the elements equals one., f 66
-;
+#X msg 266 118 matrix 5 5;
+#X text 4 31 The abstraction generates a matrix filled with random
+values. The sum of the absolutes values of the elements equals one.
+The matrix can be used for kernel filter., f 66;
 #X connect 2 0 4 0;
 #X connect 3 0 2 0;
 #X connect 4 0 9 0;

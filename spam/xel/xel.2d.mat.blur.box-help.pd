@@ -1,27 +1,75 @@
-#N canvas 803 145 469 459 10;
+#N struct 1288-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N canvas 664 146 528 455 10;
 #X obj 6 7 xel.header xel.2d.mat.blur.box;
 #X obj 6 364 xel.footer;
-#X obj 9 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 27 134 Outputs;
-#X obj 144 161 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 0 256;
-#X text 141 143 Number of Rows;
-#X obj 144 180 pack f f, f 17;
-#X obj 243 161 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
--1 -1 0 256;
-#X text 142 126 Matrix Size;
-#X text 240 143 Number of Columns;
-#X obj 9 109 loadbang;
-#X obj 9 229 list prepend set;
-#X obj 9 251 list trim;
-#X msg 9 273;
-#X obj 9 207 xel.2d.mat.blur.box 5 5;
-#X text 4 31 The abstraction generates a matrix ., f 67;
-#X connect 2 0 14 0;
-#X connect 4 0 6 0;
-#X connect 7 0 6 1;
-#X connect 10 0 2 0;
-#X connect 11 0 12 0;
+#X obj 243 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 261 109 Outputs;
+#X obj 243 84 loadbang;
+#N canvas 0 22 1029 742 \$0-canvas 0;
+#X scalar 1288-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 4 0 \;;
+#X scalar 1288-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.76 999 0 4 1 \;
+;
+#X scalar 1288-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.76 999 0 4 2 \;;
+#X scalar 1288-stuct-matrix 0.2 1 0.6 0.6 0.3 0.76 999 0 4 3 \;;
+#X scalar 1288-stuct-matrix 0.6 1 1 0.6 0.7 0.76 999 0 4 4 \;;
+#X scalar 1288-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.36 999 0 4 5 \;
+;
+#X scalar 1288-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.36 999 0 4 6 \;
+;
+#X scalar 1288-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.36 999 0 4 7 \;
+;
+#X scalar 1288-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.36 999 0 4 8 \;;
+#X scalar 1288-stuct-matrix 0.6 0.6 1 0.2 0.7 0.36 999 0 4 9 \;;
+#X scalar 1288-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -0.04 999 0 4 10
+\;;
+#X scalar 1288-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -0.04 999 0 4 11
+\;;
+#X scalar 1288-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -0.04 999 0 4 12
+\;;
+#X scalar 1288-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -0.04 999 0 4 13 \;
+;
+#X scalar 1288-stuct-matrix 0.6 0.2 1 -0.2 0.7 -0.04 999 0 4 14 \;
+;
+#X scalar 1288-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.44 999 0 4 15
+\;;
+#X scalar 1288-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.44 999 0 4
+16 \;;
+#X scalar 1288-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.44 999 0 4 17
+\;;
+#X scalar 1288-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.44 999 0 4 18
+\;;
+#X scalar 1288-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.44 999 0 4 19 \;
+;
+#X scalar 1288-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.84 999 0 4 20 \;
+;
+#X scalar 1288-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.84 999 0 4 21
+\;;
+#X scalar 1288-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.84 999 0 4 22
+\;;
+#X scalar 1288-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.84 999 0 4 23 \;
+;
+#X scalar 1288-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.84 999 0 4 24 \;;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 7 88 pd \$0-canvas;
+#X obj 243 186 list prepend set;
+#X obj 243 208 list trim;
+#X msg 243 230 matrix 5 5 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04
+0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04 0.04
+0.04 0.04, f 38;
+#X obj 243 164 xel.2d.gui.mat \$0-canvas 5 5;
+#X msg 323 109 matrix 3 3;
+#X text 4 31 The abstraction generates a matrix filled with a normalized
+constant value that equals one over the number of elements. The matrix
+can be used for kernel filter., f 67;
+#X msg 323 79 matrix 4 4;
+#X obj 243 142 xel.2d.mat.blur.box 5 5;
+#X connect 2 0 13 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 6 0;
+#X connect 10 0 13 0;
 #X connect 12 0 13 0;
-#X connect 14 0 11 0;
+#X connect 13 0 9 0;
