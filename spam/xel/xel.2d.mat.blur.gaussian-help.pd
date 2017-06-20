@@ -1,0 +1,60 @@
+#N struct 1020-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N canvas 820 190 528 455 10;
+#X obj 6 7 xel.header xel.2d.mat.blur.gaussian;
+#X obj 6 364 xel.footer;
+#X obj 243 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 261 109 Outputs;
+#X obj 243 84 loadbang;
+#N canvas 0 22 1029 742 \$0-canvas 0;
+#X scalar 1020-stuct-matrix -1 1 -0.5 0.5 -0.875 0.7 999 0 1 0 \;;
+#X scalar 1020-stuct-matrix -0.5 1 0 0.5 -0.375 0.7 999 0 4 1 \;;
+#X scalar 1020-stuct-matrix 0 1 0.5 0.5 0.125 0.7 999 0 4 2 \;;
+#X scalar 1020-stuct-matrix 0.5 1 1 0.5 0.625 0.7 999 0 1 3 \;;
+#X scalar 1020-stuct-matrix -1 0.5 -0.5 0 -0.875 0.2 999 0 4 4 \;;
+#X scalar 1020-stuct-matrix -0.5 0.5 0 0 -0.375 0.2 999 0 13 5 \;;
+#X scalar 1020-stuct-matrix 0 0.5 0.5 0 0.125 0.2 999 0 13 6 \;;
+#X scalar 1020-stuct-matrix 0.5 0.5 1 0 0.625 0.2 999 0 4 7 \;;
+#X scalar 1020-stuct-matrix -1 0 -0.5 -0.5 -0.875 -0.3 999 0 4 8 \;
+;
+#X scalar 1020-stuct-matrix -0.5 0 0 -0.5 -0.375 -0.3 999 0 13 9 \;
+;
+#X scalar 1020-stuct-matrix 0 0 0.5 -0.5 0.125 -0.3 999 0 13 10 \;
+;
+#X scalar 1020-stuct-matrix 0.5 0 1 -0.5 0.625 -0.3 999 0 4 11 \;;
+#X scalar 1020-stuct-matrix -1 -0.5 -0.5 -1 -0.875 -0.8 999 0 1 12
+\;;
+#X scalar 1020-stuct-matrix -0.5 -0.5 0 -1 -0.375 -0.8 999 0 4 13 \;
+;
+#X scalar 1020-stuct-matrix 0 -0.5 0.5 -1 0.125 -0.8 999 0 4 14 \;
+;
+#X scalar 1020-stuct-matrix 0.5 -0.5 1 -1 0.625 -0.8 999 0 1 15 \;
+;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 7 88 pd \$0-canvas;
+#X obj 243 186 list prepend set;
+#X obj 243 208 list trim;
+#X msg 243 230 matrix 4 4 0.017552 0.04869 0.04869 0.017552 0.04869
+0.135068 0.135068 0.04869 0.04869 0.135068 0.135068 0.04869 0.017552
+0.04869 0.04869 0.017552, f 38;
+#X obj 243 164 xel.2d.gui.mat \$0-canvas 5 5;
+#X msg 323 109 matrix 3 3;
+#X text 4 31 The abstraction generates a matrix filled with a normalized
+constant value that equals one over the number of elements. The matrix
+can be used for kernel filter., f 67;
+#X msg 323 79 matrix 4 4;
+#X obj 243 142 xel.2d.mat.blur.gaussian 5 5;
+#X msg 400 109 deviation \$1;
+#X obj 400 90 nbx 5 14 0.001 2 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.66 256;
+#X connect 2 0 13 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 6 0;
+#X connect 10 0 13 0;
+#X connect 12 0 13 0;
+#X connect 13 0 9 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 0;
