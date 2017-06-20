@@ -1,0 +1,32 @@
+#N canvas 130 434 446 289 10;
+#X obj 12 190 *~, f 15;
+#X obj 12 16 spam.in~ 0;
+#X obj 99 168 line~;
+#X obj 99 146 pack f 10;
+#X obj 28 58 route matrix, f 13;
+#X obj 28 80 list split 2;
+#X obj 62 102 list split \$1;
+#X obj 99 124 float;
+#X obj 12 212 spam.out~;
+#X obj 28 37 spam.in 0;
+#X obj 118 194 print \$1;
+#X obj 177 133 list trim;
+#X msg 177 155 0 0.38 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0.69 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.34 0.58 0
+0 0 0 0 0 0 0 0 0 0;
+#X obj 133 229 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X obj 177 111 list prepend set;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 1;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 1 6 0;
+#X connect 5 1 14 0;
+#X connect 6 1 7 0;
+#X connect 7 0 3 0;
+#X connect 7 0 13 0;
+#X connect 9 0 4 0;
+#X connect 11 0 12 0;
+#X connect 14 0 11 0;
