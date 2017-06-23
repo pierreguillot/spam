@@ -1,0 +1,56 @@
+#N struct 1006-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N canvas 653 309 528 455 10;
+#X obj 6 7 xel.header xel.2d.mat.fltr.log;
+#X obj 6 364 xel.footer;
+#X obj 243 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 261 109 Outputs;
+#X obj 243 84 loadbang;
+#N canvas 0 22 1029 742 \$0-canvas 0;
+#X scalar 1006-stuct-matrix -1 1 -0.333333 0.333333 -0.833333 0.6 999
+0 -2 0 \;;
+#X scalar 1006-stuct-matrix -0.333333 1 0.333333 0.333333 -0.166667
+0.6 999 0 -10 1 \;;
+#X scalar 1006-stuct-matrix 0.333333 1 1 0.333333 0.5 0.6 999 0 -2
+2 \;;
+#X scalar 1006-stuct-matrix -1 0.333333 -0.333333 -0.333333 -0.833333
+-0.0666667 999 0 -10 3 \;;
+#X scalar 1006-stuct-matrix -0.333333 0.333333 0.333333 -0.333333 -0.166667
+-0.0666667 999 0 47 4 \;;
+#X scalar 1006-stuct-matrix 0.333333 0.333333 1 -0.333333 0.5 -0.0666667
+999 0 -10 5 \;;
+#X scalar 1006-stuct-matrix -1 -0.333333 -0.333333 -1 -0.833333 -0.733333
+999 0 -2 6 \;;
+#X scalar 1006-stuct-matrix -0.333333 -0.333333 0.333333 -1 -0.166667
+-0.733333 999 0 -10 7 \;;
+#X scalar 1006-stuct-matrix 0.333333 -0.333333 1 -1 0.5 -0.733333 999
+0 -2 8 \;;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 7 88 pd \$0-canvas;
+#X obj 223 196 list prepend set;
+#X obj 223 218 list trim;
+#X msg 223 240 matrix 3 3 -0.0219786 -0.109426 -0.0219786 -0.109426
+0.474383 -0.109426 -0.0219786 -0.109426 -0.0219786, f 38;
+#X obj 243 164 xel.2d.gui.mat \$0-canvas 5 5;
+#X msg 323 109 matrix 3 3;
+#X msg 323 79 matrix 4 4;
+#X msg 400 109 deviation \$1;
+#X obj 400 90 nbx 5 14 0.001 2 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.4 256;
+#X obj 243 142 xel.2d.mat.fltr.log 5 5;
+#X text 4 31 The abstraction generates a matrix filled with walues
+generated with the laplacian of gaussian. The matrix can be used for
+kernel filter., f 67;
+#X msg 426 68 matrix 5 5;
+#X connect 2 0 14 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 10 0 14 0;
+#X connect 11 0 14 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 9 0;
+#X connect 14 0 6 0;
+#X connect 16 0 14 0;

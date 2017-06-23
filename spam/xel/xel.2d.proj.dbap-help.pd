@@ -1,0 +1,228 @@
+#N struct 1064-t-meter float x array ls 1064-t-meter-value;
+#N struct 1064-t-meter-value float x1 float y1 float s1 float s2 float
+s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
+v2 float v3 float v4;
+#N canvas 543 25 646 820 10;
+#X declare -stdpath spam;
+#X obj 284 752 text define -k \$0-config;
+#A set positions 0 0.75 -0.53 0.53 -0.75 0 -0.53 -0.53 0 -0.75 0.53
+-0.53 0.75 0 0.53 0.53 \; rolloff 10 \; blur 0.01 \; gain 100 \;;
+#X obj 38 752 dac~ 1 2 3 4 5 6 7 8, f 39;
+#N canvas 0 22 450 300 \$0-meter 0;
+#X scalar 1064-t-meter 0 \; 0 0.75 8 16 24 32 555 90 990 950 900 1
+0 0 0 \; -0.53 0.53 8 16 24 32 555 90 990 950 900 1 0 0 0 \; -0.75
+0 8 16 24 32 555 90 990 950 900 1 0 0 0 \; -0.53 -0.53 8 16 24 32 555
+90 990 950 900 1 0 0 0 \; 0 -0.75 8 16 24 32 555 90 990 950 900 1 0
+0 0 \; 0.53 -0.53 8 16 24 32 555 90 990 950 900 1 1 1 1 \; 0.75 0 8
+16 24 32 555 90 990 950 900 1 1 1 0 \; 0.53 0.53 8 16 24 32 555 90
+990 950 900 1 0 0 0 \; \;;
+#X coords -1 1 1 -1 153 153 2 100 100;
+#X restore 80 592 pd \$0-meter;
+#X obj 4 781 xel.footer;
+#X obj 284 728 declare -stdpath spam;
+#X obj 5 7 xel.header xel.2d.proj.dbap;
+#N canvas 453 135 603 301 init 0;
+#X obj 13 42 loadbang;
+#X obj 13 86 s \$0-gain;
+#X obj 89 42 loadbang;
+#X obj 53 201 loadbang;
+#X obj 89 87 s \$0-pos;
+#X msg 89 64 list 0 0;
+#X obj 269 42 loadbang;
+#X msg 269 64 list 0 0;
+#X obj 269 87 s \$0-coord;
+#X obj 132 112 loadbang;
+#X msg 132 134 0;
+#X obj 132 156 s \$0-hardness;
+#X obj 222 112 loadbang;
+#X obj 222 156 s \$0-opacity;
+#X msg 222 134 100;
+#X obj 302 112 loadbang;
+#X obj 302 156 s \$0-size;
+#X msg 13 64 60;
+#X msg 53 223 list 0 1;
+#X obj 53 246 s \$0-brush1;
+#X obj 184 201 loadbang;
+#X obj 364 201 loadbang;
+#X obj 364 246 s \$0-brush3;
+#X obj 184 246 s \$0-brush2;
+#X msg 184 223 list 0.9238 -0.3826;
+#X msg 115 224 size 1.6;
+#X msg 364 223 list -0.9238 -0.3826;
+#X msg 306 224 size 1.7;
+#X msg 506 224 size 1.7;
+#X msg 302 134 1.7;
+#X connect 0 0 17 0;
+#X connect 2 0 5 0;
+#X connect 3 0 18 0;
+#X connect 3 0 25 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;
+#X connect 15 0 29 0;
+#X connect 17 0 1 0;
+#X connect 18 0 19 0;
+#X connect 20 0 24 0;
+#X connect 20 0 27 0;
+#X connect 21 0 26 0;
+#X connect 21 0 28 0;
+#X connect 24 0 23 0;
+#X connect 25 0 19 0;
+#X connect 26 0 22 0;
+#X connect 27 0 23 0;
+#X connect 28 0 22 0;
+#X connect 29 0 16 0;
+#X restore 284 706 pd init;
+#X obj 59 262 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 0 22 573 343 trajectory 0;
+#X obj 54 191 t f f, f 15;
+#X obj 54 279 pack f f, f 15;
+#X obj 54 237 * 6.28319;
+#X obj 141 237 * 6.28319;
+#X obj 54 128 line 0;
+#X obj 54 257 sin;
+#X obj 141 257 sin;
+#X obj 54 215 * 3;
+#X obj 141 215 * 1;
+#X obj 54 80 f 0;
+#X obj 144 96 sel 1;
+#X obj 54 301 outlet;
+#X msg 17 104 stop;
+#X obj 17 53 sel 0 1, f 13;
+#X obj 144 118 f 0;
+#X obj 17 25 inlet;
+#X msg 54 104 \$1 \, 1 5000;
+#X connect 0 0 7 0;
+#X connect 0 1 8 0;
+#X connect 1 0 11 0;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 4 0 0 0;
+#X connect 4 0 10 0;
+#X connect 5 0 1 0;
+#X connect 6 0 1 1;
+#X connect 7 0 2 0;
+#X connect 8 0 3 0;
+#X connect 9 0 16 0;
+#X connect 10 0 14 0;
+#X connect 10 1 9 1;
+#X connect 12 0 4 0;
+#X connect 13 0 12 0;
+#X connect 13 1 9 0;
+#X connect 14 0 9 0;
+#X connect 15 0 13 0;
+#X connect 16 0 4 0;
+#X restore 59 286 pd trajectory;
+#X msg 401 326 blur \$1;
+#X msg 469 327 rolloff \$1;
+#X obj 79 375 list prepend set;
+#X obj 79 397 list trim;
+#X obj 401 307 nbx 5 14 0.0001 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.1 256;
+#X obj 449 132 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X msg 449 152 \; pd dsp \$1;
+#X msg 79 420 0.00347261 0.00468077 0.00673685 0.0107439 0.0604026
+0.994902 0.0760919 0.0231767;
+#X obj 59 460 unpack f f f f f f f f, f 39;
+#X obj 38 535 *~ 0;
+#X obj 71 535 *~ 0;
+#X obj 104 535 *~ 0;
+#X obj 137 535 *~ 0;
+#X obj 170 535 *~ 0;
+#X obj 203 535 *~ 0;
+#X obj 236 535 *~ 0;
+#X obj 269 535 *~ 0;
+#X obj 38 490 sig~ 1;
+#X obj 32 313 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 38 556 spam~ 8 ../zpt/zpt.2d.meter~ 8 \$0-meter \$0-config,
+f 39;
+#X text 4 31 The abstraction compute the gains for a set of loudspeakers
+using distance based amplitude panning (DBAP). The principles of DBAP
+are explained in the paper by Trond Lossius \, Pascal Baltazar and
+Theo de la Hogue at the International Computer Music Conference (ICMC)
+- 2009 Montreal. A facultative argument can be use to define the name
+of a text object used to retrieves the positions of the loudspeakers
+\, the rolloff and the blur values. The text object can be changed
+thereafter using the symbol text followed by its name or all the parameters
+can be changed independently using their specific symbol positions
+\, blur or rolloff (the symbols are the same than the ones used to
+define the parameters inside the text object).;
+#X obj 469 307 nbx 5 14 1 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#N canvas 217 367 450 300 pos 0;
+#X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.786289 256;
+#X obj 100 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0.414374 256;
+#X obj 119 77 t b f;
+#X obj 101 150 pack 1 f;
+#X obj 101 18 r \$0-pos;
+#X obj 101 40 unpack f f;
+#X obj 101 172 outlet;
+#X obj 164 19 inlet;
+#X connect 0 0 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
+#X connect 2 1 3 1;
+#X connect 3 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 5 1 0 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 90 14 2 100 100;
+#X restore 59 314 pd pos;
+#X msg 241 321 text \$1;
+#X obj 241 279 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 241 299 symbol \$0-config;
+#X obj 59 353 xel.2d.proj.dbap \$0-config, f 49;
+#X msg 319 252 positions -0.8 0.75 -0.6 0.75 -0.4 0.75 -0.2 0.75 0.2
+0.75 0.4 0.75 0.6 0.75 0.8 0.75;
+#X connect 7 0 8 0;
+#X connect 8 0 31 0;
+#X connect 9 0 35 1;
+#X connect 10 0 35 1;
+#X connect 11 0 12 0;
+#X connect 12 0 16 0;
+#X connect 13 0 9 0;
+#X connect 14 0 15 0;
+#X connect 17 0 18 1;
+#X connect 17 1 19 1;
+#X connect 17 2 20 1;
+#X connect 17 3 21 1;
+#X connect 17 4 22 1;
+#X connect 17 5 23 1;
+#X connect 17 6 24 1;
+#X connect 17 7 25 1;
+#X connect 18 0 28 0;
+#X connect 19 0 28 1;
+#X connect 20 0 28 2;
+#X connect 21 0 28 3;
+#X connect 22 0 28 4;
+#X connect 23 0 28 5;
+#X connect 24 0 28 6;
+#X connect 25 0 28 7;
+#X connect 26 0 18 0;
+#X connect 26 0 19 0;
+#X connect 26 0 20 0;
+#X connect 26 0 21 0;
+#X connect 26 0 22 0;
+#X connect 26 0 23 0;
+#X connect 26 0 24 0;
+#X connect 26 0 25 0;
+#X connect 27 0 35 0;
+#X connect 30 0 10 0;
+#X connect 31 0 35 0;
+#X connect 32 0 35 1;
+#X connect 33 0 34 0;
+#X connect 34 0 32 0;
+#X connect 35 0 11 0;
+#X connect 35 0 17 0;
+#X connect 36 0 35 1;

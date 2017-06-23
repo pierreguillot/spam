@@ -1,8 +1,8 @@
-#N struct 1050-t-scope float x array cells 1050-t-scope-value;
-#N struct 1050-t-scope-value float x1 float y1 float x2 float y2 float
+#N struct 1167-t-scope float x array cells 1167-t-scope-value;
+#N struct 1167-t-scope-value float x1 float y1 float x2 float y2 float
 c1 float c2;
-#N struct 1042-t-meter float x array ls 1042-t-meter-value;
-#N struct 1042-t-meter-value float x1 float y1 float s1 float s2 float
+#N struct 1159-t-meter float x array ls 1159-t-meter-value;
+#N struct 1159-t-meter-value float x1 float y1 float s1 float s2 float
 s3 float s4 float c0 float c1 float c2 float c3 float c4 float v1 float
 v2 float v3 float v4;
 #N canvas 231 23 476 826 10;
@@ -97,7 +97,7 @@ v2 float v3 float v4;
 -4.18723e-06 0.75 \; rolloff 10 \; blur 0.01 \; gain 140 \;;
 #X obj 38 752 dac~ 1 2 3 4 5 6 7 8, f 39;
 #N canvas 0 22 223 200 \$0-scope 0;
-#X scalar 1050-t-scope 0 \; -1 1 -0.666667 0.666667 999 0 \; -0.666667
+#X scalar 1167-t-scope 0 \; -1 1 -0.666667 0.666667 999 0 \; -0.666667
 1 -0.333333 0.666667 999 0 \; -0.333333 1 2.98023e-08 0.666667 999
 0 \; 0 1 0.333333 0.666667 999 0 \; 0.333333 1 0.666667 0.666667 999
 0 \; 0.666667 1 1 0.666667 999 0 \; -1 0.666667 -0.666667 0.333333
@@ -108,28 +108,28 @@ v2 float v3 float v4;
 -0.333333 -2.98023e-08 999 0 \; -0.333333 0.333333 2.98023e-08 -2.98023e-08
 999 0 \; 0 0.333333 0.333333 -2.98023e-08 999 0 \; 0.333333 0.333333
 0.666667 -2.98023e-08 999 0 \; 0.666667 0.333333 1 -2.98023e-08 999
-0 \; -1 -0 -0.666667 -0.333333 999 0 \; -0.666667 -0 -0.333333 -0.333333
-999 0 \; -0.333333 -0 2.98023e-08 -0.333333 999 0 \; 0 -0 0.333333
--0.333333 999 0 \; 0.333333 -0 0.666667 -0.333333 999 0 \; 0.666667
--0 1 -0.333333 999 0 \; -1 -0.333333 -0.666667 -0.666667 999 0 \; -0.666667
--0.333333 -0.333333 -0.666667 999 0 \; -0.333333 -0.333333 2.98023e-08
--0.666667 999 0 \; 0 -0.333333 0.333333 -0.666667 999 0 \; 0.333333
--0.333333 0.666667 -0.666667 999 0 \; 0.666667 -0.333333 1 -0.666667
-999 0 \; -1 -0.666667 -0.666667 -1 999 0 \; -0.666667 -0.666667 -0.333333
--1 999 0 \; -0.333333 -0.666667 2.98023e-08 -1 999 0 \; 0 -0.666667
-0.333333 -1 999 0 \; 0.333333 -0.666667 0.666667 -1 999 0 \; 0.666667
--0.666667 1 -1 999 0 \; \;;
+0 \; -1 -0 -0.666667 -0.333333 90 0 \; -0.666667 -0 -0.333333 -0.333333
+90 0 \; -0.333333 -0 2.98023e-08 -0.333333 90 0 \; 0 -0 0.333333 -0.333333
+999 0 \; 0.333333 -0 0.666667 -0.333333 999 0 \; 0.666667 -0 1 -0.333333
+999 0 \; -1 -0.333333 -0.666667 -0.666667 999 0 \; -0.666667 -0.333333
+-0.333333 -0.666667 90 0 \; -0.333333 -0.333333 2.98023e-08 -0.666667
+90 0 \; 0 -0.333333 0.333333 -0.666667 999 0 \; 0.333333 -0.333333
+0.666667 -0.666667 999 0 \; 0.666667 -0.333333 1 -0.666667 999 0 \;
+-1 -0.666667 -0.666667 -1 999 0 \; -0.666667 -0.666667 -0.333333 -1
+999 0 \; -0.333333 -0.666667 2.98023e-08 -1 999 0 \; 0 -0.666667 0.333333
+-1 999 0 \; 0.333333 -0.666667 0.666667 -1 999 0 \; 0.666667 -0.666667
+1 -1 999 0 \; \;;
 #X coords -1 1 1 -1 153 153 2 100 100;
 #X restore 79 363 pd \$0-scope;
 #N canvas 0 22 450 300 \$0-meter 0;
-#X scalar 1042-t-meter 0 \; -0.530331 0.530329 8 16 24 32 555 90 990
-950 900 0 0 0 0 \; -0.75 -1.67489e-06 8 16 24 32 555 90 990 950 900
-0 0 0 0 \; -0.530329 -0.530332 8 16 24 32 555 90 990 950 900 0 0 0
-0 \; 2.51234e-06 -0.75 8 16 24 32 555 90 990 950 900 0 0 0 0 \; 0.530332
--0.530328 8 16 24 32 555 90 990 950 900 0 0 0 0 \; 0.75 3.34978e-06
-8 16 24 32 555 90 990 950 900 0 0 0 0 \; 0.530328 0.530333 8 16 24
-32 555 90 990 950 900 0 0 0 0 \; -4.18723e-06 0.75 8 16 24 32 555 90
-990 950 900 0 0 0 0 \; \;;
+#X scalar 1159-t-meter 0 \; -0.530331 0.530329 8 16 24 32 555 90 990
+950 900 1 0 0 0 \; -0.75 -1.67489e-06 8 16 24 32 555 90 990 950 900
+1 0 0 0 \; -0.530329 -0.530332 8 16 24 32 555 90 990 950 900 1 1 0
+0 \; 2.51234e-06 -0.75 8 16 24 32 555 90 990 950 900 1 0 0 0 \; 0.530332
+-0.530328 8 16 24 32 555 90 990 950 900 1 0 0 0 \; 0.75 3.34978e-06
+8 16 24 32 555 90 990 950 900 1 0 0 0 \; 0.530328 0.530333 8 16 24
+32 555 90 990 950 900 1 0 0 0 \; -4.18723e-06 0.75 8 16 24 32 555 90
+990 950 900 1 0 0 0 \; \;;
 #X coords -1 1 1 -1 153 153 2 100 100;
 #X restore 80 592 pd \$0-meter;
 #X obj 4 781 xel.footer;
@@ -150,12 +150,11 @@ of columns. The third argument is the number of loudspeakers. The last
 argument is the name of the text object that defines the positions
 of the loudspeakers \, it can also be used to define the rolloff and
 the blur values.;
-#X obj 38 523 spam~ 36 xel.2d.proj.dbap~ 6 6 8 \$0-config, f 39;
 #N canvas 217 367 450 300 pos 0;
 #X obj 145 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 -0.36 256;
 #X obj 100 100 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 -0.53 256;
 #X obj 119 77 t b f;
 #X obj 101 150 pack 1 f;
 #X obj 101 18 r \$0-pos;
@@ -248,106 +247,107 @@ the blur values.;
 #X connect 28 0 22 0;
 #X connect 29 0 16 0;
 #X restore 284 706 pd init;
+#X obj 38 523 spam~ 36 xel.2d.proj.dbap~ 6 6 8 \$0-config, f 39;
 #X connect 0 0 1 0;
-#X connect 1 0 17 0;
-#X connect 2 0 18 0;
+#X connect 1 0 16 0;
+#X connect 2 0 17 0;
 #X connect 3 0 4 0;
-#X connect 4 0 17 0;
+#X connect 4 0 16 0;
 #X connect 12 0 14 0;
-#X connect 12 0 16 0;
+#X connect 12 0 26 0;
 #X connect 12 1 14 1;
-#X connect 12 1 16 1;
+#X connect 12 1 26 1;
 #X connect 12 2 14 2;
-#X connect 12 2 16 2;
+#X connect 12 2 26 2;
 #X connect 12 3 14 3;
-#X connect 12 3 16 3;
+#X connect 12 3 26 3;
 #X connect 12 4 14 4;
-#X connect 12 4 16 4;
+#X connect 12 4 26 4;
 #X connect 12 5 14 5;
-#X connect 12 5 16 5;
+#X connect 12 5 26 5;
 #X connect 12 6 14 6;
-#X connect 12 6 16 6;
+#X connect 12 6 26 6;
 #X connect 12 7 14 7;
-#X connect 12 7 16 7;
+#X connect 12 7 26 7;
 #X connect 12 8 14 8;
-#X connect 12 8 16 8;
+#X connect 12 8 26 8;
 #X connect 12 9 14 9;
-#X connect 12 9 16 9;
+#X connect 12 9 26 9;
 #X connect 12 10 14 10;
-#X connect 12 10 16 10;
+#X connect 12 10 26 10;
 #X connect 12 11 14 11;
-#X connect 12 11 16 11;
+#X connect 12 11 26 11;
 #X connect 12 12 14 12;
-#X connect 12 12 16 12;
+#X connect 12 12 26 12;
 #X connect 12 13 14 13;
-#X connect 12 13 16 13;
+#X connect 12 13 26 13;
 #X connect 12 14 14 14;
-#X connect 12 14 16 14;
+#X connect 12 14 26 14;
 #X connect 12 15 14 15;
-#X connect 12 15 16 15;
+#X connect 12 15 26 15;
 #X connect 12 16 14 16;
-#X connect 12 16 16 16;
+#X connect 12 16 26 16;
 #X connect 12 17 14 17;
-#X connect 12 17 16 17;
+#X connect 12 17 26 17;
 #X connect 12 18 14 18;
-#X connect 12 18 16 18;
+#X connect 12 18 26 18;
 #X connect 12 19 14 19;
-#X connect 12 19 16 19;
+#X connect 12 19 26 19;
 #X connect 12 20 14 20;
-#X connect 12 20 16 20;
+#X connect 12 20 26 20;
 #X connect 12 21 14 21;
-#X connect 12 21 16 21;
+#X connect 12 21 26 21;
 #X connect 12 22 14 22;
-#X connect 12 22 16 22;
+#X connect 12 22 26 22;
 #X connect 12 23 14 23;
-#X connect 12 23 16 23;
+#X connect 12 23 26 23;
 #X connect 12 24 14 24;
-#X connect 12 24 16 24;
+#X connect 12 24 26 24;
 #X connect 12 25 14 25;
-#X connect 12 25 16 25;
+#X connect 12 25 26 25;
 #X connect 12 26 14 26;
-#X connect 12 26 16 26;
+#X connect 12 26 26 26;
 #X connect 12 27 14 27;
-#X connect 12 27 16 27;
+#X connect 12 27 26 27;
 #X connect 12 28 14 28;
-#X connect 12 28 16 28;
+#X connect 12 28 26 28;
 #X connect 12 29 14 29;
-#X connect 12 29 16 29;
+#X connect 12 29 26 29;
 #X connect 12 30 14 30;
-#X connect 12 30 16 30;
+#X connect 12 30 26 30;
 #X connect 12 31 14 31;
-#X connect 12 31 16 31;
+#X connect 12 31 26 31;
 #X connect 12 32 14 32;
-#X connect 12 32 16 32;
+#X connect 12 32 26 32;
 #X connect 12 33 14 33;
-#X connect 12 33 16 33;
+#X connect 12 33 26 33;
 #X connect 12 34 14 34;
-#X connect 12 34 16 34;
+#X connect 12 34 26 34;
 #X connect 12 35 14 35;
-#X connect 12 35 16 35;
-#X connect 16 0 6 0;
-#X connect 16 0 13 0;
-#X connect 16 1 6 1;
-#X connect 16 1 13 1;
-#X connect 16 2 6 2;
-#X connect 16 2 13 2;
-#X connect 16 3 6 3;
-#X connect 16 3 13 3;
-#X connect 16 4 6 4;
-#X connect 16 4 13 4;
-#X connect 16 5 6 5;
-#X connect 16 5 13 5;
-#X connect 16 6 6 6;
-#X connect 16 6 13 6;
-#X connect 16 7 6 7;
-#X connect 16 7 13 7;
+#X connect 12 35 26 35;
+#X connect 16 0 12 1;
 #X connect 17 0 12 1;
-#X connect 18 0 12 1;
-#X connect 19 0 20 1;
-#X connect 20 0 22 0;
-#X connect 21 0 24 0;
-#X connect 22 0 12 0;
-#X connect 23 0 20 0;
-#X connect 24 0 22 1;
-#X connect 25 0 19 0;
-#X connect 25 0 19 1;
+#X connect 18 0 19 1;
+#X connect 19 0 21 0;
+#X connect 20 0 23 0;
+#X connect 21 0 12 0;
+#X connect 22 0 19 0;
+#X connect 23 0 21 1;
+#X connect 24 0 18 0;
+#X connect 24 0 18 1;
+#X connect 26 0 6 0;
+#X connect 26 0 13 0;
+#X connect 26 1 6 1;
+#X connect 26 1 13 1;
+#X connect 26 2 6 2;
+#X connect 26 2 13 2;
+#X connect 26 3 6 3;
+#X connect 26 3 13 3;
+#X connect 26 4 6 4;
+#X connect 26 4 13 4;
+#X connect 26 5 6 5;
+#X connect 26 5 13 5;
+#X connect 26 6 6 6;
+#X connect 26 6 13 6;
+#X connect 26 7 6 7;
+#X connect 26 7 13 7;

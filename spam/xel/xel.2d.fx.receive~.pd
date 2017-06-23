@@ -1,0 +1,4 @@
+#N canvas 352 27 172 137 10;
+#X obj 23 26 r~ \$2-\$1;
+#X obj 23 61 spam.out~;
+#X connect 0 0 1 0;

@@ -1,0 +1,82 @@
+#N struct 1015-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N canvas 550 92 546 472 10;
+#X obj 6 7 xel.header xel.2d.mat.clip;
+#X obj 6 384 xel.footer;
+#X obj 243 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 243 94 loadbang;
+#X obj 243 162 xel.2d.mat.const 5 5;
+#N canvas 0 22 1029 742 \$0-canvas 0;
+#X scalar 1015-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 100 0 \;
+;
+#X scalar 1015-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.76 999 0 100 1 \;
+;
+#X scalar 1015-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.76 999 0 100 2 \;
+;
+#X scalar 1015-stuct-matrix 0.2 1 0.6 0.6 0.3 0.76 999 0 100 3 \;;
+#X scalar 1015-stuct-matrix 0.6 1 1 0.6 0.7 0.76 999 0 100 4 \;;
+#X scalar 1015-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.36 999 0 100 5 \;
+;
+#X scalar 1015-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.36 999 0 100 6
+\;;
+#X scalar 1015-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.36 999 0 100 7
+\;;
+#X scalar 1015-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.36 999 0 100 8 \;
+;
+#X scalar 1015-stuct-matrix 0.6 0.6 1 0.2 0.7 0.36 999 0 100 9 \;;
+#X scalar 1015-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -0.04 999 0 100 10
+\;;
+#X scalar 1015-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -0.04 999 0 100
+11 \;;
+#X scalar 1015-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -0.04 999 0 100
+12 \;;
+#X scalar 1015-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -0.04 999 0 100 13
+\;;
+#X scalar 1015-stuct-matrix 0.6 0.2 1 -0.2 0.7 -0.04 999 0 100 14 \;
+;
+#X scalar 1015-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.44 999 0 100
+15 \;;
+#X scalar 1015-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.44 999 0 100
+16 \;;
+#X scalar 1015-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.44 999 0 100
+17 \;;
+#X scalar 1015-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.44 999 0 100 18
+\;;
+#X scalar 1015-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.44 999 0 100 19
+\;;
+#X scalar 1015-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.84 999 0 100 20
+\;;
+#X scalar 1015-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.84 999 0 100
+21 \;;
+#X scalar 1015-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.84 999 0 100 22
+\;;
+#X scalar 1015-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.84 999 0 100 23
+\;;
+#X scalar 1015-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.84 999 0 100 24 \;
+;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 7 88 pd \$0-canvas;
+#X obj 224 259 list trim;
+#X msg 224 281 matrix 5 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+1 1 1 1, f 38;
+#X obj 243 184 xel.2d.gui.mat \$0-canvas 5 5;
+#X msg 266 118 matrix 5 5;
+#X obj 340 120 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1.43 256;
+#X text 4 31 The abstraction generates a matrix filled with a constant
+value. The The arguments are the default size of the matrix \, the
+number of rows and the number of columns and the default value., f
+66;
+#X obj 243 207 xel.2d.mat.clip 0 1;
+#X obj 224 236 list prepend set;
+#X connect 2 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 6 0 7 0;
+#X connect 6 0 8 0;
+#X connect 8 0 12 0;
+#X connect 9 0 4 0;
+#X connect 10 0 4 0;
+#X connect 12 0 13 0;
+#X connect 13 0 6 0;
