@@ -1,0 +1,4 @@
+#N canvas 146 23 225 72 10;
+#X obj 12 41 spam.out~;
+#X obj 12 16 spam.in~;
+#X connect 1 0 0 0;

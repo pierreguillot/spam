@@ -6,7 +6,7 @@ xv float yv float c1 float c2 float val float index;
 #X obj 243 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 243 94 loadbang;
-#X obj 243 162 xel.2d.mat.const 5 5;
+#X obj 243 162 xel.2d.mat.brush 5 5;
 #N canvas 0 22 1029 742 \$0-canvas 0;
 #X scalar 1015-stuct-matrix -1 1 -0.6 0.6 -0.9 0.76 999 0 100 0 \;
 ;

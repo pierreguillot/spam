@@ -1,0 +1,145 @@
+#N struct 1015-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N struct 1012-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N canvas 327 49 951 723 10;
+#X declare -lib iemmatrix;
+#X obj 6 7 xel.header xel.2d.mat.brush;
+#X obj 6 654 xel.footer;
+#X obj 233 118 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 233 94 loadbang;
+#N canvas 0 22 1029 742 \$0-canvas 0;
+#X scalar 1015-stuct-matrix -1 1 -0.6 0.6 -0.9 0.8 999 0 0 0 \;;
+#X scalar 1015-stuct-matrix -0.6 1 -0.2 0.6 -0.5 0.8 999 0 0 1 \;;
+#X scalar 1015-stuct-matrix -0.2 1 0.2 0.6 -0.1 0.8 999 0 0 2 \;;
+#X scalar 1015-stuct-matrix 0.2 1 0.6 0.6 0.3 0.8 999 0 0 3 \;;
+#X scalar 1015-stuct-matrix 0.6 1 1 0.6 0.7 0.8 999 0 0 4 \;;
+#X scalar 1015-stuct-matrix -1 0.6 -0.6 0.2 -0.9 0.4 999 0 100 5 \;
+;
+#X scalar 1015-stuct-matrix -0.6 0.6 -0.2 0.2 -0.5 0.4 999 0 0 6 \;
+;
+#X scalar 1015-stuct-matrix -0.2 0.6 0.2 0.2 -0.1 0.4 999 0 0 7 \;
+;
+#X scalar 1015-stuct-matrix 0.2 0.6 0.6 0.2 0.3 0.4 999 0 0 8 \;;
+#X scalar 1015-stuct-matrix 0.6 0.6 1 0.2 0.7 0.4 999 0 0 9 \;;
+#X scalar 1015-stuct-matrix -1 0.2 -0.6 -0.2 -0.9 -1.49012e-08 999
+0 100 10 \;;
+#X scalar 1015-stuct-matrix -0.6 0.2 -0.2 -0.2 -0.5 -1.49012e-08 999
+0 100 11 \;;
+#X scalar 1015-stuct-matrix -0.2 0.2 0.2 -0.2 -0.1 -1.49012e-08 999
+0 0 12 \;;
+#X scalar 1015-stuct-matrix 0.2 0.2 0.6 -0.2 0.3 -1.49012e-08 999 0
+0 13 \;;
+#X scalar 1015-stuct-matrix 0.6 0.2 1 -0.2 0.7 -1.49012e-08 999 0 0
+14 \;;
+#X scalar 1015-stuct-matrix -1 -0.2 -0.6 -0.6 -0.9 -0.4 999 0 0 15
+\;;
+#X scalar 1015-stuct-matrix -0.6 -0.2 -0.2 -0.6 -0.5 -0.4 999 0 0 16
+\;;
+#X scalar 1015-stuct-matrix -0.2 -0.2 0.2 -0.6 -0.1 -0.4 999 0 0 17
+\;;
+#X scalar 1015-stuct-matrix 0.2 -0.2 0.6 -0.6 0.3 -0.4 999 0 0 18 \;
+;
+#X scalar 1015-stuct-matrix 0.6 -0.2 1 -0.6 0.7 -0.4 999 0 0 19 \;
+;
+#X scalar 1015-stuct-matrix -1 -0.6 -0.6 -1 -0.9 -0.8 999 0 0 20 \;
+;
+#X scalar 1015-stuct-matrix -0.6 -0.6 -0.2 -1 -0.5 -0.8 999 0 0 21
+\;;
+#X scalar 1015-stuct-matrix -0.2 -0.6 0.2 -1 -0.1 -0.8 999 0 0 22 \;
+;
+#X scalar 1015-stuct-matrix 0.2 -0.6 0.6 -1 0.3 -0.8 999 0 0 23 \;
+;
+#X scalar 1015-stuct-matrix 0.6 -0.6 1 -1 0.7 -0.8 999 0 0 24 \;;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 7 88 pd \$0-canvas;
+#X obj 233 546 list prepend set;
+#X obj 233 568 list trim;
+#X msg 233 590 matrix 5 5 0 0 0 0 0 4 0 0 0 0 2 1 0 0 0 0 0 0 0 0 0
+0 0 0 0;
+#X msg 244 143 matrix 5 5;
+#X text 4 31 The abstraction generates a matrices. The arguments are
+the default size of the matrix \, the number of rows and the number
+of columns and the default value., f 66;
+#X text 314 138 Changes the size of the matrix, f 16;
+#X text 251 119 Outputs the matrix;
+#N canvas 298 125 450 300 error.generator 0;
+#X obj 20 238 outlet;
+#X obj 20 18 inlet;
+#X obj 20 40 bang;
+#X msg 27 80 matrix 0 3;
+#X msg 44 139 matrix 5 5 0 0 0 1 2 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0, f 38;
+#X msg 314 202 zaza;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 2 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 0 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X restore 35 407 pd error.generator;
+#X obj 35 385 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 268 229 matrix 5 5 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09
+0.01 0.11 0.12 0.13 0.14 0.15 0.16 0.17 0.18 0.19 0.2 0.21 0.22 0.23
+0.24 0.25, f 33;
+#X text 267 178 Sets all the values of the matrix and resizes it if
+needed, f 33;
+#X text 267 208 nrows \, ncols \, coeff1 \, coeff2 \, etc.;
+#X obj 249 408 r \$0-in;
+#N canvas 0 22 450 300 \$0-pattern-gui 0;
+#X scalar 1012-stuct-matrix -1 1 1 -1 -0.5 0 999 0 100 0 \;;
+#X coords -1 1 1 -1 70 70 2 100 100;
+#X restore 540 204 pd \$0-pattern-gui;
+#X obj 542 345 xel.2d.gui.mat \$0-pattern-gui 3 3;
+#X obj 233 474 xel.2d.gui.mat \$0-canvas 5 5;
+#X obj 480 11 declare -lib iemmatrix;
+#X obj 542 322 mtx;
+#X text 33 538 Perhaps arguments can define a default pattern, f 24
+;
+#X obj 314 413 pack f f f;
+#X obj 314 338 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 342 358 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 371 378 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 0 256;
+#X msg 542 292 eye 3;
+#X obj 542 387 list prepend pattern;
+#X obj 542 409 list trim;
+#X obj 542 367 list split 1;
+#X obj 314 317 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 545 75 Todo;
+#X obj 233 500 mtx_+;
+#X obj 269 500 mtx;
+#X msg 599 288 ones 1;
+#X obj 233 452 xel.2d.mat.brush 5 5;
+#X connect 2 0 37 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 8 0 37 0;
+#X connect 12 0 37 0;
+#X connect 13 0 12 0;
+#X connect 14 0 37 0;
+#X connect 17 0 37 0;
+#X connect 19 0 31 0;
+#X connect 20 0 34 0;
+#X connect 22 0 19 0;
+#X connect 24 0 37 0;
+#X connect 25 0 24 0;
+#X connect 26 0 24 1;
+#X connect 27 0 24 2;
+#X connect 28 0 22 0;
+#X connect 29 0 30 0;
+#X connect 30 0 37 0;
+#X connect 31 1 29 0;
+#X connect 32 0 25 0;
+#X connect 34 0 5 0;
+#X connect 34 0 35 0;
+#X connect 35 0 34 1;
+#X connect 36 0 22 0;
+#X connect 37 0 20 0;

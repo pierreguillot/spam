@@ -1,0 +1,49 @@
+#N canvas 203 126 467 646 10;
+#X obj 6 7 xel.header xel.2d.mat.check;
+#X obj 6 604 xel.footer;
+#X obj 63 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 63 112 loadbang;
+#X msg 74 178 matrix 5 5;
+#X obj 63 494 route bang;
+#X obj 63 516 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 120 514 list prepend set;
+#X obj 120 536 list trim;
+#X msg 120 558 matrix 3 4 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09
+0.01 0.11 0.12;
+#X obj 63 472 xel.2d.mat.check 5 5;
+#X text 4 31 The abstraction checks if the size of the matrix is valid
+and consistent with the number of coefficients. The abstraction ouputs
+the matrix if everything is valid otherwise it outputs a bang. The
+facultative arguments can be used to define the default size of the
+matrix., f 66;
+#X msg 116 331 matrix 3 4 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09
+0.01 0.11 0.12, f 33;
+#X msg 110 311 matrix 2 2 0.01 0.02 0.03 0.04, f 33;
+#X text 109 290 Valid matrices;
+#X msg 123 399 matrix 2 2 0.01 0.02 0.03, f 33;
+#X text 125 379 Invalid matrices;
+#X msg 124 421 matrix 3 4 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09
+0.01 0.11 0.12 0.13, f 33;
+#X text 81 137 Outputs the current state;
+#X text 71 159 Valid sizes;
+#X msg 84 199 matrix 7 12;
+#X msg 98 242 matrix -5 5;
+#X msg 108 263 matrix 7 0;
+#X text 95 223 Invalid sizes;
+#X connect 2 0 10 0;
+#X connect 3 0 2 0;
+#X connect 4 0 10 0;
+#X connect 5 0 6 0;
+#X connect 5 1 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 10 0 5 0;
+#X connect 12 0 10 0;
+#X connect 13 0 10 0;
+#X connect 15 0 10 0;
+#X connect 17 0 10 0;
+#X connect 20 0 10 0;
+#X connect 21 0 10 0;
+#X connect 22 0 10 0;

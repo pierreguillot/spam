@@ -1,0 +1,60 @@
+#N struct 1353-stuct-matrix float x1 float y1 float x2 float y2 float
+xv float yv float c1 float c2 float val float index;
+#N canvas 752 151 528 455 10;
+#X obj 6 7 xel.header xel.2d.mat.fltr.log;
+#X obj 6 364 xel.footer;
+#X obj 243 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 261 109 Outputs;
+#X obj 243 84 loadbang;
+#N canvas 0 22 1029 742 \$0-canvas 0;
+#X scalar 1353-stuct-matrix -1 1 -0.333333 0.333333 -0.833333 0.666667
+999 0 -22 0 \;;
+#X scalar 1353-stuct-matrix -0.333333 1 0.333333 0.333333 -0.166667
+0.666667 999 0 -11 1 \;;
+#X scalar 1353-stuct-matrix 0.333333 1 1 0.333333 0.5 0.666667 999
+0 0 2 \;;
+#X scalar 1353-stuct-matrix -1 0.333333 -0.333333 -0.333333 -0.833333
+-2.98023e-08 999 0 -11 3 \;;
+#X scalar 1353-stuct-matrix -0.333333 0.333333 0.333333 -0.333333 -0.166667
+-2.98023e-08 999 0 11 4 \;;
+#X scalar 1353-stuct-matrix 0.333333 0.333333 1 -0.333333 0.5 -2.98023e-08
+999 0 11 5 \;;
+#X scalar 1353-stuct-matrix -1 -0.333333 -0.333333 -1 -0.833333 -0.666667
+999 0 0 6 \;;
+#X scalar 1353-stuct-matrix -0.333333 -0.333333 0.333333 -1 -0.166667
+-0.666667 999 0 11 7 \;;
+#X scalar 1353-stuct-matrix 0.333333 -0.333333 1 -1 0.5 -0.666667 999
+0 22 8 \;;
+#X coords -1 1 1 -1 201 201 2 100 100;
+#X restore 7 88 pd \$0-canvas;
+#X obj 223 196 list prepend set;
+#X obj 223 218 list trim;
+#X msg 223 240 matrix 3 3 -0.222222 -0.111111 0 -0.111111 0.111111
+0.111111 0 0.111111 0.222222, f 38;
+#X obj 243 164 xel.2d.gui.mat \$0-canvas 5 5;
+#X msg 323 109 matrix 3 3;
+#X msg 400 109 deviation \$1;
+#X obj 400 90 nbx 5 14 0.001 2 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.001 256;
+#X text 4 31 The abstraction generates a matrix filled with walues
+generated with the laplacian of gaussian. The matrix can be used for
+kernel filter., f 67;
+#X msg 316 78 matrix 5 5;
+#X obj 243 142 xel.2d.mat.fltr.2 5 5;
+#X msg 422 62 matrix 5 7;
+#X msg 422 32 matrix 7 5;
+#X msg 413 141 matrix 3 3;
+#X connect 2 0 15 0;
+#X connect 4 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 10 0 15 0;
+#X connect 11 0 15 0;
+#X connect 12 0 11 0;
+#X connect 14 0 15 0;
+#X connect 15 0 9 0;
+#X connect 15 0 6 0;
+#X connect 16 0 15 0;
+#X connect 17 0 15 0;
+#X connect 18 0 15 0;

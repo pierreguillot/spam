@@ -1,0 +1,47 @@
+#N canvas 720 204 469 459 10;
+#X obj 6 7 xel.header xel.2d.get.distance;
+#X obj 6 414 xel.footer;
+#X obj 9 123 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 27 124 Outputs;
+#X obj 25 164 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 25 183 pack f f, f 12;
+#X obj 94 164 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 1 256;
+#X obj 9 99 loadbang;
+#X obj 9 364 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1.28062 256;
+#X text 22 146 Abscissa 1;
+#X text 91 146 Ordinate 1;
+#X obj 94 222 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 94 241 pack f f, f 12;
+#X obj 163 222 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X text 91 204 Abscissa 2;
+#X text 160 204 Ordinate 2;
+#X obj 181 287 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X obj 181 306 pack f f, f 12;
+#X obj 250 287 nbx 5 14 0 1e+37 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0 256;
+#X text 4 31 The abstraction compute the euclidean distance between
+two points. The abscissa and the ordinate can be weighted by coeffcients.
+The arguments can be used to define the default second point and the
+weights., f 67;
+#X text 180 255 Abscissa Weight, f 9;
+#X obj 9 337 xel.2d.get.distance 0 0 1 0.8;
+#X text 247 257 Ordinate Weight, f 10;
+#X connect 2 0 21 0;
+#X connect 4 0 5 0;
+#X connect 5 0 21 0;
+#X connect 6 0 5 1;
+#X connect 7 0 2 0;
+#X connect 11 0 12 0;
+#X connect 12 0 21 1;
+#X connect 13 0 12 1;
+#X connect 16 0 17 0;
+#X connect 17 0 21 2;
+#X connect 18 0 17 1;
+#X connect 21 0 8 0;

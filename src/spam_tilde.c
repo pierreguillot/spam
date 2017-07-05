@@ -122,9 +122,7 @@ extern void spam_tilde_setup(void)
         
         class_addmethod(c, (t_method)spam_tilde_io_init,  gensym(__spam_io_init__), A_CANT, 0);
         class_addmethod(c, (t_method)spam_tilde_io_dsp,   gensym(__spam_io_dsp__), A_CANT, 0);
-        
         CLASS_MAINSIGNALIN(c, t_spam_tilde, s_f);
-        
         class_sethelpsymbol((t_class *)c, gensym("spam"));
         
         class_addmethod(c, (t_method)spam_tilde_bang,       gensym("bang"),    A_NULL,  0);

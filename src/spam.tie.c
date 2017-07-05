@@ -5,6 +5,7 @@
 */
 
 #include "spam.tie.h"
+#include "../pd/src/g_canvas.h"
 #include <string.h>
 
 static t_class* spam_tie_class;
