@@ -1,9 +1,0 @@
-#N canvas 322 267 603 446 10;
-#X obj 18 20 spam.in shared 1;
-#X obj 18 50 spam.in shared;
-#X obj 18 81 spam.in shared 3;
-#X obj 229 133 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 29 256;
-#X msg 206 73 zaza;
-#X connect 3 0 1 0;
-#X connect 4 0 1 0;
