@@ -4,3 +4,6 @@
 [submodule "pd.build"]
 	path = pd.build
 	url = https://pierreguillot@github.com/pierreguillot/pd.build.git
+[submodule "spam/soxel"]
+	path = spam/soxel
+	url = https://pierreguillot@github.com/pierreguillot/soxel.git
