@@ -1,4 +1,4 @@
-#N canvas 178 23 1285 719 10;
+#N canvas 155 23 1285 719 10;
 #X declare -stdpath spam;
 #X obj 7 681 declare -stdpath spam;
 #X obj 490 558 dac~ 1 2 3 4 5 6 7 8, f 33;
@@ -55,8 +55,8 @@ angles of the plane waves., f 67;
 -0.424264 -0.424264 0 -0.6 0.424264 -0.424264 0.6 0 \; gain 135 \;
 ;
 #X msg 121 607 vis 4;
-#X msg 311 525 angles 45 90 135 180 225 270 315 360 \;;
-#X obj 710 118 text define -k \$0-attrs;
+#X msg 74 554 angles 45 90 135 180 225 270 315 360 \;;
+#X obj 798 62 text define -k \$0-attrs;
 #A set angles 45 90 135 180 225 270 315 360 \;;
 #X obj 490 251 spam~ 7 ylm.2d.projector~ 3 8 \$0-attrs, f 33;
 #X obj 110 468 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
