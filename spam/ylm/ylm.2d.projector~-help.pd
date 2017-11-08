@@ -1,0 +1,80 @@
+#N canvas 155 23 1285 719 10;
+#X declare -stdpath spam;
+#X obj 7 681 declare -stdpath spam;
+#X obj 490 558 dac~ 1 2 3 4 5 6 7 8, f 33;
+#X obj 6 10 ylm.header ylm.2d.syn.directional;
+#X obj 490 72 spam~ 7 ylm.2d.syn.directional~ 3;
+#X obj 9 750 ylm.footer;
+#N canvas 0 22 450 300 init 0;
+#X obj 23 32 loadbang;
+#X msg 23 54 80;
+#X obj 23 76 s \$0-gain;
+#X obj 93 32 loadbang;
+#X obj 93 76 s \$0-pos;
+#X msg 93 54 1 0;
+#X obj 163 32 loadbang;
+#X msg 163 54 1;
+#X obj 163 76 s \$0-traj;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 3 0 5 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X restore 7 660 pd init;
+#X text 4 31 The abstraction projects the signals of the circular harmonics
+onto a set of plane waves. The projection (or decoding) is the most
+basic operation to render a sound field from the domain of the spatial
+harmonics to a set of loudspeakers. To ensure a good restitution \,
+the loudspeakers must be equally spaced on a circle and the number
+of loudspeakers must at least equal to the number of harmonics. If
+the system of restitution is irregular \, one way to make up the artefact
+is to combine the projection with another spatialization technique
+like VBAP \, DBAP \, Binaural \, etc., f 67;
+#X text 4 149 The projection operation for one planewave amounts to
+compute the dot product of the signals of the circular harmonics of
+the sound field with the coefficients of the circular harmonics resulting
+from the synthesis of an unitary signal in the direction of the plane
+wave:, f 67;
+#X text 4 213 g(θ) = Y[0 \, 0] * G[0 \, 0](θ) + Y[1 \, -1] * G[1
+\, -1](θ) + Y[1 \, 1] * G[1 \, 1](θ) + ... + Y[N*2+1 \, N*2+1] *
+G[N*2+1 \, N*2+1](θ), f 67;
+#X text 4 240 whith θ the angle of the plane wave \, Y[l \, m] the
+signal of the circular harmonic of degree l and azimuthal order m \,
+G[0 \, 0] the coefficient resulting from synthesis of an unitary signal
+in the direction of the plane wave and N the order of decomposition.
+In practice \, the Y[0 \, 0] * G[0 \, 0](θ) part is divided by 2 because
+the harmonics are not normalized bedore the projection. The unitary
+signal is equal to 1/(N+1)., f 67;
+#X text 4 340 The abstraction expects the order of decomposition as
+the first argument and the number of planwaves as the second argument
+and the third argument must the name of a text object containing the
+angles of the plane waves., f 67;
+#X obj 7 722 text define -k \$0-meter-attrs;
+#A set positions 0.424264 0.424264 0 0.6 -0.424264 0.424264 -0.6 0
+-0.424264 -0.424264 0 -0.6 0.424264 -0.424264 0.6 0 \; gain 135 \;
+;
+#X msg 121 607 vis 4;
+#X msg 74 554 angles 45 90 135 180 225 270 315 360 \;;
+#X obj 798 62 text define -k \$0-attrs;
+#A set angles 45 90 135 180 225 270 315 360 \;;
+#X obj 490 251 spam~ 7 ylm.2d.projector~ 3 8 \$0-attrs, f 33;
+#X obj 110 468 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 110 488 spam.connect;
+#X connect 3 0 15 0;
+#X connect 3 1 15 1;
+#X connect 3 2 15 2;
+#X connect 3 3 15 3;
+#X connect 3 4 15 4;
+#X connect 3 5 15 5;
+#X connect 3 6 15 6;
+#X connect 15 0 1 0;
+#X connect 15 1 1 1;
+#X connect 15 2 1 2;
+#X connect 15 3 1 3;
+#X connect 15 4 1 4;
+#X connect 15 5 1 5;
+#X connect 15 6 1 6;
+#X connect 15 7 1 7;
+#X connect 16 0 17 0;

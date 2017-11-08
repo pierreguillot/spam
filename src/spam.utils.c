@@ -142,7 +142,7 @@ static t_canvas* spam_master_load_canvas(t_spam_master* master, t_symbol* name, 
                     if(n && vec && n >= 2 && atom_getsymbol(vec) == name)
                     {
                         if(vec[0].a_type == A_SYMBOL && atom_getsymbol(vec) == name &&
-                           vec[1].a_type == A_FLOAT && atom_getfloat(vec+1) == index)
+                           vec[1].a_type == A_FLOAT && (int)(atom_getfloat(vec+1)) == index)
                         {
                             freebytes(av, (argc + 4) * sizeof(t_atom));
                             canvas_loadbang((t_canvas *)z);
@@ -179,7 +179,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
     master->s_subcanvas = NULL;
     master->s_canvas    = NULL;
     master->s_currentn  = 0;
-    master->s_sigs      = NULL;
+    
     master->s_outputs   = NULL;
     master->s_routputs  = NULL;
     master->s_blksize   = 0;
@@ -249,6 +249,7 @@ char spam_master_init(t_spam_master* master, t_symbol* name, int n, int argc, t_
 
 char spam_master_free(t_spam_master* master)
 {
+    int nins = spam_iolets_get_ninsig(&(master->s_iolets), master->s_n);
     int nouts = spam_iolets_get_noutsig(&(master->s_iolets), master->s_n);
     if(master->s_canvas)
     {
@@ -268,6 +269,16 @@ char spam_master_free(t_spam_master* master)
         {
             freebytes(master->s_routputs,nouts * sizeof(t_sample **));
             master->s_routputs = NULL;
+        }
+        if(master->s_inputs)
+        {
+            freebytes(master->s_inputs, master->s_blksize * nins * sizeof(t_sample *));
+            master->s_inputs = NULL;
+        }
+        if(master->s_rinputs)
+        {
+            freebytes(master->s_rinputs, nins * sizeof(t_sample **));
+            master->s_rinputs = NULL;
         }
         return 0;
     }
@@ -299,31 +310,29 @@ char spam_master_visible(t_spam_master* master, int index)
 
 static t_int *spam_process_perform(t_int *w)
 {
-    int i, j;
+    int i;
     int n                   = (int)(w[1]);
-    int nouts               = (int)(w[2]);
-    t_sample* iout          = (t_sample *)(w[3]);
-    t_sample** rout         = (t_sample **)(w[4]);
-    t_object* block         = (t_object *)(w[5]);
+    int nins                = (int)(w[2]);
+    t_sample** rins         = (t_sample **)(w[3]);
+    t_sample*  iins         = (t_sample *)(w[4]);
+    int nouts               = (int)(w[5]);
+    t_sample*  iout         = (t_sample *)(w[6]);
+    t_sample** rout         = (t_sample **)(w[7]);
+    t_object* block         = (t_object *)(w[8]);
     
-    for(i = 0; i < nouts * n; ++i)
+    for(i = 0; i < nins; ++i)
     {
-        iout[i] = 0.f;
+        memcpy(iins+i*n, rins[i], n * sizeof(t_sample));
     }
+    memset(iout, 0, nouts * n * sizeof(t_sample));
     pd_bang((t_pd *)block);
     for(i = 0; i < nouts; ++i)
     {
-        for(j = 0; j < n; ++j)
-        {
-            rout[i][j] = iout[i*n+j];
-        }
+        memcpy(rout[i], iout+i*n, n * sizeof(t_sample));
     }
     
-    return (w+6);
+    return (w+9);
 }
-
-
-
 
 
 char spam_master_dsp(t_spam_master* master, t_signal **sp)
@@ -342,27 +351,41 @@ char spam_master_dsp(t_spam_master* master, t_signal **sp)
         freebytes(master->s_routputs,nouts * sizeof(t_sample **));
         master->s_routputs = NULL;
     }
+    
+    if(master->s_inputs)
+    {
+        freebytes(master->s_inputs, master->s_blksize * nins * sizeof(t_sample *));
+        master->s_inputs = NULL;
+    }
+    if(master->s_rinputs)
+    {
+        freebytes(master->s_rinputs, nins * sizeof(t_sample **));
+        master->s_rinputs = NULL;
+    }
+    
     if(sp && sp[0])
     {
-        master->s_outputs = getbytes(sp[0]->s_n * nouts * sizeof(t_sample *));
-        if(master->s_outputs)
+        master->s_inputs    = getbytes(sp[0]->s_n * nins * sizeof(t_sample *));
+        master->s_outputs   = getbytes(sp[0]->s_n * nouts * sizeof(t_sample *));
+        master->s_rinputs   = (t_sample **)getbytes(nins * sizeof(t_sample *));
+        master->s_routputs  = (t_sample **)getbytes(nouts * sizeof(t_sample *));
+        
+        if(master->s_outputs && master->s_routputs && master->s_inputs && master->s_rinputs)
         {
-            master->s_blksize = sp[0]->s_n;
-            master->s_sigs    = sp;
-            master->s_routputs = (t_sample **)getbytes(nouts * sizeof(t_sample *));
-            if(master->s_routputs)
+            master->s_blksize = sp[0]->s_n;    
+            for(i = 0; i < nins; ++i)
             {
-                for(i = 0; i < nouts; ++i)
-                {
-                    master->s_routputs[i] = sp[nins+i]->s_vec;
-                }
-                dsp_add(spam_process_perform, 5, (t_int)sp[0]->s_n, (t_int)nouts, (t_int)master->s_outputs, (t_int)master->s_routputs, (t_int)(master->s_block));
-                mess0((t_pd *)master->s_canvas, gensym("dsp"));
+                master->s_rinputs[i] = sp[i]->s_vec;
             }
-            else
+            for(i = 0; i < nouts; ++i)
             {
-                return -1;
+                master->s_routputs[i] = sp[nins+i]->s_vec;
             }
+            
+            pd_float((t_pd *)master->s_block, 1);
+            dsp_add(spam_process_perform, 8, (t_int)sp[0]->s_n, (t_int)nins, (t_int)master->s_rinputs, (t_int)master->s_inputs, (t_int)nouts, (t_int)master->s_outputs, (t_int)master->s_routputs, (t_int)(master->s_block));
+            mess0((t_pd *)master->s_canvas, gensym("dsp"));
+            pd_float((t_pd *)master->s_block, 0);
         }
         else
         {
@@ -405,7 +428,6 @@ void spam_master_io_init(t_spam_master* master, t_spam_io* io)
 
 void spam_master_io_dsp(t_spam_master* master, t_spam_io* io)
 {
-    t_signal** sp = master->s_sigs;
     t_spam_iolets* iolets = &(master->s_iolets);
     if(!io->s_signal)
     {
@@ -415,13 +437,13 @@ void spam_master_io_dsp(t_spam_master* master, t_spam_io* io)
     {
         if(io->s_static)
         {
-            io->s_samples = sp[io->s_index]->s_vec;
-            io->s_n       = sp[io->s_index]->s_n;
+            io->s_samples = master->s_inputs + master->s_blksize * io->s_index;
+            io->s_n       = master->s_blksize;
         }
         else if(!io->s_static)
         {
-            io->s_samples = sp[io->s_index + master->s_n * iolets->staticins]->s_vec;
-            io->s_n       = sp[io->s_index + master->s_n * iolets->staticins]->s_n;
+            io->s_samples = master->s_inputs + master->s_blksize * (io->s_index + master->s_n * iolets->staticins);
+            io->s_n       = master->s_blksize;
         }
     }
     else

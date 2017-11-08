@@ -1,10 +1,10 @@
 
 environment:
    matrix:
-      - CONFIGURATION: Debug
+      - CONFIGURATION: Release
         PLATFORM: Win32
         ZIP: spam_win_32
-      - CONFIGURATION: Debug
+      - CONFIGURATION: Release
         PLATFORM: x64
         ZIP: spam_win_64
 
@@ -14,7 +14,6 @@ install:
     - git submodule update --init --recursive
     - git clone -q --branch=master https://github.com/pierreguillot/pdwinlib.git
     - cd pdwinlib
-    - dir /s /b /o:gn
     - cd ..\
 
 build_script:
@@ -25,22 +24,9 @@ build_script:
 
 after_build:
     - cd ..\
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_in.dll spam.in.dll
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_out.dll spam.out.dll
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_in_tilde.dll spam.in~.dll
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_out_tilde.dll spam.out~.dll
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_tilde.dll spam~.dll
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam_connect.dll spam.connect.dll
-    - rename %APPVEYOR_BUILD_FOLDER%\bin\spam.dll spam.dll
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.pdb
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
-    - rename %APPVEYOR_BUILD_FOLDER%\bin spam
-    - xcopy /E %APPVEYOR_BUILD_FOLDER%\ylm\* %APPVEYOR_BUILD_FOLDER%\spam\ylm\*
-    - rename %APPVEYOR_BUILD_FOLDER%\spam\ylm\README.md readme.txt
-    - xcopy /E %APPVEYOR_BUILD_FOLDER%\xel\* %APPVEYOR_BUILD_FOLDER%\spam\xel\*
-    - rename %APPVEYOR_BUILD_FOLDER%\spam\xel\README.md readme.txt
-    - xcopy /E %APPVEYOR_BUILD_FOLDER%\zpt\* %APPVEYOR_BUILD_FOLDER%\spam\zpt\*
-    - rename %APPVEYOR_BUILD_FOLDER%\spam\zpt\README.md readme.txt
+    - rename %APPVEYOR_BUILD_FOLDER%\spam\soxel\README.md readme.txt
     - copy %APPVEYOR_BUILD_FOLDER%\README.md %APPVEYOR_BUILD_FOLDER%\spam\readme.txt
     - copy %APPVEYOR_BUILD_FOLDER%\LICENSE %APPVEYOR_BUILD_FOLDER%\spam\license.txt
     - 7z a %ZIP%.zip %APPVEYOR_BUILD_FOLDER%\spam\

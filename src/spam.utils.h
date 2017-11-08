@@ -36,10 +36,13 @@ typedef struct _spam_master
     t_canvas**          s_subcanvas;
     int                 s_currentn;
     t_spam_iolets       s_iolets;
-    t_signal**          s_sigs;
+
+    t_sample*           s_inputs;
+    t_sample**          s_rinputs;
     t_sample*           s_outputs;
     t_sample**          s_routputs;
     int                 s_blksize;
+    
     t_symbol*           s_fin;
 }t_spam_master;
 

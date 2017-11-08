@@ -1,10 +1,10 @@
-#N canvas 422 139 766 523 10;
+#N canvas 319 138 926 548 10;
 #N canvas 443 106 450 300 header 0;
 #X obj 3 3 cnv 18 18 18 empty empty spam~ 2 8 0 14 -262144 -66577 0
 ;
 #X text 215 4 by Pierre Guillot - 2016;
-#X coords 0 -1 1 1 365 20 2 2 2;
-#X restore 6 6 pd header;
+#X coords 0 -1 1 1 397 20 2 2 2;
+#X restore 10 5 pd header;
 #X text 6 28 The object loads several instances of a patch. It acts
 in a similar way to the clone object but allows to differentiate the
 inputs and outputs of each instance. This specificity can be useful
@@ -25,70 +25,70 @@ The first inlets and outlets match to the signal \, starting with the
 inlets and outlets specifics to each instance and finishing with the
 inlets and outlets shared by all the instances. The inlets and outlets
 for messages are always at the end.;
-#X msg 403 171 vis \$1;
-#X obj 403 141 nbx 5 14 0 3 0 0 empty empty empty 0 -8 0 10 -262144
+#X msg 473 171 vis \$1;
+#X obj 473 141 nbx 5 14 0 3 0 0 empty empty empty 0 -8 0 10 -262144
 -1 -1 0 256;
-#X obj 467 94 sig~ 1;
-#X obj 467 483 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 467 462 snapshot~;
-#X obj 475 442 r \$0-b;
-#X obj 418 95 s \$0-b;
-#X obj 418 72 metro 20;
-#X obj 418 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 537 94 sig~ 1;
+#X obj 537 483 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 537 462 snapshot~;
+#X obj 545 442 r \$0-b;
+#X obj 463 95 s \$0-b;
+#X obj 463 72 metro 20;
+#X obj 463 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X msg 427 38 \; pd dsp \$1;
-#X obj 496 423 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X msg 472 38 \; pd dsp \$1;
+#X obj 571 423 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256;
+#X obj 571 402 snapshot~;
+#X obj 579 382 r \$0-b;
+#X obj 566 114 sig~ 2;
+#X obj 596 135 sig~ 3;
+#X obj 625 155 sig~ 4;
+#X obj 606 363 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 6 256;
+#X obj 606 342 snapshot~;
+#X obj 614 322 r \$0-b;
+#X obj 640 303 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 8 256;
+#X obj 640 282 snapshot~;
+#X obj 648 262 r \$0-b;
+#X obj 655 74 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 496 402 snapshot~;
-#X obj 504 382 r \$0-b;
-#X obj 492 114 sig~ 2;
-#X obj 517 135 sig~ 3;
-#X obj 542 155 sig~ 4;
-#X obj 526 363 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 684 118 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 526 342 snapshot~;
-#X obj 534 322 r \$0-b;
-#X obj 555 303 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 675 423 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 1 256;
+#X obj 675 402 snapshot~;
+#X obj 683 382 r \$0-b;
+#X obj 709 354 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 20 256;
+#X obj 709 333 snapshot~;
+#X obj 717 313 r \$0-b;
+#X obj 744 280 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X obj 714 157 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X obj 555 282 snapshot~;
-#X obj 563 262 r \$0-b;
-#X obj 568 74 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 593 118 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 585 423 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 585 402 snapshot~;
-#X obj 593 382 r \$0-b;
-#X obj 614 354 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 614 333 snapshot~;
-#X obj 622 313 r \$0-b;
-#X obj 644 284 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 618 157 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 644 177 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X text 440 17 Turn on the dsp.;
-#X obj 593 136 sig~ 0;
-#X obj 702 303 + 1;
-#X obj 677 325 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
-#X obj 644 260 t f b, f 6;
-#X obj 644 196 t f b, f 8;
-#X obj 690 263 f 1;
-#X obj 677 303 f 1;
-#X obj 568 94 sig~ 2;
-#X obj 467 228 spam~ 4 spam.example 8 shadoks;
+#X obj 744 177 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 2 256;
+#X text 485 17 Turn on the dsp.;
+#X obj 684 136 sig~ 0;
+#X obj 812 299 + 1;
+#X obj 783 321 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 4 256;
+#X obj 744 256 t f b, f 6;
+#X obj 744 196 t f b, f 8;
+#X obj 801 259 f 1;
+#X obj 783 299 f 1;
+#X obj 655 94 sig~ 2;
+#X obj 537 228 spam~ 4 spam.example 8 shadoks;
 #X text 6 358 If you don't have any spam.in~ objects but you do have
 a spam.in object in your patch \, the first inlet will be used for
 the first spam.in object and the spam~ object. The inlets and outlets
 for messages are always shared by all the instance and there is no
 methods to target a specfic instance so you you should use route the
 messages within the patches.;
-#X text 6 458 Important: If you edit the patch \, you have to recreate
+#X text 6 478 Important: If you edit the patch \, you have to recreate
 the spam~ object to reflect the changes.;
 #X connect 5 0 47 0;
 #X connect 6 0 5 0;

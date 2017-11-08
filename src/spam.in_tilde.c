@@ -42,7 +42,7 @@ static void *spam_in_tilde_new(t_symbol* s, int argc, t_atom* argv)
     t_spam_in_tilde *x = (t_spam_in_tilde *)pd_new(spam_in_tilde_class);
     if(x)
     {
-        if(spam_io_init((t_spam_io *)x, (int)atom_getfloatarg(0, argc, argv), 0, 1, (argc == 0)))
+        if(spam_io_init((t_spam_io *)x, (int)(atom_getfloatarg(0, argc, argv)), 0, 1, (argc == 0)))
         {
             pd_free((t_pd *)x);
             return NULL;
