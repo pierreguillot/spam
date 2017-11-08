@@ -13,7 +13,8 @@ A set of externals and abstractions for sound spatialization.
 - **spam.connect**: The object that creates several connections in one click.
 - **spam** : The all-in-one library
 
-#### Abstractions:
+#### Spatialization:
+- **soxel** - matrix based spatialization tools
 - **ylm** - high order ambisonics spatialization tools
 - **zpt** - point source spatialization tools
 
