@@ -26,9 +26,7 @@ after_build:
     - cd ..\
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.pdb
     - del /F /S /Q /A %APPVEYOR_BUILD_FOLDER%\*.ilk
-    - rename %APPVEYOR_BUILD_FOLDER%\spam\ylm\README.md readme.txt
     - rename %APPVEYOR_BUILD_FOLDER%\spam\soxel\README.md readme.txt
-    - rename %APPVEYOR_BUILD_FOLDER%\spam\zpt\README.md readme.txt
     - copy %APPVEYOR_BUILD_FOLDER%\README.md %APPVEYOR_BUILD_FOLDER%\spam\readme.txt
     - copy %APPVEYOR_BUILD_FOLDER%\LICENSE %APPVEYOR_BUILD_FOLDER%\spam\license.txt
     - 7z a %ZIP%.zip %APPVEYOR_BUILD_FOLDER%\spam\
