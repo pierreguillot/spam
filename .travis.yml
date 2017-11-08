@@ -6,54 +6,50 @@ notifications:
 git:
   submodules: true
   depth: 3
-
 matrix:
   include:
   - os: linux
     compiler: gcc
     env:
-      - zip=linux_32
+    - zip=linux_32
     install:
-      - sudo apt-get install -y gcc-multilib
-      - sudo apt-get install -y libc6-dev-i386
+    - sudo apt-get install -y gcc-multilib
+    - sudo apt-get install -y libc6-dev-i386
     script:
-      - mkdir build && cd build
-      - cmake .. -DCMAKE_C_FLAGS=-m32
-      - cmake --build . --config Release
+    - mkdir build && cd build
+    - cmake .. -DCMAKE_C_FLAGS=-m32
+    - cmake --build . --config Release
   - os: linux
     compiler: gcc
     env:
-      - zip=linux_64
+    - zip=linux_64
     script:
-      - mkdir build && cd build
-      - cmake .. -DCMAKE_C_FLAGS=-m64
-      - cmake --build . --config Release
+    - mkdir build && cd build
+    - cmake .. -DCMAKE_C_FLAGS=-m64
+    - cmake --build . --config Release
   - os: osx
     compiler: gcc
     env:
-      - zip=mac_universal
+    - zip=mac_universal
     script:
-      - mkdir build && cd build
-      - cmake ..
-      - cmake --build . --config Release
-
+    - mkdir build && cd build
+    - cmake ..
+    - cmake --build . --config Release
 after_success:
-  - cd ../
-  - mv bin spam
-  - cp LICENSE spam/license.txt
-  - cp README.md spam/readme.txt
-  - mv spam/ylm/README.md spam/ylm/readme.txt
-  - mv spam/xel/README.md spam/xel/readme.txt
-  - mv spam/zpt/README.md spam/zpt/readme.txt
-  - zip -r spam_$zip.zip spam
-
+- cd ../
+- mv bin spam
+- cp LICENSE spam/license.txt
+- cp README.md spam/readme.txt
+- mv spam/ylm/README.md spam/ylm/readme.txt
+- mv spam/xel/README.md spam/xel/readme.txt
+- mv spam/zpt/README.md spam/zpt/readme.txt
+- zip -r spam_$zip.zip spam
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: fN6p5VEtIgGrtarx8viTVJU9HqithhwARc/578IMB73gDB7rDtYv4sWpnc/ShsCN7rKK52e2vn0auqm+2sPg12Cn9Dy4VPKhulFestBOAlrOSoweTAgQk9Y8ltjjc0QukZkBy/nZrnRg9py7zOvL251EJc7L3jmzcOFlQKqkp2JJYur7ylSlpFf0wPPNWDSDZky0gnBgHu458dnD0gSRSugw9GOrjYRbwSomdwETCGiwTR/FUZDIqF76F++4HCtFEOYzwA1eGUQCpgl8YPIIad+vGSR/mSZausQkB/qFkCwDv5tIw7TCJ/oTP1+Z7bquyq4HsOmbIr9Bg2mH7wHRdNDEGagmDaKPZzK5hkenevVqPrAPMNGsQrl6s8XbnTSP+HxD04H+2foyz5RCw4XCy57jEQMMzC8M13l7qSo4X8OjlKiIVd+OEiBneLgDgPz2pW1iwzD5OV6jF/RJKduidsduFQi947kUjZokcpMZWv7hHPMG1PNx1A3T9aeV1T3heK2T2RtqsiFYuiST28LQCLvwNwpD4JtMgDoV2HJX/yQqjs9WCH5VDO59whjAmlSW26sx5/4D5RjQDlbg1wWujo5mbwpIwnRTakY4xGD+BA3KADE2HzyP34SAmA2Qky4CjHwONIB0IB14gI7h3xVMQ4RXCx2uOK8w4RlnGdFzZA0=
-  file:
-    - spam_$zip.zip
+    secure: AZdWnhrfpdGX1uI56Y8t1Drms30Y88T8Ni5UAUfB5vyvQPE33uFPMYlRGII5+s7OIqk+9MUvDUzSsUM0XjxuJ3aHYfFBS15c2Tcrl7uURWfGvmTolXKaz+SNCxnxrepq3eF7zKA38qO8BDwjW3uVfa8XODX6LQt4oAp2zAYgFQ4tcskzsp8vOKaIeicqAgXtNPoPtz3FJbVbA8UZpa8HUOhT7+gf0qO3emdQ+FaWU086eIvFyQI+IRY0dJnG4pL8dtDe2795GBccuyzwbEh0wy/lifeHRCfT3qLoELunG92fA7i6wTO2ViiiSd8O+rxnqqN1CIAnG/VuTy/0FrAWzp+TS/4c9A17YwDao9Q28dhCnRKHduinjOhxe5DqffMuC6yomGB77wXqsaO80mknri6eIN9hBdz9UI9gLznNoHi1/HNKiIWaVBwoUdqDquQgtoAMHi4TGk6MvW5ddNTEOrp3Xf4nLUYOHAg+MqMEBqzaRsQlrlEbDzJIEmtwx2H/n3FfQIxYKhJjMvHhHX1nvHaLU8Y+SbXTfH6YtghXfn8PUyh5V3WRDw6k7itB5a/HYNHa4jvOE6EDIcJJ6SKCk6kL73nP9kPWWAK22fdZwsuS5QcHthflGOWQDf3b3sr26x1I6FNKxIxct0bMP0zTrGS88VT3oBU8uURTBfuI4bE=
+  file: spam_$zip.zip
   on:
-    tags: true
+    rtags: true
     repo: pierreguillot/spam
